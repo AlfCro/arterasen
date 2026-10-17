@@ -1,0 +1,180 @@
+// npm run verify [-- --out=<dir>]
+//
+// Browser check of the built site, for agents and humans:
+//   1. Builds a preview and takes phone-width screenshots (light and dark) to look at.
+//   2. Prints the signs to A5 PDF and decodes every QR code from the rendered page.
+//   3. Builds production in a temporary copy with every place approved, then checks
+//      language redirect, offline reading after the first scan, language memory and 404.
+// Exits with code 1 if anything fails. Screenshots and the PDF go to --out (default: OS temp).
+//
+// Needs a Chromium. Found in this order: $CHROMIUM_PATH, $PLAYWRIGHT_BROWSERS_PATH/chromium-*,
+// then Playwright's own download (npx playwright-core install chromium).
+
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import http from 'node:http';
+import { execFileSync } from 'node:child_process';
+import { chromium } from 'playwright-core';
+import jsQR from 'jsqr';
+import { PNG } from 'pngjs';
+
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const outArg = process.argv.find((a) => a.startsWith('--out='));
+const OUT = outArg ? path.resolve(outArg.slice(6)) : fs.mkdtempSync(path.join(os.tmpdir(), 'arterasen-verify-'));
+fs.mkdirSync(OUT, { recursive: true });
+
+const failures = [];
+const fail = (msg) => {
+  failures.push(msg);
+  console.log(`FEL   ${msg}`);
+};
+const ok = (msg) => console.log(`ok    ${msg}`);
+
+function chromiumPath() {
+  if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
+  const base = process.env.PLAYWRIGHT_BROWSERS_PATH;
+  if (base && fs.existsSync(base)) {
+    const dirs = fs.readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort().reverse();
+    for (const d of dirs) {
+      const exe = path.join(base, d, 'chrome-linux', 'chrome');
+      if (fs.existsSync(exe)) return exe;
+    }
+  }
+  return undefined;
+}
+
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.jpg': 'image/jpeg' };
+function serve(dir, port) {
+  const server = http.createServer((req, res) => {
+    const url = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    let file = path.join(dir, url);
+    if (fs.existsSync(file) && fs.statSync(file).isDirectory()) {
+      if (!url.endsWith('/')) return res.writeHead(301, { Location: url + '/' }).end();
+      file = path.join(file, 'index.html');
+    }
+    if (!fs.existsSync(file)) {
+      res.writeHead(404, { 'Content-Type': TYPES['.html'] });
+      return res.end(fs.readFileSync(path.join(dir, '404.html')));
+    }
+    res.writeHead(200, { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' });
+    fs.createReadStream(file).pipe(res);
+  });
+  return new Promise((resolve) => server.listen(port, () => resolve(server)));
+}
+
+function build(cwd, outDir, preview) {
+  execFileSync(process.execPath, [path.join(cwd, 'src', 'build.mjs'), ...(preview ? ['--preview'] : []), `--out=${outDir}`], {
+    cwd,
+    stdio: 'pipe',
+    env: { ...process.env, SITE_URL: '' },
+  });
+}
+
+const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
+const browser = await chromium.launch({ executablePath: chromiumPath() });
+
+// ---------- 1 + 2: preview build, screenshots, signs ----------
+const previewDir = fs.mkdtempSync(path.join(os.tmpdir(), 'arterasen-preview-'));
+build(ROOT, previewDir, true);
+const places = fs.readdirSync(path.join(previewDir, 'skyltar', 'qr')).map((f) => f.replace(/\.svg$/, ''));
+let server = await serve(previewDir, 4311);
+let base = 'http://localhost:4311';
+
+const shots = [['/sv/', 'light'], ...places.map((p) => [`/sv/${p}/`, 'light']), [`/de/${places[0] ?? ''}/`, 'dark'], ['/intern/', 'light'], ['/intern/status/', 'light']];
+for (const [url, scheme] of shots) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, colorScheme: scheme });
+  const page = await ctx.newPage();
+  page.on('console', (m) => m.type() === 'error' && fail(`konsolfel på ${url}: ${m.text()}`));
+  const res = await page.goto(base + url, { waitUntil: 'networkidle' });
+  if (!res || res.status() !== 200) fail(`${url} svarade ${res?.status()}`);
+  await page.evaluate(() => document.fonts.ready);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+  if (overflow) fail(`${url} scrollar i sidled i mobilbredd`);
+  const file = path.join(OUT, `${url.replace(/^\/|\/$/g, '').replace(/\//g, '_') || 'root'}-${scheme}.png`);
+  await page.screenshot({ path: file, fullPage: true });
+  await ctx.close();
+}
+ok(`${shots.length} skärmdumpar i 390 px`);
+
+{
+  const ctx = await browser.newContext({ viewport: { width: 900, height: 1200 }, deviceScaleFactor: 2 });
+  const page = await ctx.newPage();
+  await page.goto(base + '/skyltar/', { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  await page.pdf({ path: path.join(OUT, 'skyltar.pdf'), preferCSSPageSize: true, printBackground: true });
+  const signs = await page.$$('.sign');
+  for (const [i, sign] of signs.entries()) {
+    const png = PNG.sync.read(await (await sign.$('.sign-qr')).screenshot());
+    const code = jsQR(new Uint8ClampedArray(png.data), png.width, png.height);
+    // The printed address and the QR code must point to the same place.
+    const printed = (await (await sign.$('.sign-url')).textContent()).trim();
+    const expected = `${config.siteUrl}${printed.split('/').pop()}/`;
+    if (!code) fail(`QR-koden på skylt ${i + 1} gick inte att avkoda`);
+    else if (code.data !== expected) fail(`QR-koden på skylt ${i + 1} är ${code.data}, väntade ${expected}`);
+    if (i === 0) await sign.screenshot({ path: path.join(OUT, 'skylt-1.png') });
+  }
+  ok(`${signs.length} skyltar avkodade, PDF sparad`);
+  await ctx.close();
+}
+server.close();
+
+// ---------- 3: production with everything approved, offline behaviour ----------
+const copy = fs.mkdtempSync(path.join(os.tmpdir(), 'arterasen-prod-'));
+for (const item of ['content', 'src', 'docs', 'site.config.json', 'package.json']) fs.cpSync(path.join(ROOT, item), path.join(copy, item), { recursive: true });
+fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(copy, 'node_modules'));
+for (const p of places) {
+  for (const lang of config.languages) {
+    const f = path.join(copy, 'content', 'platser', p, `${lang}.md`);
+    fs.writeFileSync(f, fs.readFileSync(f, 'utf8').replace(/^status: utkast$/m, 'status: klar'));
+  }
+}
+fs.writeFileSync(path.join(copy, 'content', 'tryckta-skyltar.json'), JSON.stringify({ skyltar: places[0] ? [{ slug: 'gammal-skylt', uppsatt: '2027-01-01', flyttad_till: places[0] }] : [] }));
+const prodDir = path.join(copy, 'dist');
+build(copy, prodDir, false);
+server = await serve(prodDir, 4312);
+base = 'http://localhost:4312';
+
+if (places.length >= 2) {
+  const ctx = await browser.newContext({ locale: 'de-DE' });
+  const page = await ctx.newPage();
+  await page.goto(`${base}/${places[0]}/`, { waitUntil: 'networkidle' });
+  if (page.url().endsWith(`/de/${places[0]}/`)) ok('QR-adress skickar tysk telefon till tysk sida');
+  else fail(`QR-adress hamnade på ${page.url()}, väntade /de/${places[0]}/`);
+
+  await page.evaluate(() => navigator.serviceWorker.ready);
+  await page.waitForTimeout(1500);
+  await ctx.setOffline(true);
+  try {
+    await page.goto(`${base}/${places[1]}/`);
+    await page.waitForURL(new RegExp(`/de/${places[1]}/$`), { timeout: 8000 });
+    ok('nästa skylt går att läsa offline');
+  } catch {
+    fail('nästa skylt gick inte att läsa offline');
+  }
+  await ctx.setOffline(false);
+
+  await page.click('a[lang="en"]');
+  await page.goto(`${base}/gammal-skylt/`, { waitUntil: 'networkidle' });
+  if (page.url().endsWith(`/en/${places[0]}/`)) ok('språkval sparas och flyttad skylt leder rätt');
+  else fail(`flyttad skylt hamnade på ${page.url()}`);
+
+  const r = await page.goto(`${base}/finns-inte/`);
+  if (r.status() === 404) ok('okänd adress ger 404');
+  else fail(`okänd adress gav ${r.status()}`);
+  await ctx.close();
+} else {
+  console.log('hoppar över offlinetestet, det behövs minst två platser');
+}
+
+server.close();
+await browser.close();
+fs.rmSync(copy, { recursive: true, force: true });
+fs.rmSync(previewDir, { recursive: true, force: true });
+
+console.log(`\nSkärmdumpar och PDF: ${OUT}`);
+if (failures.length) {
+  console.log(`${failures.length} fel.`);
+  process.exit(1);
+}
+console.log('Allt fungerar.');

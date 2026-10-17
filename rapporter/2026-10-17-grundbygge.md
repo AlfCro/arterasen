@@ -1,6 +1,6 @@
 # Rapport 2026-10-17: Grundbygge
 
-Arbetspass: 2026-10-17 21:44–22:20
+Arbetspass: 2026-10-17 21:44–22:35
 Av: Claude
 PR: #1
 Initiativ: 01, 02, 03, 04, 05
@@ -18,6 +18,11 @@ Grundbygget ligger i PR #1 och kontrollen i CI är grön: sajt, skyltar, arbetsf
 - **Planstruktur.** `AGENTS.md` (med `CLAUDE.md` som importerar den) pekar på `PLAN.md`, som har fem initiativ med en delplan vardera i `plans/`. `docs/arbetsflode.md` beskriver hur Claude hanterar Trello-korten.
 - **Interna sidor.** `/intern/` byggs från `docs/intern/`: hur man skriver, granskar och sätter upp skyltar, statustabell och en sida för ändringar i arbetssättet.
 - **Innehåll.** Fem exempelplatser som utkast med källor: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Uppgifter som inte gick att belägga ströks.
+- **Överlämning.** Allt som behövs för att fortsätta i en ny session finns i repot:
+  - `docs/fakta.md`: allt insamlat underlag med källor, obekräftade uppgifter och motsägelser
+  - `npm run verify` (`tools/verify.mjs`): samma webbläsartester som kördes i det här passet
+  - avsnittet *Miljön i Claude-sessioner* i `AGENTS.md`: GitHub-begränsningar, grund klon, kopplingar
+  - rapporterna i `rapporter/`, länkade från `PLAN.md`
 
 ## Beslut
 
@@ -37,6 +42,7 @@ Grundbygget ligger i PR #1 och kontrollen i CI är grön: sajt, skyltar, arbetsf
 - Alla fem QR-koderna avkodade från de renderade skyltarna till rätt adress
 - I Chromium: offline (andra skanningen och språkbyte i flygplansläge), språkminne mellan skyltar, flyttad skylt och 404
 - Skydden i `npm run check` provade med fyra trasiga indata, alla stoppades
+- `npm run verify` går igenom utan fel
 - `npm audit`: 0 sårbarheter, efter att gray-matter bytts mot `yaml` och sharp uppgraderats till 0.35.5
 
 ## Väntar på

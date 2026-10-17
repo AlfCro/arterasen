@@ -34,7 +34,10 @@ npm run build              # produktion: bara platser med status klar på alla s
 npm run build:preview      # som granskningsversionen: utkast, källor och banner syns
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
 npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
+npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
 ```
+
+Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna med Read. Skriptet avslutas med fel om något brister.
 
 ## Struktur
 
@@ -46,6 +49,9 @@ npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 | `content/tryckta-skyltar.json` | Skyltar som sitter uppe. Raderna tas aldrig bort. |
 | `docs/intern/` | Interna sidor för volontärerna, Markdown på enkel svenska |
 | `docs/arbetsflode.md` | Agentens rutin för Trello-korten |
+| `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
+| `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
+| `tools/verify.mjs` | Webbläsartest av den byggda sajten |
 | `src/` | Byggskript, mallar, stil. Inga ramverk. |
 | `plans/` | Delplaner per initiativ |
 | `rapporter/` | En rapport per arbetspass, nyast länkad från PLAN.md |
@@ -101,5 +107,28 @@ npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 
 ### Datum och språk
 
+- Prata med Alf på svenska. Han är fullstackutvecklare och vill ha raka, tekniska svar.
 - Datum skrivs ÅÅÅÅ-MM-DD och tid med 24-timmarsklocka (sv-SE), tidszon Europe/Stockholm.
 - Dokumentation och innehåll på svenska. Kod, kodkommentarer och commit-meddelanden på engelska.
+
+## Miljön i Claude-sessioner
+
+Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
+
+- **Repot måste kopplas i varje ny session.** Sessionen når bara de repon som är kopplade. Be om `AlfCro/arterasen` om det inte redan finns.
+- **Nya repon kan inte skapas** härifrån. Alf skapar dem på github.com.
+- **GitHub GraphQL är spärrat.** `gh pr create` och `gh pr view` fungerar inte. Använd REST:
+  ```sh
+  gh api repos/AlfCro/arterasen/pulls -X POST -f title="…" -f head="<gren>" -f base=main -F body=@pr-body.md
+  gh api repos/AlfCro/arterasen/commits/<sha>/check-runs --jq '.check_runs[] | .name + ": " + (.conclusion // .status)'
+  gh api repos/AlfCro/arterasen/pulls/<nr>/merge -X PUT -f merge_method=squash
+  ```
+- **Klonen är grund och har bara en gren.** Efter push av en ny gren saknas spårningsreferensen, och en stopp-kontroll kan då klaga på opushade commits trots att de finns på GitHub. Lös det med:
+  ```sh
+  git config --add remote.origin.fetch '+refs/heads/<gren>:refs/remotes/origin/<gren>'
+  git fetch origin <gren> && git branch -u origin/<gren>
+  ```
+- **Hämta `main` innan push** (`git fetch origin main && git rebase origin/main`), annars kan push från en gammal grund klon avvisas.
+- **Chromium** finns under `$PLAYWRIGHT_BROWSERS_PATH`. `npm run verify` hittar den själv. Kör aldrig `playwright install`.
+- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet men var inte kopplade 2026-10-17. Kontrollera med ListConnectors. Atlassian-kopplingen tillhör Lunds universitet och används inte här.
+- **Nätet från skalet** går via en proxy med vitlista. npm fungerar. Webbsidor läses med WebFetch, inte curl.

@@ -26,7 +26,7 @@ Föreningen har valt vilka platser som ska ha skyltar, och varje plats har en go
 
 Förslag på fler platser, från arterasen.se: Karles lada och serveringen, Turiststugan, gärdesgårdarna, Mickelsons lador, fäbodstigen från Näset, utsikten.
 
-Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens pressmeddelande om Unesco. Källorna står i varje `sv.md` och syns i förhandsvisningen. Uppgifter som inte gick att belägga har lämnats utanför.
+Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens pressmeddelande om Unesco. Källorna står i varje `sv.md` och syns i förhandsvisningen. Uppgifter som inte gick att belägga har lämnats utanför. Allt insamlat underlag, även det som inte används ännu, finns i [docs/fakta.md](../docs/fakta.md).
 
 ## Beslut
 

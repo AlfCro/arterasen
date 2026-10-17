@@ -21,6 +21,8 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 
 ## Beslut
 
+- 2026-10-17: **Omfattning:** statisk sajt med en sida per plats plus utskrivbara QR-skyltar (Alf).
+- 2026-10-17: **Språk:** svenska, engelska och tyska (Alf). Fler språk kan läggas till, se öppna frågor.
 - 2026-10-17: **Egen liten generator i Node** i stället för Astro, Eleventy eller liknande. Få beroenden, lätt att förstå för nästa person, inget ramverk att uppgradera.
 - 2026-10-17: **Adress per skylt:** `https://info.arterasen.se/<slug>/`. QR-koden innehåller avslutande snedstreck så att ingen omdirigering behövs på svag täckning. Språksidor ligger på `/<sv|en|de>/<slug>/`.
 - 2026-10-17: **Språkval:** sparat val, annars telefonens språk. Norska, danska och finska telefoner får svenska, nederländska och okända språk får engelska (`languageAliases` och `fallbackLanguage` i `site.config.json`).
