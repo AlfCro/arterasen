@@ -2,7 +2,9 @@
 
 Det som har samlats in om fäboden, med källa, även sådant som inte används i någon text ännu. Läs det här innan du letar på nätet igen. Använd bara uppgifter med källa. Det som står under *Obekräftat* får inte användas förrän föreningen har bekräftat det.
 
-Hämtat 2026-10-17 om inget annat står.
+Hämtat 2026-10-17 om inget annat står. Avsnitten från Rättviks kommun och framåt hämtades 2026-10-18.
+
+Var källorna finns och vad som inte är genomsökt: [kallor.md](kallor.md). Bilder: [bilder.md](bilder.md).
 
 ## Föreningens sajt, startsidan
 
@@ -71,19 +73,164 @@ Källa: <https://regeringen.se/pressmeddelanden/2024/12/fabodbruk--en-del-av-man
 
 - I december 2024 fördes fäbodbruket upp på Unescos representativa lista över mänsklighetens immateriella kulturarv, som en gemensam nominering från Sverige och Norge.
 
+## Rättviks kommun, Ärteråsen
+
+Källa: <https://www.rattvik.se/uppleva-och-gora/kultur/kulturarv/fabodar/arterasen.html> (uppdaterad 2026-04-24)
+
+- Fäboden ligger högt uppe på Ärteråsens berg ovanför byn Näset i Furudal.
+- **Utsiktstorn** med utsikt över berg, skog och Oresjön.
+- Anor från **1600-talet** enligt sidan (föreningen och Visit Dalarna säger 1400-talet).
+- **Ett 30-tal byggnader**: eldhus, mjölkbod, stugor, fähus och lador i den småkuperade sluttningen. Sidan kallar det **landets största samling eldhus**.
+- När djuren är på vallen går de fritt i skogen.
+- **Vägbeskrivning:** väg 301 från Rättvik mot Furudal, skyltat mot Näset, sedan skyltad grusväg till parkeringen. Från parkeringen är det **ca 300 m** på fäbodstigen till fäboden (föreningen och Visit Dalarna säger 500 m).
+
+## Rättviks kommun, fäbodstigen Näset–Ärteråsen
+
+Källa: <https://www.rattvik.se/uppleva-och-gora/rattvik-outdoor/vandra-pa-fabodstigar/naset-arterasen.html> (uppdaterad 2026-05-11)
+
+- Start i Näset vid **Brändavägen**. Stigen går upp till **Siljansleden** och följer den till Ärteråsen. Går man åt andra hållet kan man avsluta med ett dopp i Skattungen.
+- **Ca 6,5 km**, medelsvår, markerad med orange färg på träd och stolpar. Skogsmark, blött på sina ställen.
+- Vid fäboden finns utsiktstorn, eldhus och kor. Stigen passerar inhägnade betesvallar.
+- PDF-karta finns på sidan. Terrängkartan heter *Rättvik NV*. Mobiltäckningen kan saknas.
+
+## Föreningens sajt, Aktiviteter och övriga sidor
+
+Källor: <https://www.arterasen.se/aktiviteter>, <https://www.arterasen.se/kulturveckaullvecka>, <https://www.arterasen.se/foreningsnytt>. Delar av texterna är några år gamla.
+
+- **Fäbodstigen:** en återställd historisk vandring på **7,6 km från Brända** till fäboden, skyltad med karta både från Brända och från Näsets bystuga. (Kartbilden heter "fabodstigen-naset-arterasen-76-km".)
+- Det går att övernatta på Ärteråsen. Bokning via Facebook.
+- Föreningen är ideell och tar normalt inte emot bussresor eller större sällskap med guidning.
+- *Ärteråslåten* skrevs till en musiktävling 2016. Upphovspersonen namnges på sidan.
+- **Kulturveckan** är vecka 29 varje år, 50 kr för vuxna per aktivitet. På sidan finns en bild från en gudstjänst.
+- **Föreningens syfte:** bevara Ärteråsen som fäbodmiljö, bevara fäbodkunskap i Ore och omvärlden, fäboden som besöksmål i Rättviks kommun, och gemenskap i närområdet.
+
+## Furudal.nu
+
+Källor: <https://www.furudal.nu/sv/aktiviteter/arterasens-fabodar>, <https://www.furudal.nu/en/gora/besoksmal>
+
+- Fäbodarna tillhör byn Näset. Öppet hela sommaren, med kor, utsiktstorn och enkel kaffeservering.
+- **Ett 20-tal byggnader** på vallen. Några är från 1600- och 1700-talet, andra från 1800-talet. Flera har välbevarade ristningar.
+- Eldhusen har stampat jordgolv och öppen härd.
+- Fäbodstigen är **ca 7 km** från Näset upp till Ärteråsberget.
+- **Hundar** är inte tillåtna på sommaren, eftersom korna går lösa.
+- **Siljansleden och fäbodstigen** passerar fäboden. Utsiktstornet ligger en bit upp på berget, dit en stig leder från fäboden.
+- Koordinater i sidans metadata: 61.16167, 15.16543.
+
+## Visit Dalarna, Dalarnas sju underverk
+
+Källa: <https://www.visitdalarna.se/artikel/har-ar-dalarnas-sju-underverk> (publicerad 2020-11-23)
+
+- *Ärteråsen med fäbodkulturen* utsågs 2020 till ett av **Dalarnas sju underverk**, i kategorin *Spår av det förflutna*. Projektet drevs av Dalarnas museum. Av 377 nomineringar gick 70 vidare, och allmänheten röstade fram sju.
+- Fäboden ligger högt i väglös terräng med utsikt över sjöar och skogar.
+- 12 eldhus med mjölkbodar. Vid 1800-talets mitt **minst 18 eldhus**, 36 brukare och 200 djur.
+- Fägatorna är inhägnade med gärdesgård, och vallen hålls öppen av kor och får som betar på sommaren.
+
+## Länsstyrelsen Dalarna, fäbodveckan
+
+Källor: [nyhet 2025-06-27](https://www.lansstyrelsen.se/dalarna/om-oss/nyheter-och-press/aktuella-nyheter/nyheter---dalarna/2025-06-27-under-fabodveckan-visar-gammal-kunskap-vagen-framat.html), [Landsbygdsnytt 3/2025, s. 3](https://www.lansstyrelsen.se/download/18.3fcb6f8319931f7a95f94f95/1758549173634/Landsbygdsnytt_Nr3_2025.pdf)
+
+- Fäbodveckan 2025 (14–20 juli) arrangerades av Länsstyrelsen Dalarna, Dalarnas Fäbodbrukarförening och Ärteråsens kulturförening. De flesta aktiviteterna hölls på Ärteråsen.
+- Under veckan fanns bland annat vallmusik, pollinatörer på fäboden, ulldag och berättelser från fäbodarna.
+
+## Dalarnas Spelmansförbund, låtkurs 2019
+
+Källa: <https://www.dalarnasspelmansforbund.se/kalender/2019/8/9/rtersens-fbod-furudal>
+
+- En heldagskurs 2019-08-09 med en låttradition i vart och ett av tre eldhus.
+- **Eldhusen beskrivs så här:** gamla timrade bostäder med ett långsmalt rum, väggfasta bänkar, jordgolv, öppen eldstad i mitten och röklucka i taket.
+- 12 eldhus och flera andra byggnader. Ca 20 minuter med bil från Furudal.
+
+## Lars Bägerfeldts skrifter
+
+Källor: se [kallor.md](kallor.md). Sidnumren gäller versionerna som länkas där. Uppgifterna är hämtade med ett verktyg som sammanfattar PDF:er, så kontrollera siffror och citat mot originalet innan de används i en text.
+
+### Historia
+
+Skrift 67, *Fäbodens kullor och dalkarlar* (2024-10-01), om inget annat anges.
+
+- **Äldsta belägg:** två skattebetalare i "Erte tjärn" i mitten av 1500-talet (s. 10).
+- **1664:** kronans fäbodinventering räknar sju ägare (s. 34). I skrift 66 (s. 38–39) heter fäboden där "Per Olofssons fäbod", med sju enheter från Näset och Tillhed.
+- **1686:** namnet Ärteråsen förekommer första gången, i Rättviks häradsting (s. 34). Samma år ägdes en nedbrunnen fäbod i Ärteråsen av en bonde i Orsa (skrift 84, s. 9).
+- Enligt en muntlig tradition röjdes Ärteråsen av morakarlar, kanske på 1400- eller 1500-talet. Det är inte belagt (skrift 66, s. 15–16).
+- **Husgrupper över tid:** troligen 3–4 år 1664, 17 år 1827, upp mot 22 runt 1870-talet (osäker källa), och 12–14 i dag beroende på hur man räknar (s. 6). År 1956 fanns nio gamla eldhus kvar (s. 35).
+- **Storskiftet:** kartan ritades 1825 och fastställdes 1828, redogörelsen är från 1827 (s. 31).
+- **Nedgången** började runt 1870-talet när mejerier och lönearbete minskade behovet av fäbodar (s. 13). Fäboden brukades till mitten av 1900-talet och har senare tagits upp igen (s. 6).
+- De flesta hus som står kvar är byggda på 1700- och 1800-talet. Några är flyttade dit, och vissa har äldre stockar (s. 18). Eldhus har flyttats till Ärteråsen från andra fäbodar, bland annat delvis från Lindbodarna, och det finns en sätesstuga (skrift 84, s. 12–14).
+- **Namnet** tolkas som "Erters ås", efter mansnamnet Erter. Bägerfeldt avfärdar att det skulle ha med ärter att göra (s. 10).
+
+### Ristningarna
+
+- **10 746 ristningar** med 61 357 tecken i fäbodgårdarna 1–14 (skrift 67, s. 6). Med 176 ristningar i ytterligare hus blir det 10 922 (skrift 84, s. 15).
+- **Äldsta årtal 1662** (skrift 84, s. 15).
+- Fördelning: 4 989 initialer från kullor, 1 568 initialer från dalkarlar, 807 utskrivna förnamn, 126 namn i lönnskrift, 708 bomärken, 563 personmärken och 66 figurristningar (skrift 67, s. 6).
+- De flesta sitter inne i eldhusen och på gavlarnas utsida på eldhus och mjölkbodar (skrift 67, s. 6).
+- **318 personer** är identifierade, 200 kvinnor och 118 män (skrift 84, s. 15–16). Nästan alla var ogifta när de ristade, de flesta unga kvinnor (skrift 88, s. 27, 50).
+- Kvinnorna ristade mest under sommaren. Männen, husbönder och ogifta söner, ristade främst före eller efter vallningen (skrift 67, s. 31).
+- Exempel på text: "LÖF MED TREFLIGT HÄR I ÄRTERÅSEN" (skrift 88, s. 28).
+- Rader med X, ofta sju i följd, kan betyda 70 dagar (skrift 84, s. 28).
+
+### Figurristningarna
+
+Skrift 70 (2021-11-25).
+
+- 66 figurristningar: 41 i eldhus, mjölkbodar och ett fähus, 15 i en bod vid fäbodgård 12 och 10 i en bod som flyttats till fäbodgård 3.
+- Motiv: kvistar och blad, kors, män med svärd, spjut, gevär eller yxa, ryttare och hästar, jaktscener, hundar, stjärnor, hjärta med pil och dryckesglas.
+
+### En fäbodkulla: Brita Eriksdotter
+
+Skrift 72 (2026-02-14). Ett möjligt underlag för skylten om ristningarna, eftersom hon är en verklig person som besökare kan följa i timret.
+
+- Tillhed Brita Eriksdotter föddes 1833 i Näset (s. 3–4, 39).
+- Hon var fäbodkulla på Ärteråsen från 14 års ålder, ungefär tolv somrar 1847–1858, mest vid föräldrarnas fäbodgård nr 2 (s. 19–22, 32, 39).
+- Hon ristade sina initialer BED, ibland med gårdsnamnet och familjens bomärke. Ca 91 ristningar vid föräldrarnas fäbod och 9 vid andra, under en period ungefär en gång i veckan (s. 19, 21).
+- Texterna är korta och glada. År 1856 ristade hon att hon längtade (s. 27, 32).
+- Kullan skötte mjölkning, vallning, smör, ost och disk i ungefär tio veckor, sov i eldhuset och fick besök från byn på lördagar (s. 5–18). Hon gifte sig 1859 (s. 32).
+
+### Fäbodbruket och orden
+
+Skrift 88 och 67.
+
+- **Eldhus:** huset där man bodde och kokade messmör, i en stor kopparkittel över härden (skrift 88, s. 5, 8).
+- **Sätesstuga:** en utvecklad form av eldhus med murad spis, skorsten, trägolv och glasfönster (skrift 88, s. 5–6).
+- **Arbetet:** mjölkning morgon och kväll, kärning, ystning, messmörskokning och vallning 8–12 timmar om dagen. Ett arbetslag var tre personer (skrift 67, s. 15). I snitt ca 5,4 kor och 12,6 getter per fäbodgård där två hushåll delade (skrift 67, s. 15, 17).
+- Djuren stängdes in i fähuset på natten på grund av varg och björn (skrift 88, s. 50).
+- Karl XI:s förordning 1686 ville ha kvinnor i stället för pojkar som vallhjon. I Ore följdes den i hög grad (skrift 88, s. 48).
+- "Mas" användes inte i bygden. Unga män kallades gosse eller dalkarl (skrift 67, s. 7).
+
+### Fäbodgårdarna och byn
+
+Skrift 69 (2026-04-30) kopplar varje fäbodgård till en gård i Näset eller Arvet. Några av gårdsnamnen där liknar husnamnen på arterasen.se: Tillhed (nr 7 och 15), Juganer (nr 13, jämför Juganes) och Carles (nr 18, jämför Karles lada). Kontrollera mot originalet och med föreningen innan sambanden används.
+
+## Årsringsdateringar
+
+Källor: Torbjörn Axelson, [taxelson.se](https://taxelson.se/dendro/obj/nytt.php), poster 2024-09-29, och Bägerfeldt skrift 89. Proverna togs 2024-09-20. "fbg" är fäbodgård, numrerad som hos Bägerfeldt.
+
+| Byggnad | Datering | Anmärkning |
+| --- | --- | --- |
+| Fäbodgård 1, mjölkbod | efter ca 1765, efter 1796 | Byggd ca 1765–1775, röstet ombyggt efter 1796 (skrift 89, s. 59) |
+| Fäbodgård 2, eldhus och mjölkbod | efter 1646, ca 1845, ca 1870 | En stock i eldhuset har sista årsring 1646 och fälldes troligen i slutet av 1600-talet. Tre prover visar 1869, alltså en ombyggnad (skrift 89, s. 62) |
+| Fäbodgård 8, eldhus | ca 1785 | |
+| Fäbodgård 13, eldhus och mjölkbod | efter 1656, ca 1748, ca 1824 | |
+| Kvickgården i Näset, stuga och uthus | ca 1796, ca 1823 | Inte på fäboden |
+
+Den äldsta daterade stocken på fäboden är alltså från 1600-talets slut, samma århundrade som den äldsta ristningen (1662).
+
 ## Obekräftat
 
-Uppgifter från ett tidigare samtal (juli 2026) som inte gick att belägga 2026-10-17. Får inte användas innan föreningen bekräftat dem.
+Uppgifter som inte är belagda. Får inte användas förrän föreningen bekräftat dem.
 
-- "Landets största samling eldhus" och "ett trettiotal byggnader"
-- Ett utsiktstorn med utsikt åt alla fyra väderstreck över Oresjön (Swedish Spoon nämner en utsiktsplats längs Siljansleden)
-- Siljansleden passerar fäboden
-- Fäbodstigen från **Brända**, 7,6 km, återställd (föreningen säger att stigen går från **Näset**)
+- Muntlig tradition om att morakarlar röjde Ärteråsen på 1400- eller 1500-talet (Bägerfeldt skrift 66). Det kan vara grunden till att föreningen skriver "anor sedan 1400-talet".
+
+Det som stod här 2026-10-17 är nu belagt: "ett 30-tal byggnader" och "landets största samling eldhus" (Rättviks kommun), utsiktstornet (Rättviks kommun, furudal.nu), att Siljansleden passerar (Rättviks kommun, furudal.nu) och fäbodstigen 7,6 km från Brända (arterasen.se/aktiviteter). Flera av dem motsäger andra källor, se nedan.
 
 ## Motsägelser att reda ut
 
-| Fråga | Källa 1 | Källa 2 |
-| --- | --- | --- |
-| Hundar | Inte vecka 32–33 (arterasen.se) | Inte tillåtna alls (Visit Dalarna) |
-| Fäbodstigens start | Näset (arterasen.se) | Brända (obekräftat) |
-| Utsikt | Utsiktsplats längs Siljansleden (Swedish Spoon) | Utsiktstorn (obekräftat) |
+| Fråga | Uppgifter |
+| --- | --- |
+| Hur gammal fäboden är | Anor sedan 1400-talet (arterasen.se, Visit Dalarna). Anor från 1600-talet (Rättviks kommun, furudal.nu). Belagd i mitten av 1500-talet som "Erte tjärn", säkert 1664, namnet 1686 (Bägerfeldt). |
+| Eldhus vid storhetstiden | 22 eldhus och 36 brukare 1850 (arterasen.se, Visit Dalarna engelska). Minst 18 eldhus, 36 brukare och 200 djur (Visit Dalarna, sju underverk). 17 husgrupper 1827 och upp mot 22 runt 1870-talet (Bägerfeldt). |
+| Antal byggnader i dag | Ett 30-tal (Rättviks kommun). Ett 20-tal (furudal.nu). 12 eldhus är alla överens om. |
+| Hundar | Inte vecka 32–33 när korna är där (arterasen.se). Inte på sommaren (furudal.nu). Inte alls (Visit Dalarna). |
+| Fäbodstigen | 7,6 km från Brända, skyltad från Brända och Näsets bystuga (arterasen.se). Ca 6,5 km från Brändavägen i Näset via Siljansleden (Rättviks kommun). Ca 7 km från Näset (furudal.nu). Troligen samma stig räknad från olika punkter. |
+| Parkeringen | 500 m till fäboden (arterasen.se, Visit Dalarna). Ca 300 m (Rättviks kommun). |
+| När bruket upphörde | 1954 (arterasen.se, Visit Dalarna). "Mitten av 1900-talet" i de delar av Bägerfeldts skrift 67 som lästes. Ingen motsägelse, men året är inte dubbelbelagt. |

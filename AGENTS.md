@@ -36,6 +36,7 @@ npm run ny -- <slug> "<Titel>"   # ny plats från mallen
 npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
 node tools/artifact-preview.mjs dist <mapp>   # gör dist/ publicerbar som claude.ai-artifact (efter build:preview)
+npm run hamta              # hämta filerna i material/hamta.json (körs på GitHub, se nedan)
 ```
 
 Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna med Read. Skriptet avslutas med fel om något brister.
@@ -51,6 +52,9 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `docs/intern/` | Interna sidor för volontärerna, Markdown på enkel svenska |
 | `docs/arbetsflode.md` | Agentens rutin för Trello-korten |
 | `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
+| `docs/kallor.md` | Var det finns mer: skrifter, arkiv, webbplatser, och vad som inte är genomsökt |
+| `docs/bilder.md` | Bilder av fäboden på nätet med fotograf och licens |
+| `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Publiceras inte. |
 | `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
 | `tools/verify.mjs` | Webbläsartest av den byggda sajten |
 | `tools/artifact-preview.mjs` | Kopia av den byggda sajten som går att publicera som artifact |
@@ -138,3 +142,6 @@ Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
 - **Se sajten innan hosting finns:** `npm run build:preview`, sedan `node tools/artifact-preview.mjs dist <mapp i scratchpad>`. Skriptet skriver ut `files`-kartan. Publicera `<mapp>/index.html` med Artifact-verktyget, `root` satt till mappen och `files` från skriptet. Senaste versionen: se rapporten i PLAN.md. En artifact från en tidigare session uppdateras genom att dess URL skickas som `url`.
 - **Beslutsunderlag** som Alf ska läsa eller dela skrivs som Claude Docs-dokument, inte som filer i repot. Länka dem från delplanen.
 - **Nätet från skalet** går via en proxy med vitlista. npm fungerar. Webbsidor läses med WebFetch, inte curl.
+- **Filer från webben** (bilder, PDF:er) kan inte laddas ner härifrån. Lägg dem i `material/hamta.json` och pusha till en gren: workflowen `hamta-material` hämtar dem och committar till grenen. Resultatet står i `material/hamta-status.json`. Se [material/LASMIG.md](material/LASMIG.md).
+- **WebFetch** når bara adresser som har synts i samtalet (sökresultat eller från Alf), uppgraderar http till https och klarar därför inte sajter som bara har http (fnf.nu, taxelson.se:s objektsidor). Långa PDF:er läses bara delvis. Facebook kräver inloggning och går bara att läsa om chatten är kopplad till Alfs dator.
+- **Leta inte igen** efter sådant som redan finns i `docs/fakta.md`, `docs/kallor.md` och `docs/bilder.md`. Där står också vad som inte gick att nå.
