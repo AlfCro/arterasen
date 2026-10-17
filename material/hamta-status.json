@@ -2,44 +2,44 @@
   "dm-kef02850": {
     "fil": "bilder/dalarnas-museum-KEF02850-arterasens-fabod-1916.jpg",
     "status": "ok",
-    "byte": 184214,
-    "sha256": "4f46ec886e71dc65ad25040fb05e6b95f89d6085709629a492256ded8123245a"
+    "byte": 366330,
+    "sha256": "d2992c95e224a7f3b0f95caf66c45456979df30e3312bcc248d29ccafc3c99f8"
   },
   "vlm-blom-2281-1": {
     "fil": "bilder/vastmanlands-lans-museum-Blom-2281-eldhus-och-mjolkbod-1.jpg",
     "status": "ok",
-    "byte": 685148,
-    "sha256": "d86e175687549a581a40144565fb793c28a6826c27f60f1d405ee0da480f725f"
+    "byte": 714820,
+    "sha256": "09d93a94634e044c8363bc34301e4274f4f84ec18ff0ebd4fbc32337b7fc8db4"
   },
   "vlm-blom-2281-2": {
     "fil": "bilder/vastmanlands-lans-museum-Blom-2281-eldhus-och-mjolkbod-2.jpg",
     "status": "ok",
-    "byte": 322510,
-    "sha256": "9482380f1e1deb8ad07d11ec70a92e68edb2a04f98063d865c3f73f9845547ec"
+    "byte": 435276,
+    "sha256": "79be76889be37563368f0c0b6d166c5181bdba72b865ef2e38e044fc103138ad"
   },
   "dmtb-000000168": {
     "fil": "bilder/dalarnas-museum-DMTB-000000168-ristningar-inomhus-2018.jpg",
     "status": "ok",
-    "byte": 300554,
-    "sha256": "7832a90811e7823cb7542a34d01cb7f5074b3fe09962ae80e777ff9406315afd"
+    "byte": 461015,
+    "sha256": "f3c63174e9b65d7d77089651fee59a3cfcae79bfe3073cf51abc9c83ffef5bfe"
   },
   "dmtb-000000180": {
     "fil": "bilder/dalarnas-museum-DMTB-000000180-ristningar-inomhus-2018.jpg",
     "status": "ok",
-    "byte": 376352,
-    "sha256": "7d0a39964ef33d17b1106e352e874bc167b5269b41f58f2d57ceb90a63cfc52e"
+    "byte": 532307,
+    "sha256": "827130f80c522b8d997da2712d95e6bc4846034488aa1867a7e1cc38820571e3"
   },
   "dmtb-000000186": {
     "fil": "bilder/dalarnas-museum-DMTB-000000186-fjallkor-2018.jpg",
     "status": "ok",
-    "byte": 629642,
-    "sha256": "95a76d8c742ec21711a69db72f409c91fc7b5521c2dcc0bd20ff7bebe9c5c583"
+    "byte": 729323,
+    "sha256": "e237dc1e717cd9942dfe171656a5e1bbe97d65d8cb97f0f899c03f88858e9925"
   },
   "dm-26652": {
     "fil": "bilder/dalarnas-museum-DM-26652-tradristning-ore-1866.jpg",
     "status": "ok",
-    "byte": 106098,
-    "sha256": "382c3c81fab9a75c03e83f328f0e2bf91bc71a7f4b54b52fee71390ed20d9f00"
+    "byte": 159326,
+    "sha256": "e778f4479074ca0068c581b7da769582b3a5af391960f5cae9703d1efc0b954b"
   },
   "arterasen-se-fabodstigen-1": {
     "fil": "foreningen/arterasen-se-fabodstigen-naset-arterasen-76-km-v2-1.jpg",
