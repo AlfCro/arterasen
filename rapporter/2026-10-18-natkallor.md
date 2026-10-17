@@ -7,14 +7,14 @@ Initiativ: 04
 
 ## Sammanfattning
 
-Underlaget om fäboden är kraftigt utökat. Den största nya källan är Lars Bägerfeldts skrifter, som har dokumenterat varenda ristning på Ärteråsen, och Torbjörn Axelsons årsringsdateringar från 2024. Fyra uppgifter som tidigare var obekräftade är nu belagda, och nya motsägelser är listade. Fria museibilder och skrifterna hämtas till `material/` av en ny workflow, eftersom sessionen inte kan ladda ner filer själv. Facebook gick inte att läsa.
+Underlaget om fäboden är kraftigt utökat. Den största nya källan är Lars Bägerfeldts skrifter, som har dokumenterat varenda ristning på Ärteråsen, och Torbjörn Axelsons årsringsdateringar från 2024. Fyra uppgifter som tidigare var obekräftade är nu belagda, och nya motsägelser är listade. Sista sommaren med vallning var 1953, och de 36 brukare som föreningen anger för 1850 finns redan som 36 ägare vid storskiftet 1827. Fria museibilder och skrifterna hämtas till `material/` av en ny workflow, eftersom sessionen inte kan ladda ner filer själv. Facebook gick inte att läsa.
 
 ## Gjort
 
 - **`docs/fakta.md`:** nya avsnitt från Rättviks kommun (fäboden och fäbodstigen), furudal.nu, arterasen.se/aktiviteter, Visit Dalarnas sju underverk, Länsstyrelsen, Dalarnas Spelmansförbund, Bägerfeldts skrifter (historia, ristningar, figurristningar, fäbodkullan Brita Eriksdotter, ord och arbete) och årsringsdateringar. *Obekräftat* och *Motsägelser* omskrivna.
 - **`docs/kallor.md`** (ny): alla källor med länk, Bägerfeldts skrifter nr 66–105, äldre tryck och arkiv, och vad som inte är genomsökt.
 - **`docs/bilder.md`** (ny): bilder på nätet uppdelade efter vad som gäller: fria med namn (sex museibilder), föreningens egna, Bägerfeldts, och bilder som kräver tillstånd.
-- **`material/`** (ny): `hamta.json` listar 17 filer att hämta, sju bilder och tio skrifter. `tools/hamta-material.mjs` (`npm run hamta`) laddar ner, kontrollerar typ och storlek och skriver `hamta-status.json`. Workflowen `.github/workflows/hamta-material.yml` kör skriptet när listan ändras på en gren som inte är `main` och committar filerna till grenen.
+- **`material/`** (ny): `hamta.json` listar 17 filer: sju museibilder, föreningens karta över fäbodstigen i två versioner och åtta skrifter. Alla är hämtade, ca 56 MB, varav skrifterna 53 MB. `tools/hamta-material.mjs` (`npm run hamta`) laddar ner, kontrollerar typ och storlek och skriver `hamta-status.json`. Workflowen `.github/workflows/hamta-material.yml` kör skriptet när listan ändras på en gren som inte är `main` och committar filerna till grenen.
 - **`AGENTS.md`:** nya filer i strukturtabellen, kommandot `npm run hamta`, och anteckningar om vad WebFetch inte klarar.
 - **`plans/04-innehall.md`:** öppna frågor uppdaterade med det nya underlaget, fyra nya frågor, två nya att göra-punkter.
 
@@ -27,8 +27,9 @@ Underlaget om fäboden är kraftigt utökat. Den största nya källan är Lars B
 
 - `npm run check` och `npm run build` gröna.
 - `tools/hamta-material.mjs` lokalt: validering av listan (felaktig sökväg, filändelse och http-adress avvisas), och att misslyckade nedladdningar hamnar i statusfilen med orsak.
-- Workflowen `hamta-material` på GitHub: se *Väntar på* och `material/hamta-status.json` på grenen.
-- Fakta från Bägerfeldt är lästa via ett verktyg som sammanfattar PDF:er och bara läser början av långa filer. Siffror och citat ska kontrolleras mot originalen i `material/skrifter/` innan de används i en skylttext. Det står i fakta.md.
+- Workflowen `hamta-material` körde två gånger på GitHub, båda gröna. Första gången skickade DigitaltMuseum WebP under .jpg-namn. Skriptet kontrollerar nu formatet på filens första byte och ber om JPEG, och andra körningen gav JPEG för alla sju bilder. Alla 17 poster har status `ok`.
+- De viktigaste siffrorna från Bägerfeldt är kontrollerade mot PDF-texten och markerade ✓ i fakta.md: antal ristningar och årtal, äldsta årtal 1662, 318 personer, husgrupper 1827 och 1956, sista sommaren 1953, Brita Eriksdotters årtal och årsringsdateringarna. Övriga uppgifter från skrifterna är verktygssammanfattningar.
+- Bilderna granskade som kontaktark. En av dem (Vlm-Blom 2281) visade sig vara ett repro av en boksida med foto av Olof Ekberg och bildtexten "Ore socken". Fotografen är rättad i hamta.json och bilder.md.
 
 ## Väntar på
 
