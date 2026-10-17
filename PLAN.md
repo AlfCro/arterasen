@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-17
+Senast uppdaterad: 2026-10-17 23:12
 
 ## Mål
 
@@ -12,8 +12,8 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 
 | Nr | Initiativ | Delplan | Status | Nästa steg | Vem |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge klart, i PR | Alf granskar och mergar PR:en | Alf |
-| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Ej startat | Skapa Cloudflare-konto och koppla repot | Alf |
+| 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner när hosting är klar | Alf, föreningen |
+| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Väntar på beslut | Välj upplägg för två adresser (utkast och publik), ta reda på vems Cloudflare-konto arterasen.se ligger i | Alf |
 | 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude | Alf |
 | 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast | Föreningen väljer platser och granskar utkasten | Föreningen |
 | 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar | Provskylt på en plats, välj material | Föreningen |
@@ -24,16 +24,19 @@ Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 
 Det som står still tills någon gör något. Hela listan med detaljer finns i den senaste rapporten.
 
-- [ ] Alf: granska och merga PR #1, ge GitHub Actions skrivrättighet
+- [x] Alf: granska och merga PR #1 (2026-10-17). Actions behövde ingen ändrad inställning.
 - [ ] Alf: koppla Trello och Google Drive till Claude
-- [ ] Alf: Cloudflare-konto kopplat till repot
-- [ ] Domänägaren: CNAME `info` hos Loopia, automatisk förnyelse av arterasen.se
+- [ ] Alf: välj upplägg och namn för utkastadressen, [underlag](https://claude.ai/code/artifact/9e3892a9-0640-41c1-93ca-0a359e9727c9)
+- [ ] Alf: ta reda på vems Cloudflare-konto arterasen.se ligger i (DNS ligger hos Cloudflare, inte hos Loopia)
+- [ ] Alf: Cloudflare Pages kopplat till repot, helst i domänens konto
+- [ ] Domänägaren: automatisk förnyelse av arterasen.se hos Loopia
 - [ ] Föreningen: faktagranska de fem utkasten
 
 ## Rapporter
 
 En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
 
+- 2026-10-17 [Efter merge, åtkomst och två adresser](rapporter/2026-10-17-efter-merge.md): DNS ligger hos Cloudflare, underlag för utkastadress väntar på beslut, förhandsvisning som artifact
 - 2026-10-17 [Grundbygge](rapporter/2026-10-17-grundbygge.md): sajt, skyltar, arbetsflöde och planstruktur i PR #1
 
 ## Beroenden

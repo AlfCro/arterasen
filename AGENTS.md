@@ -35,6 +35,7 @@ npm run build:preview      # som granskningsversionen: utkast, källor och banne
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
 npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
+node tools/artifact-preview.mjs dist <mapp>   # gör dist/ publicerbar som claude.ai-artifact (efter build:preview)
 ```
 
 Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna med Read. Skriptet avslutas med fel om något brister.
@@ -52,6 +53,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
 | `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
 | `tools/verify.mjs` | Webbläsartest av den byggda sajten |
+| `tools/artifact-preview.mjs` | Kopia av den byggda sajten som går att publicera som artifact |
 | `src/` | Byggskript, mallar, stil. Inga ramverk. |
 | `plans/` | Delplaner per initiativ |
 | `rapporter/` | En rapport per arbetspass, nyast länkad från PLAN.md |
@@ -123,6 +125,7 @@ Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
   gh api repos/AlfCro/arterasen/commits/<sha>/check-runs --jq '.check_runs[] | .name + ": " + (.conclusion // .status)'
   gh api repos/AlfCro/arterasen/pulls/<nr>/merge -X PUT -f merge_method=squash
   ```
+- **Efter en ny klon kan lokala `main` vara gammal** om sessionen klonade en annan gren först. Kör `git fetch origin main && git checkout -B main origin/main` innan du bygger från `main`.
 - **Klonen är grund och har bara en gren.** Efter push av en ny gren saknas spårningsreferensen, och en stopp-kontroll kan då klaga på opushade commits trots att de finns på GitHub. Lös det med:
   ```sh
   git config --add remote.origin.fetch '+refs/heads/<gren>:refs/remotes/origin/<gren>'
@@ -130,5 +133,8 @@ Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
   ```
 - **Hämta `main` innan push** (`git fetch origin main && git rebase origin/main`), annars kan push från en gammal grund klon avvisas.
 - **Chromium** finns under `$PLAYWRIGHT_BROWSERS_PATH`. `npm run verify` hittar den själv. Kör aldrig `playwright install`.
-- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet men var inte kopplade 2026-10-17. Kontrollera med ListConnectors. Atlassian-kopplingen tillhör Lunds universitet och används inte här.
+- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet. 2026-10-17 var Trello inte installerat och Google Drive installerat men inte anslutet. Kontrollera med ListConnectors och föreslå dem med SuggestConnectors. Atlassian-kopplingen tillhör Lunds universitet och används inte här.
+- **DNS-uppslag** fungerar inte från skalet (ingen `dig`, ingen namnupplösning). Använd WebFetch mot `https://dns.google/resolve?name=<domän>&type=<NS|A|MX|CNAME>`.
+- **Se sajten innan hosting finns:** `npm run build:preview`, sedan `node tools/artifact-preview.mjs dist <mapp i scratchpad>`. Skriptet skriver ut `files`-kartan. Publicera `<mapp>/index.html` med Artifact-verktyget, `root` satt till mappen och `files` från skriptet. Senaste versionen: se rapporten i PLAN.md. En artifact från en tidigare session uppdateras genom att dess URL skickas som `url`.
+- **Beslutsunderlag** som Alf ska läsa eller dela skrivs som Claude Docs-dokument, inte som filer i repot. Länka dem från delplanen.
 - **Nätet från skalet** går via en proxy med vitlista. npm fungerar. Webbsidor läses med WebFetch, inte curl.
