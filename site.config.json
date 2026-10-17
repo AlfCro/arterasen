@@ -1,0 +1,25 @@
+{
+  "siteUrl": "https://info.arterasen.se/",
+  "languages": ["sv", "en", "de"],
+  "primaryLanguage": "sv",
+  "fallbackLanguage": "en",
+  "languageAliases": {
+    "nb": "sv",
+    "nn": "sv",
+    "no": "sv",
+    "da": "sv",
+    "fi": "sv",
+    "nl": "en"
+  },
+  "productionBranch": "main",
+  "cloudflareProject": "arterasen-info",
+  "organisation": {
+    "name": "Ärteråsens Kulturförening",
+    "url": "https://www.arterasen.se/"
+  },
+  "intern": {
+    "trelloUrl": null,
+    "driveUrl": null,
+    "granskningUrl": "https://granskning.arterasen-info.pages.dev/"
+  }
+}

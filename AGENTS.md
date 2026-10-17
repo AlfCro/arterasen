@@ -1,0 +1,101 @@
+# AGENTS.md
+
+Instruktioner för AI-agenter som arbetar i det här repot (Claude och andra). Människor börjar i [README.md](README.md).
+
+## Börja här, varje gång
+
+1. Läs [PLAN.md](PLAN.md). Den listar alla initiativ, deras status och nästa steg, och länkar till en delplan per initiativ i [plans/](plans/).
+2. Läs delplanen för det initiativ du ska arbeta med. Där står mål, beslut som redan är fattade, vad som återstår och öppna frågor.
+3. Gör arbetet.
+4. Innan du avslutar: bocka av i delplanen, skriv en daterad rad i delplanens **Logg**, och uppdatera status och nästa steg för initiativet i PLAN.md.
+5. Nytt initiativ? Kopiera [plans/_mall.md](plans/_mall.md) till `plans/NN-namn.md` och lägg till en rad i PLAN.md. Fråga Alf först om initiativet inte redan är beslutat.
+
+Ett beslut som ändrar något i en delplans **Beslut** ska stämmas av med Alf innan det genomförs.
+
+## Projektet i korthet
+
+QR-skyltar på Ärteråsens fäbod (Ore, Rättviks kommun). Varje skylt leder till en kort text om platsen på svenska, engelska och tyska. Texterna skrivs av lågtekniska volontärer i Ärteråsens Kulturförening. De lämnar material i Google Drive och följer arbetet på en Trello-tavla. Agenten gör sidor av materialet, översätter, lägger upp förhandsvisningar och publicerar när föreningen har godkänt.
+
+- Publik sajt: `https://info.arterasen.se/` (Cloudflare Pages, gren `main`)
+- Förhandsvisningar: Cloudflare Pages, en per gren, plus `granskning` som speglar `main` med utkast synliga
+- Interna sidor för volontärerna: `/intern/`, genereras från [docs/intern/](docs/intern/)
+- Repo-ägare och utvecklare: Alf Cronmalm (AlfCro)
+
+## Kommandon
+
+```sh
+npm ci                     # installera
+npm run dev                # förhandsvisning på http://localhost:8080 (utkast syns)
+npm run check              # validera allt innehåll, måste vara grönt
+npm run build              # produktion: bara platser med status klar på alla språk
+npm run build:preview      # som granskningsversionen: utkast, källor och banner syns
+npm run ny -- <slug> "<Titel>"   # ny plats från mallen
+npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
+```
+
+## Struktur
+
+| Sökväg | Innehåll |
+| --- | --- |
+| `content/platser/<slug>/{sv,en,de}.md` | En plats. `sv.md` är huvudfilen med nummer, bild och källor. |
+| `content/start/` | Startsidans text per språk |
+| `content/_mall/` | Mall som `npm run ny` kopierar |
+| `content/tryckta-skyltar.json` | Skyltar som sitter uppe. Raderna tas aldrig bort. |
+| `docs/intern/` | Interna sidor för volontärerna, Markdown på enkel svenska |
+| `docs/arbetsflode.md` | Agentens rutin för Trello-korten |
+| `src/` | Byggskript, mallar, stil. Inga ramverk. |
+| `plans/` | Delplaner per initiativ |
+| `site.config.json` | Adress, språk, länkar till Trello och Drive |
+
+## Regler
+
+### Innehåll
+
+- **Hitta aldrig på fakta.** Varje uppgift ska komma från volontärens dokument eller från en källa som står i `kallor`. Är något oklart: ställ frågan på Trello-kortet och lämna uppgiften utanför tills den är besvarad.
+- **Status `klar` sätts bara efter godkännande:** kortet ligger i *Godkänt* och flyttades dit av någon annan än den som skrev texten. Se [docs/arbetsflode.md](docs/arbetsflode.md).
+- **Adressen (slug) är permanent** när skylten satts upp. Byter en plats namn: lägg till `flyttad_till` i `content/tryckta-skyltar.json`, ta aldrig bort en rad.
+- **Privatpersoner** nämns inte utan samtycke. Husen ägs av enskilda.
+- **Bilder** används bara om dokumentet säger att föreningen får använda dem och vem fotografen är. Kör alltid `npm run bild`.
+- **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
+- **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
+
+### Ordlista
+
+| Svenska | Engelska | Tyska |
+| --- | --- | --- |
+| fäbod | summer farm | Sommeralm, Alm |
+| vall | meadow | Almwiese, Weide |
+| eldhus | fire house | Feuerhaus |
+| fäbodkulla | dairymaid | Sennerin |
+| messmör | messmör, a sweet whey butter | Messmör, eine süßliche Molkenbutter |
+| mjölkstuga | milk house | Milchhütte |
+| bomärke | farm mark | Hausmarke |
+| ristning | carving | Ritzung |
+| fjällko | Swedish mountain cattle (fjällko) | Fjällrind |
+| plats (på skylt) | stop | Station |
+| Ärteråsens Kulturförening | översätts inte | wird nicht übersetzt |
+
+### Kod
+
+- Vanlig Node utan ramverk och med få beroenden. Sidorna ska fungera utan JavaScript och vara lätta, täckningen på fäboden kan vara svag.
+- Relativa länkar överallt utom i `404.html`, så att `dist/` fungerar på vilken värd som helst och direkt från disk.
+- Designbeslut (typsnitt, färger, skyltens mått) finns i [plans/01-sajt.md](plans/01-sajt.md). Ändra dem inte i förbigående.
+- Kör `npm run check` och `npm run build` innan du pushar. Titta på ändrade sidor i mobilbredd (390 px).
+
+### Git och publicering
+
+- Grenar: `innehall/<slug>` för ny eller ändrad text, `publicera/<slug>` för statusändring efter godkännande, `skylt/<slug>` för tryckta skyltar, `claude/<kort-beskrivning>` för kod och dokumentation.
+- Agenten får själv merga PR:er som **bara** ändrar filer under `content/`, när kontrollen `check` är grön.
+- Alla andra ändringar (src/, docs/, plans/, .github/, site.config.json, package.json) går som PR som Alf granskar och mergar.
+- Skriv aldrig om historiken på `main` och forcera aldrig push dit.
+
+### Kommunikation
+
+- Volontärerna läser `/intern/` och Trello, inte GitHub. Skriv enkel svenska utan tekniska ord.
+- Ändras arbetssättet: uppdatera sidorna i `docs/intern/` och lägg en daterad punkt överst i `docs/intern/90-nytt.md`.
+- Lösenord, telefonnummer och mejladresser hör inte hemma i repot eller på `/intern/`. Sidan är olistad men publik.
+
+### Datum och språk
+
+- Datum skrivs ÅÅÅÅ-MM-DD och tid med 24-timmarsklocka (sv-SE), tidszon Europe/Stockholm.
+- Dokumentation och innehåll på svenska. Kod, kodkommentarer och commit-meddelanden på engelska.

@@ -1,0 +1,763 @@
+/* Ärteråsen QR-information
+   Lichen-grey ground, tar-black text, falu red only for the carved numerals.
+   Display: IM Fell English (17th-century type, same century as the oldest carving, 1662),
+   with lining digits from EB Garamond so a 1 never reads as an I. See FONTS in build.mjs.
+   Text: Lexend, wide and open, chosen to be read outdoors, in sunlight, by every age. */
+
+:root {
+  --bg: #e8ece3;
+  --surface: #dae1d1;
+  --text: #26211c;
+  --muted: #55514a;
+  --accent: #8a2a1c;
+  --rule: #b9c1b0;
+  --warn-bg: #ecd38f;
+  --warn-text: #26211c;
+  --display: "Arteras Display", "Iowan Old Style", Georgia, serif;
+  --body: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --measure: 36rem;
+  --gutter: 1rem;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1a17;
+    --surface: #2a2723;
+    --text: #e7eae1;
+    --muted: #b4b2a8;
+    --accent: #e39383;
+    --rule: #403c36;
+    --warn-bg: #5b4814;
+    --warn-text: #f6ecd2;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-kerning: normal;
+}
+
+.site-header,
+main,
+.route,
+.site-footer,
+.preview-banner p {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.5rem 0.75rem;
+  z-index: 10;
+}
+
+.skip:focus {
+  top: 0.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.site-name {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin: 0;
+  text-decoration: none;
+}
+
+.site-name a {
+  text-decoration: none;
+}
+
+.langs ul,
+.tabs ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+  margin: 0 -0.5rem;
+  padding: 0;
+}
+
+.langs a,
+.tabs a {
+  display: inline-block;
+  padding: 0.6rem 0.5rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.langs a[aria-current],
+.tabs a[aria-current] {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+}
+
+/* ---------- Text ---------- */
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 1.65rem;
+  margin: 2.25rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.ingress {
+  font-size: 1.3rem;
+  line-height: 1.45;
+  margin: 1rem 0 1.5rem;
+  text-wrap: pretty;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+/* ---------- Place page ---------- */
+
+.place-head {
+  margin-top: 1.25rem;
+}
+
+.numeral {
+  font-family: var(--display);
+  color: var(--accent);
+  font-size: clamp(6.5rem, 34vw, 9.5rem);
+  line-height: 0.82;
+  margin: 0 0 0.6rem -0.04em;
+}
+
+.place h1 {
+  font-size: clamp(2.3rem, 10vw, 3.3rem);
+  line-height: 1.04;
+  margin: 0;
+}
+
+.photo {
+  margin: 1.75rem 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.photo figcaption {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.credit {
+  white-space: nowrap;
+}
+
+.facts {
+  margin: 2.25rem 0 1rem;
+}
+
+.facts h2 {
+  margin: 0 0 0.25rem;
+}
+
+.facts dl {
+  margin: 0;
+}
+
+.facts dl > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+  border-top: 1px solid var(--rule);
+  padding: 0.55rem 0;
+}
+
+.facts dl > div:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.facts dd {
+  margin: 0 0 0 auto;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.facts .long {
+  display: block;
+}
+
+.facts .long dd {
+  margin: 0.1rem 0 0;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.sources {
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+
+.sources h2 {
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.sources ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.route a {
+  display: block;
+  padding: 0.85rem 0 1rem;
+  border-top: 3px solid var(--text);
+  text-decoration: none;
+}
+
+.route a:hover .route-target {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.route-next {
+  text-align: right;
+}
+
+.route-dir {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.route-target {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.4rem;
+  line-height: 1.15;
+  margin-top: 0.2rem;
+}
+
+.route-n {
+  color: var(--accent);
+}
+
+/* ---------- Start page ---------- */
+
+.start-title {
+  font-size: clamp(2.8rem, 13vw, 4.2rem);
+  line-height: 1;
+  margin: 1.75rem 0 0;
+}
+
+.places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.places li {
+  border-top: 1px solid var(--rule);
+}
+
+.places a {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  align-items: baseline;
+  padding: 0.8rem 0 0.9rem;
+  text-decoration: none;
+}
+
+.places-n {
+  font-family: var(--display);
+  font-size: 2.6rem;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+.places-title {
+  display: block;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.places-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.places a:hover .places-name {
+  text-decoration-thickness: 2px;
+}
+
+.places-ingress {
+  display: block;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.45;
+  margin-top: 0.15rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.consider {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.35rem 0;
+}
+
+/* ---------- Preview ---------- */
+
+.preview-banner {
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.preview-banner p {
+  margin: 0 auto;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.badge {
+  display: inline-block;
+  vertical-align: 0.3em;
+  font-family: var(--body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  padding: 0.3em 0.45em;
+  border-radius: 3px;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  text-decoration: none;
+}
+
+/* ---------- QR entry page ---------- */
+
+.entry main {
+  padding-top: 18vh;
+}
+
+.entry-opening {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  margin: 0 0 1.5rem;
+}
+
+.entry-langs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.entry-langs a {
+  display: block;
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- 404 ---------- */
+
+.not-found main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.not-found section + section {
+  border-top: 1px solid var(--rule);
+  margin-top: 1.5rem;
+}
+
+/* ---------- Internal pages ---------- */
+
+.intern-header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0;
+}
+
+.intern-header .site-name {
+  flex-basis: 100%;
+}
+
+.intern-tag {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-left: 0.35rem;
+  vertical-align: 0.15em;
+}
+
+.tabs a {
+  white-space: nowrap;
+}
+
+.intern h1 {
+  font-size: clamp(2.2rem, 9vw, 3rem);
+  margin: 1.5rem 0 0;
+}
+
+.intern-wide-page .site-header,
+.intern-wide {
+  max-width: 60rem;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 2.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+thead th {
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 2px solid var(--text);
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+td.num {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+td a + a {
+  margin-left: 0.75rem;
+}
+
+.prose code {
+  font-size: 0.92em;
+  background: var(--surface);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.prose blockquote {
+  margin: 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* ---------- Printable signs ---------- */
+
+.signs-page {
+  background: var(--surface);
+}
+
+.signs-help {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem var(--gutter) 1rem;
+}
+
+.signs-help h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.signs-empty {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 0 var(--gutter);
+}
+
+.sign {
+  position: relative;
+  overflow: hidden;
+  width: 148mm;
+  height: 210mm;
+  margin: 0 auto 10mm;
+  padding: 12mm 12mm 9mm;
+  background: #fff;
+  color: #1f1a16;
+  border: 1px solid #b9c1b0;
+  display: grid;
+  grid-template-columns: 72mm 1fr;
+  grid-template-rows: auto auto auto 1fr auto auto;
+  column-gap: 6mm;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.sign-n {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0 0 0 -1.5mm;
+  font-family: var(--display);
+  font-size: 112pt;
+  line-height: 0.8;
+  color: #8a2a1c;
+}
+
+.sign-title {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 6mm 0 2.5mm;
+  font-size: 38pt;
+  line-height: 1.02;
+}
+
+.sign-titles {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 17pt;
+  line-height: 1.25;
+  color: #4a463f;
+}
+
+.sign-qr {
+  grid-column: 1;
+  grid-row: 4;
+  align-self: end;
+}
+
+.sign-qr svg {
+  display: block;
+  width: 72mm;
+  height: 72mm;
+  margin-left: -4mm; /* the quiet zone is white, so align the code itself with the text edge */
+}
+
+.sign-scan {
+  grid-column: 2;
+  grid-row: 4;
+  align-self: end;
+  list-style: none;
+  margin: 0 0 3mm;
+  padding: 0;
+  font-size: 11pt;
+  line-height: 1.3;
+}
+
+.sign-scan li + li {
+  margin-top: 2.5mm;
+}
+
+.sign-scan li:first-child {
+  font-weight: 600;
+}
+
+.sign-url {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  margin: 4mm 0 0;
+  font-weight: 600;
+  font-size: 15pt;
+  letter-spacing: 0.01em;
+}
+
+.sign-org {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  margin: 4mm 0 0;
+  padding-top: 2.5mm;
+  border-top: 0.4mm solid #1f1a16;
+  font-size: 10pt;
+  color: #4a463f;
+}
+
+.sign-stamp {
+  position: absolute;
+  top: 43%;
+  left: -12mm;
+  right: -12mm;
+  margin: 0;
+  transform: rotate(-14deg);
+  text-align: center;
+  font-weight: 600;
+  font-size: 24pt;
+  color: rgb(138 42 28 / 0.5);
+  border-block: 1mm solid rgb(138 42 28 / 0.5);
+  padding: 1mm 0;
+  pointer-events: none;
+}
+
+@page {
+  size: A5 portrait;
+  margin: 0;
+}
+
+@media print {
+  .signs-page {
+    background: none;
+  }
+
+  .signs-help,
+  .signs-empty {
+    display: none;
+  }
+
+  .sign {
+    margin: 0;
+    border: 0;
+    break-after: page;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
