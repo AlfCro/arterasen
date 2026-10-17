@@ -32,7 +32,7 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 
 ## Att göra
 
-- [ ] Granska och merga PR:en med grundbygget (Alf)
+- [x] Granska och merga PR:en med grundbygget (Alf, 2026-10-17)
 - [ ] Testa på telefoner på plats när hosting är klar (föreningen, Alf)
 - [ ] Bestäm om sajten ska ha besöksstatistik, till exempel Cloudflare Web Analytics utan kakor (Alf)
 
@@ -44,3 +44,4 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 ## Logg
 
 - 2026-10-17: Grundbygge med generator, tre språk, fem exempelplatser, skyltar, interna sidor, service worker och kontroller (Claude).
+- 2026-10-17: PR #1 mergad. `granskning`-grenen skapades av workflowen direkt, eftersom den själv begär `contents: write`. Repots standardinställning för Actions behöver inte ändras (Alf, Claude).

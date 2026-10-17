@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-17
+Senast uppdaterad: 2026-10-17 22:40
 
 ## Mål
 
@@ -12,7 +12,7 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 
 | Nr | Initiativ | Delplan | Status | Nästa steg | Vem |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge klart, i PR | Alf granskar och mergar PR:en | Alf |
+| 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner när hosting är klar | Alf, föreningen |
 | 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Ej startat | Skapa Cloudflare-konto och koppla repot | Alf |
 | 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude | Alf |
 | 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast | Föreningen väljer platser och granskar utkasten | Föreningen |
@@ -24,7 +24,7 @@ Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 
 Det som står still tills någon gör något. Hela listan med detaljer finns i den senaste rapporten.
 
-- [ ] Alf: granska och merga PR #1, ge GitHub Actions skrivrättighet
+- [x] Alf: granska och merga PR #1 (2026-10-17). Actions behövde ingen ändrad inställning.
 - [ ] Alf: koppla Trello och Google Drive till Claude
 - [ ] Alf: Cloudflare-konto kopplat till repot
 - [ ] Domänägaren: CNAME `info` hos Loopia, automatisk förnyelse av arterasen.se
