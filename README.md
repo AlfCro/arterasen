@@ -5,6 +5,7 @@ QR-skyltar för besökare på Ärteråsens fäbod i Ore, Rättviks kommun. Varje
 - **Publik sajt:** https://info.arterasen.se/ (när hostingen är på plats, se [plans/02-hosting.md](plans/02-hosting.md))
 - **För volontärerna:** https://info.arterasen.se/intern/ beskriver hur man skriver, granskar och sätter upp skyltar
 - **Arbetsplan:** [PLAN.md](PLAN.md) med en delplan per initiativ i [plans/](plans/)
+- **Rapporter:** vad som gjorts och vad som väntar, ett arbetspass i taget, i [rapporter/](rapporter/)
 - **För AI-agenter:** [AGENTS.md](AGENTS.md)
 
 ## Så fungerar det

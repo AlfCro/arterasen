@@ -20,6 +20,22 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 
 Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 
+## Väntar på
+
+Det som står still tills någon gör något. Hela listan med detaljer finns i den senaste rapporten.
+
+- [ ] Alf: granska och merga PR #1, ge GitHub Actions skrivrättighet
+- [ ] Alf: koppla Trello och Google Drive till Claude
+- [ ] Alf: Cloudflare-konto kopplat till repot
+- [ ] Domänägaren: CNAME `info` hos Loopia, automatisk förnyelse av arterasen.se
+- [ ] Föreningen: faktagranska de fem utkasten
+
+## Rapporter
+
+En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
+
+- 2026-10-17 [Grundbygge](rapporter/2026-10-17-grundbygge.md): sajt, skyltar, arbetsflöde och planstruktur i PR #1
+
 ## Beroenden
 
 ```

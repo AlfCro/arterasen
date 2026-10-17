@@ -8,7 +8,10 @@ Instruktioner för AI-agenter som arbetar i det här repot (Claude och andra). M
 2. Läs delplanen för det initiativ du ska arbeta med. Där står mål, beslut som redan är fattade, vad som återstår och öppna frågor.
 3. Gör arbetet.
 4. Innan du avslutar: bocka av i delplanen, skriv en daterad rad i delplanens **Logg**, och uppdatera status och nästa steg för initiativet i PLAN.md.
-5. Nytt initiativ? Kopiera [plans/_mall.md](plans/_mall.md) till `plans/NN-namn.md` och lägg till en rad i PLAN.md. Fråga Alf först om initiativet inte redan är beslutat.
+5. **Skriv en rapport** för arbetspasset i `rapporter/ÅÅÅÅ-MM-DD-kort-namn.md` utifrån [rapporter/_mall.md](rapporter/_mall.md). Lägg den överst under **Rapporter** i PLAN.md och committa den med resten av arbetet. Rapporten är den återkoppling Alf sparar. Sammanfattningen i chatten ska säga samma sak, inte något annat.
+6. Nytt initiativ? Kopiera [plans/_mall.md](plans/_mall.md) till `plans/NN-namn.md` och lägg till en rad i PLAN.md. Fråga Alf först om initiativet inte redan är beslutat.
+
+Rapport eller logg? Delplanens **Logg** är en rad per händelse i ett initiativ. Rapporten beskriver ett helt arbetspass över alla initiativ: vad som gjordes, vad som beslutades, vad som kontrollerades och vad som väntar på vem. Små pass, till exempel en enskild textändring från Trello, behöver ingen rapport. Där räcker kommentaren på kortet och PR:en.
 
 Ett beslut som ändrar något i en delplans **Beslut** ska stämmas av med Alf innan det genomförs.
 
@@ -45,6 +48,7 @@ npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 | `docs/arbetsflode.md` | Agentens rutin för Trello-korten |
 | `src/` | Byggskript, mallar, stil. Inga ramverk. |
 | `plans/` | Delplaner per initiativ |
+| `rapporter/` | En rapport per arbetspass, nyast länkad från PLAN.md |
 | `site.config.json` | Adress, språk, länkar till Trello och Drive |
 
 ## Regler

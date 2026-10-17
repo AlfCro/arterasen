@@ -22,4 +22,5 @@
 
 - [ ] Testat i mobilbredd
 - [ ] PLAN.md och berörd delplan uppdaterade
+- [ ] Rapport i `rapporter/` för arbetspasset, länkad från PLAN.md
 - [ ] `docs/intern/` uppdaterad om arbetssättet ändras
