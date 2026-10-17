@@ -24,6 +24,19 @@ Sajten ligger på `https://info.arterasen.se/` och uppdateras automatiskt när `
 
 ## Att göra
 
+### Fler än en person kommer åt allt (Alf, föreningen)
+
+Sajten ska fungera i många år och får inte hänga på en enda person. Varje tjänst ska ha minst två personer som kan logga in, och en adress som föreningen kommer åt som kontaktmejl. Inloggningsuppgifter skrivs aldrig i repot eller på `/intern/`.
+
+- [ ] Välj eller skapa en mejladress som föreningen kommer åt. Använd den som kontaktadress i tjänsterna nedan.
+- [ ] **GitHub, före Cloudflare-kopplingen:** ett personligt repo kan bara ha en ägare, och medarbetare får inte adminrätt. Skapa en gratis organisation, flytta repot dit och lägg till en andra ägare. Görs det efter Cloudflare-kopplingen måste Cloudflare-appen godkännas om för det nya repot. Claude uppdaterar `AlfCro/arterasen` i `package.json`, `AGENTS.md`, `docs/arbetsflode.md` och den här filen. GitHub omdirigerar de gamla adresserna under tiden.
+- [ ] Cloudflare: lägg till en andra person som medlem med administratörsroll.
+- [ ] Trello: minst två administratörer på arbetsytan och tavlan.
+- [ ] Google Drive: mappen ska ägas av föreningens konto, inte av ett privat. En fil ägs av den som skapade den och försvinner om det kontot tas bort.
+- [ ] Loopia: domänen ägs juridiskt av den som står som innehavare, inte av den som har inloggningen. Utred att flytta arterasen.se till föreningen med dess organisationsnummer.
+- [ ] Skriv upp vem som har inloggning till vad, på ett ställe som föreningen kommer åt men utanför repot, till exempel i ett styrelseprotokoll.
+- [ ] Arbetsflödet med Claude går via Alfs Claude-konto. Kontrollera att README räcker för att någon annan ska kunna lägga in och publicera en text för hand.
+
 ### Cloudflare (Alf, cirka 15 minuter)
 
 - [ ] Skapa ett Cloudflare-konto. Använd gärna en adress som föreningen kommer åt, så att kontot inte hänger på en person.
@@ -48,9 +61,11 @@ Sajten ligger på `https://info.arterasen.se/` och uppdateras automatiskt när `
 
 ## Öppna frågor
 
-- Vem i föreningen ska ha inloggning till Cloudflare som reserv?
+- Vem i föreningen blir andra person med inloggning till GitHub, Cloudflare, Trello, Drive och Loopia?
+- Ska repot flyttas till en GitHub-organisation innan Cloudflare kopplas?
 - Vem betalar domänen framöver, och står den kvar på din mamma eller flyttas den till föreningen?
 
 ## Logg
 
 - 2026-10-17: Bygget förberett för Cloudflare: `npm run build:cf` väljer läge från `CF_PAGES_BRANCH`, `_headers` och `robots.txt` genereras, workflow speglar `main` till `granskning` (Claude).
+- 2026-10-17: Checklista för att minst två personer ska komma åt varje tjänst (Alf, Claude).

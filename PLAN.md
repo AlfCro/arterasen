@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-17 22:40
+Senast uppdaterad: 2026-10-17 22:48
 
 ## Mål
 
@@ -13,7 +13,7 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 | Nr | Initiativ | Delplan | Status | Nästa steg | Vem |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner när hosting är klar | Alf, föreningen |
-| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Ej startat | Skapa Cloudflare-konto och koppla repot | Alf |
+| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Ej startat | Bestäm om repot flyttas till en GitHub-organisation, koppla sedan Cloudflare | Alf |
 | 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude | Alf |
 | 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast | Föreningen väljer platser och granskar utkasten | Föreningen |
 | 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar | Provskylt på en plats, välj material | Föreningen |
