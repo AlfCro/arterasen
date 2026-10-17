@@ -1,0 +1,56 @@
+# Arbetsplan
+
+Senast uppdaterad: 2026-10-17
+
+## Mål
+
+Till säsongen 2027 har de viktigaste platserna på Ärteråsens fäbod en skylt med QR-kod som öppnar en kort text på svenska, engelska och tyska. Texterna kommer från föreningens volontärer och är godkända av föreningen innan de publiceras.
+
+Föreningen har fått pengar från Vindkraftsfonden till bland annat informationsblad med QR-koder, planerade till 2027 ([arterasen.se](https://www.arterasen.se/)). Det här projektet är den digitala delen av det.
+
+## Initiativ
+
+| Nr | Initiativ | Delplan | Status | Nästa steg | Vem |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge klart, i PR | Alf granskar och mergar PR:en | Alf |
+| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Ej startat | Skapa Cloudflare-konto och koppla repot | Alf |
+| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude | Alf |
+| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast | Föreningen väljer platser och granskar utkasten | Föreningen |
+| 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar | Provskylt på en plats, välj material | Föreningen |
+
+Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
+
+## Väntar på
+
+Det som står still tills någon gör något. Hela listan med detaljer finns i den senaste rapporten.
+
+- [ ] Alf: granska och merga PR #1, ge GitHub Actions skrivrättighet
+- [ ] Alf: koppla Trello och Google Drive till Claude
+- [ ] Alf: Cloudflare-konto kopplat till repot
+- [ ] Domänägaren: CNAME `info` hos Loopia, automatisk förnyelse av arterasen.se
+- [ ] Föreningen: faktagranska de fem utkasten
+
+## Rapporter
+
+En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
+
+- 2026-10-17 [Grundbygge](rapporter/2026-10-17-grundbygge.md): sajt, skyltar, arbetsflöde och planstruktur i PR #1
+
+## Beroenden
+
+```
+1 Sajt ──► 2 Hosting ──► 3 Innehållsflöde ──► 4 Texter godkända ──► 5 Skyltar tryckta
+                         (förhandsvisning     (Trello + Drive)
+                          kräver hosting)
+```
+
+Skyltar får inte tryckas förrän adressen `info.arterasen.se` fungerar (initiativ 2), eftersom QR-koden inte kan ändras efter tryck.
+
+## Tidslinje
+
+| När | Vad |
+| --- | --- |
+| Hösten 2026 | Sajt, hosting och arbetsflöde på plats. Testa flödet med en plats från start till publicering. |
+| Vintern 2026–27 | Föreningen skriver texter. Granskning och översättning löpande. |
+| Våren 2027 | Provskyltar sätts upp och testas. Varaktiga skyltar beställs. |
+| Säsongen 2027 | Skyltarna sitter uppe. Genomgång inför varje säsong därefter. |

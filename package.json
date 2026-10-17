@@ -1,0 +1,44 @@
+{
+  "name": "arterasen",
+  "version": "1.0.0",
+  "description": "QR-information för besökare på Ärteråsens fäbod: statisk sajt på svenska, engelska och tyska, plus utskrivbara skyltar.",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "author": "Alf Cronmalm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfCro/arterasen.git"
+  },
+  "homepage": "https://github.com/AlfCro/arterasen#readme",
+  "bugs": {
+    "url": "https://github.com/AlfCro/arterasen/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node src/dev.mjs",
+    "build": "node src/build.mjs",
+    "build:preview": "node src/build.mjs --preview",
+    "build:cf": "node src/build.mjs --cloudflare",
+    "check": "node src/check.mjs",
+    "ny": "node src/new-place.mjs",
+    "bild": "node src/image.mjs",
+    "verify": "node tools/verify.mjs"
+  },
+  "dependencies": {
+    "@fontsource/eb-garamond": "^5.3.0",
+    "@fontsource/im-fell-english": "^5.3.0",
+    "@fontsource/lexend": "^5.3.0",
+    "marked": "^14.1.4",
+    "qrcode": "^1.5.4",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "jsqr": "^1.4.0",
+    "playwright-core": "^1.64.1",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.35.5"
+  }
+}

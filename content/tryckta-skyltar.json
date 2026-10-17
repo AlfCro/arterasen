@@ -1,0 +1,4 @@
+{
+  "_info": "Skyltar som sitter uppe. Adressen på en uppsatt skylt måste alltid fungera, så ta aldrig bort en rad. Om en plats byter namn eller tas bort: ange flyttad_till med den nya platsens slug, eller \"start\" för startsidan. Exempel: { \"slug\": \"eldhusen\", \"uppsatt\": \"2027-05-20\" }",
+  "skyltar": []
+}

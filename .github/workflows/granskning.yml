@@ -1,0 +1,25 @@
+# Keeps the branch "granskning" identical to main. Cloudflare Pages builds every
+# non-production branch as a preview, so granskning.<project>.pages.dev always shows
+# the latest main with drafts visible. That is the review link volunteers use.
+name: granskning
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: granskning
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Mirror main to granskning
+        run: git push --force origin HEAD:refs/heads/granskning
