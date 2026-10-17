@@ -19,9 +19,27 @@ const MAX_BYTES = 25 * 1024 * 1024;
 const TIMEOUT_MS = 120_000;
 const REQUIRED = ['id', 'typ', 'fil', 'url', 'kalla', 'titel', 'upphov', 'licens', 'kreditering'];
 const TYPES = {
-  bild: { ext: ['.jpg', '.jpeg', '.png', '.webp'], mime: /^image\// },
-  dokument: { ext: ['.pdf'], mime: /^application\/pdf/ },
+  bild: { ext: ['.jpg', '.jpeg', '.png', '.webp'], accept: 'image/jpeg,image/png;q=0.9,*/*;q=0.1' },
+  dokument: { ext: ['.pdf'], accept: 'application/pdf,*/*;q=0.1' },
 };
+const FORMAT_BY_EXT = { '.jpg': 'jpeg', '.jpeg': 'jpeg', '.png': 'png', '.webp': 'webp', '.pdf': 'pdf' };
+
+// Identify the file by its first bytes; servers often lie about the type or
+// negotiate a different one (DigitaltMuseum sends WebP unless asked for JPEG).
+function sniff(buf) {
+  const head = buf.subarray(0, 12).toString('latin1');
+  if (head.startsWith('\xff\xd8\xff')) return 'jpeg';
+  if (head.startsWith('\x89PNG')) return 'png';
+  if (head.startsWith('RIFF') && head.slice(8, 12) === 'WEBP') return 'webp';
+  if (head.startsWith('%PDF-')) return 'pdf';
+  return null;
+}
+
+function checkFormat(entry, buf) {
+  const expected = FORMAT_BY_EXT[path.extname(entry.fil).toLowerCase()];
+  const actual = sniff(buf);
+  if (actual !== expected) throw new Error(`filen är ${actual ?? 'okänt format'}, ändelsen säger ${expected}`);
+}
 
 function validate(list) {
   const errors = [];
@@ -54,19 +72,17 @@ async function download(entry) {
   const res = await fetch(entry.url, {
     redirect: 'follow',
     signal: AbortSignal.timeout(TIMEOUT_MS),
-    headers: { 'user-agent': 'arterasen-material/1.0 (+https://github.com/AlfCro/arterasen)' },
+    headers: {
+      'user-agent': 'arterasen-material/1.0 (+https://github.com/AlfCro/arterasen)',
+      accept: TYPES[entry.typ].accept,
+    },
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const declared = Number(res.headers.get('content-length') || 0);
   if (declared > MAX_BYTES) throw new Error(`för stor (${Math.round(declared / 1e6)} MB)`);
-  const mime = (res.headers.get('content-type') || '').toLowerCase();
   const buf = Buffer.from(await res.arrayBuffer());
   if (buf.length > MAX_BYTES) throw new Error(`för stor (${Math.round(buf.length / 1e6)} MB)`);
-  // Some hosts send a generic type; fall back to magic bytes before rejecting.
-  const looksPdf = buf.subarray(0, 5).toString('latin1') === '%PDF-';
-  const looksImage = /^(\xff\xd8\xff|\x89PNG|RIFF)/.test(buf.subarray(0, 4).toString('latin1'));
-  const okType = TYPES[entry.typ].mime.test(mime) || (entry.typ === 'dokument' ? looksPdf : looksImage);
-  if (!okType) throw new Error(`fel innehållstyp (${mime || 'okänd'})`);
+  checkFormat(entry, buf);
   return buf;
 }
 
@@ -86,7 +102,14 @@ for (const entry of list) {
   const target = path.join(DIR, entry.fil);
   if (fs.existsSync(target)) {
     const buf = fs.readFileSync(target);
-    status[entry.id] = { fil: entry.fil, status: 'ok', byte: buf.length, sha256: sha256(buf) };
+    try {
+      checkFormat(entry, buf);
+      status[entry.id] = { fil: entry.fil, status: 'ok', byte: buf.length, sha256: sha256(buf) };
+    } catch (err) {
+      failed++;
+      status[entry.id] = { fil: entry.fil, status: 'fel', meddelande: `${err.message}. Ta bort filen så hämtas den igen.` };
+      console.error(`${entry.fil}: ${status[entry.id].meddelande}`);
+    }
     continue;
   }
   try {

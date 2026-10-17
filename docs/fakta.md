@@ -98,6 +98,7 @@ Källa: <https://www.rattvik.se/uppleva-och-gora/rattvik-outdoor/vandra-pa-fabod
 Källor: <https://www.arterasen.se/aktiviteter>, <https://www.arterasen.se/kulturveckaullvecka>, <https://www.arterasen.se/foreningsnytt>. Delar av texterna är några år gamla.
 
 - **Fäbodstigen:** en återställd historisk vandring på **7,6 km från Brända** till fäboden, skyltad med karta både från Brända och från Näsets bystuga. (Kartbilden heter "fabodstigen-naset-arterasen-76-km".)
+- **Föreningens karta över stigen** (`material/foreningen/`, rubrik *Fäbodstigen Näset–Ärteråsen 7,6 km*): start vid en parkering norr om Näsets bystuga, parkering nära fäboden, servering, och utsiktstorn på Ärteråsberget väster om fäboden. Längs stigen finns vilstenar med skylt; den första heter Lillvilshäll.
 - Det går att övernatta på Ärteråsen. Bokning via Facebook.
 - Föreningen är ideell och tar normalt inte emot bussresor eller större sällskap med guidning.
 - *Ärteråslåten* skrevs till en musiktävling 2016. Upphovspersonen namnges på sidan.
