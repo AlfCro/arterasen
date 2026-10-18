@@ -22,5 +22,7 @@
 
 - [ ] Testat i mobilbredd
 - [ ] PLAN.md och berörd delplan uppdaterade
+- [ ] README.md uppdaterad: kommandon, mappar, workflows, adresser och *Läget just nu* (`npm run check:readme` är grön)
 - [ ] Rapport i `rapporter/` för arbetspasset, länkad från PLAN.md
 - [ ] `docs/intern/` uppdaterad om arbetssättet ändras
+- [ ] Inget i PR:en som inte får vara publikt: namn utan samtycke, kontaktuppgifter, filer som inte får spridas

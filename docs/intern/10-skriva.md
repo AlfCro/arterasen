@@ -2,7 +2,7 @@
 titel: Skriva en text
 flik: Skriva
 ingress: En bra text på en skylt är kort och handlar om det besökaren ser framför sig just nu.
-uppdaterad: 2026-10-17
+uppdaterad: 2026-10-18
 ---
 
 ## Så här gör du
@@ -22,7 +22,8 @@ uppdaterad: 2026-10-17
 - **Förklara ovanliga ord** som fäbodkulla, messmör eller bomärke första gången de används.
 - **Fakta i en lista.** Årtal, antal och namn kan stå som korta rader, till exempel *Äldsta ristningen: 1662*.
 - **Ange källor.** En länk, en bok, eller "berättat av …". Källorna visas bara i förhandsvisningen.
-- **Nämn inte privatpersoner** utan att de har sagt ja. Husen ägs av enskilda personer.
+- **Nämn inte privatpersoner** utan att de har sagt ja. Husen ägs av enskilda personer. Det gäller även källor: skriv "berättat av …" bara om personen vill stå med.
+- **Allt du skriver kan bli offentligt.** Ditt dokument i Drive syns bara för oss, men när Claude har gjort en sida av texten syns den för alla som letar på internet, även innan den är godkänd. Skriv därför inget i dokumentet som inte får bli känt, till exempel telefonnummer eller vem som äger ett hus.
 
 ## Foton
 

@@ -23,6 +23,7 @@
     "build:preview": "node src/build.mjs --preview",
     "build:cf": "node src/build.mjs --cloudflare",
     "check": "node src/check.mjs",
+    "check:readme": "node tools/check-readme.mjs",
     "ny": "node src/new-place.mjs",
     "bild": "node src/image.mjs",
     "verify": "node tools/verify.mjs",

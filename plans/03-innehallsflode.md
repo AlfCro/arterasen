@@ -2,7 +2,7 @@
 
 Status: Ej startat
 Ansvarig: Alf (uppsättning), Claude (daglig hantering), föreningen (texter och godkännande)
-Senast uppdaterad: 2026-10-17
+Senast uppdaterad: 2026-10-18
 
 ## Mål
 
@@ -21,7 +21,7 @@ Volontärer utan teknisk vana kan lämna text och bilder, läsa en förhandsvisn
 - 2026-10-17: **Trello för flödet, Google Drive för material** (Alf). Ett kort per plats som flyttas mellan listor. Text i Google-dokument från en mall, foton i samma mapp.
 - 2026-10-17: **Claude publicerar direkt** när ett kort ligger i *Godkänt* och kontrollerna är gröna (Alf). Gäller bara ändringar under `content/`. Kod går via Alf.
 - 2026-10-17: **Arbetssättet beskrivs på `/intern/`** (Alf). Sidorna byggs från `docs/intern/` så att instruktionerna alltid stämmer med sajten. Frågor och diskussion sker som kommentarer på Trello-kort, ändringar i arbetssättet skrivs upp på `/intern/nytt/`.
-- 2026-10-17: Jira-kopplingen i Claude tillhör Lunds universitet och används inte för föreningen.
+- 2026-10-17: Jira-kopplingen i Claude hör inte till föreningen och används inte här.
 - 2026-10-17 (förslag, bekräfta): **Fyra ögon.** Den som godkänner ska vara någon annan än den som skrev texten. Claude kontrollerar det i kortets historik.
 
 ## Listor på Trello-tavlan
@@ -57,3 +57,4 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 ## Logg
 
 - 2026-10-17: Arbetsflödet beskrivet, interna sidor och agentens rutin skrivna. Väntar på kopplingar (Claude).
+- 2026-10-18: Volontärerna informerade på `/intern/` om att texterna syns för alla när repot är publikt. Frågorna om godkännare, skribenter, översättningsgranskare och Google-konto skickade till ordföranden (D2, D3, A6) (Claude).

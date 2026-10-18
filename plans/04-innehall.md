@@ -1,6 +1,6 @@
 # 04 Platser och texter
 
-Status: Fem utkast, väntar på föreningen
+Status: Fem utkast, frågor skickade till föreningen
 Ansvarig: Föreningen (val av platser, fakta, godkännande), Claude (redigering, översättning)
 Senast uppdaterad: 2026-10-18
 
@@ -59,4 +59,5 @@ Faktagranskning, för den som kan fäboden:
 ## Logg
 
 - 2026-10-17: Fem platser och startsidan skrivna som utkast på svenska, engelska och tyska (Claude).
+- 2026-10-18: Frågorna om källor, bilder, fakta och platslistan skickade till ordföranden som underlag (B1–B7, C1–C9, D1). Ny fråga: museibilden från 2018 där ordföranden syns med fjällkorna. Se rapporten 2026-10-18 publikt-readme-underlag (Claude).
 - 2026-10-18: Underlaget utökat från Rättviks kommun, furudal.nu, Länsstyrelsen, DigitaltMuseum, Bägerfeldts skrifter och årsringsdateringar. Nya filer docs/kallor.md, docs/bilder.md och material/ med fria bilder och skrifter. Facebook inte genomsökt (Claude).
