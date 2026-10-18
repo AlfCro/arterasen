@@ -2,7 +2,7 @@
 titel: Skriva en text
 flik: Skriva
 ingress: En bra text på en skylt är kort och handlar om det besökaren ser framför sig just nu.
-uppdaterad: 2026-10-18
+uppdaterad: 2026-10-19
 ---
 
 ## Så här gör du
@@ -28,7 +28,7 @@ uppdaterad: 2026-10-18
 
 ## Foton
 
-- Ta bilden i liggande format och i dagsljus. En bra bild räcker.
+- Ta bilden i liggande format och i dagsljus. En bra bild räcker, men upp till fem bilder per plats går bra.
 - Skriv i dokumentet vem som tog bilden och att vi får använda den.
 - Syns det en person som går att känna igen, fråga personen först.
 - Gamla bilder från museer, till exempel Dalarnas museum, får vi ofta använda fritt om fotografen och museet står med. Claude letar upp sådana bilder och skriver ut vem som tog dem.

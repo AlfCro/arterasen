@@ -1,8 +1,8 @@
 # 04 Platser och texter
 
-Status: Fem utkast, två med museibild, frågor skickade till föreningen
+Status: Fem utkast, fyra med museibilder, frågor skickade till föreningen
 Ansvarig: Föreningen (val av platser, fakta, godkännande), Claude (redigering, översättning)
-Senast uppdaterad: 2026-10-18
+Senast uppdaterad: 2026-10-19
 
 ## Mål
 
@@ -18,11 +18,11 @@ Föreningen har valt vilka platser som ska ha skyltar, och varje plats har en go
 
 | Nr | Slug | Titel | Status | Behöver |
 | --- | --- | --- | --- | --- |
-| 1 | `vallen` | Fäbodvallen | Utkast, museibild 1916 | Faktagranskning |
-| 2 | `eldhusen` | Eldhusen | Utkast | Bekräfta 36 brukare kring 1850, foto |
-| 3 | `ristningarna` | Ristningarna | Utkast, museibild 2018, Bägerfeldts uppgifter | Faktagranskning. Lars Bägerfeldt ska få veta innan godkännande |
-| 4 | `kallorna` | Källorna | Utkast | Bekräfta vilka källor som rinner, var skylten ska stå |
-| 5 | `fjallkorna` | Fjällkorna | Utkast | Hundregler, vems korna är |
+| 1 | `vallen` | Fäbodvallen | Utkast, fyra bilder, sju fakta | Faktagranskning |
+| 2 | `eldhusen` | Eldhusen | Utkast, tre bilder, sex fakta | Bekräfta 22 eldhus och 36 brukare kring 1850. Vem tog bilden från 1926 |
+| 3 | `ristningarna` | Ristningarna | Utkast, fyra bilder, sex fakta, Bägerfeldts uppgifter | Faktagranskning. Lars Bägerfeldt ska få veta innan godkännande |
+| 4 | `kallorna` | Källorna | Utkast, fem fakta, ingen bild | Bekräfta vilka källor som rinner, var skylten ska stå, en bild |
+| 5 | `fjallkorna` | Fjällkorna | Utkast, en bild, sju fakta | Hundregler, vems korna är |
 
 Förslag på fler platser, från arterasen.se: Karles lada och serveringen, Turiststugan, gärdesgårdarna, Mickelsons lador, fäbodstigen från Näset, utsikten. Från källorna 2026-10-18: utsiktstornet, Siljansleden, ett av de årsringsdaterade husen (eldhuset i fäbodgård 2 har en stock från 1600-talet).
 
@@ -38,7 +38,7 @@ Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens p
 
 - [ ] Föreningen läser utkasten i granskningsversionen och kommenterar
 - [ ] Föreningen bestämmer platslistan och numreringen
-- [ ] Foton till varje plats, med fotografens namn och tillåtelse eller fri licens. Fäbodvallen och Ristningarna har museibilder (2026-10-18). Kvar: Eldhusen, Källorna, Fjällkorna. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
+- [ ] Foton till varje plats, med fotografens namn och tillåtelse eller fri licens. Alla utom Källorna har museibilder (2026-10-19). Kvar: en bild av en källa, och nyare bilder av eldhusen utifrån. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
 - [ ] Berätta för Lars Bägerfeldt att hans skrifter används i utkastet om ristningarna och att kopior ligger i repot, och fråga om bilder (föreningen eller Alf). Utkasten väntar inte, men det ska vara gjort innan Ristningarna godkänns.
 - [ ] Uppdatera utkasten med det nya underlaget när föreningen har svarat på frågorna nedan (Claude)
 - [ ] Claude rättar efter kommentarerna och sätter status `klar` efter godkännande
@@ -63,3 +63,4 @@ Faktagranskning, för den som kan fäboden:
 - 2026-10-18: Frågorna om källor, bilder, fakta och platslistan skickade till ordföranden som underlag (B1–B7, C1–C9, D1). Ny fråga: museibilden från 2018 där ordföranden syns med fjällkorna. Se rapporten 2026-10-18 publikt-readme-underlag (Claude).
 - 2026-10-18: Underlaget utökat från Rättviks kommun, furudal.nu, Länsstyrelsen, DigitaltMuseum, Bägerfeldts skrifter och årsringsdateringar. Nya filer docs/kallor.md, docs/bilder.md och material/ med fria bilder och skrifter. Facebook inte genomsökt (Claude).
 - 2026-10-18: Fritt material in i utkasten (beslut av Alf): museibilder på Fäbodvallen (Forsslund 1916) och Ristningarna (Tiderman-Österberg 2018), med fotograf, licens och källa under bilden. Ristningarna omskriven med Bägerfeldts uppgifter: 10 746 ristningar, var 1662 sitter, figurristningarna och Brita Eriksdotter (Claude).
+- 2026-10-19: Alla 24 museibilder av Ärteråsen på DigitaltMuseum hämtade till `material/bilder/`. Fyra platser har nu bilder, upp till fyra per plats, bland annat eldhusinteriören från 1926 och gaveln med "ILS 1662". Fjällkobilden beskuren så att personen inte syns. Fler faktarader på alla platser, från Bägerfeldt (skrift 67, 84, 88, 89), NordGen och Visit Dalarna (Claude).

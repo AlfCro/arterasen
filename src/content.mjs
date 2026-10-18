@@ -51,6 +51,23 @@ function readMd(file) {
   return { data, body: m[2].trim() };
 }
 
+// Width and height of a JPEG from its SOF marker, so pages can reserve the space before
+// a lazy image loads. No image library needed at build time.
+function jpegSize(file) {
+  const b = fs.readFileSync(file);
+  if (b[0] !== 0xff || b[1] !== 0xd8) return null;
+  let i = 2;
+  while (i + 9 < b.length) {
+    if (b[i] !== 0xff) return null;
+    const m = b[i + 1];
+    if (m === 0xff) { i++; continue; }
+    if (m === 0x01 || (m >= 0xd0 && m <= 0xd9)) { i += 2; continue; }
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { width: b.readUInt16BE(i + 7), height: b.readUInt16BE(i + 5) };
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return null;
+}
+
 const words = (s) => s.replace(/[#*_>`\[\]()]/g, ' ').split(/\s+/).filter(Boolean).length;
 
 export function loadContent(config) {
@@ -140,6 +157,7 @@ export function loadContent(config) {
         return {
           file: img,
           name,
+          size: jpegSize(img),
           credit: d.fotograf || null,
           license: d.bildlicens || null,
           licenseUrl: FREE_LICENSES[d.bildlicens] || null,

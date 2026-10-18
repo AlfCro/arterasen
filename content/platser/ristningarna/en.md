@@ -2,12 +2,25 @@
 titel: The carvings
 ingress: More than 10,000 carvings cover the timber on the summer farm. The oldest is from 1662.
 status: utkast
-bildtext: Carvings in a timber wall inside one of the houses on the summer farm. Initials, farm marks and years are cut close together.
+bildtext: The gable above the door of the milk house. At the very top is ILS 1662, the oldest year on the summer farm. Below it are initials and years from later times.
+fler_bilder:
+  - bild: bild-2.jpg
+    bildtext: Carvings in a timber wall inside one of the houses. Initials, farm marks and years are cut close together.
+  - bild: bild-3.jpg
+    bildtext: Figure carvings inside one of the houses, among them a rider, an animal and human figures.
+  - bild: bild-4.jpg
+    bildtext: The inside of a door with names, initials and years, among them 1912, 1913 and 1915.
 fakta:
   - rubrik: Oldest year
     text: "1662"
   - rubrik: Number of carvings
     text: 10,746
+  - rubrik: Years carved
+    text: Over 7,500
+  - rubrik: Figure carvings
+    text: "66"
+  - rubrik: People identified
+    text: "318"
   - rubrik: Common motifs
     text: Initials, years, farm marks
 ---

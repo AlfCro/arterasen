@@ -2,12 +2,25 @@
 titel: Die Ritzungen
 ingress: Mehr als 10 000 Ritzungen bedecken das Holz auf der Alm. Die älteste stammt aus dem Jahr 1662.
 status: utkast
-bildtext: Ritzungen in einer Holzwand im Inneren eines Hauses auf der Alm. Initialen, Hausmarken und Jahreszahlen stehen dicht beieinander.
+bildtext: Der Giebel über der Tür der Milchhütte. Ganz oben steht ILS 1662, die älteste Jahreszahl der Alm. Darunter Initialen und Jahreszahlen aus späterer Zeit.
+fler_bilder:
+  - bild: bild-2.jpg
+    bildtext: Ritzungen in einer Holzwand im Inneren eines Hauses. Initialen, Hausmarken und Jahreszahlen stehen dicht beieinander.
+  - bild: bild-3.jpg
+    bildtext: Figurenritzungen in einem der Häuser, darunter ein Reiter, ein Tier und menschliche Figuren.
+  - bild: bild-4.jpg
+    bildtext: Die Innenseite einer Tür mit Namen, Initialen und Jahreszahlen, darunter 1912, 1913 und 1915.
 fakta:
   - rubrik: Älteste Jahreszahl
     text: "1662"
   - rubrik: Anzahl der Ritzungen
     text: 10 746
+  - rubrik: Eingeritzte Jahreszahlen
+    text: Über 7 500
+  - rubrik: Figurenritzungen
+    text: "66"
+  - rubrik: Identifizierte Personen
+    text: "318"
   - rubrik: Häufige Motive
     text: Initialen, Jahreszahlen, Hausmarken
 ---

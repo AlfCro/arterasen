@@ -2,8 +2,13 @@
 titel: Nytt i arbetssättet
 flik: Nytt
 ingress: Här skrivs det upp när något ändras i hur vi jobbar. Det senaste står först.
-uppdaterad: 2026-10-18
+uppdaterad: 2026-10-19
 ---
+
+## 2026-10-19
+
+- En plats kan nu ha flera bilder. Den första visas överst, de andra under rubriken *Fler bilder* efter texten.
+- Fyra av de fem utkasten har fått gamla och nya bilder från Dalarnas museum och Västmanlands läns museum, och fler korta fakta. Bara Källorna saknar bild. Har du en bild av en källa får du gärna lämna den.
 
 ## 2026-10-18, kväll
 

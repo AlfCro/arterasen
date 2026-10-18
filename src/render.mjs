@@ -137,7 +137,7 @@ export function placePage(ctx, place, lang, prev, next) {
   const url = (l) => `${ctx.config.siteUrl}${l}/${place.slug}/`;
 
   const photoFigure = (img) =>
-    `<figure class="photo"><img src="${r}bilder/${img.name}" alt="${esc(img.captions[lang])}" loading="lazy" decoding="async">
+    `<figure class="photo"><img src="${r}bilder/${img.name}" alt="${esc(img.captions[lang])}"${img.size ? ` width="${img.size.width}" height="${img.size.height}"` : ''} loading="lazy" decoding="async">
 <figcaption>${esc(img.captions[lang])}${photoCredit(t, lang, img)}</figcaption></figure>`;
   const figure = place.image ? photoFigure(place.image) : '';
   const morePhotos = (place.extraImages || []).length

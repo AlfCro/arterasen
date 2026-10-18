@@ -91,6 +91,15 @@ for (const [url, scheme] of shots) {
   await page.evaluate(() => document.fonts.ready);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
   if (overflow) fail(`${url} scrollar i sidled i mobilbredd`);
+  // Load every lazy image so the screenshot shows them, and fail on any that does not load.
+  const broken = await page.evaluate(async () => {
+    const imgs = [...document.images];
+    for (const img of imgs) img.loading = 'eager';
+    await Promise.all(imgs.map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
+    await Promise.all(imgs.map((img) => img.decode().catch(() => {})));
+    return imgs.filter((img) => !img.naturalWidth).map((img) => img.getAttribute('src'));
+  });
+  if (broken.length) fail(`${url}: bilderna laddas inte: ${broken.join(', ')}`);
   const file = path.join(OUT, `${url.replace(/^\/|\/$/g, '').replace(/\//g, '_') || 'root'}-${scheme}.png`);
   await page.screenshot({ path: file, fullPage: true });
   await ctx.close();
@@ -154,7 +163,8 @@ if (places.length >= 2) {
   }
   await ctx.setOffline(false);
 
-  await page.click('a[lang="en"]');
+  // Wait for the English page to load (it saves the choice) before leaving it; heavier pages lost this race.
+  await Promise.all([page.waitForURL(/\/en\//, { waitUntil: 'load' }), page.click('a[lang="en"]')]);
   await page.goto(`${base}/gammal-skylt/`, { waitUntil: 'networkidle' });
   if (page.url().endsWith(`/en/${places[0]}/`)) ok('språkval sparas och flyttad skylt leder rätt');
   else fail(`flyttad skylt hamnade på ${page.url()}`);

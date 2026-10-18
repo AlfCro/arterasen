@@ -2,7 +2,7 @@
 
 Status: Grundbygge klart, väntar på granskning
 Ansvarig: Alf (granskning), Claude (bygge)
-Senast uppdaterad: 2026-10-17
+Senast uppdaterad: 2026-10-19
 
 ## Mål
 
@@ -30,6 +30,8 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 - 2026-10-17: **Design.** Lavgrå bakgrund `#e8ece3`, tjärsvart text `#26211c`, faluröd `#8a2a1c` bara på numren. Rubriker i IM Fell English, ett typsnitt från 1600-talet som den äldsta ristningen. Siffrorna kommer från EB Garamond eftersom IM Fells etta ser ut som ett I. Brödtext i Lexend för läsbarhet utomhus. Platsens nummer är det stora elementet på sidan och skylten, som ett ristat årtal.
 - 2026-10-17: **Skylt:** A5 stående, nummer, svenskt namn stort, engelskt och tyskt i kursiv, QR 72 mm med felkorrigering Q (tål ungefär 25 % skada), kort adress i klartext.
 
+- 2026-10-19: **Flera bilder per plats** (Alf bad om fler bilder). Huvudbilden står under ingressen som förut. Upp till fyra till (`fler_bilder`) visas under rubriken *Fler bilder* efter texten, före faktan, i full bredd med bildtext och kreditering. Bilderna laddas först när man scrollar dit, och sidan reserverar platsen med bredd och höjd.
+
 ## Att göra
 
 - [x] Granska och merga PR:en med grundbygget (Alf, 2026-10-17)
@@ -45,3 +47,4 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 
 - 2026-10-17: Grundbygge med generator, tre språk, fem exempelplatser, skyltar, interna sidor, service worker och kontroller (Claude).
 - 2026-10-17: PR #1 mergad. `granskning`-grenen skapades av workflowen direkt, eftersom den själv begär `contents: write`. Repots standardinställning för Actions behöver inte ändras (Alf, Claude).
+- 2026-10-19: `fler_bilder`, bredd och höjd på bilderna, och en kontroll i `npm run verify` att alla bilder laddas. Testet av språkval väntar nu in sidbytet, det föll ibland på tyngre sidor (Claude).

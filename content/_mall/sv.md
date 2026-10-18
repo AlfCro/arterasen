@@ -15,6 +15,11 @@ status: utkast
 # bildlicens: CC BY 4.0
 # bildkalla: https://adressen-där-bilden-och-licensen-står
 # bildtext: Vad bilden visar, skrivet för den som inte kan se den.
+# Upp till fyra bilder till, visas efter texten. I en.md och de.md: bara bild och bildtext.
+# fler_bilder:
+#   - bild: bild-2.jpg
+#     fotograf: Förnamn Efternamn
+#     bildtext: Vad bilden visar.
 # Korta fakta som visas i en lista. Ta bort raderna om de inte behövs.
 fakta:
   - rubrik: RUBRIK

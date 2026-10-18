@@ -166,7 +166,7 @@ Skrift 67, *Fäbodens kullor och dalkarlar* (2024-10-01), om inget annat anges.
 
 - **10 746 ristningar** med 61 357 tecken i fäbodgårdarna 1–14, uppskattningsvis 99 % av alla (skrift 67, s. 6) ✓. Med sätesstugan, en bod, en lös bräda och ett fritidshus blir det 10 922 (skrift 84, s. 15) ✓.
 - **Äldsta årtal 1662.** Nästa årtal kommer först på 1690-talet. Drygt 7 500 årtal är inristade. De ökar 1740–1770, igen från 1790-talet till 1910-talet, och minskar snabbt efter 1919 (skrift 67, s. 57) ✓.
-- **Var 1662 sitter:** "ILS 1662", strax ovanför dörren på utsidan av mjölkboden i husgrupp 13. Initialerna är Jon Larssons i Tillhed, som finns bland ägarna i kronans fäbodinventering 1664 (skrift 67, s. 57–58) ✓. Den syns alltså utifrån. Om det är samma hus som föreningen kallar den äldsta mjölkstugan framgår inte.
+- **Var 1662 sitter:** "ILS 1662", strax ovanför dörren på utsidan av mjölkboden i husgrupp 13. Den syns högst upp på gaveln i Dalarnas museums bild DMTB 000000175 (2018), se [bilder.md](bilder.md). Initialerna är Jon Larssons i Tillhed, som finns bland ägarna i kronans fäbodinventering 1664 (skrift 67, s. 57–58) ✓. Den syns alltså utifrån. Om det är samma hus som föreningen kallar den äldsta mjölkstugan framgår inte.
 - De äldsta årtalen per husgrupp ligger mellan 1733 och 1812 i eldhusen och mellan 1662 och 1894 i mjölkbodarna (skrift 67, s. 57) ✓.
 - Fördelning ✓: 4 989 initialer från kullor, 1 568 initialer från dalkarlar, 807 utskrivna förnamn, 126 namn i lönnskrift, 708 bomärken, 563 personmärken och 66 figurristningar (skrift 67, s. 6).
 - De flesta sitter inne i eldhusen och på gavlarnas utsida på eldhus och mjölkbodar. Fähus och bodar har mycket få (skrift 67, s. 6) ✓.
@@ -197,8 +197,9 @@ Skrift 72 (2026-02-14). Ett möjligt underlag för skylten om ristningarna, efte
 Skrift 88 och 67.
 
 - **Eldhus:** huset där man bodde och kokade messmör, i en stor kopparkittel över härden (skrift 88, s. 5, 8).
+- **Eldhusets inredning:** i regel omkring 4 × 4 m. Man sov på de väggfasta bänkarna, lavarna; ofta är bara en bred nog att sova på. Härden låg mitt på det stampade jordgolvet, kopparkitteln hängde från taket, och röken gick ut genom en ljore, en öppning mitt i taket (skrift 88, s. 7 i PDF:en) ✓. Det gäller eldhus i allmänhet, inte bara Ärteråsens.
 - **Sätesstuga:** en utvecklad form av eldhus med murad spis, skorsten, trägolv och glasfönster (skrift 88, s. 5–6).
-- **Arbetet:** mjölkning morgon och kväll, kärning, ystning, messmörskokning och vallning 8–12 timmar om dagen. Ett arbetslag var tre personer (skrift 67, s. 15). I snitt ca 5,4 kor och 12,6 getter per fäbodgård där två hushåll delade (skrift 67, s. 15, 17).
+- **Arbetet:** mjölkning morgon och kväll, kärning, ystning, messmörskokning 4–6 timmar och vallning 8–12 timmar om dagen. Ett arbetslag var tre personer (skrift 67, s. 15) ✓. Beräknat ur bouppteckningar 1822–1850: i snitt ca 5,4 kor och 12,6 getter per enhet där två hushåll delade, troligen också får och ungnöt ibland (skrift 67, s. 17) ✓.
 - Djuren stängdes in i fähuset på natten på grund av varg och björn (skrift 88, s. 50).
 - Karl XI:s förordning 1686 ville ha kvinnor i stället för pojkar som vallhjon. I Ore följdes den i hög grad (skrift 88, s. 48).
 - "Mas" användes inte i bygden. Unga män kallades gosse eller dalkarl (skrift 67, s. 7).
@@ -220,6 +221,16 @@ Källor: Torbjörn Axelson, [taxelson.se](https://taxelson.se/dendro/obj/nytt.ph
 | Kvickgården i Näset, stuga och uthus | ca 1796, ca 1823 | Inte på fäboden |
 
 Den äldsta daterade stocken på fäboden är alltså från 1600-talets slut, samma århundrade som den äldsta ristningen (1662).
+
+## Fjällkon som ras
+
+Källa: [NordGen, Swedish Mountain Cattle](https://www.nordgen.org/en/?p=18127) (publicerad 2021-04-22, hämtad 2026-10-19)
+
+- Härstammar från en lantras som hållits i norra Norden i minst 1 000 år. Rasbeskrivning 1893, stambok 1912.
+- Oftast vit med prickar, fläckar eller färgade sidor i svart, rött eller grått. Båda könen är hornlösa, med enstaka undantag.
+- Kor väger 400–450 kg och är 120–130 cm höga.
+- Mjölkras, med proteinvarianter som passar för ost. 600 kor i kokontrollen 2019.
+- Ett projekt för att rädda fjällkon startade 1993 med WWF, och avelsföreningen Svensk Fjällrasavel bildades 1995.
 
 ## Obekräftat
 

@@ -13,18 +13,34 @@ Bilder med fri licens hämtas till [`material/`](../material/) av workflowen `ha
 
 ## Fria att använda med namn
 
-Licensen tillåter användning, även på skyltar och sajten, om fotograf och museum anges. Krediteringen står i `material/hamta.json`. Kolumnen *Används* visar var bilden sitter i utkasten.
+Licensen tillåter användning, även på skyltar och sajten, om fotograf och museum anges. Krediteringen står i `material/hamta.json`, och alla filer ligger i `material/bilder/`. Kolumnen *Används* visar var bilden sitter i utkasten (2026-10-19).
+
+DigitaltMuseums API, `https://api.dimu.org/api/solr/select?q=Ärteråsen&wt=json&rows=100&api.key=demo`, gav 24 träffar 2026-10-19. Alla finns här. API:t går att läsa med WebFetch.
 
 | Bild | Fotograf, år | Licens | Används | Källa |
 | --- | --- | --- | --- | --- |
-| Ärteråsens fäbod 1916: kvinna med ko framför ett timmerhus, gärdesgård. Museet klassar huset som ladugård, inte som eldhus. | Karl-Erik Forsslund, 1916 | CC BY 4.0, Dalarnas museum (DM KEF02850) | Fäbodvallen (2026-10-18) | [DigitaltMuseum](https://digitaltmuseum.se/0210114730455/rattvik-ore-arterasen-arterasens-fabod-1916) |
-| Eldhus och mjölkbod med gavlarna mot varandra. Repro av en boksida (fig. 31) och av hela uppslaget. Bildtexten i boken säger bara "Ore socken", museet anger Ärteråsen. | Foto Olof Ekberg, repro Ernst Blom, år okänt | Public Domain Mark för reprot, Västmanlands läns museum (Vlm-Blom 2281). **Kontrollera Ekbergs upphovsrätt** innan användning: museets sida anger varken bok eller år (läst 2026-10-18). | Nej | [DigitaltMuseum](https://digitaltmuseum.se/0210114263141/eldhus-och-mjolkbod-pa-arterasen) |
-| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000168) | Nej, reserv för Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343958/timmervagg-ristningar-inomhus-arterasen-ore-2018) |
-| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000180) | Ristningarna (2026-10-18) | [DigitaltMuseum](https://digitaltmuseum.se/021018343969/timmervagg-med-ristningar-inomhus-arterasen-ore-2018) |
-| Person med fjällkor på vallen. **Personen namnges i museets titel. Kräver personens samtycke.** | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000186) | Nej, väntar på samtycke | [DigitaltMuseum](https://digitaltmuseum.se/021018343976/anna-k-kjellin-med-fjallkor-arterasen-ore-2018) |
-| Fäbodristning på torrfura, bomärke, initialer och 1866. Från Ore socken, inte uttryckligen Ärteråsen. | Hansa Andersson, insamlad 2023 | CC BY 4.0, Dalarnas museum (DM 26652) | Nej, inte från Ärteråsen | [DigitaltMuseum](https://digitaltmuseum.se/0210214508679/ristning) |
+| Ärteråsens fäbod 1916: kvinna med ko framför ett timmerhus, gärdesgård. Museet klassar huset som ladugård, inte som eldhus. | Karl-Erik Forsslund, 1916 | CC BY 4.0 (DM KEF02850) | Fäbodvallen, huvudbild | [DigitaltMuseum](https://digitaltmuseum.se/0210114730455) |
+| Inne i ett eldhus, med bänkar och en gryta över elden. Repro av bild 11 i en bok av Sigurd Erixon: "Interiör av eldhus, »störhöis», dat. 1775. Ärteråsen, Ore sn, 1926." Beskuren till fotot. | Okänd fotograf 1926, repro Ernst Blom | Public Domain Mark (Vlm-Blom 2282). Fotot är från 1926, så skyddet för en vanlig fotografisk bild (50 år) har gått ut. Räknas det som ett konstnärligt fotografiskt verk gäller skyddet längre. Kontrollera vem som tog det innan Eldhusen godkänns. | Eldhusen, huvudbild | [DigitaltMuseum](https://digitaltmuseum.se/0210114263144) |
+| Eldhus och mjölkbod med gavlarna mot varandra. Repro av fig. 31 i boken *Bondens gård*; bildtexten säger bara "Ore socken". | Foto Olof Ekberg, repro Ernst Blom, år okänt | Public Domain Mark för reprot (Vlm-Blom 2281). **Kontrollera Ekbergs upphovsrätt**: år och bok saknas hos museet. | Nej | [DigitaltMuseum](https://digitaltmuseum.se/0210114263141) |
+| Vy över vallen med timmerhus och skog | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000166) | Fäbodvallen | [DigitaltMuseum](https://digitaltmuseum.se/021018343956) |
+| Utsikt över gärdesgård, hus och skog | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000167) | Fäbodvallen | [DigitaltMuseum](https://digitaltmuseum.se/021018343957) |
+| Ristningar inomhus | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000168, 169, 171, 179, 182, 184) | Nej, reserv för Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343958) |
+| Timmervägg med redskap: såg, kedja | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000170) | Eldhusen | [DigitaltMuseum](https://digitaltmuseum.se/021018343960) |
+| Figurristningar inomhus: ryttare, djur, människofigurer, årtal | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000172) | Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343961) |
+| Husknut | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000173) | Eldhusen | [DigitaltMuseum](https://digitaltmuseum.se/021018343963) |
+| Timmervägg | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000174) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343965) |
+| **Gavel med dörr, med "ILS 1662" högst upp**: mjölkboden som Bägerfeldt beskriver (skrift 67, s. 57–58). Beskuren till gaveln. | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000175) | Ristningarna, huvudbild | [DigitaltMuseum](https://digitaltmuseum.se/021018343964) |
+| Samma gavel med dörr, längre ifrån | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000176) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343966) |
+| Dörr med ristningar, utsida | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000177) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343967) |
+| Dörr med ristningar, insida: namn och årtal 1912–1915 | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000178) | Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343968) |
+| Timmervägg med ristningar, bland annat 1756 | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0 (DMTB 000000180) | Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343969) |
+| Närbild på ristade initialer | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000181) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343973) |
+| Hölada | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000183) | Fäbodvallen | [DigitaltMuseum](https://digitaltmuseum.se/021018343972) |
+| Tupp vid ett hus | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000185) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343977) |
+| Fjällkor vid gärdesgård, och en person som namnges i museets titel. **Beskuren så att personen inte syns.** Hela bilden kräver personens samtycke. | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0 (DMTB 000000186) | Fjällkorna, huvudbild, beskuren | [DigitaltMuseum](https://digitaltmuseum.se/021018343976) |
+| Fäbodristning på torrfura, bomärke, initialer och 1866. Från Ore socken, inte uttryckligen Ärteråsen. | Hansa Andersson, insamlad 2023 | CC BY 4.0 (DM 26652) | Nej, inte från Ärteråsen | [DigitaltMuseum](https://digitaltmuseum.se/0210214508679) |
 
-De tre bilderna från 2018 är tagna inom Dalarnas museums projekt *Fäbodlandskap och vallmusik*. Det kan finnas fler bilder från samma dag i serien DMTB 000000160–000000190. Sök på "Ärteråsen" direkt på [digitaltmuseum.se](https://digitaltmuseum.se/) för att se allt; här har bara det som syntes via sökmotorer gått att läsa.
+Bilderna från 2018 är tagna inom Dalarnas museums projekt *Fäbodlandskap och vallmusik*, troligen samma dag (2018-06-20 för de som har datum).
 
 ## Föreningens egna bilder
 

@@ -7,8 +7,12 @@ fakta:
     text: Spjutgravskällan, Möhrkällan
   - rubrik: Brunnen
     text: Drei gegrabene, ein gebohrter
+  - rubrik: Wiederbelebbar
+    text: Kvickkällan, Ninnis källa
   - rubrik: Renoviert
     text: "2025"
+  - rubrik: Finanziert durch
+    text: 30 000 SEK aus einem örtlichen Fonds
 ---
 
 Menschen und Tiere brauchten jeden Tag Wasser, und die Milch wurde oft in kaltem Quellwasser gekühlt. Ohne die Quellen hätte es die Alm nicht gegeben.
