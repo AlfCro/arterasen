@@ -14,11 +14,11 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
 Senast uppdaterad: 2026-10-18
 
-- **Sajten** är byggd och testad i webbläsare, men ligger inte på nätet. Hostingen på Cloudflare Pages väntar på att vi vet vems Cloudflare-konto domänen arterasen.se ligger i.
+- **Sajten** är byggd och testad i webbläsare, men ligger inte på nätet. Ingen i föreningen kände till Cloudflare-kontot där DNS för arterasen.se ligger, så zonen flyttas till ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Pages-projektet skapas i samma konto. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** fem platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Ingen är godkänd av föreningen. Flera fakta motsäger varandra mellan källorna och väntar på svar.
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
-- **Väntar på föreningen:** svar om domän, konton, källor, bilder och fakta. Frågorna skickades till ordföranden 2026-10-18.
+- **Väntar på föreningen:** svar om konton, källor, bilder och fakta. Frågorna skickades till ordföranden 2026-10-18.
 
 Detaljer, vem som gör vad och tidslinje: [PLAN.md](PLAN.md) och den senaste rapporten.
 
