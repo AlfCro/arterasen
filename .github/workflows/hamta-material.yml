@@ -6,7 +6,7 @@ name: hamta-material
 
 on:
   push:
-    branches-ignore: [main, granskning]
+    branches-ignore: [main]
     paths:
       - material/hamta.json
       - tools/hamta-material.mjs
