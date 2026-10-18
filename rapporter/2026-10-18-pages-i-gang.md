@@ -2,7 +2,7 @@
 
 Arbetspass: 2026-10-18 21:27–23:00
 Av: Claude, med Alf i Cloudflares dashboard
-PR: #6
+PR: #7 (först #6, som stängdes när basgrenen togs bort)
 Initiativ: 02
 
 ## Sammanfattning
@@ -45,7 +45,8 @@ Kontrollerna gällde svar och rubriker via Claudes hämtverktyg, inte ett test i
 
 ## Väntar på
 
-- [ ] Granska och merga PR #5 och sedan PR #6 (Alf)
+- [x] Granska och merga PR #5 (Alf, 2026-10-18 22:52)
+- [ ] Granska och merga PR #7 (Alf). PR #6 stängdes av GitHub när #5:s gren togs bort, eftersom den hade #5:s gren som bas. #7 har samma innehåll mot `main`.
 - [ ] Ta bort grenen `granskning` på GitHub efter merge (Alf eller Claude)
 - [ ] Se att båda domänerna står som *Active* under *Custom domains* (Alf)
 - [ ] Kontrollera att Cloudflares GitHub-app bara når `AlfCro/arterasen` (Alf)
