@@ -1,0 +1,50 @@
+# Fetches the files listed in material/hamta.json and commits them to the same branch.
+# Claude sessions cannot download from most websites, so a branch that adds an entry to
+# the list gets the file from here instead. Never runs on main: the files arrive with
+# the pull request and are reviewed there.
+name: hamta-material
+
+on:
+  push:
+    branches-ignore: [main, granskning]
+    paths:
+      - material/hamta.json
+      - tools/hamta-material.mjs
+      - .github/workflows/hamta-material.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hamta-material-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Fetch listed files
+        id: fetch
+        continue-on-error: true
+        run: node tools/hamta-material.mjs
+      - name: Commit fetched files and status
+        run: |
+          git add material
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Fetch files listed in material/hamta.json"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Fail if any file could not be fetched
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "See material/hamta-status.json on the branch for which entries failed."
+          exit 1

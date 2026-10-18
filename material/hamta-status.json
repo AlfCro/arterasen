@@ -1,0 +1,104 @@
+{
+  "dm-kef02850": {
+    "fil": "bilder/dalarnas-museum-KEF02850-arterasens-fabod-1916.jpg",
+    "status": "ok",
+    "byte": 366330,
+    "sha256": "d2992c95e224a7f3b0f95caf66c45456979df30e3312bcc248d29ccafc3c99f8"
+  },
+  "vlm-blom-2281-1": {
+    "fil": "bilder/vastmanlands-lans-museum-Blom-2281-eldhus-och-mjolkbod-1.jpg",
+    "status": "ok",
+    "byte": 714820,
+    "sha256": "09d93a94634e044c8363bc34301e4274f4f84ec18ff0ebd4fbc32337b7fc8db4"
+  },
+  "vlm-blom-2281-2": {
+    "fil": "bilder/vastmanlands-lans-museum-Blom-2281-eldhus-och-mjolkbod-2.jpg",
+    "status": "ok",
+    "byte": 435276,
+    "sha256": "79be76889be37563368f0c0b6d166c5181bdba72b865ef2e38e044fc103138ad"
+  },
+  "dmtb-000000168": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000168-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 461015,
+    "sha256": "f3c63174e9b65d7d77089651fee59a3cfcae79bfe3073cf51abc9c83ffef5bfe"
+  },
+  "dmtb-000000180": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000180-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 532307,
+    "sha256": "827130f80c522b8d997da2712d95e6bc4846034488aa1867a7e1cc38820571e3"
+  },
+  "dmtb-000000186": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000186-fjallkor-2018.jpg",
+    "status": "ok",
+    "byte": 729323,
+    "sha256": "e237dc1e717cd9942dfe171656a5e1bbe97d65d8cb97f0f899c03f88858e9925"
+  },
+  "dm-26652": {
+    "fil": "bilder/dalarnas-museum-DM-26652-tradristning-ore-1866.jpg",
+    "status": "ok",
+    "byte": 159326,
+    "sha256": "e778f4479074ca0068c581b7da769582b3a5af391960f5cae9703d1efc0b954b"
+  },
+  "arterasen-se-fabodstigen-1": {
+    "fil": "foreningen/arterasen-se-fabodstigen-naset-arterasen-76-km-v2-1.jpg",
+    "status": "ok",
+    "byte": 157470,
+    "sha256": "7fcd97e50838eb0a9d7e26b54b21dee3647e32d6f4fb61975d2ea7ef23c8fa55"
+  },
+  "arterasen-se-fabodstigen-12": {
+    "fil": "foreningen/arterasen-se-fabodstigen-naset-arterasen-76-km-v2-12.jpg",
+    "status": "ok",
+    "byte": 152959,
+    "sha256": "52cdd95be836d9fae67f9354519adcab96bc3a9aaf28eeac8643460c4ce5fa2f"
+  },
+  "bagerfeldt-66": {
+    "fil": "skrifter/bagerfeldt-66-historisk-vandring-runt-arterasens-fabod-2025-12-26.pdf",
+    "status": "ok",
+    "byte": 2290109,
+    "sha256": "f9ed22349378aeb6b8cd34eb3ea9e96cba67c361dedea759182dd243baab0e59"
+  },
+  "bagerfeldt-67": {
+    "fil": "skrifter/bagerfeldt-67-fabodens-kullor-och-dalkarlar-2024-10-01.pdf",
+    "status": "ok",
+    "byte": 6671363,
+    "sha256": "cef5412f07fb68c8902dc0490e0ca5d3e423689fa03ece1bac13cfd956d42593"
+  },
+  "bagerfeldt-69": {
+    "fil": "skrifter/bagerfeldt-69-gardarna-i-naset-och-arvet-2026-04-30.pdf",
+    "status": "ok",
+    "byte": 4104218,
+    "sha256": "88641ee59b72b817968ab895a747e5c25bde108a0e5124670859b38d88b9e67b"
+  },
+  "bagerfeldt-70": {
+    "fil": "skrifter/bagerfeldt-70-strovtag-bland-figurristningar-2021-11-25.pdf",
+    "status": "ok",
+    "byte": 14217266,
+    "sha256": "e3cd56486e970ee28d01598600e5f31e7d135761e8531eca1b754f33aa670e38"
+  },
+  "bagerfeldt-72": {
+    "fil": "skrifter/bagerfeldt-72-fabodkullan-tillhed-bed-2026-02-14.pdf",
+    "status": "ok",
+    "byte": 7350611,
+    "sha256": "3a3efe4ff2342c26cfc03df959157b5e4c170407e0cdf69ace3567d34cca130a"
+  },
+  "bagerfeldt-84": {
+    "fil": "skrifter/bagerfeldt-84-fabodristningar-i-ore-socken-2025-07-17.pdf",
+    "status": "ok",
+    "byte": 8454601,
+    "sha256": "750d7975065914ffe3e5119e7eea0e2a44e9999a72d7f51b3a8163a2ed477d45"
+  },
+  "bagerfeldt-88": {
+    "fil": "skrifter/bagerfeldt-88-fabodar-fakta-och-funderingar-2024-04-29.pdf",
+    "status": "ok",
+    "byte": 2804025,
+    "sha256": "d424e3ac0deacd7a2fae19367b784122c0c51befb8ebb593c95f805dadb0decd"
+  },
+  "bagerfeldt-89": {
+    "fil": "skrifter/bagerfeldt-89-arsringsdatering-av-fabodhus-2025-07-17.pdf",
+    "status": "ok",
+    "byte": 9578793,
+    "sha256": "403de7489be3fa43c4aaccd88786ded76200795bdc9d1834d6714e0c3ebf06c8"
+  }
+}
