@@ -35,8 +35,8 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
 9. **Kontrollera:** `npm run check` utan fel och `npm run build:preview`. Titta på sidan i mobilbredd.
 10. **Git:**
     - Gren `innehall/<slug>`, commit, PR med titeln *Innehåll: <Titel>* och kortets länk i beskrivningen.
-    - **Ny plats:** merga när `check` är grön. Platsen är utkast och syns bara i granskningsversionen. Granskningslänk: `<granskningUrl>sv/<slug>/`.
-    - **Ändring av publicerad plats:** merga inte. Granskningslänk är PR:ens egen förhandsvisning. Hämta adressen från Cloudflares kontroll på PR:en (`gh pr checks <nr>` eller PR-kommentaren). Grenaliaset brukar vara `https://innehall-<slug>.arterasen-info.pages.dev/`.
+    - **Ny plats:** merga när `check` är grön. Platsen är utkast och syns bara i granskningsversionen. Granskningslänk: `<granskningUrl>sv/<slug>/`, alltså `https://utkast.arterasen.se/sv/<slug>/`. Utkastsajten byggs om efter merge. Vänta tills kontrollen `Cloudflare Pages: arterasen-utkast` på merge-commiten är grön innan du länkar.
+    - **Ändring av publicerad plats:** merga inte. Granskningslänk är PR:ens egen förhandsvisning. Hämta adressen ur Cloudflares kommentar på PR:en eller ur kontrollen `Cloudflare Pages: arterasen-info` (kommandot står under *Miljön i Claude-sessioner* i [AGENTS.md](../AGENTS.md); `gh pr checks` fungerar inte). Grenaliaset är `https://innehall-<slug>.arterasen-info.pages.dev/`.
 11. **Vänta på förhandsvisningen** och öppna länken för att se att sidan finns. Skriv sedan en kommentar på kortet:
     - Länkar till sidan på svenska, engelska och tyska
     - Vad du har ändrat jämfört med dokumentet, i en eller två meningar
@@ -50,7 +50,7 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
 2. **Nya önskemål?** Finns kommentarer med ändringsönskemål efter din senaste förhandsvisning: behandla kortet som *Klar för Claude* i stället.
 3. **Ny plats (utkast i `main`):** gren `publicera/<slug>`, sätt `status: klar` i alla språkfiler, PR *Publicera: <Titel>* med kortlänk och vem som godkände. Merga när `check` är grön.
 4. **Ändring av publicerad plats:** merga den öppna `innehall/<slug>`-PR:en när `check` är grön. Skriv i PR:en vem som godkände.
-5. **Kontrollera produktion** när bygget är klart: `https://info.arterasen.se/<slug>/` ska leda till språksidan och `/sv/<slug>/` ska visa den nya texten.
+5. **Kontrollera produktion** när bygget är klart, alltså när kontrollen `Cloudflare Pages: arterasen-info` på merge-commiten är grön: `https://info.arterasen.se/<slug>/` ska leda till språksidan och `/sv/<slug>/` ska visa den nya texten.
 6. **Kommentera** på kortet: länk till den publika sidan och till `https://info.arterasen.se/skyltar/` där skylten kan skrivas ut. Ändrades bara texten på en plats som redan har skylt behöver ingen ny skylt tryckas, skriv det.
 7. Flytta kortet till **Publicerat, skylt ska tryckas**. Gällde det en ändring av en plats som redan har skylt: flytta direkt till **Skylt uppsatt**.
 
