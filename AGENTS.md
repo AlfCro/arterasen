@@ -135,6 +135,7 @@ Saker som var kända 2026-10-17 och 2026-10-18 och som inte syns förrän man st
 
 - **Repot måste kopplas i varje ny session.** Sessionen når bara de repon som är kopplade. Be om `AlfCro/arterasen` om det inte redan finns.
 - **Nya repon kan inte skapas** härifrån. Alf skapar dem på github.com.
+- **Drift- och kontouppgifter** (DNS-zonen, Cloudflare-inställningar, vem som har inloggning var) dokumenteras i det privata repot `AlfCro/arterasen-config`, inte här. Be Alf koppla det när arbetet kräver det, och kopiera inget därifrån hit utan att han säger till.
 - **GitHub GraphQL är spärrat.** `gh pr create` och `gh pr view` fungerar inte. Använd REST:
   ```sh
   gh api repos/AlfCro/arterasen/pulls -X POST -f title="…" -f head="<gren>" -f base=main -F body=@pr-body.md

@@ -10,16 +10,25 @@ Sajten ligger på `https://info.arterasen.se/` och uppdateras automatiskt när `
 
 ## Förutsättningar
 
-Kontrollerat 2026-10-17 med DNS-uppslag via `dns.google`:
+### Efter flytten 2026-10-18
 
-- arterasen.se använder Cloudflares namnservrar, `jean.ns.cloudflare.com` och `lloyd.ns.cloudflare.com`. **DNS ligger alltså hos Cloudflare.** Poster som läggs hos domänregistraren används inte så länge namnservrarna pekar på Cloudflare.
-- **Registraren är Name ISP, inte Loopia** som stod här tidigare (Alf har inloggning, kontrollerat 2026-10-18). Automatisk förnyelse är på och domänen går ut 2027-01-22.
-- Huvudsajten arterasen.se går via Cloudflares proxy (A-poster 104.21.7.106 och 172.67.130.30).
-- Domänen har inga MX-poster. Ingen mejl påverkas av DNS-ändringar.
-- Huvudsajten är byggd i webbplatsverktyget N.nu, enligt en metatagg i sidans kod (kontrollerat 2026-10-18). Sidan namnger ingen webbansvarig.
-- **Ingen i föreningen känner till något Cloudflare-konto** (ordföranden, 2026-10-18), och domänen finns inte i Alfs. N.nu:s manual för domäner hos Loopia anger exakt `jean`/`lloyd` och säger att supporten skickar namnservrarna. Zonen ligger alltså troligen i N.nu:s Cloudflare-konto. Samma namnserverpar delas av många konton, så det är inte bevisat.
-- N.nu beskriver också hur kunden sköter Cloudflare själv: CNAME `@` och `www` → `www.n.nu`, båda via proxyn, och SSL/TLS i läget *Flexible*. `www.n.nu` ligger inte bakom Cloudflare (46.246.45.145), så en egen zon kan peka dit. Apex har inga MX- eller TXT-poster (kontrollerat 2026-10-18).
-- Ligger Pages-projektet i samma Cloudflare-konto som domänen skapar Cloudflare CNAME-posten för `info` automatiskt. Fallet med två olika konton beskrivs inte i dokumentationen.
+Alf flyttade zonen för hand 2026-10-18. Kontrollerat efter flytten:
+
+- **DNS ligger i Alfs Cloudflare-konto.** Zonen är aktiv i Cloudflares dashboard, och publika uppslag efter aktiveringen ger namnservrarna `betty.ns.cloudflare.com` och `carl.ns.cloudflare.com`.
+- **Registraren är fortfarande Name ISP** (Alf har inloggning). Automatisk förnyelse är på och domänen går ut 2027-01-22.
+- **Poster:** CNAME `@` → `www.n.nu` och CNAME `www` → `www.n.nu`, båda *Proxied*, TTL *Auto*, enligt N.nu:s manual. Cloudflares import hade läst in fyra A- och fyra AAAA-poster med det gamla kontots proxyadresser. De är borttagna.
+- **SSL/TLS är *Flexible*,** sparat i dashboarden, enligt N.nu:s manual. Trafiken är krypterad mellan besökaren och Cloudflare men går över HTTP mellan Cloudflare och N.nu. Läget gäller hela zonen, alltså också `info` när den läggs till.
+- **Huvudsajten ligger kvar hos N.nu** och svarar: cirka 19:55 gav `https://arterasen.se` 301 till `https://www.arterasen.se/`, som gav 200. Det var kontroller av DNS och HTTP-huvuden, inte ett test i webbläsare.
+- **`info.arterasen.se` finns inte i DNS än** (NXDOMAIN efter flytten).
+- Pages-projektet skapas i samma konto som zonen. Då lägger Cloudflare CNAME-posten för `info` när domänen läggs till i projektet. Lägg inte in posten för hand innan: enligt Cloudflare löser domänen då inte ut och besökare får fel 522.
+
+### Före flytten
+
+Kontrollerat 2026-10-17 och 2026-10-18 med publika uppslag:
+
+- Namnservrarna var `jean.ns.cloudflare.com` och `lloyd.ns.cloudflare.com`, i ett Cloudflare-konto som ingen i föreningen kände till (ordföranden, 2026-10-18) och som inte var Alfs. N.nu:s manual för domäner hos Loopia anger exakt `jean`/`lloyd` och säger att supporten skickar namnservrarna, så zonen låg troligen i N.nu:s konto. Samma namnserverpar delas av många konton, så det är inte bekräftat.
+- Inga MX-poster och ingen TXT-post på apex, ingen TXT på `_dmarc`, ingen CAA-post och ingen DS-post i `.se`-zonen, alltså ingen aktiv DNSSEC-kedja. Utan CAA-post finns inget som hindrar Cloudflare från att utfärda certifikat för `info`. Uppslagen är inte en export av hela zonen och bevisar inte att det saknas andra tjänster.
+- Huvudsajten är byggd i webbplatsverktyget N.nu, enligt en metatagg i sidans kod. Sidan namnger ingen webbansvarig. `www.n.nu` ligger inte bakom Cloudflare (46.246.45.145), så en egen zon kan peka dit.
 
 ## Väntar på beslut
 
@@ -77,23 +86,27 @@ Repot blev publikt 2026-10-18. Det ger några gratisfunktioner och några saker 
 
 ### Domän: zonen till Alfs Cloudflare-konto (Alf)
 
-Beslutat 2026-10-18. Huvudsajten går via zonen, så gör bytet en lugn stund. Går något fel: byt tillbaka till `jean`/`lloyd` hos Name ISP. Den gamla zonen finns kvar några dagar.
+Beslutat och genomfört 2026-10-18. Kvar är `info.arterasen.se`, som väntar på Pages-projektet.
 
 - [x] Kontrollera var DNS för arterasen.se hanteras: hos Cloudflare (Claude, 2026-10-17, se Förutsättningar)
 - [x] ~~Ta reda på vems Cloudflare-konto arterasen.se ligger i~~: ingen i föreningen vet, troligen N.nu:s. Ersatt av egen zon (2026-10-18).
 - [x] **Automatisk förnyelse** av arterasen.se: på hos Name ISP, går ut 2027-01-22 (Alf, 2026-10-18). Går domänen ut slutar alla tryckta QR-koder att fungera.
-- [ ] **Name ISP → DNSSEC:** ska vara av. Är det på: stäng av och vänta några timmar innan namnservrarna byts, annars slutar domänen att fungera.
-- [ ] **Cloudflare → Domains → Add a domain** → `arterasen.se`, Free.
-- [ ] **DNS:** ta bort de inlästa A-posterna för `@` och `www` (104.21.x och 172.67.x är Cloudflares egna adresser, inte N.nu:s). Lägg in CNAME `@` → `www.n.nu` och CNAME `www` → `www.n.nu`, båda *Proxied*.
-- [ ] **SSL/TLS → Flexible**, enligt N.nu:s manual.
-- [ ] **Name ISP:** byt namnservrar från `jean`/`lloyd` till de två som Cloudflare visar.
-- [ ] Vänta tills zonen är *Active*. Kontrollera att `https://arterasen.se/` och `https://www.arterasen.se/` visar huvudsajten. Visar den fel: *Aktivera* HTTPS i N.nu-admin (steg 6 i manualen), vilket kräver N.nu-inloggningen.
-- [ ] Pages-projektet → *Custom domains* → *Set up a custom domain* → `info.arterasen.se`. Cloudflare lägger CNAME-posten själv eftersom zonen ligger i samma konto.
+- [x] **DNSSEC:** ingen DS-post i `.se`-zonen före bytet, alltså ingen aktiv DNSSEC-kedja att stänga av.
+- [x] **Zonen `arterasen.se`** tillagd i Alfs Cloudflare-konto och aktiv (Alf, 2026-10-18).
+- [x] **DNS:** importens fyra A- och fyra AAAA-poster borttagna. CNAME `@` → `www.n.nu` och CNAME `www` → `www.n.nu`, båda *Proxied*, TTL *Auto* (Alf, 2026-10-18).
+- [x] **SSL/TLS → Flexible**, enligt N.nu:s manual, sparat (Alf, 2026-10-18).
+- [x] **Name ISP:** namnservrarna bytta till `betty.ns.cloudflare.com` och `carl.ns.cloudflare.com` (Alf, 2026-10-18).
+- [x] Huvudsajten svarar efter bytet: `https://arterasen.se` ger 301 till `https://www.arterasen.se/`, som ger 200 (Alf, 2026-10-18 cirka 19:55, DNS och HTTP-huvuden, inte i webbläsare).
+- [ ] Pages-projektet → *Custom domains* → *Set up a custom domain* → `info.arterasen.se`. Lägg inte in CNAME-posten för hand innan, då blir det fel 522. Cloudflare lägger posten själv eftersom zonen ligger i samma konto.
+- [ ] Kontrollera att posten för `info` pekar på projektets faktiska `pages.dev`-adress. Den kan skilja sig från `arterasen-info.pages.dev` om namnet var upptaget.
 - [ ] Vänta tills domänen visar *Active* i Pages. Det brukar ta från några minuter till ett par timmar.
+- Rör inte posterna `@` och `www`. De bär huvudsajten hos N.nu.
 
 ### Kontroll (Claude)
 
-- [ ] Efter namnserverbytet: NS, `arterasen.se`, `www` och `info` via `dns.google`, och att huvudsajten svarar
+- [x] Efter namnserverbytet: NS, `arterasen.se`, `www` och `info`, och att huvudsajten svarar. Gjort av Alf 2026-10-18, se *Efter flytten* ovan.
+- [ ] Efter att `info` lagts till: HTTPS och certifikat på `info.arterasen.se`. Zonen står på *Flexible* för huvudsajtens skull, så se efter omdirigeringsslinga eller certifikatfel. Byt inte läge för hela zonen, det påverkar huvudsajten.
+- [ ] Efter att `info` lagts till: att `arterasen.se` och `www.arterasen.se` fortfarande svarar som förut
 - [ ] Öppna `/`, `/sv/`, `/intern/` och en QR-adress på den riktiga domänen
 - [ ] Kontrollera att `granskning`-grenen byggs som förhandsvisning efter nästa push till `main`
 
@@ -102,7 +115,7 @@ Beslutat 2026-10-18. Huvudsajten går via zonen, så gör bytet en lugn stund. G
 - Vem i föreningen blir andra person med inloggning till GitHub, Cloudflare, Trello, Drive och Name ISP?
 - Ska repot flyttas till en GitHub-organisation innan Cloudflare kopplas?
 - Vem betalar domänen framöver, vems kort dras vid förnyelsen 2027-01-22, och ska domänen stå kvar på nuvarande innehavare eller flyttas till föreningen?
-- Vem har N.nu-inloggningen för huvudsajten? Den kan behövas om HTTPS måste aktiveras om efter namnserverbytet.
+- Vem har N.nu-inloggningen för huvudsajten? Den behövs om något måste ändras hos N.nu, till exempel om HTTPS slutar fungera.
 
 Frågorna om domän, konton och huvudsajten skickades till föreningens ordförande 2026-10-18 som ett underlag (se rapporten för 2026-10-18).
 
@@ -113,3 +126,4 @@ Frågorna om domän, konton och huvudsajten skickades till föreningens ordföra
 - 2026-10-17: DNS för arterasen.se visade sig ligga hos Cloudflare, inte hos Loopia. Domänstegen omskrivna. Underlag för två adresser (utkast och publik) väntar på beslut (Claude).
 - 2026-10-18: Repot publikt (Alf). Avsnitt om regel för `main`, licens, mejl i commits och en bild med osäker upphovsrätt. Huvudsajten visade sig vara byggd i N.nu. Frågor om domän och konton skickade till ordföranden (Claude).
 - 2026-10-18: Registraren är Name ISP, inte Loopia. Automatisk förnyelse på, går ut 2027-01-22 (Alf). Ingen i föreningen känner till Cloudflare-kontot. Beslut att flytta zonen till Alfs Cloudflare-konto och peka huvudsajten på `www.n.nu` enligt N.nu:s manual. Domänstegen omskrivna (Alf, Claude).
+- 2026-10-18: Zonen flyttad till Alfs Cloudflare-konto: namnservrar `betty`/`carl`, CNAME `@` och `www` → `www.n.nu`, *Flexible*. Huvudsajten svarar. `info.arterasen.se` väntar på Pages-projektet (Alf). Planen uppdaterad med läget (Claude).
