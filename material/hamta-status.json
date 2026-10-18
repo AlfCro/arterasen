@@ -100,5 +100,119 @@
     "status": "ok",
     "byte": 9578793,
     "sha256": "403de7489be3fa43c4aaccd88786ded76200795bdc9d1834d6714e0c3ebf06c8"
+  },
+  "dmtb-000000166": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000166-utsikt-2018.jpg",
+    "status": "ok",
+    "byte": 556480,
+    "sha256": "29fd036959f7ffcd4a5da471ecd3fbe647cc9e7a670ea7fc7a515cfab0518acf"
+  },
+  "dmtb-000000167": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000167-utsikt-2018.jpg",
+    "status": "ok",
+    "byte": 348426,
+    "sha256": "2a2fd0e5d2fa3c290a716bdcd1846170ffdcba8d069457ef2b2beeb2dc40837f"
+  },
+  "dmtb-000000169": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000169-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 426301,
+    "sha256": "7074cae2a9509aceb7615c4af6c2a6edcd4223b5dfb55224f92b4d31d22e3d25"
+  },
+  "dmtb-000000170": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000170-redskap-2018.jpg",
+    "status": "ok",
+    "byte": 502558,
+    "sha256": "c3f2d0c2f45c53da63de65416c08fb0aeb8ce49b9e0d1251e02bb31dc699d8d6"
+  },
+  "dmtb-000000171": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000171-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 464445,
+    "sha256": "43c5443103fbb27718b551cfcec3751d9f1cc9ef19d5433bee7392f3204450d2"
+  },
+  "dmtb-000000172": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000172-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 460184,
+    "sha256": "d7cf33f084cf32399a8acf1cbc5407dfa08152ec67ef88c3e0f037bbdc6dc7c1"
+  },
+  "dmtb-000000173": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000173-husknut-2018.jpg",
+    "status": "ok",
+    "byte": 775097,
+    "sha256": "10438721e5507ba5b0dd3c3c73614789a25f146f750cb62ad97fb3020cc031b3"
+  },
+  "dmtb-000000174": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000174-timmervagg-2018.jpg",
+    "status": "ok",
+    "byte": 843147,
+    "sha256": "0871bce138bbe57e0935d0ee343b75c3fb4bd67b06e77dbbbfd01c10746618a2"
+  },
+  "dmtb-000000175": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000175-gavel-med-dorr-2018.jpg",
+    "status": "ok",
+    "byte": 535131,
+    "sha256": "b1cb052d914878280f599ed5804ac2558b0bdcd6065e6485a8bd36c6a5873c9a"
+  },
+  "dmtb-000000176": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000176-gavel-med-dorr-2018.jpg",
+    "status": "ok",
+    "byte": 497542,
+    "sha256": "914bd843ef776ab367297136b8a181ed980c40502e77ab3bcede87c5885651e3"
+  },
+  "dmtb-000000177": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000177-dorr-med-ristningar-2018.jpg",
+    "status": "ok",
+    "byte": 488823,
+    "sha256": "31a5125d4533c63f8f6cca9987395310da851f76ca2c23247475e578ee03bfac"
+  },
+  "dmtb-000000178": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000178-dorr-med-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 525952,
+    "sha256": "6554a4fd14c7fcac608b56e7c9d4fb0d422433907729b6f3f6344a61c93b2180"
+  },
+  "dmtb-000000179": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000179-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 423391,
+    "sha256": "f81e9b8f4fae6c091cc70a931eb5e770d5f13959fec5d52d18bdc852db5da34f"
+  },
+  "dmtb-000000181": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000181-ristning-narbild-2018.jpg",
+    "status": "ok",
+    "byte": 578750,
+    "sha256": "8598a7cedef7bab3aca73d58c306fb6a9a8c4aff1210fc6f4a3edbac8f1a2b72"
+  },
+  "dmtb-000000182": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000182-ristningar-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 444469,
+    "sha256": "a16b03439065da6a2886582193852fc1f1723390f865a8e8517bf85ee2ba0169"
+  },
+  "dmtb-000000183": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000183-holada-2018.jpg",
+    "status": "ok",
+    "byte": 565066,
+    "sha256": "2b811cc2c0bfbad9e5d4420526c86bef79a0a16ef3a91eb5409a251ac066b7a0"
+  },
+  "dmtb-000000184": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000184-ristning-inomhus-2018.jpg",
+    "status": "ok",
+    "byte": 543877,
+    "sha256": "13781e1f829579c0815f4ddb67f741019899024af70d457f9ddd90a7b05f1d00"
+  },
+  "dmtb-000000185": {
+    "fil": "bilder/dalarnas-museum-DMTB-000000185-tupp-2018.jpg",
+    "status": "ok",
+    "byte": 503036,
+    "sha256": "ee5c79502c558d7305a2c4213e737923d9013552969be318890cdcdebed56543"
+  },
+  "vlm-blom-2282": {
+    "fil": "bilder/vastmanlands-lans-museum-Blom-2282-interior-eldhus.jpg",
+    "status": "ok",
+    "byte": 676661,
+    "sha256": "762ec74bef99117a8ceabd2aa758ae4d768420b4bdf920f73c59c8d93f53234f"
   }
 }
