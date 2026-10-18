@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-18 23:00
+Senast uppdaterad: 2026-10-18 23:15
 
 ## Mål
 
@@ -31,14 +31,16 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [x] Alf: flytta zonen arterasen.se till sitt Cloudflare-konto (2026-10-18). Huvudsajten svarar som förut, se [plans/02-hosting.md](plans/02-hosting.md).
 - [x] Alf: Cloudflare Pages kopplat till repot, i samma konto som zonen: `arterasen-info` och `arterasen-utkast` (2026-10-18)
 - [ ] Alf: se att `info.arterasen.se` och `utkast.arterasen.se` står som *Active*, och att Cloudflares GitHub-app bara når `AlfCro/arterasen`
-- [ ] Claude, efter merge av PR #7: läs `utkast.arterasen.se` och `/intern/` på `info.arterasen.se`
+- [x] Claude, efter merge av PR #7: utkastbygget och `/intern/` lästa, båda sajterna byggda (2026-10-18)
 - [x] Automatisk förnyelse av arterasen.se: på hos Name ISP, går ut 2027-01-22 (2026-10-18)
 - [ ] Alf, senast innan skyltarna trycks: döp om Cloudflare-kontot till föreningen, lägg till en person i styrelsen och en inloggning med föreningens mejladress som administratörer
 - [ ] Föreningen: faktagranska de fem utkasten
 - [x] Alf: granska och merga PR #3 (2026-10-18)
 - [x] Alf: granska och merga PR #4 (2026-10-18)
 - [x] Alf: granska och merga PR #5 (2026-10-18)
-- [ ] Alf: granska och merga PR #7 (Pages i gång, utkastadressen). Ersätter #6, som GitHub stängde när #5:s gren togs bort. Ta sedan bort grenen `granskning`.
+- [x] Alf: granska och merga PR #7 (Pages i gång, utkastadressen), ersatte #6 (2026-10-18)
+- [ ] Alf: ta bort grenarna `granskning` och `claude/pages-info-utkast` på GitHub. Claude kan inte radera grenar.
+- [ ] Alf: granska och merga PR:en med anteckningar för nästa agent (AGENTS.md, arbetsflödet)
 - [ ] Alf: skicka underlaget med 32 frågor till ordföranden (filen skickades till Alf 2026-10-18, ligger inte i repot)
 - [ ] Ordföranden och föreningen: svara på underlaget, de fem viktigaste är A1, A2, A3, B1 och E1
 - [ ] Alf: regel för `main` på GitHub, gratis nu när repot är publikt (se [plans/02-hosting.md](plans/02-hosting.md))

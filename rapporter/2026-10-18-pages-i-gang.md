@@ -46,13 +46,21 @@ Kontrollerna gällde svar och rubriker via Claudes hämtverktyg, inte ett test i
 ## Väntar på
 
 - [x] Granska och merga PR #5 (Alf, 2026-10-18 22:52)
-- [ ] Granska och merga PR #7 (Alf). PR #6 stängdes av GitHub när #5:s gren togs bort, eftersom den hade #5:s gren som bas. #7 har samma innehåll mot `main`.
-- [ ] Ta bort grenen `granskning` på GitHub efter merge (Alf eller Claude)
+- [x] Granska och merga PR #7 (Alf, cirka 22:56). PR #6 stängdes av GitHub när #5:s gren togs bort, eftersom den hade #5:s gren som bas. #7 har samma innehåll mot `main`.
+- [ ] Ta bort grenarna `granskning` och `claude/pages-info-utkast` på GitHub (Alf, Claude kan inte)
 - [ ] Se att båda domänerna står som *Active* under *Custom domains* (Alf)
 - [ ] Kontrollera att Cloudflares GitHub-app bara når `AlfCro/arterasen` (Alf)
 - [ ] Förslag: slå av förhandsvisningar per gren i `arterasen-utkast` (Alf)
-- [ ] Läs `utkast.arterasen.se` och `info.arterasen.se/intern/` efter merge (Claude, eller Alf i telefonen om Claudes verktyg fortfarande stoppas)
+- [x] Utkastbygget och `/intern/` lästa efter merge, se *Efteråt* (Claude)
 - [x] PR #6 fick förhandsvisningslänkar från Cloudflare (Claude)
+
+## Efteråt, 23:00–23:15
+
+- PR #7 mergad cirka 22:56. Båda Pages-projekten byggde `main` (`1576687`) utan fel.
+- Utkastbygget läst på `arterasen-utkast.pages.dev/sv/`: banner och fem platser märkta *Utkast*. `/intern/` i produktionsbygget läst via deploy-adressen: *granskningsversionen* länkar till `https://utkast.arterasen.se/`.
+- `utkast.arterasen.se` och `info.arterasen.se/intern/` stoppades ändå i Claudes hämtverktyg. Alfs skärmdumpar av `/robots.txt` på båda domänerna visade rätt innehåll 23:07–23:08. Verktyget sparar alltså `robots.txt` per värdnamn längre än 30 minuter.
+- Grenarna `granskning` och `claude/pages-info-utkast` kunde inte tas bort: GitHubs API gav 403 och `git push --delete` avvisades. Alf tar bort dem.
+- Anteckningar för nästa agent i AGENTS.md och `docs/arbetsflode.md`, i en egen PR. De tar upp grenar, PR:er mot `main`, Cloudflare, publiceringskontroller och cachen i hämtverktyget. Det privata repot fick motsvarande i sin CLAUDE.md.
 
 ## Öppna frågor
 

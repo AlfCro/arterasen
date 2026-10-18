@@ -108,7 +108,7 @@ Repot blev publikt 2026-10-18. Det ger några gratisfunktioner och några saker 
 - [x] Projektet `arterasen-utkast`: samma repo och gren, Build command `npm run build:preview`, Build output directory `dist`, fick `arterasen-utkast.pages.dev` (Alf, 2026-10-18).
 - [ ] Förslag: slå av förhandsvisningar per gren i `arterasen-utkast` (*Settings* → *Builds* → *Branch control*), eftersom `arterasen-info` redan gör dem. De är på i dag: PR #6 byggdes i båda projekten (Alf)
 - [x] `intern.granskningUrl` i `site.config.json` pekar på `https://utkast.arterasen.se/`, och `granskning.yml` är borttagen (Claude, 2026-10-18).
-- [ ] Ta bort grenen `granskning` på GitHub när ändringen är mergad (Alf eller Claude)
+- [ ] Ta bort grenarna `granskning` och `claude/pages-info-utkast` på GitHub (Alf). Claude kan inte radera grenar härifrån. `granskning` har inga egna commits (kontrollerat 2026-10-18).
 
 ### Domän: zonen till Alfs Cloudflare-konto (Alf)
 
@@ -133,10 +133,10 @@ Beslutat och genomfört 2026-10-18, liksom `info` och `utkast` samma kväll. Kva
 - [x] Efter namnserverbytet: NS, `arterasen.se`, `www` och `info`, och att huvudsajten svarar. Gjort av Alf 2026-10-18, se *Efter flytten* ovan.
 - [x] Efter att `info` lagts till: `https://info.arterasen.se/sv/` svarar med startsidan över HTTPS, ingen omdirigeringsslinga med *Flexible* (Claude, 2026-10-18). Byt inte läge för hela zonen, det påverkar huvudsajten.
 - [x] Efter att `info` lagts till: `https://www.arterasen.se/` svarar med huvudsajten (Claude, 2026-10-18 cirka 22:50)
-- [ ] Öppna `/`, `/sv/`, `/intern/` och en QR-adress på den riktiga domänen. `/sv/` är gjort. `/intern/` stoppas av `robots.txt` i Claudes hämtverktyg, som det ska, och behöver öppnas i webbläsare (Alf). QR-adresserna väntar på en godkänd plats.
+- [ ] Öppna `/`, `/sv/`, `/intern/` och en QR-adress på den riktiga domänen. `/sv/` gjort. `/intern/` i produktionsbygget gjort via deploy-adressen: *granskningsversionen* länkar till `https://utkast.arterasen.se/` (Claude, 2026-10-18 23:10). QR-adresserna väntar på en godkänd plats.
 - [x] Claudes hämtverktyg släpps in av gruppen `Claude-User` i `robots.txt`: förhandsvisningen av PR #6 (`Disallow: /` för alla andra) gick att läsa, med utkastbanner och fem platser (Claude, 2026-10-18).
-- [ ] Efter merge: läs `utkast.arterasen.se` och `info.arterasen.se/intern/` (Claude)
-- [ ] Efter nästa merge till `main`: att båda sajterna byggs om
+- [x] Efter merge av PR #7: utkastbygget läst på `arterasen-utkast.pages.dev/sv/` med banner och fem platser märkta *Utkast*. `robots.txt` på `utkast.arterasen.se` och `info.arterasen.se` börjar med gruppen `Claude-User` (Alfs skärmdumpar 23:07–23:08). Claudes hämtverktyg stoppades ändå på de två domänerna, eftersom det sparar `robots.txt` per värdnamn (se AGENTS.md).
+- [x] Efter merge till `main`: båda sajterna byggdes om, kontrollerna `Cloudflare Pages: arterasen-info` och `arterasen-utkast` gröna på `1576687` (Claude, 2026-10-18)
 
 ## Öppna frågor
 
@@ -156,3 +156,4 @@ Frågorna om domän, konton och huvudsajten skickades till föreningens ordföra
 - 2026-10-18: Registraren är Name ISP, inte Loopia. Automatisk förnyelse på, går ut 2027-01-22 (Alf). Ingen i föreningen känner till Cloudflare-kontot. Beslut att flytta zonen till Alfs Cloudflare-konto och peka huvudsajten på `www.n.nu` enligt N.nu:s manual. Domänstegen omskrivna (Alf, Claude).
 - 2026-10-18: Zonen flyttad till Alfs Cloudflare-konto: namnservrar `betty`/`carl`, CNAME `@` och `www` → `www.n.nu`, *Flexible*. Huvudsajten svarar. `info.arterasen.se` väntar på Pages-projektet (Alf). Planen uppdaterad med läget (Claude).
 - 2026-10-18: Pages-projekten `arterasen-info` och `arterasen-utkast` skapade med `info.arterasen.se` och `utkast.arterasen.se` (Alf). Pages valt framför Workers (Claude). `granskningUrl` pekar på utkastsajten och `granskning.yml` är borttagen. `info.arterasen.se` och huvudsajten svarar. `robots.txt` släpper in `Claude-User` (Claude).
+- 2026-10-18: PR #7 mergad (ersatte #6, som stängdes när #5:s gren togs bort). Båda sajterna byggda från `main` och kontrollerade. Grenar kan inte raderas från sessionen. Anteckningar för nästa agent i AGENTS.md och `docs/arbetsflode.md` (Claude).
