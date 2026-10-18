@@ -132,7 +132,15 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
   ];
   if (preview) headers.unshift('/*\n  X-Robots-Tag: noindex');
   write(outDir, '_headers', headers.join('\n') + '\n');
-  write(outDir, 'robots.txt', preview ? 'User-agent: *\nDisallow: /\n' : 'User-agent: *\nDisallow: /intern/\nDisallow: /skyltar/\n');
+  // Claude-User is Anthropic's agent for fetches a person asks Claude to make, so Claude
+  // can check previews and /intern/ when asked. It does not index or train; ClaudeBot and
+  // all other robots follow the "*" group. The noindex headers above still apply.
+  const claudeUser = 'User-agent: Claude-User\nAllow: /\n\n';
+  write(
+    outDir,
+    'robots.txt',
+    claudeUser + (preview ? 'User-agent: *\nDisallow: /\n' : 'User-agent: *\nDisallow: /intern/\nDisallow: /skyltar/\n'),
+  );
 
   log(
     `Byggt ${preview ? 'förhandsvisning' : 'produktion'} till ${path.relative(ROOT, outDir) || outDir}: ` +
