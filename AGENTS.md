@@ -56,7 +56,8 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
 | `docs/kallor.md` | Var det finns mer: skrifter, arkiv, webbplatser, och vad som inte är genomsökt |
 | `docs/bilder.md` | Bilder av fäboden på nätet med fotograf och licens |
-| `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Syns på GitHub, aldrig på sajten. |
+| `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Syns på GitHub. Bilder därifrån når sajten bara via `npm run bild` till `content/`. |
+| `LICENSE`, `LICENSER.md` | MIT för koden, CC BY 4.0 för texterna, undantagen |
 | `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
 | `tools/verify.mjs` | Webbläsartest av den byggda sajten |
 | `tools/artifact-preview.mjs` | Kopia av den byggda sajten som går att publicera som artifact |
@@ -72,10 +73,12 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 ### Innehåll
 
 - **Hitta aldrig på fakta.** Varje uppgift ska komma från volontärens dokument eller från en källa som står i `kallor`. Är något oklart: ställ frågan på Trello-kortet och lämna uppgiften utanför tills den är besvarad.
+- **Fritt material väntar inte.** Bilder och uppgifter med fri licens (CC BY, CC BY-SA, CC0, public domain) eller med upphovspersonens egna fria villkor används i utkasten direkt, med källan angiven. Vänta inte på svar om tillstånd för sådant (beslut av Alf 2026-10-18). Kontakta upphovspersonen parallellt: en privatperson, till exempel Lars Bägerfeldt, ska ha fått veta och inte ha sagt nej innan platsen sätts till `klar`. Ett museum med CC-licens behöver inte tillfrågas.
+- **Motsägelser väntar.** Uppgifter där källorna säger olika saker (se *Motsägelser* i `docs/fakta.md`) är ingen tillståndsfråga och lämnas utanför eller skrivs försiktigt tills föreningen har svarat.
 - **Status `klar` sätts bara efter godkännande:** kortet ligger i *Godkänt* och flyttades dit av någon annan än den som skrev texten. Se [docs/arbetsflode.md](docs/arbetsflode.md).
 - **Adressen (slug) är permanent** när skylten satts upp. Byter en plats namn: lägg till `flyttad_till` i `content/tryckta-skyltar.json`, ta aldrig bort en rad.
 - **Privatpersoner** nämns inte utan samtycke. Husen ägs av enskilda.
-- **Bilder** används bara om dokumentet säger att föreningen får använda dem och vem fotografen är. Kör alltid `npm run bild`.
+- **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens dokument säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens.
 - **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
 - **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
 
@@ -123,7 +126,8 @@ Sedan 2026-10-18 kan vem som helst läsa allt i repot, även utkast, planer, rap
 - Skriv om personer som om texten stod på föreningens anslagstavla. Namnge privatpersoner bara när de själva har gått ut med det eller har sagt ja. Skriv "en privatperson" eller rollen hellre än namnet när namnet inte behövs.
 - Underlag och brev till enskilda personer läggs inte i repot. Se *Beslutsunderlag* nedan.
 - Lägg bara filer i `material/` som får spridas vidare, inte bara användas. Se [material/LASMIG.md](material/LASMIG.md).
-- Ingen licens är vald. Ändra inte `license` i `package.json` och lägg inte till en LICENSE-fil förrän Alf och föreningen har bestämt (se [plans/02-hosting.md](plans/02-hosting.md)).
+- **Licenser** (Alf 2026-10-18): MIT för koden ([LICENSE](LICENSE)) och CC BY 4.0 för texterna, med undantag för bilder och `material/`. Se [LICENSER.md](LICENSER.md). Lägg inte in något i repot som inte får spridas under de villkoren, och ange egna villkor när en fil har det.
+- **Det privata repot `AlfCro/arterasen-config`** nämns i README. Dess innehåll stannar där.
 
 ### Datum och språk
 

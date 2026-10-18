@@ -5,6 +5,11 @@ ingress: Här skrivs det upp när något ändras i hur vi jobbar. Det senaste st
 uppdaterad: 2026-10-18
 ---
 
+## 2026-10-18, kväll
+
+- Bilder och texter som andra har gjort fria att använda tar vi in i utkasten direkt, utan att vänta på svar. Två utkast har fått gamla bilder från Dalarnas museum: Fäbodvallen (1916) och Ristningarna (2018). Ristningarna bygger nu också på Lars Bägerfeldts undersökningar. Vi frågar fortfarande den som har gjort materialet, och en privatperson ska ha fått veta innan texten godkänns.
+- Våra egna texter på sajten får användas fritt av andra om föreningen anges som källa. Licensen heter CC BY 4.0. Den som lämnar en text går med på det. Se [Skriva en text](../skriva/).
+
 ## 2026-10-18
 
 - Sajten finns nu på internet. Texter som föreningen har godkänt kommer att synas på {{publik}}. Än så länge är ingen text godkänd.

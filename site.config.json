@@ -13,6 +13,10 @@
   },
   "productionBranch": "main",
   "cloudflareProject": "arterasen-info",
+  "contentLicense": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
   "organisation": {
     "name": "Ärteråsens Kulturförening",
     "url": "https://www.arterasen.se/"

@@ -166,8 +166,10 @@ Skrift 67, *Fäbodens kullor och dalkarlar* (2024-10-01), om inget annat anges.
 
 - **10 746 ristningar** med 61 357 tecken i fäbodgårdarna 1–14, uppskattningsvis 99 % av alla (skrift 67, s. 6) ✓. Med sätesstugan, en bod, en lös bräda och ett fritidshus blir det 10 922 (skrift 84, s. 15) ✓.
 - **Äldsta årtal 1662.** Nästa årtal kommer först på 1690-talet. Drygt 7 500 årtal är inristade. De ökar 1740–1770, igen från 1790-talet till 1910-talet, och minskar snabbt efter 1919 (skrift 67, s. 57) ✓.
+- **Var 1662 sitter:** "ILS 1662", strax ovanför dörren på utsidan av mjölkboden i husgrupp 13. Initialerna är Jon Larssons i Tillhed, som finns bland ägarna i kronans fäbodinventering 1664 (skrift 67, s. 57–58) ✓. Den syns alltså utifrån. Om det är samma hus som föreningen kallar den äldsta mjölkstugan framgår inte.
+- De äldsta årtalen per husgrupp ligger mellan 1733 och 1812 i eldhusen och mellan 1662 och 1894 i mjölkbodarna (skrift 67, s. 57) ✓.
 - Fördelning ✓: 4 989 initialer från kullor, 1 568 initialer från dalkarlar, 807 utskrivna förnamn, 126 namn i lönnskrift, 708 bomärken, 563 personmärken och 66 figurristningar (skrift 67, s. 6).
-- De flesta sitter inne i eldhusen och på gavlarnas utsida på eldhus och mjölkbodar (skrift 67, s. 6).
+- De flesta sitter inne i eldhusen och på gavlarnas utsida på eldhus och mjölkbodar. Fähus och bodar har mycket få (skrift 67, s. 6) ✓.
 - **318 personer** är identifierade, 200 kvinnor och 118 män (skrift 84, s. 15–16) ✓. Nästan alla var ogifta när de ristade, de flesta unga kvinnor (skrift 88, s. 27, 50).
 - Kvinnorna ristade mest under sommaren. Männen, husbönder och ogifta söner, ristade främst före eller efter vallningen (skrift 67, s. 31).
 - Exempel på text: "LÖF MED TREFLIGT HÄR I ÄRTERÅSEN" (skrift 88, s. 28) ✓.
@@ -178,7 +180,7 @@ Skrift 67, *Fäbodens kullor och dalkarlar* (2024-10-01), om inget annat anges.
 Skrift 70 (2021-11-25).
 
 - 66 figurristningar: 41 i eldhus, mjölkbodar och ett fähus, och 25 i två bodar (15 vid fäbodgård 12, 10 i en bod som flyttats till fäbodgård 3) ✓.
-- Motiv: kvistar och blad, kors, män med svärd, spjut, gevär eller yxa, ryttare och hästar, jaktscener, hundar, stjärnor, hjärta med pil och dryckesglas.
+- Motiv: kvistar och blad, kors, män med svärd, spjut, gevär eller yxa, ryttare och hästar, jaktscener, hundar, stjärnor, hjärta med pil och dryckesglas. Ryttare, svärd, spjut, gevär, hästar, hundar, stjärnor och hjärta med pil kontrollerade i innehållsförteckningen och figurlistan ✓.
 
 ### En fäbodkulla: Brita Eriksdotter
 
@@ -186,8 +188,8 @@ Skrift 72 (2026-02-14). Ett möjligt underlag för skylten om ristningarna, efte
 
 - Tillhed Brita Eriksdotter föddes 1833 i Näset ✓.
 - Hon var fäbodkulla på Ärteråsen från 14 års ålder, ungefär tolv somrar 1847–1858, mest vid föräldrarnas fäbodgård nr 2 (s. 19–22, 32, 39).
-- Hon ristade sina initialer BED, ibland med gårdsnamnet och familjens bomärke. Den första är från 1847, tillsammans med storasystern: "TILLHED AED BED I NESSETT 1847" ✓. År 1850 ristade hon sitt födelseår för första gången ✓. Det finns 91 bevarade ristningar av henne vid föräldrarnas fäbod och 9 vid andra, under en period ungefär en gång i veckan (s. 19, 21).
-- Texterna är korta och glada. År 1856 ristade hon "SY TYLL BED IAG LÄNGTAR ÅR 1856" ✓.
+- Hon ristade sina initialer BED, ibland med gårdsnamnet och familjens bomärke. Den första är från 1847, tillsammans med storasystern: "TILLHED AED BED I NESSETT 1847" ✓. År 1850 ristade hon sitt födelseår för första gången ✓. Det finns 91 bevarade ristningar där hon tycks nämnas vid föräldrarnas fäbod och 9 vid andra, men antalet är osäkert eftersom alla bara ristade initialer (s. 19) ✓.
+- Texterna är korta och glada. År 1856 ristade hon "SY TYLL BED IAG LÄNGTAR ÅR 1856", som Bägerfeldt tolkar "Se Tillhed Brita Eriksdotter. Jag längtar, år 1856." (s. 31) ✓.
 - Kullan skötte mjölkning, vallning, smör, ost och disk i ungefär tio veckor, sov i eldhuset och fick besök av byns unga män sent på lördagarna (s. 5–18). Hon gifte sig 1859-12-26, och då upphör hennes ristningar ✓.
 
 ### Fäbodbruket och orden

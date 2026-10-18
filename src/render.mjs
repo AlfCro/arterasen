@@ -79,6 +79,7 @@ function footer(ctx, lang, depth) {
 <li><a href="${esc(org.url)}">${esc(org.name)}</a></li>
 ${lang === 'sv' ? `<li><a href="${r}intern/">Intern sida för föreningen</a></li>` : ''}
 </ul>
+${ctx.config.contentLicense ? `<p class="license">${t.license(`<a href="${esc(deed(ctx.config.contentLicense.url, lang))}" rel="license">${esc(ctx.config.contentLicense.name)}</a>`, esc(org.name))}</p>` : ''}
 </footer>`;
 }
 
@@ -109,6 +110,19 @@ ${langNav(ctx, lang, hrefFor)}
 </header>`;
 }
 
+// CC 4.0 deeds exist in Swedish, English and German; the other tools fall back to the plain URL.
+const deed = (url, lang) => (url.includes('/4.0/') ? `${url}deed.${lang}` : url);
+
+// "Foto: <name, linked to the source>, <license, linked to the deed>". CC BY requires all three.
+function photoCredit(t, lang, image) {
+  if (!image.credit) return '';
+  const who = image.source ? `<a href="${esc(image.source)}">${esc(image.credit)}</a>` : esc(image.credit);
+  const license = image.license
+    ? `, ${image.licenseUrl ? `<a href="${esc(deed(image.licenseUrl, lang))}" rel="license">${esc(image.license)}</a>` : esc(image.license)}`
+    : '';
+  return ` <span class="credit">${t.photo}: ${who}${license}</span>`;
+}
+
 const statusBadge = (ctx, place) =>
   ctx.mode.preview && !place.published ? ' <span class="badge">Utkast</span>' : '';
 
@@ -124,7 +138,7 @@ export function placePage(ctx, place, lang, prev, next) {
 
   const figure = place.image
     ? `<figure class="photo"><img src="${r}bilder/${place.image.name}" alt="${esc(c.bildtext)}" loading="lazy" decoding="async">
-<figcaption>${esc(c.bildtext)}${place.image.credit ? ` <span class="credit">${t.photo}: ${esc(place.image.credit)}</span>` : ''}</figcaption></figure>`
+<figcaption>${esc(c.bildtext)}${photoCredit(t, lang, place.image)}</figcaption></figure>`
     : '';
 
   const facts = (c.fakta || []).length
@@ -136,7 +150,11 @@ export function placePage(ctx, place, lang, prev, next) {
   const sources =
     ctx.mode.preview && place.sources.length
       ? `<section class="sources"><h2>${t.previewSources}</h2><ul>${place.sources
-          .map((s) => `<li>${/^https?:/.test(s) ? `<a href="${esc(s)}">${esc(s)}</a>` : esc(s)}</li>`)
+          .map((s) => {
+            // "Title: https://…" links the title; a bare URL links itself.
+            const m = String(s).match(/^(?:(.*?):?\s+)?(https?:\/\/\S+)$/);
+            return `<li>${m ? `<a href="${esc(m[2])}">${esc(m[1] || m[2])}</a>` : esc(s)}</li>`;
+          })
           .join('')}</ul></section>`
       : '';
 

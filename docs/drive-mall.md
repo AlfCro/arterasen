@@ -9,6 +9,8 @@ Innehållet nedan blir dokumentet *Mall – ny plats* i föreningens Drive-mapp.
 **Skrivet av:** (ditt namn)
 **Datum:** (ÅÅÅÅ-MM-DD)
 
+*Texterna på sajten får användas fritt av andra om föreningen anges som källa (licensen CC BY 4.0). När du lämnar texten till föreningen går du med på det.*
+
 ## Var står skylten?
 
 Beskriv var på fäboden platsen finns, till exempel "vid grinden nedanför serveringen". Ett foto eller en pil på en karta går också bra.
@@ -39,6 +41,7 @@ För varje bild i mappen:
 - Filnamn:
 - Fotograf:
 - Får föreningen använda bilden på sajten? (ja/nej)
+- Syns någon person som går att känna igen? Har hen sagt ja? (ja/nej)
 - Vad visar bilden? (en mening)
 
 ## Till Claude
