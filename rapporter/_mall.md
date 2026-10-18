@@ -20,6 +20,7 @@ Två eller tre meningar om vad som kom ut av passet.
 ## Kontrollerat
 
 - Vad som testades och hur.
+- README.md stämmer med ändringarna (`npm run check:readme`).
 
 ## Väntar på
 

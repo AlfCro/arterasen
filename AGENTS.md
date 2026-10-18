@@ -7,7 +7,7 @@ Instruktioner för AI-agenter som arbetar i det här repot (Claude och andra). M
 1. Läs [PLAN.md](PLAN.md). Den listar alla initiativ, deras status och nästa steg, och länkar till en delplan per initiativ i [plans/](plans/).
 2. Läs delplanen för det initiativ du ska arbeta med. Där står mål, beslut som redan är fattade, vad som återstår och öppna frågor.
 3. Gör arbetet.
-4. Innan du avslutar: bocka av i delplanen, skriv en daterad rad i delplanens **Logg**, och uppdatera status och nästa steg för initiativet i PLAN.md.
+4. Innan du avslutar: bocka av i delplanen, skriv en daterad rad i delplanens **Logg**, och uppdatera status och nästa steg för initiativet i PLAN.md. **Uppdatera README.md i samma PR** när något den beskriver har ändrats: kommandon, mappar, workflows, adresser, rättigheter eller *Läget just nu*. Ändras PLAN.md ska läget i README ha minst samma datum. `npm run check:readme` stoppar PR:en annars.
 5. **Skriv en rapport** för arbetspasset i `rapporter/ÅÅÅÅ-MM-DD-kort-namn.md` utifrån [rapporter/_mall.md](rapporter/_mall.md). Lägg den överst under **Rapporter** i PLAN.md och committa den med resten av arbetet. Rapporten är den återkoppling Alf sparar. Sammanfattningen i chatten ska säga samma sak, inte något annat.
 6. Nytt initiativ? Kopiera [plans/_mall.md](plans/_mall.md) till `plans/NN-namn.md` och lägg till en rad i PLAN.md. Fråga Alf först om initiativet inte redan är beslutat.
 
@@ -30,6 +30,7 @@ QR-skyltar på Ärteråsens fäbod (Ore, Rättviks kommun). Varje skylt leder ti
 npm ci                     # installera
 npm run dev                # förhandsvisning på http://localhost:8080 (utkast syns)
 npm run check              # validera allt innehåll, måste vara grönt
+npm run check:readme       # README nämner alla kommandon, mappar och workflows, länkarna fungerar, läget inte äldre än PLAN.md
 npm run build              # produktion: bara platser med status klar på alla språk
 npm run build:preview      # som granskningsversionen: utkast, källor och banner syns
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
@@ -54,10 +55,12 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
 | `docs/kallor.md` | Var det finns mer: skrifter, arkiv, webbplatser, och vad som inte är genomsökt |
 | `docs/bilder.md` | Bilder av fäboden på nätet med fotograf och licens |
-| `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Publiceras inte. |
+| `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Syns på GitHub, aldrig på sajten. |
 | `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
 | `tools/verify.mjs` | Webbläsartest av den byggda sajten |
 | `tools/artifact-preview.mjs` | Kopia av den byggda sajten som går att publicera som artifact |
+| `tools/check-readme.mjs` | Kontrollen att README.md hänger med (`npm run check:readme`) |
+| `README.md` | Ingången för människor, med *Läget just nu*. Hålls uppdaterad i varje PR som ändrar något den beskriver. |
 | `src/` | Byggskript, mallar, stil. Inga ramverk. |
 | `plans/` | Delplaner per initiativ |
 | `rapporter/` | En rapport per arbetspass, nyast länkad från PLAN.md |
@@ -96,7 +99,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - Vanlig Node utan ramverk och med få beroenden. Sidorna ska fungera utan JavaScript och vara lätta, täckningen på fäboden kan vara svag.
 - Relativa länkar överallt utom i `404.html`, så att `dist/` fungerar på vilken värd som helst och direkt från disk.
 - Designbeslut (typsnitt, färger, skyltens mått) finns i [plans/01-sajt.md](plans/01-sajt.md). Ändra dem inte i förbigående.
-- Kör `npm run check` och `npm run build` innan du pushar. Titta på ändrade sidor i mobilbredd (390 px).
+- Kör `npm run check`, `npm run check:readme` och `npm run build` innan du pushar. Titta på ändrade sidor i mobilbredd (390 px).
 
 ### Git och publicering
 
@@ -111,6 +114,15 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - Ändras arbetssättet: uppdatera sidorna i `docs/intern/` och lägg en daterad punkt överst i `docs/intern/90-nytt.md`.
 - Lösenord, telefonnummer och mejladresser hör inte hemma i repot eller på `/intern/`. Sidan är olistad men publik.
 
+### Repot är publikt
+
+Sedan 2026-10-18 kan vem som helst läsa allt i repot, även utkast, planer, rapporter och historiken. Det som en gång har pushats ska räknas som publicerat, även om det tas bort senare.
+
+- Skriv om personer som om texten stod på föreningens anslagstavla. Namnge privatpersoner bara när de själva har gått ut med det eller har sagt ja. Skriv "en privatperson" eller rollen hellre än namnet när namnet inte behövs.
+- Underlag och brev till enskilda personer läggs inte i repot. Se *Beslutsunderlag* nedan.
+- Lägg bara filer i `material/` som får spridas vidare, inte bara användas. Se [material/LASMIG.md](material/LASMIG.md).
+- Ingen licens är vald. Ändra inte `license` i `package.json` och lägg inte till en LICENSE-fil förrän Alf och föreningen har bestämt (se [plans/02-hosting.md](plans/02-hosting.md)).
+
 ### Datum och språk
 
 - Prata med Alf på svenska. Han är fullstackutvecklare och vill ha raka, tekniska svar.
@@ -119,7 +131,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 
 ## Miljön i Claude-sessioner
 
-Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
+Saker som var kända 2026-10-17 och 2026-10-18 och som inte syns förrän man stöter på dem.
 
 - **Repot måste kopplas i varje ny session.** Sessionen når bara de repon som är kopplade. Be om `AlfCro/arterasen` om det inte redan finns.
 - **Nya repon kan inte skapas** härifrån. Alf skapar dem på github.com.
@@ -137,10 +149,11 @@ Saker som var kända 2026-10-17 och som inte syns förrän man stöter på dem.
   ```
 - **Hämta `main` innan push** (`git fetch origin main && git rebase origin/main`), annars kan push från en gammal grund klon avvisas.
 - **Chromium** finns under `$PLAYWRIGHT_BROWSERS_PATH`. `npm run verify` hittar den själv. Kör aldrig `playwright install`.
-- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet. 2026-10-17 var Trello inte installerat och Google Drive installerat men inte anslutet. Kontrollera med ListConnectors och föreslå dem med SuggestConnectors. Atlassian-kopplingen tillhör Lunds universitet och används inte här.
+- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet. 2026-10-17 var Trello inte installerat och Google Drive installerat men inte anslutet. Kontrollera med ListConnectors och föreslå dem med SuggestConnectors. Atlassian-kopplingen hör inte till föreningen och används inte här.
 - **DNS-uppslag** fungerar inte från skalet (ingen `dig`, ingen namnupplösning). Använd WebFetch mot `https://dns.google/resolve?name=<domän>&type=<NS|A|MX|CNAME>`.
 - **Se sajten innan hosting finns:** `npm run build:preview`, sedan `node tools/artifact-preview.mjs dist <mapp i scratchpad>`. Skriptet skriver ut `files`-kartan. Publicera `<mapp>/index.html` med Artifact-verktyget, `root` satt till mappen och `files` från skriptet. Senaste versionen: se rapporten i PLAN.md. En artifact från en tidigare session uppdateras genom att dess URL skickas som `url`.
-- **Beslutsunderlag** som Alf ska läsa eller dela skrivs som Claude Docs-dokument, inte som filer i repot. Länka dem från delplanen.
+- **Beslutsunderlag** som Alf ska läsa eller dela skrivs som Claude Docs-dokument, eller som en självständig HTML-fil (allt inbäddat, inga externa resurser) som skickas till Alf med SendUserFile när han vill ha en fil att skicka vidare. Aldrig som filer i repot, eftersom repot är publikt. Länka eller nämn dem från delplanen och rapporten, och skriv frågorna i rapporten så att nästa session vet vad som frågats.
+- **GitHub-inställningar** går inte att läsa eller ändra härifrån: branch protection och rulesets ger 403, och Actions-inställningarna spärras av proxyn. Be Alf göra dem på github.com. Repots synlighet och övriga metadata går att läsa med `gh api repos/AlfCro/arterasen`.
 - **Nätet från skalet** går via en proxy med vitlista. npm fungerar. Webbsidor läses med WebFetch, inte curl.
 - **Filer från webben** (bilder, PDF:er) kan inte laddas ner härifrån. Lägg dem i `material/hamta.json` och pusha till en gren: workflowen `hamta-material` hämtar dem och committar till grenen. Resultatet står i `material/hamta-status.json`. Se [material/LASMIG.md](material/LASMIG.md).
 - **WebFetch** når bara adresser som har synts i samtalet (sökresultat eller från Alf), uppgraderar http till https och klarar därför inte sajter som bara har http (fnf.nu, taxelson.se:s objektsidor). Långa PDF:er läses bara delvis. Facebook kräver inloggning och går bara att läsa om chatten är kopplad till Alfs dator.
