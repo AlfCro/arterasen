@@ -2,6 +2,7 @@
 titel: Die Sommeralm
 ingress: Vom 15. Jahrhundert bis 1954 trieben die Bewohner von Näset jeden Sommer ihre Tiere hier herauf.
 status: utkast
+bildtext: Die Sommeralm Ärteråsen im Jahr 1916. Eine Frau mit einer Kuh vor einem Blockhaus, rundherum ein Holzzaun.
 fakta:
   - rubrik: Ursprung
     text: 15. Jahrhundert

@@ -1,21 +1,34 @@
 ---
 titel: Ristningarna
-ingress: Årtal, namn och bomärken har ristats i timret sedan 1600-talet. Det äldsta årtalet som finns kvar är 1662.
+ingress: Över 10 000 ristningar finns i timret på fäboden. Den äldsta är från 1662.
 nummer: 3
 status: utkast
+bild: bild.jpg
+fotograf: Jennie Tiderman-Österberg, Dalarnas museum
+bildlicens: CC BY 4.0
+bildkalla: https://digitaltmuseum.se/021018343969/timmervagg-med-ristningar-inomhus-arterasen-ore-2018
+bildtext: Ristningar i en timmervägg inne i ett av husen på fäboden. Initialer, bomärken och årtal sitter tätt.
 fakta:
-  - rubrik: Äldsta ristningen
+  - rubrik: Äldsta årtalet
     text: "1662"
+  - rubrik: Antal ristningar
+    text: 10 746
   - rubrik: Vanliga motiv
-    text: Årtal, namn, bomärken, jakt
+    text: Initialer, årtal, bomärken
 kallor:
   - https://www.arterasen.se/om-arterasen
-  - https://www.arterasen.se/
   - https://swedishspoon.com/arterasen-summer-farm
+  - "Lars Bägerfeldt, Fäbodens kullor och dalkarlar (skrift 67, 2024), s. 6 och 57–58: https://lasse345.wordpress.com/wp-content/uploads/2024/10/67-fabodens-kullor-och-dalkarlar-2024-10-01.pdf"
+  - "Lars Bägerfeldt, Strövtåg bland fäbodens ristningar (skrift 70, 2021): https://lasse345.wordpress.com/wp-content/uploads/2021/11/70-strovtag-bland-figurristningar-2021-11-25.pdf"
+  - "Lars Bägerfeldt, Om Brita Eriksdotters liv under 1800-talet (skrift 72, 2026), s. 19–31: https://lasse345.wordpress.com/wp-content/uploads/2026/02/72-arterasens-fabodkulla-tillhed-bed-2026-02-14.pdf"
 ---
 
-Den som vistades på fäboden lämnade gärna spår efter sig. Med kniven skar man in sitt namn eller sina initialer, ett årtal och ofta ett bomärke, gårdens eget tecken. Några ristningar visar jaktscener med beväpnade män och hästar.
+Den som vistades på fäboden lämnade gärna spår efter sig. Med kniven skar man in sina initialer, ett årtal och ofta ett bomärke, gårdens eget tecken. De flesta ristningarna finns inne i eldhusen och på gavlarna till eldhus och mjölkbodar.
 
-Den äldsta ristningen som har hittats och finns kvar är från 1662. Ristningar från 1660-talet finns i fäbodens äldsta mjölkstuga, där mjölken förvarades svalt. De flesta ristningarna finns annars inne i eldhusen.
+Lars Bägerfeldt, som har undersökt fäboden, har räknat 10 746 ristningar. Vanligast är initialer efter fäbodkullorna, kvinnorna som skötte djuren och mjölken om somrarna. Ett sextiotal är bilder: ryttare, jaktscener, män med svärd eller gevär, hjärtan och stjärnor.
+
+Det äldsta årtalet sitter ovanför dörren på utsidan av en mjölkbod: ILS 1662. Det är initialerna för Jon Larsson i Tillhed, en av fäbodens ägare på den tiden.
+
+En av kullorna var Brita Eriksdotter från Näset, född 1833. Hennes initialer BED finns nästan hundra gånger i timret. År 1856 ristade hon SY TYLL BED IAG LÄNGTAR, ungefär "Se, Tillhed Brita Eriksdotter. Jag längtar." Tre år senare gifte hon sig, och då slutar hennes ristningar.
 
 Ristningarna går inte att ersätta. Titta gärna, men rista aldrig själv i timret.

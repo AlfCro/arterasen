@@ -10,6 +10,7 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 - **Arbetsplan:** [PLAN.md](PLAN.md) med en delplan per initiativ i [plans/](plans/)
 - **Rapporter:** vad som gjorts och vad som väntar, ett arbetspass i taget, i [rapporter/](rapporter/)
 - **För AI-agenter:** [AGENTS.md](AGENTS.md)
+- **Drift och konton:** beskrivs i ett separat, privat repo, `AlfCro/arterasen-config`. Se [Drift och konfiguration](#drift-och-konfiguration).
 
 ## Läget just nu
 
@@ -17,6 +18,8 @@ Senast uppdaterad: 2026-10-18
 
 - **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** fem platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Ingen är godkänd av föreningen. Flera fakta motsäger varandra mellan källorna och väntar på svar.
+- **Fritt material används direkt i utkasten** sedan 2026-10-18: bilder och uppgifter med fri licens eller fria villkor väntar inte på svar. Fäbodvallen och Ristningarna har museibilder, och Ristningarna bygger nu också på Lars Bägerfeldts skrifter. Upphovspersonen kontaktas parallellt, och för en privatperson ska det vara gjort innan platsen godkänns.
+- **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
 - **Väntar på föreningen:** svar om konton, källor, bilder och fakta. Frågorna skickades till ordföranden 2026-10-18.
@@ -46,12 +49,13 @@ Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/
 | --- | --- |
 | `content/` | Texterna: en mapp per plats i `content/platser/` med `sv.md`, `en.md` och `de.md`, startsidan, mallen och [listan över uppsatta skyltar](content/tryckta-skyltar.json) |
 | `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, mallen för Google Drive, och `docs/intern/` som blir `/intern/` på sajten |
-| `material/` | Kopior av fria bilder och skrifter, med licens per fil i [material/hamta.json](material/hamta.json). Syns på GitHub men aldrig på sajten. Se [material/LASMIG.md](material/LASMIG.md). |
+| `material/` | Kopior av fria bilder och skrifter, med licens per fil i [material/hamta.json](material/hamta.json). Syns på GitHub. En bild som ska visas på sajten krymps först till `content/` med `npm run bild`. Se [material/LASMIG.md](material/LASMIG.md). |
 | `plans/` | En delplan per initiativ: mål, beslut, att göra, öppna frågor och logg |
 | `rapporter/` | En rapport per arbetspass |
 | `src/` | Generatorn, mallar, stil och service worker. Inga ramverk. |
 | `tools/` | Webbläsartest, förhandsvisning som artifact, hämtning av material och kontrollen av den här filen |
-| [site.config.json](site.config.json) | Adress, språk och länkar till Trello och Drive |
+| [site.config.json](site.config.json) | Adress, språk, textlicens och länkar till Trello och Drive |
+| [LICENSE](LICENSE), [LICENSER.md](LICENSER.md) | MIT för koden, CC BY 4.0 för texterna, och undantagen |
 
 ## Utveckling
 
@@ -109,9 +113,15 @@ Fyll i `content/platser/karles-lada/{sv,en,de}.md`. Platsen syns bara i förhand
 
 ## Rättigheter
 
-Ingen licens är vald än. Det är en fråga för föreningen och Alf (se [plans/02-hosting.md](plans/02-hosting.md)). Tills dess gäller vanlig upphovsrätt: fråga innan du återanvänder texter eller kod.
+Koden har licensen [MIT](LICENSE) och texterna [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.sv). Du får alltså återanvända båda, också kommersiellt, om du anger Ärteråsens Kulturförening som källa. Detaljer och undantag: [LICENSER.md](LICENSER.md).
 
-Filerna i `material/` har egna villkor, som står per fil i `material/hamta.json`: museibilder med CC BY 4.0 eller Public Domain Mark, och Lars Bägerfeldts skrifter som får användas fritt i icke-kommersiellt syfte.
+Bilderna på sajten har egna villkor, som står under varje bild och i platsens `sv.md`. Filerna i `material/` har också egna villkor, per fil i `material/hamta.json`: museibilder med CC BY 4.0 eller Public Domain Mark, och Lars Bägerfeldts skrifter som får användas fritt i icke-kommersiellt syfte.
+
+## Drift och konfiguration
+
+Uppgifter om driften står inte i det här repot utan i ett privat repo, `AlfCro/arterasen-config`: DNS-zonen för arterasen.se, inställningarna i Cloudflare och för Pages-projekten, vem som har inloggning var, och checklistor för ändringar. Det är privat eftersom det beskriver konton och personer, och det innehåller inga lösenord eller nycklar. Alf ger åtkomst till den som behöver det för föreningens räkning.
+
+Det som behövs för att förstå och bygga sajten finns här: adresserna och byggkommandona ovan, [site.config.json](site.config.json) och planerna för [hosting](plans/02-hosting.md).
 
 ## Kontakt
 

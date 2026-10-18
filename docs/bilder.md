@@ -2,22 +2,27 @@
 
 Bilder som hittats på andra webbplatser, med fotograf och vad som gäller för att använda dem. Läs det här innan du letar efter bilder igen. Sammanställt 2026-10-18.
 
-Reglerna i [AGENTS.md](../AGENTS.md) gäller: en bild används på sajten bara när vi vet vem som tagit den och att föreningen får använda den. Kör alltid `npm run bild` innan en bild läggs in under `content/`.
+Reglerna i [AGENTS.md](../AGENTS.md) gäller: en bild används på sajten när vi vet vem som tagit den och har rätt att använda den. Det gäller två slags bilder:
+
+- **Fri licens** (CC BY, CC BY-SA, CC0, public domain): används i utkasten direkt, utan att vänta på svar. Ange `fotograf`, `bildlicens` och `bildkalla` i platsens `sv.md`, så visas krediteringen under bilden. Museer med CC-licens behöver inte tillfrågas.
+- **Tillåtelse från fotografen**: volontärens dokument säger att föreningen får använda bilden. Lars Bägerfeldts fria villkor (ej kommersiellt) räcker för utkasten, men han ska ha fått veta innan platsen godkänns.
+
+En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Kör alltid `npm run bild` innan en bild läggs in under `content/`.
 
 Bilder med fri licens hämtas till [`material/`](../material/) av workflowen `hamta-material` (se [material/LASMIG.md](../material/LASMIG.md)). Övriga bilder står bara som länk här.
 
 ## Fria att använda med namn
 
-Licensen tillåter användning, även på skyltar och sajten, om fotograf och museum anges. Krediteringen står i `material/hamta.json`.
+Licensen tillåter användning, även på skyltar och sajten, om fotograf och museum anges. Krediteringen står i `material/hamta.json`. Kolumnen *Används* visar var bilden sitter i utkasten.
 
-| Bild | Fotograf, år | Licens | Hämtas till | Källa |
+| Bild | Fotograf, år | Licens | Används | Källa |
 | --- | --- | --- | --- | --- |
-| Ärteråsens fäbod 1916: kvinna med ko vid ett eldhus, gärdesgård. | Karl-Erik Forsslund, 1916 | CC BY 4.0, Dalarnas museum (DM KEF02850) | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/0210114730455/rattvik-ore-arterasen-arterasens-fabod-1916) |
-| Eldhus och mjölkbod med gavlarna mot varandra. Repro av en boksida (fig. 31) och av hela uppslaget. Bildtexten i boken säger bara "Ore socken", museet anger Ärteråsen. | Foto Olof Ekberg, repro Ernst Blom, år okänt | Public Domain Mark för reprot, Västmanlands läns museum (Vlm-Blom 2281). **Kontrollera Ekbergs upphovsrätt** innan användning. | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/0210114263141/eldhus-och-mjolkbod-pa-arterasen) |
-| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000168) | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/021018343958/timmervagg-ristningar-inomhus-arterasen-ore-2018) |
-| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000180) | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/021018343969/timmervagg-med-ristningar-inomhus-arterasen-ore-2018) |
-| Person med fjällkor på vallen. **Personen namnges i museets titel. Kräver personens samtycke.** | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000186) | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/021018343976/anna-k-kjellin-med-fjallkor-arterasen-ore-2018) |
-| Fäbodristning på torrfura, bomärke, initialer och 1866. Från Ore socken, inte uttryckligen Ärteråsen. | Hansa Andersson, insamlad 2023 | CC BY 4.0, Dalarnas museum (DM 26652) | `material/bilder/` | [DigitaltMuseum](https://digitaltmuseum.se/0210214508679/ristning) |
+| Ärteråsens fäbod 1916: kvinna med ko framför ett timmerhus, gärdesgård. Museet klassar huset som ladugård, inte som eldhus. | Karl-Erik Forsslund, 1916 | CC BY 4.0, Dalarnas museum (DM KEF02850) | Fäbodvallen (2026-10-18) | [DigitaltMuseum](https://digitaltmuseum.se/0210114730455/rattvik-ore-arterasen-arterasens-fabod-1916) |
+| Eldhus och mjölkbod med gavlarna mot varandra. Repro av en boksida (fig. 31) och av hela uppslaget. Bildtexten i boken säger bara "Ore socken", museet anger Ärteråsen. | Foto Olof Ekberg, repro Ernst Blom, år okänt | Public Domain Mark för reprot, Västmanlands läns museum (Vlm-Blom 2281). **Kontrollera Ekbergs upphovsrätt** innan användning: museets sida anger varken bok eller år (läst 2026-10-18). | Nej | [DigitaltMuseum](https://digitaltmuseum.se/0210114263141/eldhus-och-mjolkbod-pa-arterasen) |
+| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000168) | Nej, reserv för Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343958/timmervagg-ristningar-inomhus-arterasen-ore-2018) |
+| Timmervägg med ristningar, inomhus | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000180) | Ristningarna (2026-10-18) | [DigitaltMuseum](https://digitaltmuseum.se/021018343969/timmervagg-med-ristningar-inomhus-arterasen-ore-2018) |
+| Person med fjällkor på vallen. **Personen namnges i museets titel. Kräver personens samtycke.** | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0, Dalarnas museum (DMTB 000000186) | Nej, väntar på samtycke | [DigitaltMuseum](https://digitaltmuseum.se/021018343976/anna-k-kjellin-med-fjallkor-arterasen-ore-2018) |
+| Fäbodristning på torrfura, bomärke, initialer och 1866. Från Ore socken, inte uttryckligen Ärteråsen. | Hansa Andersson, insamlad 2023 | CC BY 4.0, Dalarnas museum (DM 26652) | Nej, inte från Ärteråsen | [DigitaltMuseum](https://digitaltmuseum.se/0210214508679/ristning) |
 
 De tre bilderna från 2018 är tagna inom Dalarnas museums projekt *Fäbodlandskap och vallmusik*. Det kan finnas fler bilder från samma dag i serien DMTB 000000160–000000190. Sök på "Ärteråsen" direkt på [digitaltmuseum.se](https://digitaltmuseum.se/) för att se allt; här har bara det som syntes via sökmotorer gått att läsa.
 
@@ -46,7 +51,7 @@ Fotogalleriet på [arterasen.se/fotogalleri](https://www.arterasen.se/fotogaller
 
 ## Lars Bägerfeldts bilder
 
-Lars Bägerfeldt har fotograferat alla byggnader och ristningar på Ärteråsen, tiotusentals bilder 2016–2023 (skrift 84, s. 20). Hans villkor är att materialet får användas fritt så länge det inte sker i kommersiellt syfte (skrift 69, s. 2; skrift 70). Sajten är ideell, men fråga honom ändå innan bilder används, och be om originalfiler.
+Lars Bägerfeldt har fotograferat alla byggnader och ristningar på Ärteråsen, tiotusentals bilder 2016–2023 (skrift 84, s. 20). Hans villkor är att materialet får användas fritt så länge det inte sker i kommersiellt syfte (skrift 69, s. 2; skrift 70). Sajten är ideell, så bilderna får användas i utkasten utan att vänta på svar. Kontakta honom parallellt och be om originalfiler; han ska ha fått veta innan en plats med hans bild godkänns. Hans bilder har inte `bildlicens` i `sv.md`, eftersom villkoret inte är en CC-licens, och de omfattas inte av sajtens CC BY för texterna.
 
 | Bilderbok | Länk |
 | --- | --- |

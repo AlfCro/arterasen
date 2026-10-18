@@ -2,6 +2,7 @@
 titel: The summer farm
 ingress: Every summer from the 1400s until 1954, the people of Näset drove their animals up here to graze.
 status: utkast
+bildtext: Ärteråsen summer farm in 1916. A woman with a cow in front of a log building, surrounded by a traditional wooden fence.
 fakta:
   - rubrik: Dating back to
     text: The 1400s

@@ -4,7 +4,7 @@
   "description": "QR-information för besökare på Ärteråsens fäbod: statisk sajt på svenska, engelska och tyska, plus utskrivbara skyltar.",
   "private": true,
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Alf Cronmalm",
   "repository": {
     "type": "git",

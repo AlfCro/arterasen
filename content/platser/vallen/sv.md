@@ -3,6 +3,11 @@ titel: Fäbodvallen
 ingress: Hit drev byborna i Näset sina djur varje sommar, från 1400-talet fram till 1954.
 nummer: 1
 status: utkast
+bild: bild.jpg
+fotograf: Karl-Erik Forsslund, Dalarnas museum
+bildlicens: CC BY 4.0
+bildkalla: https://digitaltmuseum.se/0210114730455/rattvik-ore-arterasen-arterasens-fabod-1916
+bildtext: Ärteråsens fäbod 1916. En kvinna med en ko framför ett timmerhus, med gärdesgård runt omkring.
 fakta:
   - rubrik: Anor från
     text: 1400-talet

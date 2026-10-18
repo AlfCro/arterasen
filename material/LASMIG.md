@@ -1,6 +1,6 @@
 # Material från andra källor
 
-Kopior av bilder och skrifter om Ärteråsen som finns på nätet. Det här är arkiv och underlag, inte sajtens innehåll. Ingenting här hamnar på info.arterasen.se.
+Kopior av bilder och skrifter om Ärteråsen som finns på nätet. Det här är arkiv och underlag. Filerna publiceras inte på sajten som de är: en bild som ska visas krymps till `content/` med `npm run bild`, och då står fotograf, licens och källa i platsens `sv.md`.
 
 **Repot är publikt sedan 2026-10-18.** Allt i den här mappen kan alltså laddas ner av vem som helst från GitHub. Lägg bara hit filer som får spridas vidare, inte bara användas.
 
@@ -20,7 +20,7 @@ Vem som tagit bilderna, licens och hur de ska krediteras står i [hamta.json](ha
 
 Lokalt går det också: `npm run hamta`.
 
-Hämta bara filer som får spridas: fri licens, föreningens eget material eller material där upphovspersonen har gett tillåtelse. Lars Bägerfeldts villkor är fri användning som inte är kommersiell, och hans skrifter ligger redan fritt på hans egen sajt, men fråga honom ändå om kopiorna här (se `plans/04-innehall.md`). En bild där en person syns och namnges sprids bara med personens samtycke. En fil som ska användas på sajten går ändå via `npm run bild` till `content/`.
+Hämta bara filer som får spridas: fri licens, föreningens eget material eller material där upphovspersonen har gett tillåtelse. Lars Bägerfeldts villkor är fri användning som inte är kommersiell, och hans skrifter ligger redan fritt på hans egen sajt. Hans material används i utkasten utan att vänta på svar, men han ska få veta det, och om kopiorna här, innan en plats som bygger på honom godkänns (se `plans/04-innehall.md`). En bild där en person syns och namnges sprids bara med personens samtycke. En fil som ska användas på sajten går ändå via `npm run bild` till `content/`.
 
 Att ta bort en fil ur mappen tar inte bort den ur git-historiken. Det som en gång har pushats till GitHub ska räknas som publicerat.
 

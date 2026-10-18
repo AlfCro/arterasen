@@ -1,6 +1,6 @@
 # 04 Platser och texter
 
-Status: Fem utkast, frågor skickade till föreningen
+Status: Fem utkast, två med museibild, frågor skickade till föreningen
 Ansvarig: Föreningen (val av platser, fakta, godkännande), Claude (redigering, översättning)
 Senast uppdaterad: 2026-10-18
 
@@ -18,9 +18,9 @@ Föreningen har valt vilka platser som ska ha skyltar, och varje plats har en go
 
 | Nr | Slug | Titel | Status | Behöver |
 | --- | --- | --- | --- | --- |
-| 1 | `vallen` | Fäbodvallen | Utkast | Faktagranskning, foto |
+| 1 | `vallen` | Fäbodvallen | Utkast, museibild 1916 | Faktagranskning |
 | 2 | `eldhusen` | Eldhusen | Utkast | Bekräfta 36 brukare kring 1850, foto |
-| 3 | `ristningarna` | Ristningarna | Utkast | Var sitter den äldsta ristningen, syns den för besökare? Foto |
+| 3 | `ristningarna` | Ristningarna | Utkast, museibild 2018, Bägerfeldts uppgifter | Faktagranskning. Lars Bägerfeldt ska få veta innan godkännande |
 | 4 | `kallorna` | Källorna | Utkast | Bekräfta vilka källor som rinner, var skylten ska stå |
 | 5 | `fjallkorna` | Fjällkorna | Utkast | Hundregler, vems korna är |
 
@@ -32,13 +32,14 @@ Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens p
 
 - 2026-10-17: Utkasten skrivs för någon som står framför platsen: ingress högst 160 tecken, brödtext 80–200 ord, fakta i en kort lista.
 - 2026-10-17: Ägare till husen nämns inte vid namn.
+- 2026-10-18: **Fritt material används i utkasten utan att vänta på svar** (Alf). Bilder med fri licens och uppgifter med upphovspersonens fria villkor, till exempel Lars Bägerfeldts, går in direkt med källan angiven. Upphovspersonen kontaktas parallellt. En privatperson ska ha fått veta och inte ha sagt nej innan platsen sätts till `klar`. Museer med CC-licens behöver inte tillfrågas. Gäller inte motsägelser mellan källor eller bilder där en nutida person syns.
 
 ## Att göra
 
 - [ ] Föreningen läser utkasten i granskningsversionen och kommenterar
 - [ ] Föreningen bestämmer platslistan och numreringen
-- [ ] Foton till varje plats, med fotografens namn och tillåtelse. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
-- [ ] Fråga Lars Bägerfeldt om hans bilder och skrifter får användas på sajten (föreningen)
+- [ ] Foton till varje plats, med fotografens namn och tillåtelse eller fri licens. Fäbodvallen och Ristningarna har museibilder (2026-10-18). Kvar: Eldhusen, Källorna, Fjällkorna. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
+- [ ] Berätta för Lars Bägerfeldt att hans skrifter används i utkastet om ristningarna och att kopior ligger i repot, och fråga om bilder (föreningen eller Alf). Utkasten väntar inte, men det ska vara gjort innan Ristningarna godkänns.
 - [ ] Uppdatera utkasten med det nya underlaget när föreningen har svarat på frågorna nedan (Claude)
 - [ ] Claude rättar efter kommentarerna och sätter status `klar` efter godkännande
 
@@ -49,15 +50,16 @@ Faktagranskning, för den som kan fäboden:
 - **Hundar:** arterasen.se säger att hundar inte är välkomna vecka 32–33 när korna är där. furudal.nu säger inte på sommaren, Visit Dalarna inte alls. Vad gäller?
 - **Korna:** kommer de från Sunnanheds fjällkor, och får det stå på skylten?
 - **36 brukare kring 1850:** finns i den engelska texten på arterasen.se. Stämmer det?
-- **Äldsta ristningen 1662:** sitter den i den äldsta mjölkstugan, och kan besökare se den? 1662 bekräftas av Bägerfeldt (skrift 84).
+- **Äldsta ristningen 1662:** besvarad av Bägerfeldt (skrift 67, s. 57–58): "ILS 1662" ovanför dörren på utsidan av mjölkboden i husgrupp 13, alltså synlig utifrån. Kvar för föreningen: är det den mjölkbod de kallar den äldsta mjölkstugan, och får besökare gå fram till den?
 - **Fäbodstigen:** arterasen.se säger 7,6 km från Brända, Rättviks kommun ca 6,5 km från Brändavägen i Näset via Siljansleden. Vilken sträcka och vilken startpunkt ska skylten ange?
 - **Utsikten:** utsiktstornet finns (Rättviks kommun, furudal.nu). Ska det ha egen skylt?
 - **Fäbodens ålder:** utkastet till Fäbodvallen säger 1400-talet. Rättviks kommun säger 1600-talet, och Bägerfeldt hittar första belägg i mitten av 1500-talet och säkert 1664. Vilken formulering ska användas?
 - **Antal eldhus vid storhetstiden:** 22 (arterasen.se) eller minst 18 (Visit Dalarna)?
-- **Brita Eriksdotter:** får hennes historia och ristningar (Bägerfeldt skrift 72) användas på skylten om ristningarna?
+- ~~**Brita Eriksdotter:** får hennes historia och ristningar (Bägerfeldt skrift 72) användas på skylten om ristningarna?~~ Används i utkastet sedan 2026-10-18 enligt beslutet om fritt material. Hon levde på 1800-talet, så det är ingen fråga om samtycke.
 
 ## Logg
 
 - 2026-10-17: Fem platser och startsidan skrivna som utkast på svenska, engelska och tyska (Claude).
 - 2026-10-18: Frågorna om källor, bilder, fakta och platslistan skickade till ordföranden som underlag (B1–B7, C1–C9, D1). Ny fråga: museibilden från 2018 där ordföranden syns med fjällkorna. Se rapporten 2026-10-18 publikt-readme-underlag (Claude).
 - 2026-10-18: Underlaget utökat från Rättviks kommun, furudal.nu, Länsstyrelsen, DigitaltMuseum, Bägerfeldts skrifter och årsringsdateringar. Nya filer docs/kallor.md, docs/bilder.md och material/ med fria bilder och skrifter. Facebook inte genomsökt (Claude).
+- 2026-10-18: Fritt material in i utkasten (beslut av Alf): museibilder på Fäbodvallen (Forsslund 1916) och Ristningarna (Tiderman-Österberg 2018), med fotograf, licens och källa under bilden. Ristningarna omskriven med Bägerfeldts uppgifter: 10 746 ristningar, var 1662 sitter, figurristningarna och Brita Eriksdotter (Claude).

@@ -14,6 +14,15 @@ export const STATUSES = ['utkast', 'klar'];
 export const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 export const RESERVED = new Set(['assets', 'bilder', 'intern', 'skyltar', 'index', '404', 'sw', 'robots', 'start']);
 
+// Licenses that may be used for photos without asking anyone, as long as the credit is shown.
+// Key = what is written in bildlicens, value = the license deed (a language suffix is added for 4.0).
+export const FREE_LICENSES = {
+  'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/',
+  'CC BY-SA 4.0': 'https://creativecommons.org/licenses/by-sa/4.0/',
+  'CC0 1.0': 'https://creativecommons.org/publicdomain/zero/1.0/',
+  'Public Domain Mark 1.0': 'https://creativecommons.org/publicdomain/mark/1.0/',
+};
+
 const LIMITS = {
   ingressChars: 160,
   bodyWordsMin: 40,
@@ -95,8 +104,8 @@ export function loadContent(config) {
       if (n < LIMITS.bodyWordsMin) warn(where, `brödtexten är bara ${n} ord`);
       if (n > LIMITS.bodyWordsMax) warn(where, `brödtexten är ${n} ord (högst ${LIMITS.bodyWordsMax} rekommenderas för att läsas stående)`);
       checkBody(where, body, err);
-      if (lang !== primary && (data.nummer != null || data.bild != null))
-        warn(where, `nummer och bild anges bara i ${primary}.md`);
+      if (lang !== primary && ['nummer', 'bild', 'fotograf', 'bildlicens', 'bildkalla'].some((k) => data[k] != null))
+        warn(where, `nummer, bild, fotograf, bildlicens och bildkalla anges bara i ${primary}.md`);
       place.langs[lang] = { ...data, body, words: n };
     }
 
@@ -111,10 +120,21 @@ export function loadContent(config) {
         const img = path.join(place.dir, main.bild);
         if (!fs.existsSync(img)) err(`${base}/${primary}.md`, `bilden ${main.bild} finns inte i mappen`);
         else {
-          place.image = { file: img, name: `${slug}${path.extname(main.bild).toLowerCase()}`, credit: main.fotograf || null };
+          place.image = {
+            file: img,
+            name: `${slug}${path.extname(main.bild).toLowerCase()}`,
+            credit: main.fotograf || null,
+            license: main.bildlicens || null,
+            licenseUrl: FREE_LICENSES[main.bildlicens] || null,
+            source: main.bildkalla || null,
+          };
           const size = fs.statSync(img).size;
           if (size > LIMITS.imageBytes) warn(`${base}/${main.bild}`, `bilden är ${Math.round(size / 1024)} kB, kör npm run bild för att krympa den`);
           if (!main.fotograf) err(`${base}/${primary}.md`, 'fotograf saknas för bilden');
+          if (main.bildlicens && !FREE_LICENSES[main.bildlicens])
+            err(`${base}/${primary}.md`, `bildlicens "${main.bildlicens}" känns inte igen. Använd ${Object.keys(FREE_LICENSES).join(', ')}, eller ta bort raden om fotografen har gett tillåtelse`);
+          if (main.bildlicens && !main.bildkalla) err(`${base}/${primary}.md`, 'bildkalla saknas: länka till sidan där bilden och licensen finns');
+          if (main.bildkalla && !/^https:\/\//.test(main.bildkalla)) err(`${base}/${primary}.md`, 'bildkalla måste vara en https-adress');
         }
         for (const lang of langs) {
           if (place.langs[lang] && !place.langs[lang].bildtext) err(`${base}/${lang}.md`, 'bildtext saknas (behövs för skärmläsare)');

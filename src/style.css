@@ -234,6 +234,17 @@ h3 {
 }
 
 .credit {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+.credit a {
+  color: inherit;
+}
+
+.credit a[rel="license"],
+.license a[rel="license"] {
   white-space: nowrap;
 }
 
@@ -429,6 +440,15 @@ h3 {
 
 .footer-links li {
   margin: 0.35rem 0;
+}
+
+.license {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+}
+
+.license a {
+  color: inherit;
 }
 
 /* ---------- Preview ---------- */
