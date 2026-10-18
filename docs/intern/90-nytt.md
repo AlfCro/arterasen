@@ -7,6 +7,8 @@ uppdaterad: 2026-10-18
 
 ## 2026-10-18
 
+- Sajten finns nu på internet. Texter som föreningen har godkänt kommer att synas på {{publik}}. Än så länge är ingen text godkänd.
+- Alla texter, också de som inte är godkända, går att läsa i {{granskning}}. Adressen är utkast.arterasen.se. Den sidan är till för oss, inte för besökare.
 - Allt Claude gör av texterna syns nu för alla på internet, även utkast som inte är godkända. Det du skriver i ditt eget dokument i Drive syns fortfarande bara för oss. Skriv inget som inte får bli känt, och nämn bara personer som har sagt ja. Se [Skriva en text](../skriva/).
 
 ## 2026-10-17

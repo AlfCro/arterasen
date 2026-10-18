@@ -19,8 +19,9 @@ Ett beslut som ändrar något i en delplans **Beslut** ska stämmas av med Alf i
 
 QR-skyltar på Ärteråsens fäbod (Ore, Rättviks kommun). Varje skylt leder till en kort text om platsen på svenska, engelska och tyska. Texterna skrivs av lågtekniska volontärer i Ärteråsens Kulturförening. De lämnar material i Google Drive och följer arbetet på en Trello-tavla. Agenten gör sidor av materialet, översätter, lägger upp förhandsvisningar och publicerar när föreningen har godkänt.
 
-- Publik sajt: `https://info.arterasen.se/` (Cloudflare Pages, gren `main`)
-- Förhandsvisningar: Cloudflare Pages, en per gren, plus `granskning` som speglar `main` med utkast synliga
+- Publik sajt: `https://info.arterasen.se/` (Cloudflare Pages-projektet `arterasen-info`, bygger `main` med `npm run build:cf`)
+- Utkast: `https://utkast.arterasen.se/` (Pages-projektet `arterasen-utkast`, bygger `main` med `npm run build:preview`, utkast synliga, `noindex`). Det är granskningsversionen som `intern.granskningUrl` pekar på.
+- Förhandsvisningar: `arterasen-info` bygger varje annan gren som förhandsvisning, `https://<gren>.arterasen-info.pages.dev/`
 - Interna sidor för volontärerna: `/intern/`, genereras från [docs/intern/](docs/intern/)
 - Repo-ägare och utvecklare: Alf Cronmalm (AlfCro)
 
@@ -32,7 +33,7 @@ npm run dev                # förhandsvisning på http://localhost:8080 (utkast 
 npm run check              # validera allt innehåll, måste vara grönt
 npm run check:readme       # README nämner alla kommandon, mappar och workflows, länkarna fungerar, läget inte äldre än PLAN.md
 npm run build              # produktion: bara platser med status klar på alla språk
-npm run build:preview      # som granskningsversionen: utkast, källor och banner syns
+npm run build:preview      # som utkast.arterasen.se: utkast, källor och banner syns
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
 npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
 npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
@@ -107,6 +108,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - Agenten får själv merga PR:er som **bara** ändrar filer under `content/`, när kontrollen `check` är grön.
 - Alla andra ändringar (src/, docs/, plans/, .github/, site.config.json, package.json) går som PR som Alf granskar och mergar.
 - Skriv aldrig om historiken på `main` och forcera aldrig push dit.
+- **En merge till `main` publicerar.** Cloudflare bygger då både `info.arterasen.se` och `utkast.arterasen.se`. Ingen nyckel eller `wrangler` behövs, och ingen ska läggas i repot.
 
 ### Kommunikation
 

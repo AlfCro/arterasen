@@ -4,7 +4,8 @@ QR-skyltar för besökare på Ärteråsens fäbod i Ore, Rättviks kommun. Varje
 
 Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
-- **Publik sajt:** https://info.arterasen.se/ (inte i gång än, se [plans/02-hosting.md](plans/02-hosting.md))
+- **Publik sajt:** https://info.arterasen.se/ (bara godkända platser, ingen är godkänd än)
+- **Utkast:** https://utkast.arterasen.se/ visar alla platser, också de som inte är godkända. Det är granskningsversionen som föreningen läser.
 - **För volontärerna:** `/intern/` på sajten beskriver hur man skriver, granskar och sätter upp skyltar. Källan är [docs/intern/](docs/intern/).
 - **Arbetsplan:** [PLAN.md](PLAN.md) med en delplan per initiativ i [plans/](plans/)
 - **Rapporter:** vad som gjorts och vad som väntar, ett arbetspass i taget, i [rapporter/](rapporter/)
@@ -14,7 +15,7 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
 Senast uppdaterad: 2026-10-18
 
-- **Sajten** är byggd och testad i webbläsare, men ligger inte på nätet. DNS för arterasen.se ligger sedan 2026-10-18 i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu svarar som förut. Nästa steg är Pages-projektet i samma konto och adressen `info.arterasen.se`. Domänen förnyas automatiskt hos Name ISP.
+- **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** fem platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Ingen är godkänd av föreningen. Flera fakta motsäger varandra mellan källorna och väntar på svar.
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
@@ -37,7 +38,7 @@ Volontär skriver i Google Drive ──► Trello-kort "Klar för Claude"
               Claude publicerar ──► info.arterasen.se ──► skylt skrivs ut
 ```
 
-Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/` bygger statiska sidor, QR-ingångar och utskrivbara skyltar till `dist/`. Cloudflare Pages ska bygga `main` till den publika sajten och varje annan gren till en egen förhandsvisning. Sidorna fungerar utan JavaScript och sparas för offlinebruk vid första besöket, eftersom täckningen på fäboden är svag.
+Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/` bygger statiska sidor, QR-ingångar och utskrivbara skyltar till `dist/`. Cloudflare Pages bygger `main` två gånger: till den publika sajten `info.arterasen.se` och, med utkast synliga, till `utkast.arterasen.se`. Varje annan gren får en egen förhandsvisning under `arterasen-info.pages.dev`. En merge till `main` publicerar alltså. Sidorna fungerar utan JavaScript och sparas för offlinebruk vid första besöket, eftersom täckningen på fäboden är svag.
 
 ## Innehåll i repot
 
@@ -67,8 +68,8 @@ npm run dev        # http://localhost:8080, utkast syns
 | `npm run check` | Validerar allt innehåll. Måste vara grönt. |
 | `npm run check:readme` | Kontrollerar att den här filen stämmer med repot, se sista avsnittet |
 | `npm run build` | Produktion till `dist/`: bara platser som har status `klar` på alla språk |
-| `npm run build:preview` | Som granskningsversionen: utkast, källor och banner syns |
-| `npm run build:cf` | Används av Cloudflare Pages. Väljer produktion eller förhandsvisning efter grenen. |
+| `npm run build:preview` | Som `utkast.arterasen.se`: utkast, källor och banner syns. Används av Pages-projektet för utkasten. |
+| `npm run build:cf` | Används av Pages-projektet för den publika sajten. Väljer produktion på `main` och förhandsvisning på andra grenar. |
 | `npm run ny -- <slug> "<Titel>"` | Ny plats från mallen |
 | `npm run bild -- <fil> <slug>` | Krymper ett foto och tar bort GPS och annan metadata |
 | `npm run verify -- --out=<mapp>` | Webbläsartest: skärmdumpar i mobilbredd, skyltar som PDF, QR-avkodning och offline. Kräver Chromium för Playwright. |
@@ -96,7 +97,6 @@ Fyll i `content/platser/karles-lada/{sv,en,de}.md`. Platsen syns bara i förhand
 | Workflow | Körs | Gör |
 | --- | --- | --- |
 | `check` | Varje PR och push till `main` | `npm run check`, `npm run check:readme`, produktionsbygge och förhandsbygge |
-| `granskning` | Push till `main` | Speglar `main` till grenen `granskning`, som Cloudflare bygger som förhandsvisning med utkast |
 | `hamta-material` | Push till andra grenar än `main` när `material/hamta.json` ändras | Hämtar filerna och committar dem till samma gren |
 
 Ändringar som bara rör `content/` får Claude merga själv när `check` är grön. Allt annat granskas och mergas av Alf.
