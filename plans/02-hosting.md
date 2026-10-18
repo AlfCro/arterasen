@@ -55,7 +55,7 @@ Inget. Frågan om två adresser avgjordes 2026-10-18, se *Beslut*.
 ## Klart när
 
 - [x] `https://info.arterasen.se/` visar startsidan med giltigt certifikat (`/sv/` över HTTPS, 2026-10-18)
-- [ ] En PR får automatiskt en förhandsvisningslänk
+- [x] En PR får automatiskt en förhandsvisningslänk (PR #6 fick en kommentar och en kontroll per Pages-projekt, 2026-10-18)
 - [ ] `https://utkast.arterasen.se/` visar `main` med utkast. Svarar och har `Disallow: /` som utkastbygget ska, men sidan är inte läst i webbläsare.
 - [ ] Domänen arterasen.se förnyas automatiskt och någon i föreningen vet hur
 
@@ -104,9 +104,9 @@ Repot blev publikt 2026-10-18. Det ger några gratisfunktioner och några saker 
 - [x] Projektnamn `arterasen-info`, fick `arterasen-info.pages.dev` utan tillägg. `cloudflareProject` i `site.config.json` stämmer.
 - [x] Bygginställningar: Framework preset *None*, Build command `npm run build:cf`, Build output directory `dist`, Production branch `main`. Node-versionen läses från `.node-version`.
 - [x] Första bygget lyckades. `https://arterasen-info.pages.dev/sv/` är i produktionsläge: ingen utkastbanner, ingen `noindex`.
-- [ ] Preview deployments i `arterasen-info`: Cloudflares standard är alla grenar. Inte kontrollerat i inställningarna.
+- [x] Förhandsvisning per gren i `arterasen-info`: PR #6:s gren byggdes till `claude-pages-info-utkast.arterasen-info.pages.dev`.
 - [x] Projektet `arterasen-utkast`: samma repo och gren, Build command `npm run build:preview`, Build output directory `dist`, fick `arterasen-utkast.pages.dev` (Alf, 2026-10-18).
-- [ ] Förslag: slå av förhandsvisningar per gren i `arterasen-utkast` (*Settings* → *Builds* → *Branch control*), eftersom `arterasen-info` redan gör dem (Alf)
+- [ ] Förslag: slå av förhandsvisningar per gren i `arterasen-utkast` (*Settings* → *Builds* → *Branch control*), eftersom `arterasen-info` redan gör dem. De är på i dag: PR #6 byggdes i båda projekten (Alf)
 - [x] `intern.granskningUrl` i `site.config.json` pekar på `https://utkast.arterasen.se/`, och `granskning.yml` är borttagen (Claude, 2026-10-18).
 - [ ] Ta bort grenen `granskning` på GitHub när ändringen är mergad (Alf eller Claude)
 
@@ -134,7 +134,8 @@ Beslutat och genomfört 2026-10-18, liksom `info` och `utkast` samma kväll. Kva
 - [x] Efter att `info` lagts till: `https://info.arterasen.se/sv/` svarar med startsidan över HTTPS, ingen omdirigeringsslinga med *Flexible* (Claude, 2026-10-18). Byt inte läge för hela zonen, det påverkar huvudsajten.
 - [x] Efter att `info` lagts till: `https://www.arterasen.se/` svarar med huvudsajten (Claude, 2026-10-18 cirka 22:50)
 - [ ] Öppna `/`, `/sv/`, `/intern/` och en QR-adress på den riktiga domänen. `/sv/` är gjort. `/intern/` stoppas av `robots.txt` i Claudes hämtverktyg, som det ska, och behöver öppnas i webbläsare (Alf). QR-adresserna väntar på en godkänd plats.
-- [ ] Läs `utkast.arterasen.se` i webbläsare: banner, utkast och källor ska synas (Alf). Claudes hämtverktyg stoppas av `robots.txt`.
+- [x] Claudes hämtverktyg släpps in av gruppen `Claude-User` i `robots.txt`: förhandsvisningen av PR #6 (`Disallow: /` för alla andra) gick att läsa, med utkastbanner och fem platser (Claude, 2026-10-18).
+- [ ] Efter merge: läs `utkast.arterasen.se` och `info.arterasen.se/intern/` (Claude)
 - [ ] Efter nästa merge till `main`: att båda sajterna byggs om
 
 ## Öppna frågor

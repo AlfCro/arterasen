@@ -38,6 +38,9 @@ Sajten ligger på nätet. Alf skapade två Cloudflare Pages-projekt från mobile
 - `npm run check`, `npm run check:readme`, `npm run build` och `npm run verify` gröna. `robots.txt` i båda byggena läst efter ändringen.
 - README.md stämmer med ändringarna (`npm run check:readme`).
 
+- PR #6 fick en kommentar och en grön kontroll från Cloudflare för vart och ett av projekten. Förhandsvisningar per gren är alltså på i båda.
+- Förhandsvisningen av PR #6 i `arterasen-info` (förhandsvisningsläge, `Disallow: /` för alla utom `Claude-User`) gick att läsa med Claudes hämtverktyg: utkastbanner och alla fem platserna. Undantaget fungerar.
+
 Kontrollerna gällde svar och rubriker via Claudes hämtverktyg, inte ett test i webbläsare.
 
 ## Väntar på
@@ -48,7 +51,7 @@ Kontrollerna gällde svar och rubriker via Claudes hämtverktyg, inte ett test i
 - [ ] Kontrollera att Cloudflares GitHub-app bara når `AlfCro/arterasen` (Alf)
 - [ ] Förslag: slå av förhandsvisningar per gren i `arterasen-utkast` (Alf)
 - [ ] Läs `utkast.arterasen.se` och `info.arterasen.se/intern/` efter merge (Claude, eller Alf i telefonen om Claudes verktyg fortfarande stoppas)
-- [ ] Se att PR #6 får en förhandsvisningslänk från Cloudflare (Claude)
+- [x] PR #6 fick förhandsvisningslänkar från Cloudflare (Claude)
 
 ## Öppna frågor
 
