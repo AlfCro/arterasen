@@ -2,7 +2,7 @@
 
 Arbetspass: 2026-10-18 15:11–15:50
 Av: Claude
-PR: se PLAN.md
+PR: #5
 Initiativ: 02
 
 ## Sammanfattning
@@ -40,7 +40,7 @@ Alf har inloggning hos domänregistraren, som visade sig vara Name ISP och inte 
 - [ ] Pages-projektet `arterasen-info` i samma konto och `info.arterasen.se` som custom domain (Alf)
 - [ ] Tvåstegsverifiering på Cloudflare-inloggningen (Alf)
 - [ ] Kontrollera DNS och sajterna efter bytet (Claude)
-- [ ] Granska och merga PR:en (Alf)
+- [ ] Granska och merga PR #5 (Alf)
 
 ## Öppna frågor
 

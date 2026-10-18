@@ -35,7 +35,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [ ] Föreningen: faktagranska de fem utkasten
 - [x] Alf: granska och merga PR #3 (2026-10-18)
 - [x] Alf: granska och merga PR #4 (2026-10-18)
-- [ ] Alf: granska och merga PR:en med DNS-beslutet (se rapporten 2026-10-18 nedan)
+- [ ] Alf: granska och merga PR #5 (DNS till eget Cloudflare-konto)
 - [ ] Alf: skicka underlaget med 32 frågor till ordföranden (filen skickades till Alf 2026-10-18, ligger inte i repot)
 - [ ] Ordföranden och föreningen: svara på underlaget, de fem viktigaste är A1, A2, A3, B1 och E1
 - [ ] Alf: regel för `main` på GitHub, gratis nu när repot är publikt (se [plans/02-hosting.md](plans/02-hosting.md))
