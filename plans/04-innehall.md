@@ -1,6 +1,6 @@
 # 04 Platser och texter
 
-Status: Fem utkast, fyra med museibilder, föreningens svar inlagda, platslista från föreningen, tolv förslag på fler skyltar
+Status: Nio utkast, föreningens svar inlagda, platslista från föreningen, fyra av förslagen 6–17 skrivna som utkast
 Ansvarig: Föreningen (val av platser, fakta, godkännande), Claude (redigering, översättning)
 Senast uppdaterad: 2026-10-19
 
@@ -23,8 +23,14 @@ Föreningen har valt vilka platser som ska ha skyltar, och varje plats har en go
 | 3 | `ristningarna` | Ristningarna | Utkast, fyra bilder, sex fakta, Bägerfeldts uppgifter | Faktagranskning. Bägerfeldt har godkänt (B1) |
 | 4 | `kallorna` | Källorna | Utkast, fem fakta, ingen bild | Skylten står vid Möhrkällan (C9). Bekräfta vilka källor som rinner, en bild |
 | 5 | `fjallkorna` | Fjällkorna | Utkast, hela museibilden med namn, åtta fakta | Faktagranskning |
+| 6 | `boden` | Boden med figurristningarna | Utkast 2026-10-19, tre bilder av Bägerfeldt, sex fakta | Är boden öppen för besökare? Föreningens plats 1 |
+| 7 | `mjolkboden` | Mjölkboden och svalen | Utkast 2026-10-19, en museibild, fem fakta | Vilken husgrupp, och ägarens ja. Kanske föreningens plats 3 |
+| 8 | `kartan-1827` | Kartan från 1827 | Utkast 2026-10-19, Bägerfeldts två kartor, sex fakta | Var den ska stå. Originalkartan från Lantmäteriet? |
+| 13 | `fabodstigen` | Fäbodstigen | Utkast 2026-10-19, föreningens karta, fem fakta | Var den ska stå. Uppgifterna ur skrift 72 är berättande |
 
 Förslag på fler platser, från arterasen.se: Karles lada och serveringen, Turiststugan, gärdesgårdarna, Mickelsons lador, fäbodstigen från Näset, utsikten. Från källorna 2026-10-18: utsiktstornet, Siljansleden, ett av de årsringsdaterade husen (eldhuset i fäbodgård 2 har en stock från 1600-talet).
+
+Utkasten 6, 7, 8 och 13 är skrivna 2026-10-19 ur förslagen med samma nummer, valda för att de har starkast underlag och passar föreningens platslista: boden ligger vid serveringen (plats 1) på samfälld mark, mjölkboden med ILS 1662 kan vara plats 3, kartan passar en bärbar karta, och stigen ska kunna få egen skylt (C6). Numren är arbetsnummer. Brita Eriksdotters fäbodgård (9) väntar, eftersom den kräver husägarens ja och överlappar Ristningarna.
 
 Från Bägerfeldts skrifter 2026-10-19: tolv förslag med arbetsnumren 6–17, med innehåll, placering och sidhänvisningar i [docs/underlag/2026-10-19-fler-skyltar.html](../docs/underlag/2026-10-19-fler-skyltar.html). Fyra har prioritet A: Boden med figurristningarna (vid serveringen), Mjölkboden och svalen, Kartan från 1827 och Brita Eriksdotters fäbodgård (husgrupp 2). Nummer 15 är utsiktstornet ovan med innehåll, nummer 13 och 14 hör till fäbodstigen.
 
@@ -34,9 +40,9 @@ Svar D1 från ordföranden, 2026-10-19. Skrevs innan förslagen 6–17 fanns, oc
 
 | Nr | Plats enligt föreningen | Utkast eller förslag som passar |
 | --- | --- | --- |
-| 1 | Serveringen och fäbodvallen | `vallen`, förslag Boden med figurristningarna |
+| 1 | Serveringen och fäbodvallen | `vallen`, `boden` |
 | 2 | Turiststugan och ristningsladan mittemot | `ristningarna` |
-| 3 | Eldhuset Kvickens (1662) | `eldhusen`, ristningen från 1662 (C8) |
+| 3 | Eldhuset Kvickens (1662) | `eldhusen` eller `mjolkboden`, ristningen från 1662 (C8) |
 | 4 | Tvåvåningsladan | Inget |
 | 5 | "Stens och gärdesgårdarna med kryor", ordalydelsen oklar | Inget |
 | 6 | Barnfäboden | Inget |
@@ -44,9 +50,9 @@ Svar D1 från ordföranden, 2026-10-19. Skrevs innan förslagen 6–17 fanns, oc
 | 8 | Westbergs eldhus | `eldhusen`? |
 | 9 | Utsiktstornet | Förslag 15 |
 | 10 | Bäckmans lagård och fjällkorna | `fjallkorna` |
-| 11 | Gamla Bäckmansgården och fäbodproduktionen | Förslag Mjölkboden och svalen? |
+| 11 | Gamla Bäckmansgården och fäbodproduktionen | Förslag 12, Messmör och en dag på fäboden? |
 
-Fäbodstigen kan få en egen skylt (C6), förslag 13 och 14. Föreningen vet inte vilka hus som är årsringsdaterade.
+Fäbodstigen kan få en egen skylt (C6): `fabodstigen`, förslag 13. Kartan från 1827 (`kartan-1827`) finns inte i listan men passar en bärbar karta. Föreningen vet inte vilka hus som är årsringsdaterade.
 
 Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens pressmeddelande om Unesco. Källorna står i varje `sv.md` och syns i förhandsvisningen. Uppgifter som inte gick att belägga har lämnats utanför. Allt insamlat underlag, även det som inte används ännu, finns i [docs/fakta.md](../docs/fakta.md). Var källorna finns står i [docs/kallor.md](../docs/kallor.md) och bilderna i [docs/bilder.md](../docs/bilder.md).
 
@@ -63,7 +69,7 @@ Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens p
 - [ ] Föreningen läser utkasten i granskningsversionen och kommenterar
 - [ ] Föreningen bestämmer platslistan och numreringen. En lista med elva platser kom 2026-10-19 (ovan). Kvar: stämma av den mot utkasten och förslagen 6–17, och vad 4–6 och 11 ska handla om (Alf, föreningen).
 - [ ] Alf skickar underlaget med förslagen 6–17 till ordföranden
-- [ ] Föreningen väljer bland förslagen 6–17 och svarar på de nio frågorna i underlaget
+- [ ] Föreningen väljer bland förslagen 6–17 och svarar på de nio frågorna i underlaget. Fyra finns som utkast att läsa: 6, 7, 8 och 13.
 - [ ] Foton till varje plats, med fotografens namn och tillåtelse eller fri licens. Alla utom Källorna har museibilder (2026-10-19). Kvar: en bild av en källa, och nyare bilder av eldhusen utifrån. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
 - [x] Berätta för Lars Bägerfeldt att hans skrifter används (föreningen). Han har godkänt att föreningen använder alla hans bilder och skrifter (svar B1, 2026-10-19).
 - [ ] Fråga Bägerfeldt om han vill läsa texterna innan de godkänns (föreningen, frivilligt)
@@ -95,3 +101,4 @@ Faktagranskning, för den som kan fäboden:
 - 2026-10-19: Alla 24 museibilder av Ärteråsen på DigitaltMuseum hämtade till `material/bilder/`. Fyra platser har nu bilder, upp till fyra per plats, bland annat eldhusinteriören från 1926 och gaveln med "ILS 1662". Fjällkobilden beskuren så att personen inte syns. Fler faktarader på alla platser, från Bägerfeldt (skrift 67, 84, 88, 89), NordGen och Visit Dalarna (Claude).
 - 2026-10-19: Bägerfeldts skrifter 66, 67, 70, 72 och 89 lästa där de rör Ärteråsen, 84 och 88 i urval. Tolv förslag på fler skyltar (6–17) som Claude Docs-dokument och som självständig HTML-fil i `docs/underlag/` för ordföranden. Nya fakta om husen, kartan från 1827 och lönnskriften i docs/fakta.md (Claude).
 - 2026-10-19: Ordförandens svar på underlaget från 2026-10-18 inlagda. Fäbodvallen, startsidan, Eldhusen och Fjällkorna uppdaterade på tre språk: åldern, fäbodgårdarna och ägarna 1827, hundar vecka 25–32, Sunnanheds fjällkor, och hela museibilden med personens namn efter hennes samtycke. Föreningens platslista med elva platser införd. Bägerfeldt har godkänt (Claude).
+- 2026-10-19: Fyra nya utkast på tre språk ur förslagen: Boden med figurristningarna (6), Mjölkboden och svalen (7), Kartan från 1827 (8) och Fäbodstigen (13). Bilder ur Bägerfeldts skrifter 66 och 70, museibild DMTB 000000176 och föreningens karta över stigen. Uppgifterna kontrollerade mot PDF-texten (Claude).

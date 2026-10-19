@@ -1,13 +1,13 @@
 # Rapport 2026-10-19: Svar från ordföranden
 
-Arbetspass: 2026-10-19 21:53–22:30
+Arbetspass: 2026-10-19 21:53–23:05
 Av: Claude
 PR: #12
 Initiativ: 01, 02, 03, 04, 05
 
 ## Sammanfattning
 
-Ordförandens svar på underlaget från 2026-10-18 är inlagda i delplanerna och i `docs/fakta.md`, och fyra utkast följer nu svaren. Föreningen har lämnat en platslista med elva platser och lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Mejl till adresser på arterasen.se kan inte komma fram, eftersom domänen saknar MX-post; förslaget är Cloudflare Email Routing i Alfs konto, utan N.nu.
+Ordförandens svar på underlaget från 2026-10-18 är inlagda i delplanerna och i `docs/fakta.md`, och fyra utkast följer nu svaren. Föreningen har lämnat en platslista med elva platser och lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Mejl till adresser på arterasen.se kan inte komma fram, eftersom domänen saknar MX-post; förslaget är Cloudflare Email Routing i Alfs konto, utan N.nu. Fyra av förslagen 6–17 finns nu som utkast inför Alfs samtal med ordföranden, och frågan om Trello räcker utan Google Drive är beskriven.
 
 ## Gjort
 
@@ -18,13 +18,18 @@ Ordförandens svar på underlaget från 2026-10-18 är inlagda i delplanerna och
 - **[plans/02-hosting.md](../plans/02-hosting.md):** svaren A1–A6 och avsnittet *Mejl på arterasen.se* med läget, förslaget och stegen i Cloudflares dashboard.
 - **[plans/03-innehallsflode.md](../plans/03-innehallsflode.md):** föreningens förslag om två läsare per text (D2) och granskarna (D3). [plans/01-sajt.md](../plans/01-sajt.md): besöksstatistik utan kakor (D5).
 - **`/intern/`:** nytt avsnitt *Allt börjar på svenska* på [Så jobbar vi](../docs/intern/00-index.md): en text per plats på svenska, Claude översätter, telefonen väljer språk, en QR-kod räcker för tre språk. Kortare hänvisning i *Skriva en text* och en punkt i *Nytt*.
-- [docs/bilder.md](../docs/bilder.md), PLAN.md och README uppdaterade.
+- **Fyra nya utkast** på tre språk ur förslagen, valda för starkast underlag och för att de passar föreningens platslista: Boden med figurristningarna (6, vid serveringen, tre av Bägerfeldts foton ur skrift 70), Mjölkboden och svalen (7, museibild DMTB 000000176), Kartan från 1827 (8, Bägerfeldts två kartor ur skrift 66) och Fäbodstigen (13, föreningens karta). Brita Eriksdotters fäbodgård (9) väntar på husägaren.
+- **Trello utan Drive:** avsnittet *Väntar på beslut* i [plans/03-innehallsflode.md](../plans/03-innehallsflode.md) beskriver vad som ändras om Drive slopas. Inget i `/intern/` är ändrat än.
+- [AGENTS.md](../AGENTS.md): Bägerfeldts godkännande, bilder ur skrifterna med `pdfimages`, var det gamla underlaget finns, personuppgifter i svar, SOA för att se vilken zon som svarar.
+- [docs/bilder.md](../docs/bilder.md), [docs/fakta.md](../docs/fakta.md), PLAN.md och README uppdaterade.
 
 ## Beslut
 
 - Föreningen (svar 2026-10-19): faktaformuleringarna C1–C3, hundar vecka 25–32, parkeringen 500 m, bild och namn i Fjällkorna, Sunnanheds fjällkor får stå med. Införda i [plans/04](../plans/04-innehall.md).
 - Föreningen (A2–A6): domänen ska ägas av föreningen, firmatecknarna ansvarar för inloggningarna, föreningen får ett eget Google-konto och en gemensam adress. Införda i [plans/02](../plans/02-hosting.md).
 - Alf 2026-10-19: N.nu kontaktas inte om mejlen.
+- Alf 2026-10-19: tvivlar på att många behöver Google Drive, Trello blir det viktiga. Inte infört som beslut; beslutet från 2026-10-17 om Drive gäller tills Alf säger till.
+- Claude: utkasten 6, 7, 8 och 13 behåller förslagens arbetsnummer tills föreningen har bestämt numreringen.
 - Inte infört, väntar på Alf: föreningens förslag om två läsare per text (D2), och om föreningens Google-konto också ska ta emot `info@arterasen.se`.
 
 ## Kontrollerat
@@ -34,6 +39,7 @@ Ordförandens svar på underlaget från 2026-10-18 är inlagda i delplanerna och
 - Cloudflares dokumentation för Email Routing: tre MX `route1`–`route3.mx.cloudflare.net`, SPF `include:_spf.mx.cloudflare.net`, DKIM `cf2024-1._domainkey`.
 - Förslagen bakom "godkänner ert förslag" (C1–C3) lästa i underlaget från 2026-10-18 i en tidigare chatt, eftersom filen inte ligger i repot.
 - Bilden till Fjällkorna krympt med samma inställningar som `npm run bild` men kvalitet 64, 289 kB, utan metadata.
+- De nya utkasten: varje uppgift läst i PDF-texten (66 s. 31, 35, 49–52; 67 s. 6, 12, 16, 18–19, 26, 46, 91; 70 s. 4, 7–16; 72 s. 4, 6). Ingress 109–149 tecken, brödtext 113–178 ord. Kartan från 1827 granskad i 390 px.
 - `npm run check` (0 fel, 0 varningar), `npm run check:readme`, `npm run build`, `npm run build:preview` och `npm run verify` gröna. Fjällkorna granskad i 390 px.
 - Inga personnummer, lösenord eller namn på testare, skribenter eller firmatecknare i repot. Personen på fjällkobilden namnges med sitt samtycke.
 - README.md stämmer med ändringarna (`npm run check:readme`).
@@ -47,6 +53,8 @@ Ordförandens svar på underlaget från 2026-10-18 är inlagda i delplanerna och
 - [ ] Alf: ja eller nej till två läsare per text
 - [ ] Alf och föreningen: platslistan mot utkasten och förslagen 6–17, och karta eller skyltar
 - [ ] Claude, omkring 2026-10-26: kontrollera att den gamla zonen har slutat svara
+- [ ] Alf: bara Trello, eller Trello och Drive
+- [ ] Föreningen: läsa de fyra nya utkasten
 
 ## Öppna frågor
 
@@ -59,6 +67,8 @@ Till ordföranden:
 5. Var börjar fäbodstigen, Brända eller Näset?
 6. Hur mycket finns i bidraget till skyltar eller karta, och finns ett datum då pengarna ska vara använda?
 7. Har svaren om platslistan tagit hänsyn till förslagen 6–17, som skickades efter underlaget?
+8. Är boden vid serveringen öppen för besökare? Vilken husgrupp kan få skylten om mjölkboden, och är "Eldhuset Kvickens (1662)" den med ILS 1662?
+9. Ska kartan från 1827 vara en egen sida, eller en del av den bärbara kartan?
 
 Till Alf:
 

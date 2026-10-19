@@ -11,6 +11,7 @@ uppdaterad: 2026-10-19
 - Föreningen har svarat på frågorna om fakta. Utkasten säger nu att fäboden är belagd sedan 1500-talet och enligt traditionen ännu äldre, att det fanns 17 fäbodgårdar med 36 ägare år 1827, och att hundar inte är välkomna vecka 25–32.
 - Lars Bägerfeldt har godkänt att föreningen använder hans bilder och skrifter.
 - Fjällkorna har fått hela bilden från 2018, med namnet på den som syns i bilden. Hon har sagt ja.
+- Fyra nya utkast att läsa i {{granskning}}: Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. De bygger mest på Lars Bägerfeldts skrifter och är förslag. Föreningen bestämmer vilka som blir skyltar och vilka nummer de får.
 
 ## 2026-10-19
 

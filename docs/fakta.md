@@ -226,6 +226,10 @@ Skrift 88 och 67.
 
 Kontrollerat mot PDF-texten 2026-10-19 ✓. Förslagen till nya skyltar som bygger på detta, med fler sidhänvisningar, står i [underlag/2026-10-19-fler-skyltar.html](underlag/2026-10-19-fler-skyltar.html).
 
+Används sedan 2026-10-19 i utkasten Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. Kontrollerat igen i passet: boden och de tio figurerna (67 s. 6, 12, 46, 91; 70 s. 4, 7–16), mjölkboden och svalen (66 s. 31; 67 s. 18–19, 26), kartan (66 s. 49–52).
+
+- **Buföringen** (skrift 72, berättande, används försiktigt): i mitten av juni gick byn upp med djuren. Männen hade lagat gärdsgårdar, huggit ved, omkring 2 m³ per fäbodgård, och gjort i ordning husen. Unga män kom på lördagskvällarna med salt till smöret och bar hem smör och ost (72, s. 4, 6) ✓. Bara djur som mjölkades följde med, kor och getter; hästar, kalvar, killingar, får och svin stannade hemma (67, s. 16) ✓. I Dalarna var man ofta på fäboden från mitten av juni till slutet av augusti (66, s. 35) ✓.
+
 - **Eldhus och mjölkbod** byggdes alltid i par, gavel mot gavel, med en sval emellan under eldhusets förlängda tak. Svalen är 1,7–2,7 m bred, i snitt 2,3 m (skrift 66, s. 31; 67, s. 19, 26).
 - **Mjölkboden** är ungefär hälften så stor som eldhuset och lägre, för att hålla kylan. Tät stenmur under syllen, takbärande ryggås, ingen rököppning, aldrig trägolv. Det enda huset med lås. I husgrupp 10, 11 och 13 är gluggen på gaveln utsågad som ett W eller en fjäril (67, s. 19, 23, 25–26; 66, s. 31).
 - **Fähuset** låg ett stenkast bort och var minst dubbelt så stort, med plats för ungefär 4 kor och ett tiotal får och getter. Förrum vid dörren, fållor (kyor) utanför som en solfjäder (67, s. 20). Det största som finns kvar hör till husgrupp 2 (67, s. 27).

@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-19 22:30
+Senast uppdaterad: 2026-10-19 23:05
 
 ## Mål
 
@@ -14,8 +14,8 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 | --- | --- | --- | --- | --- | --- |
 | 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner på `utkast.arterasen.se` | Alf, föreningen |
 | 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Pågår | Mejl på arterasen.se med Cloudflare Email Routing (domänen saknar MX). Domänen till föreningen och föreningens Google-konto (beslutat av föreningen 2026-10-19). Kvar sedan förut: domänerna *Active*, GitHub-appens åtkomst, regel för `main`, fler administratörer. | Alf, föreningen |
-| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude. Ta ställning till föreningens förslag om två läsare per text. | Alf |
-| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast som följer föreningens svar, platslista med elva platser, tolv förslag på fler skyltar | Stäm av föreningens platslista mot utkasten och förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)). Föreningen granskar utkasten. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
+| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Bestäm om Trello räcker utan Google Drive (Alf tvivlar på Drive). Koppla Trello till Claude. Ta ställning till föreningens förslag om två läsare per text. | Alf |
+| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Nio utkast, fem som följer föreningens svar och fyra ur förslagen 6–17, platslista med elva platser | Stäm av föreningens platslista mot utkasten och förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)). Föreningen granskar utkasten. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
 | 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar, föreningen lutar åt en bärbar karta | Bestäm karta, fasta skyltar på stolpar eller båda. Sedan provskylt eller provkarta våren 2027. | Föreningen |
 
 Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
@@ -51,6 +51,8 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [ ] Föreningen: skapa ett Google-konto som föreningen äger och som styrelsen delar (A4, A6)
 - [ ] Alf och föreningen: byta innehavare av arterasen.se till föreningen (A2)
 - [ ] Alf: ta ställning till föreningens förslag om två läsare per text (D2), se [plans/03-innehallsflode.md](plans/03-innehallsflode.md)
+- [ ] Alf: bara Trello, eller Trello och Google Drive? Vad som ändras står i [plans/03-innehallsflode.md](plans/03-innehallsflode.md)
+- [ ] Föreningen: läsa de fyra nya utkasten (Boden, Mjölkboden, Kartan från 1827, Fäbodstigen) på `utkast.arterasen.se` efter merge
 - [ ] Alf och föreningen: stämma av platslistan mot utkasten och förslagen 6–17, och välja karta eller skyltar
 - [ ] Claude, omkring 2026-10-26: kontrollera att den gamla DNS-zonen hos `jean`/`lloyd` har slutat svara
 - [ ] Alf: ta bort grenen `claude/fria-bilder-licens` på GitHub
@@ -64,7 +66,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 
 En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
 
-- 2026-10-19 [Svar från ordföranden](rapporter/2026-10-19-svar-ordforanden.md): svaren på underlaget inlagda, fyra utkast uppdaterade, föreningens platslista, bärbar karta i stället för skyltar, mejlen på arterasen.se saknar MX
+- 2026-10-19 [Svar från ordföranden](rapporter/2026-10-19-svar-ordforanden.md): svaren på underlaget inlagda, fyra utkast uppdaterade och fyra nya ur förslagen, föreningens platslista, bärbar karta i stället för skyltar, mejlen på arterasen.se saknar MX, Trello kanske utan Drive
 - 2026-10-19 [Förslag på fler skyltar](rapporter/2026-10-19-forslag-fler-skyltar.md): tolv förslag ur Bägerfeldts skrifter, fyra med prioritet A, som Claude Docs-dokument och som HTML-fil för ordföranden i `docs/underlag/`
 - 2026-10-19 [Fler bilder och fakta](rapporter/2026-10-19-fler-bilder-fakta.md): alla 24 museibilder av Ärteråsen hämtade, upp till fyra bilder per plats, fler faktarader, ILS 1662 hittad på bild
 - 2026-10-18 [Fritt material och licenser](rapporter/2026-10-18-fritt-material-licens.md): museibilder i två utkast, Ristningarna med Bägerfeldts uppgifter, MIT och CC BY 4.0, det privata konfigurationsrepot nämnt i README

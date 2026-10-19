@@ -30,7 +30,7 @@ DigitaltMuseums API, `https://api.dimu.org/api/solr/select?q=Ärteråsen&wt=json
 | Husknut | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000173) | Eldhusen | [DigitaltMuseum](https://digitaltmuseum.se/021018343963) |
 | Timmervägg | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000174) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343965) |
 | **Gavel med dörr, med "ILS 1662" högst upp**: mjölkboden som Bägerfeldt beskriver (skrift 67, s. 57–58). Beskuren till gaveln. | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000175) | Ristningarna, huvudbild | [DigitaltMuseum](https://digitaltmuseum.se/021018343964) |
-| Samma gavel med dörr, längre ifrån | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000176) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343966) |
+| Samma gavel med dörr, längre ifrån, med lås och taket ovanför | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000176) | Mjölkboden och svalen, huvudbild | [DigitaltMuseum](https://digitaltmuseum.se/021018343966) |
 | Dörr med ristningar, utsida | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000177) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343967) |
 | Dörr med ristningar, insida: namn och årtal 1912–1915 | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000178) | Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343968) |
 | Timmervägg med ristningar, bland annat 1756 | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0 (DMTB 000000180) | Ristningarna | [DigitaltMuseum](https://digitaltmuseum.se/021018343969) |
@@ -48,7 +48,7 @@ Bilder på [arterasen.se](https://www.arterasen.se/). Ingen fotograf anges, och 
 
 | Bild | Bild-URL |
 | --- | --- |
-| Karta över fäbodstigen Näset–Ärteråsen 7,6 km, två versioner. Hämtas till `material/foreningen/`. | [v2-1](https://images.staticjw.com/art/1614/fabodstigen-naset-arterasen-76-km-final-v2-1.jpg), [v2-12](https://images.staticjw.com/art/3420/fabodstigen-naset-arterasen-76-km-final-v2-12.jpg) |
+| Karta över fäbodstigen Näset–Ärteråsen 7,6 km, två versioner. Hämtas till `material/foreningen/`. Version v2-1 används i Fäbodstigen sedan 2026-10-19, krediterad föreningen (svar B2). | [v2-1](https://images.staticjw.com/art/1614/fabodstigen-naset-arterasen-76-km-final-v2-1.jpg), [v2-12](https://images.staticjw.com/art/3420/fabodstigen-naset-arterasen-76-km-final-v2-12.jpg) |
 | Sidhuvudet | [header.jpg](https://images.staticjw.com/art/1423/header.jpg) |
 | Hemgång (korna går hem), 2018 | [hemgang-2-18.jpg](https://images.staticjw.com/art/7578/hemgang-2-18.jpg) |
 | Hemgång | [hemgang.jpg](https://images.staticjw.com/art/6706/hemgang.jpg) |
@@ -80,6 +80,16 @@ Lars Bägerfeldt har fotograferat alla byggnader och ristningar på Ärteråsen,
 | Bilder på DeviantArt | [deviantart.com/oldhouses](https://www.deviantart.com/oldhouses) |
 
 Bilderböckerna hämtas inte till repot, de är troligen stora. B6 och B8 är mest intressanta för skylten om ristningarna.
+
+Bägerfeldt godkände 2026-10-19 att föreningen använder alla hans bilder och skrifter (svar B1). Hans bilder anges med `fotograf: Lars Bägerfeldt` utan `bildlicens`. Bilder ur skrifterna i `material/skrifter/` tas fram med `pdfimages -list` och `pdfimages -j -f <sida> -l <sida>`.
+
+| Bild | Ur | Används |
+| --- | --- | --- |
+| Figur 1, två män som strider med svärd och spjut | Skrift 70, s. 7 | Boden med figurristningarna, huvudbild |
+| Figur 3, ryttare och kanske en älg | Skrift 70, s. 9 | Boden med figurristningarna |
+| Figur 7, man med lykta | Skrift 70, s. 13 | Boden med figurristningarna |
+| Kartan från storskiftet 1827 med husen ifyllda i rött | Skrift 66, s. 50 | Kartan från 1827, huvudbild |
+| Husen på Ärteråsen i dag | Skrift 66, s. 51 | Kartan från 1827 |
 
 ## Får användas bara efter tillstånd
 
