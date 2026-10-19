@@ -6,6 +6,24 @@ Hämtat 2026-10-17 om inget annat står. Avsnitten från Rättviks kommun och fr
 
 Var källorna finns och vad som inte är genomsökt: [kallor.md](kallor.md). Bilder: [bilder.md](bilder.md).
 
+## Föreningens svar 2026-10-19
+
+Källa: ordförandens svar på frågorna i underlaget från 2026-10-18, vidarebefordrade av Alf 2026-10-19. Svaren väger tyngst när källorna säger olika. Numren är frågornas i underlaget.
+
+- **C1 Fäbodens ålder:** föreningen godkänner formuleringen "Belagd sedan 1500-talet. Enligt traditionen ännu äldre." Används i Fäbodvallen och på startsidan sedan 2026-10-19.
+- **C2 Eldhus vid storhetstiden:** föreningen godkänner "17 fäbodgårdar 1827, som mest kanske 22", och 12 eldhus i dag. Används i Eldhusen.
+- **C3 36 brukare:** föreningen godkänner "36 ägare år 1827" (Bägerfeldt skrift 67, s. 32). Används i Eldhusen.
+- **C4 1953 eller 1954:** inte avgjort. Enligt hörsägen dödades flera får av björn. Föreningen undersöker vidare. Hörsägnen används inte.
+- **C5 Hundar:** inte välkomna vecka 25–32, när korna är där. Ersätter arterasen.se:s vecka 32–33. Används i Fjällkorna.
+- **C6 Fäbodstigen:** 7,6 km stämmer. Stigen kan få en egen skylt. Startpunkten är inte besvarad; arterasen.se och föreningens karta säger Brända.
+- **C7 Parkeringen:** 500 m till fäboden.
+- **C8 Ristningen från 1662:** sitter på en mjölkstuga och syns. Platslistan (D1) säger "Eldhuset Kvickens (1662)", så husgruppen kan heta Kvickens. Inte avstämt mot Bägerfeldts husgrupp 13.
+- **C9 Källorna:** skylten ska stå vid Möhrkällan. Om listan över levande källor fortfarande stämmer är inte besvarat.
+- **B4 Museibilden från 2018:** personen på bilden går med på att bilden och hennes namn används. Används i Fjällkorna.
+- **B5 Korna:** kommer från Sunnanheds fjällkor, och namnet får stå med. Används i Fjällkorna.
+- **B7 Brita Eriksdotter:** föreningen vill ha med henne. Släktforskare i Näset är kontaktade.
+- **D1 Husen:** föreningen vet inte vilka hus som är årsringsdaterade. Se [Årsringsdateringar](#årsringsdateringar).
+
 ## Föreningens sajt, startsidan
 
 Källa: <https://www.arterasen.se/>
@@ -18,7 +36,7 @@ Källa: <https://www.arterasen.se/>
 - **Eldhusen** är öppna för umgänge och spel.
 - **Vatten:** levande källor är Spjutgravskällan och Möhrkällan. Kvickkällan (bakom Lönnerdals) och Ninnis källa kan återupplivas. Tre grävda brunnar och en borrad brunn vid serveringen. Spjutgravskällans vatten beskrivs som mycket gott.
 - **Renovering av vatten 2025:** 30 000 kr från bygdepengen. Möhrkällan och Bäckmans brunn renoverades.
-- **Hundar** är inte välkomna vecka 32 och 33, när korna är där.
+- **Hundar** är inte välkomna vecka 32 och 33, när korna är där. Föreningen säger vecka 25–32 (svar 2026-10-19).
 - **Pengar till informationen:** föreningen har fått bidrag från Vindkraftsfonden, bland annat till böcker och informationsblad med QR-koder, planerade till 2027. Rättviks kommun hanterar medlen.
 - **Renoveringar** finansieras till största delen av länsstyrelsen. Taken som ägs av Näsets bysamfällighet och förvaltas av föreningen är i gott skick.
   - 2023: nytt tak på Karles lada (Almbergs byggnadsvård)
@@ -252,7 +270,8 @@ Källa: [NordGen, Swedish Mountain Cattle](https://www.nordgen.org/en/?p=18127) 
 
 Uppgifter som inte är belagda. Får inte användas förrän föreningen bekräftat dem.
 
-- Muntlig tradition om att morakarlar röjde Ärteråsen på 1400- eller 1500-talet (Bägerfeldt skrift 66). Det kan vara grunden till att föreningen skriver "anor sedan 1400-talet".
+- Muntlig tradition om att morakarlar röjde Ärteråsen på 1400- eller 1500-talet (Bägerfeldt skrift 66). Det kan vara grunden till att föreningen skriver "anor sedan 1400-talet". Får sedan 2026-10-19 nämnas som tradition, "enligt traditionen ännu äldre" (föreningen, C1), men inte som fakta.
+- Hörsägen om att flera får dödades av björn, kanske kring att bruket upphörde 1953–54 (föreningen, C4). Föreningen undersöker.
 
 Det som stod här 2026-10-17 är nu belagt: "ett 30-tal byggnader" och "landets största samling eldhus" (Rättviks kommun), utsiktstornet (Rättviks kommun, furudal.nu), att Siljansleden passerar (Rättviks kommun, furudal.nu) och fäbodstigen 7,6 km från Brända (arterasen.se/aktiviteter). Flera av dem motsäger andra källor, se nedan.
 
@@ -260,10 +279,10 @@ Det som stod här 2026-10-17 är nu belagt: "ett 30-tal byggnader" och "landets 
 
 | Fråga | Uppgifter |
 | --- | --- |
-| Hur gammal fäboden är | Anor sedan 1400-talet (arterasen.se, Visit Dalarna). Anor från 1600-talet (Rättviks kommun, furudal.nu). Belagd i mitten av 1500-talet som "Erte tjärn", säkert 1664, namnet 1686 (Bägerfeldt). |
-| Eldhus vid storhetstiden | 22 eldhus och 36 brukare 1850 (arterasen.se, Visit Dalarna engelska). Minst 18 eldhus, 36 brukare och 200 djur (Visit Dalarna, sju underverk). 17 husgrupper med 36 ägare 1827, och upp mot 22 husgrupper runt 1870-talet enligt en obekräftad källa (Bägerfeldt). |
+| ~~Hur gammal fäboden är~~ Avgjord 2026-10-19: "belagd sedan 1500-talet, enligt traditionen ännu äldre" | Anor sedan 1400-talet (arterasen.se, Visit Dalarna). Anor från 1600-talet (Rättviks kommun, furudal.nu). Belagd i mitten av 1500-talet som "Erte tjärn", säkert 1664, namnet 1686 (Bägerfeldt). |
+| ~~Eldhus vid storhetstiden~~ Avgjord 2026-10-19: 17 fäbodgårdar och 36 ägare 1827, som mest kanske 22 | 22 eldhus och 36 brukare 1850 (arterasen.se, Visit Dalarna engelska). Minst 18 eldhus, 36 brukare och 200 djur (Visit Dalarna, sju underverk). 17 husgrupper med 36 ägare 1827, och upp mot 22 husgrupper runt 1870-talet enligt en obekräftad källa (Bägerfeldt). |
 | Antal byggnader i dag | Ett 30-tal (Rättviks kommun). Ett 20-tal (furudal.nu). 12 eldhus är alla överens om. |
-| Hundar | Inte vecka 32–33 när korna är där (arterasen.se). Inte på sommaren (furudal.nu). Inte alls (Visit Dalarna). |
-| Fäbodstigen | 7,6 km från Brända, skyltad från Brända och Näsets bystuga (arterasen.se). Ca 6,5 km från Brändavägen i Näset via Siljansleden (Rättviks kommun). Ca 7 km från Näset (furudal.nu). Troligen samma stig räknad från olika punkter. |
-| Parkeringen | 500 m till fäboden (arterasen.se, Visit Dalarna). Ca 300 m (Rättviks kommun). |
-| När bruket upphörde | Brukades till 1954 (arterasen.se, Visit Dalarna). Sista sommaren med vallning var 1953 (Bägerfeldt skrift 67, s. 57). Troligen samma sak räknat på olika sätt. |
+| ~~Hundar~~ Avgjord 2026-10-19: vecka 25–32 | Inte vecka 32–33 när korna är där (arterasen.se). Inte på sommaren (furudal.nu). Inte alls (Visit Dalarna). |
+| Fäbodstigen (7,6 km bekräftad 2026-10-19, startpunkten inte) | 7,6 km från Brända, skyltad från Brända och Näsets bystuga (arterasen.se). Ca 6,5 km från Brändavägen i Näset via Siljansleden (Rättviks kommun). Ca 7 km från Näset (furudal.nu). Troligen samma stig räknad från olika punkter. |
+| ~~Parkeringen~~ Avgjord 2026-10-19: 500 m | 500 m till fäboden (arterasen.se, Visit Dalarna). Ca 300 m (Rättviks kommun). |
+| När bruket upphörde (föreningen undersöker) | Brukades till 1954 (arterasen.se, Visit Dalarna). Sista sommaren med vallning var 1953 (Bägerfeldt skrift 67, s. 57). Troligen samma sak räknat på olika sätt. |

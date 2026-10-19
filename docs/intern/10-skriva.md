@@ -37,4 +37,4 @@ uppdaterad: 2026-10-19
 
 ## Engelska och tyska
 
-Claude översätter texten. Kan du engelska eller tyska bra får du gärna läsa översättningen i förhandsvisningen och kommentera på kortet.
+Du skriver bara på svenska. Claude översätter texten till engelska och tyska, och besökarens telefon väljer språket själv. Kan du engelska eller tyska bra får du gärna läsa översättningen i förhandsvisningen och kommentera på kortet. Se *Allt börjar på svenska* på [Så jobbar vi](../).

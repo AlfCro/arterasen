@@ -37,7 +37,7 @@ DigitaltMuseums API, `https://api.dimu.org/api/solr/select?q=Ärteråsen&wt=json
 | Närbild på ristade initialer | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000181) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343973) |
 | Hölada | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000183) | Fäbodvallen | [DigitaltMuseum](https://digitaltmuseum.se/021018343972) |
 | Tupp vid ett hus | Jennie Tiderman-Österberg, 2018 | CC BY 4.0 (DMTB 000000185) | Nej | [DigitaltMuseum](https://digitaltmuseum.se/021018343977) |
-| Fjällkor vid gärdesgård, och en person som namnges i museets titel. **Beskuren så att personen inte syns.** Hela bilden kräver personens samtycke. | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0 (DMTB 000000186) | Fjällkorna, huvudbild, beskuren | [DigitaltMuseum](https://digitaltmuseum.se/021018343976) |
+| Fjällkor vid gärdesgård, och en person som namnges i museets titel. Personen gick 2026-10-19 med på att hela bilden och hennes namn används (svar B4). | Jennie Tiderman-Österberg, 2018-06-20 | CC BY 4.0 (DMTB 000000186) | Fjällkorna, huvudbild, hela bilden med namn i bildtexten sedan 2026-10-19 | [DigitaltMuseum](https://digitaltmuseum.se/021018343976) |
 | Fäbodristning på torrfura, bomärke, initialer och 1866. Från Ore socken, inte uttryckligen Ärteråsen. | Hansa Andersson, insamlad 2023 | CC BY 4.0 (DM 26652) | Nej, inte från Ärteråsen | [DigitaltMuseum](https://digitaltmuseum.se/0210214508679) |
 
 Bilderna från 2018 är tagna inom Dalarnas museums projekt *Fäbodlandskap och vallmusik*, troligen samma dag (2018-06-20 för de som har datum).

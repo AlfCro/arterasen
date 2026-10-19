@@ -1,6 +1,6 @@
 ---
 titel: The fire houses
-ingress: The fire houses were where people cooked, processed the milk and slept. Twelve of the 22 that stood here around 1850 remain.
+ingress: The fire houses were where people cooked, processed the milk and slept. At most there were perhaps 22 farm units here. Twelve fire houses remain.
 status: utkast
 bildtext: Inside a fire house at Ärteråsen in 1926, in a building dated 1775. Benches along the walls and a pot hanging over the fire in the middle of the earth floor.
 fler_bilder:
@@ -9,10 +9,12 @@ fler_bilder:
   - bild: bild-3.jpg
     bildtext: Old tools on a timber wall, among them a saw and a chain, 2018.
 fakta:
-  - rubrik: Fire houses around 1850
-    text: "22"
-  - rubrik: People working here around 1850
+  - rubrik: Farm units in 1827
+    text: "17"
+  - rubrik: Owners in 1827
     text: "36"
+  - rubrik: At most
+    text: Perhaps 22 farm units
   - rubrik: Fire houses today
     text: "12"
   - rubrik: Size
@@ -27,6 +29,6 @@ The eldhus, or fire house, was home and kitchen on the summer farm. A fire house
 
 A large copper kettle hung over the fire. In it messmör was boiled for many hours, and the milk was also made into cheese and butter. Several people often shared one fire house.
 
-In the mid-1800s there were 22 fire houses at Ärteråsen and 36 people working the farm. Twelve fire houses still stand, and they have several different owners. When the timber was examined in 2024, a log in one of the fire houses had its outermost tree ring from 1646.
+At the land reform of 1827 there were 17 farm units with 36 owners, and at most there were perhaps 22. Twelve fire houses still stand, and they have several different owners. When the timber was examined in 2024, a log in one of the fire houses had its outermost tree ring from 1646.
 
 Inside, the walls carry many of the farm's carvings. Read more about them at sign 3. The fire houses are still in use, for get-togethers, games and folk music during the association's culture week.

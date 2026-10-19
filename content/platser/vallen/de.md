@@ -1,6 +1,6 @@
 ---
 titel: Die Sommeralm
-ingress: Vom 15. Jahrhundert bis 1954 trieben die Bewohner von Näset jeden Sommer ihre Tiere hier herauf.
+ingress: Jeden Sommer trieben die Bewohner von Näset ihre Tiere hier herauf. Die Alm ist seit dem 16. Jahrhundert belegt und wurde bis 1954 genutzt.
 status: utkast
 bildtext: Die Sommeralm Ärteråsen im Jahr 1916. Eine Frau mit einer Kuh vor einem Blockhaus, rundherum ein Holzzaun.
 fler_bilder:
@@ -13,8 +13,8 @@ fler_bilder:
 fakta:
   - rubrik: Sommeralm von
     text: Dorf Näset
-  - rubrik: Ursprung
-    text: 15. Jahrhundert
+  - rubrik: Belegt seit
+    text: 16. Jahrhundert
   - rubrik: Blütezeit
     text: Mitte des 19. Jahrhunderts
   - rubrik: Tiere in der Blütezeit
@@ -29,7 +29,7 @@ fakta:
 
 Eine Fäbod ist eine Sommeralm im Wald. Sobald der Schnee geschmolzen war, trieb man die Tiere des Dorfes hier herauf, damit auf den Wiesen daheim Heu für den Winter wachsen konnte. Den Sommer über lebten hier die Sennerinnen, auf Schwedisch fäbodkullor. Sie hüteten die Tiere, molken sie und machten aus der Milch Butter, Käse und Messmör, eine süßliche Molkenbutter.
 
-Ärteråsen war die Sommeralm des Dorfes Näset und reicht bis ins 15. Jahrhundert zurück. Ihre Blütezeit erlebte sie Mitte des 19. Jahrhunderts, als hier einige hundert Tiere weideten. Genutzt wurde die Alm bis 1954.
+Ärteråsen war die Sommeralm des Dorfes Näset. Sie ist seit dem 16. Jahrhundert belegt und nach der Überlieferung noch älter. Ihre Blütezeit erlebte sie Mitte des 19. Jahrhunderts, als hier einige hundert Tiere weideten. Genutzt wurde die Alm bis 1954.
 
 Heute weiden hier im Sommer Fjällrinder, und der Verein hält das Wissen über das Almleben mit einer jährlichen Kulturwoche lebendig.
 

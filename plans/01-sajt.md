@@ -36,7 +36,7 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 
 - [x] Granska och merga PR:en med grundbygget (Alf, 2026-10-17)
 - [ ] Testa på telefoner på plats när hosting är klar (föreningen, Alf)
-- [ ] Bestäm om sajten ska ha besöksstatistik, till exempel Cloudflare Web Analytics utan kakor (Alf)
+- [ ] Besöksstatistik utan kakor: föreningen vill kunna räkna hur många som skannar (svar D5, 2026-10-19). Förslag: Cloudflare Web Analytics i projektet `arterasen-info`, som räknar per sida utan kakor. Det kräver ett litet skript som Cloudflare lägger in; sidorna fungerar som förut utan det. Alf slår på det i dashboarden, Claude kontrollerar att `verify` fortfarande är grön (Alf, Claude)
 
 ## Öppna frågor
 
@@ -48,3 +48,4 @@ En lätt, statisk sajt som öppnas från en QR-kod på fäboden och visar platse
 - 2026-10-17: Grundbygge med generator, tre språk, fem exempelplatser, skyltar, interna sidor, service worker och kontroller (Claude).
 - 2026-10-17: PR #1 mergad. `granskning`-grenen skapades av workflowen direkt, eftersom den själv begär `contents: write`. Repots standardinställning för Actions behöver inte ändras (Alf, Claude).
 - 2026-10-19: `fler_bilder`, bredd och höjd på bilderna, och en kontroll i `npm run verify` att alla bilder laddas. Testet av språkval väntar nu in sidbytet, det föll ibland på tyngre sidor (Claude).
+- 2026-10-19: Föreningen vill ha besöksstatistik utan kakor (D5) (Claude).

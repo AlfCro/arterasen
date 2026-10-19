@@ -2,17 +2,25 @@
 titel: Så jobbar vi
 flik: Så jobbar vi
 ingress: Så här blir en text till en skylt med QR-kod. Du behöver bara Google Drive och Trello, och båda fungerar i mobilen.
-uppdaterad: 2026-10-17
+uppdaterad: 2026-10-19
 ---
 
 ## Kort version
 
-1. **Skriv** texten om en plats i ett Google-dokument i {{drive}}. Använd mallen.
+1. **Skriv** texten om en plats på svenska i ett Google-dokument i {{drive}}. Använd mallen.
 2. **Säg till** genom att flytta platsens kort på {{trello}} till listan *Klar för Claude*.
 3. **Claude** gör i ordning sidan och översätter den till engelska och tyska. Sedan lägger Claude en länk till en förhandsvisning på kortet och flyttar det till *Granska*.
 4. **Läs** förhandsvisningen i mobilen. Ser allt bra ut flyttar du kortet till *Godkänt*. Vill du ändra något skriver du en kommentar på kortet och flyttar tillbaka det till *Klar för Claude*.
 5. **Claude publicerar** sidan på {{publik}} och lägger skylten att skriva ut på kortet.
 6. **Skylten** trycks och sätts upp. Flytta kortet till *Skylt uppsatt*.
+
+## Allt börjar på svenska
+
+- Varje plats har **en text, och den skrivs på svenska**. Ingen behöver skriva något på engelska eller tyska.
+- Claude översätter den svenska texten till engelska och tyska. Översättningarna säger samma sak i samma ordning, så det är den svenska texten som gäller. Ändras den, ändras översättningarna också.
+- En som kan engelska och en som kan tyska läser översättningarna och säger till om något låter fel. De skriver inget eget.
+- **Besökaren behöver inte välja språk.** Sidan öppnas på telefonens språk: svenska för svenska, norska, danska och finska telefoner, tyska för tyska och engelska för alla andra. Det går att byta språk högst upp på sidan.
+- Därför räcker **en QR-kod per plats** för alla tre språken. En skylt eller karta behöver inte göras i tre versioner.
 
 ## Listorna på Trello-tavlan
 

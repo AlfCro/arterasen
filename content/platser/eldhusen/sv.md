@@ -1,6 +1,6 @@
 ---
 titel: Eldhusen
-ingress: I eldhusen lagade man mat, tog hand om mjölken och sov. Av de 22 eldhus som fanns kring 1850 står tolv kvar.
+ingress: I eldhusen lagade man mat, tog hand om mjölken och sov. Som mest fanns kanske 22 fäbodgårdar här. Tolv eldhus står kvar.
 nummer: 2
 status: utkast
 bild: bild.jpg
@@ -20,10 +20,12 @@ fler_bilder:
     bildkalla: https://digitaltmuseum.se/021018343960
     bildtext: Gamla redskap på en timmervägg, bland annat en såg och en kedja, 2018.
 fakta:
-  - rubrik: Eldhus kring 1850
-    text: "22"
-  - rubrik: Brukare kring 1850
+  - rubrik: Fäbodgårdar 1827
+    text: "17"
+  - rubrik: Ägare 1827
     text: "36"
+  - rubrik: Som mest
+    text: Kanske 22 fäbodgårdar
   - rubrik: Eldhus i dag
     text: "12"
   - rubrik: Storlek
@@ -36,9 +38,11 @@ kallor:
   - https://www.arterasen.se/om-arterasen
   - https://visitdalarna.se/en/do/attractions/arterasens-summer-farm
   - https://swedishspoon.com/arterasen-summer-farm
+  - "Lars Bägerfeldt, Fäbodens kullor och dalkarlar (skrift 67, 2024), s. 6 och 32: https://lasse345.wordpress.com/wp-content/uploads/2024/10/67-fabodens-kullor-och-dalkarlar-2024-10-01.pdf"
   - "Lars Bägerfeldt, Fäbodar. Fakta och funderingar (skrift 88, 2024), s. 7: https://lasse345.wordpress.com/wp-content/uploads/2024/04/88-fabodar-fakta-och-funderingar-2024-04-29-1.pdf"
   - "Lars Bägerfeldt, Årsringsdatering av fäbodhus (skrift 89, 2025): https://lasse345.wordpress.com/wp-content/uploads/2025/07/89-arsringsdatering-av-fabodhus-2025-07-17.pdf"
   - "Dalarnas Spelmansförbund, låtkurs på Ärteråsen 2019: https://www.dalarnasspelmansforbund.se/kalender/2019/8/9/rtersens-fbod-furudal"
+  - "Ärteråsens Kulturförening, svar på projektets frågor 2026-10-19"
   - "Bildtexten till huvudbilden: Sigurd Erixon, bild 11, repro hos Västmanlands läns museum: https://digitaltmuseum.se/0210114263144"
 ---
 
@@ -46,6 +50,6 @@ Eldhuset var fäbodens hem och kök. Ett eldhus är ungefär fyra gånger fyra m
 
 Över elden hängde en stor kopparkittel. I den kokades messmör i många timmar, och mjölken blev också till ost och smör. Ofta delade flera personer på samma eldhus.
 
-I mitten av 1800-talet fanns 22 eldhus på Ärteråsen och 36 brukare. Tolv eldhus står kvar i dag, och de har flera olika ägare. När timret undersöktes 2024 hade en stock i ett av eldhusen sin yttersta årsring från 1646.
+Vid storskiftet 1827 fanns 17 fäbodgårdar med 36 ägare, och som mest var de kanske 22. Tolv eldhus står kvar i dag, och de har flera olika ägare. När timret undersöktes 2024 hade en stock i ett av eldhusen sin yttersta årsring från 1646.
 
 På väggarna inne i eldhusen finns många av fäbodens ristningar. Läs mer om dem vid skylt 3. Eldhusen används fortfarande, till umgänge, spel och spelmansmusik under föreningens kulturvecka.

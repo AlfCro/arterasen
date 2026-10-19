@@ -2,7 +2,7 @@
 
 Status: Pågår
 Ansvarig: Alf
-Senast uppdaterad: 2026-10-18
+Senast uppdaterad: 2026-10-19
 
 ## Mål
 
@@ -50,7 +50,30 @@ Kontrollerat 2026-10-17 och 2026-10-18 med publika uppslag:
 
 ## Väntar på beslut
 
-Inget. Frågan om två adresser avgjordes 2026-10-18, se *Beslut*.
+### Mejl på arterasen.se (Alf)
+
+Läget 2026-10-19, från publika uppslag mot `dns.google`:
+
+- **arterasen.se har ingen MX-post**, varken i Alfs zon eller i den gamla. Det fanns ingen före flytten heller (se *Före flytten*). Post till en adress på arterasen.se kan inte levereras. Ordföranden har troligen ställt in sitt mejlprogram efter N.nu:s instruktioner, och det gäller bara att skicka. Hon har nämnt `info@arterasen.se` (svar A3).
+- **N.nu används inte för mejlen.** N.nu:s manual beskriver bara vidarebefordran till Gmail och hänvisar till supporten för resten. Alf kontaktar inte N.nu (2026-10-19).
+- **Den gamla zonen svarar fortfarande.** Ett uppslag fick SOA och NS från `jean`/`lloyd` (den gamla zonen), ett annat SOA från `betty` (Alfs). Vissa resolvrar håller alltså kvar den gamla zonen, som saknar `info` och inte får nya poster. Det bör upphöra av sig självt när Cloudflare tar bort den flyttade zonen. Kontrollera igen omkring 2026-10-26.
+
+**Förslag (Claude):**
+
+1. Föreningens eget Google-konto (A6) blir också styrelsens gemensamma adress (A4) och kontaktadress i GitHub, Cloudflare, Trello och Name ISP. Det ligger inte på arterasen.se, vilket Cloudflare-inloggningen kräver (se *Fler än en person kommer åt allt*).
+2. **Cloudflare Email Routing** i Alfs zon tar emot post till `info@arterasen.se` och skickar den vidare till en vanlig brevlåda, i första hand föreningens Gmail. Gratis, utan N.nu och utan egen server. Cloudflare lägger själv in tre MX (`route1`–`route3.mx.cloudflare.net`), SPF (`v=spf1 include:_spf.mx.cloudflare.net ~all`) och en DKIM-post (`cf2024-1._domainkey`).
+3. Ska styrelsen kunna svara från `info@arterasen.se`: *Skicka e-post som* i Gmail, och SPF utökas med `include:_spf.google.com`.
+
+Email Routing tar bara emot och skickar vidare. Det är ingen brevlåda.
+
+**Steg i Cloudflares dashboard (Alf, cirka 10 minuter):**
+
+- [ ] Fråga ordföranden vilka adresser på arterasen.se hon använder, och vart posten ska gå tills föreningens Gmail finns
+- [ ] arterasen.se → *Email* → *Email Routing* → aktivera. Godkänn posterna Cloudflare föreslår: tre MX och SPF på `@`, och DKIM. Rör inte CNAME `@` och `www`.
+- [ ] *Destination addresses*: lägg till mottagaren. Mottagaren klickar på länken i Cloudflares bekräftelsemejl.
+- [ ] *Routing rules*: `info@arterasen.se` → mottagaren. Använder hon fler adresser: en regel per adress, eller *Catch-all* till samma mottagare.
+- [ ] Skickar hon från adressen via Gmail: ändra SPF-posten till `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all`. Via något annat: fråga vilket och lägg till dess `include`.
+- [ ] Testa: skicka från en annan adress till `info@arterasen.se`. Claude kontrollerar MX och SPF med publika uppslag.
 
 ## Klart när
 
@@ -58,6 +81,7 @@ Inget. Frågan om två adresser avgjordes 2026-10-18, se *Beslut*.
 - [x] En PR får automatiskt en förhandsvisningslänk (PR #6 fick en kommentar och en kontroll per Pages-projekt, 2026-10-18)
 - [ ] `https://utkast.arterasen.se/` visar `main` med utkast. Svarar och har `Disallow: /` som utkastbygget ska, men sidan är inte läst i webbläsare.
 - [ ] Domänen arterasen.se förnyas automatiskt och någon i föreningen vet hur
+- [ ] Post till `info@arterasen.se` kommer fram
 
 ## Beslut
 
@@ -69,6 +93,7 @@ Inget. Frågan om två adresser avgjordes 2026-10-18, se *Beslut*.
 - 2026-10-18: **Claude får läsa utkast och `/intern/`** (Alf). `robots.txt` släpper in `Claude-User`, Anthropics agent för hämtningar som en person ber Claude om, så att Claude kan kontrollera sidorna. Alla andra robotar, också träningsroboten `ClaudeBot`, följer reglerna som förut, och `noindex` gäller fortfarande.
 - 2026-10-18: **Tillåtande licenser** (Alf): MIT för koden och CC BY 4.0 för texterna, med föreningen som namn att ange. Bilder och `material/` har egna villkor. Volontärerna går med på CC BY när de lämnar en text, vilket står i `docs/intern/10-skriva.md` och Drive-mallen. Ingen volontärtext fanns ännu. Se [LICENSER.md](../LICENSER.md).
 - 2026-10-18: **Det privata repot `AlfCro/arterasen-config` nämns öppet** (Alf). README säger att drift- och kontouppgifter finns där och varför det är privat. Innehållet stannar där.
+- 2026-10-19 (föreningen, svar A2–A6): **Domänen ska ägas av föreningen** med dess organisationsnummer, med automatisk förnyelse. **Styrelsens firmatecknare ansvarar för inloggningarna**, och en av dem är andra person med inloggning till varje tjänst. Föreningen ska ha **ett eget Google-konto** och **en adress som styrelsen delar**. Namnen och personnumren står i svaret, inte här.
 - 2026-10-17: **Alfs egen server används inte.** Föreningen ska inte vara beroende av en privatpersons server (Alf).
 - 2026-10-17: Huvudsajten och den här sajten hålls isär. `/intern/` ligger på den publika sajten men är olistad och utan hemligheter.
 
@@ -78,12 +103,12 @@ Inget. Frågan om två adresser avgjordes 2026-10-18, se *Beslut*.
 
 Sajten ska fungera i många år och får inte hänga på en enda person. Varje tjänst ska ha minst två personer som kan logga in, och en adress som föreningen kommer åt som kontaktmejl. Inloggningsuppgifter skrivs aldrig i repot eller på `/intern/`.
 
-- [ ] Välj eller skapa en mejladress som föreningen kommer åt. Använd den som kontaktadress i tjänsterna nedan.
+- [ ] Skapa en adress som styrelsen delar (föreningen vill det, A4) och ett Google-konto som föreningen äger (A6). Förslag: samma konto, se *Mejl på arterasen.se*. Använd den som kontaktadress i tjänsterna nedan.
 - [ ] **GitHub:** ett personligt repo kan bara ha en ägare, och medarbetare får inte adminrätt. Skapa en gratis organisation, flytta repot dit och lägg till en andra ägare. Cloudflare är kopplat sedan 2026-10-18, så Cloudflare-appen måste då godkännas för det nya repot och kopplingen kontrolleras i båda Pages-projekten. Claude uppdaterar `AlfCro/arterasen` i `package.json`, `AGENTS.md`, `docs/arbetsflode.md` och den här filen. GitHub omdirigerar de gamla adresserna under tiden.
 - [ ] Cloudflare, senast innan skyltarna trycks våren 2027: döp om kontot till föreningens namn, lägg till en person i styrelsen som *Super Administrator*, och en tredje inloggning med föreningens mejladress, också *Super Administrator*. Då kan styrelsen alltid ta sig in genom att återställa lösenordet, även om både Alf och styrelsepersonen slutar. Mejladressen får inte ligga på arterasen.se, eftersom DNS för den ligger i samma konto. Tvåstegsverifiering på alla, reservkoderna hos styrelsen.
 - [ ] Trello: minst två administratörer på arbetsytan och tavlan.
 - [ ] Google Drive: mappen ska ägas av föreningens konto, inte av ett privat. En fil ägs av den som skapade den och försvinner om det kontot tas bort.
-- [ ] Name ISP: domänen ägs juridiskt av den som står som innehavare, inte av den som har inloggningen. Utred att flytta arterasen.se till föreningen med dess organisationsnummer.
+- [ ] Name ISP: domänen ägs juridiskt av den som står som innehavare, inte av den som har inloggningen. Föreningen vill äga den (A2): byt innehavare till föreningen med dess organisationsnummer. Nuvarande innehavare behöver troligen godkänna bytet. Firmatecknarna ska ha inloggningen (Alf, föreningen).
 - [ ] Skriv upp vem som har inloggning till vad, på ett ställe som föreningen kommer åt men utanför repot, till exempel i ett styrelseprotokoll.
 - [ ] Arbetsflödet med Claude går via Alfs Claude-konto. Kontrollera att README räcker för att någon annan ska kunna lägga in och publicera en text för hand.
 
@@ -142,10 +167,10 @@ Beslutat och genomfört 2026-10-18, liksom `info` och `utkast` samma kväll. Kva
 
 ## Öppna frågor
 
-- Vem i föreningen blir andra person med inloggning till GitHub, Cloudflare, Trello, Drive och Name ISP?
+- ~~Vem blir andra person med inloggning?~~ En av styrelsens firmatecknare (A5).
 - Ska repot flyttas till en GitHub-organisation? Cloudflare är redan kopplat, så båda Pages-projekten behöver kopplas om efter flytten.
-- Vem betalar domänen framöver, vems kort dras vid förnyelsen 2027-01-22, och ska domänen stå kvar på nuvarande innehavare eller flyttas till föreningen?
-- Vem har N.nu-inloggningen för huvudsajten? Den behövs om något måste ändras hos N.nu, till exempel om HTTPS slutar fungera.
+- Vem betalar domänen framöver, och vems kort dras vid förnyelsen 2027-01-22? Att den ska flyttas till föreningen är bestämt (A2).
+- ~~Vem har N.nu-inloggningen?~~ Ordföranden sköter hemsidan (A1).
 
 Frågorna om domän, konton och huvudsajten skickades till föreningens ordförande 2026-10-18 som ett underlag (se rapporten för 2026-10-18).
 
@@ -160,3 +185,4 @@ Frågorna om domän, konton och huvudsajten skickades till föreningens ordföra
 - 2026-10-18: Pages-projekten `arterasen-info` och `arterasen-utkast` skapade med `info.arterasen.se` och `utkast.arterasen.se` (Alf). Pages valt framför Workers (Claude). `granskningUrl` pekar på utkastsajten och `granskning.yml` är borttagen. `info.arterasen.se` och huvudsajten svarar. `robots.txt` släpper in `Claude-User` (Claude).
 - 2026-10-18: Licenser valda: MIT och CC BY 4.0 (Alf). `LICENSE`, `LICENSER.md`, licensrad i sidfoten. README nämner det privata konfigurationsrepot (Claude).
 - 2026-10-18: PR #7 mergad (ersatte #6, som stängdes när #5:s gren togs bort). Båda sajterna byggda från `main` och kontrollerade. Grenar kan inte raderas från sessionen. Anteckningar för nästa agent i AGENTS.md och `docs/arbetsflode.md` (Claude).
+- 2026-10-19: Ordförandens svar A1–A6: hon sköter hemsidan, domänen ska ägas av föreningen, firmatecknarna ansvarar för inloggningarna, föreningen får eget Google-konto och gemensam adress. arterasen.se saknar MX-post, så post till adresser där kommer inte fram; förslag om Cloudflare Email Routing. Den gamla zonen svarar fortfarande för vissa resolvrar (Claude).
