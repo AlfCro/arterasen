@@ -21,6 +21,7 @@ Senast uppdaterad: 2026-10-19
 - **Fritt material används direkt i utkasten** sedan 2026-10-18: bilder och uppgifter med fri licens eller fria villkor väntar inte på svar. Sedan 2026-10-19 har fyra av fem platser museibilder, upp till fyra extra bilder per plats och fler faktarader. Källorna saknar fortfarande bild. Ristningarna, Eldhusen och Fjällkorna bygger också på Lars Bägerfeldts skrifter. Upphovspersonen kontaktas parallellt, och för en privatperson ska det vara gjort innan platsen godkänns.
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
+- **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Föreningen väljer vilka som blir skyltar.
 - **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
 - **Väntar på föreningen:** svar om konton, källor, bilder och fakta. Frågorna skickades till ordföranden 2026-10-18.
 
@@ -48,7 +49,7 @@ Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/
 | Sökväg | Vad |
 | --- | --- |
 | `content/` | Texterna: en mapp per plats i `content/platser/` med `sv.md`, `en.md` och `de.md`, startsidan, mallen och [listan över uppsatta skyltar](content/tryckta-skyltar.json) |
-| `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, mallen för Google Drive, och `docs/intern/` som blir `/intern/` på sajten |
+| `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, mallen för Google Drive, `docs/intern/` som blir `/intern/` på sajten, och underlag till föreningen i [docs/underlag/](docs/underlag/) |
 | `material/` | Kopior av fria bilder och skrifter, med licens per fil i [material/hamta.json](material/hamta.json). Syns på GitHub. En bild som ska visas på sajten krymps först till `content/` med `npm run bild`. Se [material/LASMIG.md](material/LASMIG.md). |
 | `plans/` | En delplan per initiativ: mål, beslut, att göra, öppna frågor och logg |
 | `rapporter/` | En rapport per arbetspass |

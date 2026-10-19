@@ -204,6 +204,22 @@ Skrift 88 och 67.
 - Karl XI:s förordning 1686 ville ha kvinnor i stället för pojkar som vallhjon. I Ore följdes den i hög grad (skrift 88, s. 48).
 - "Mas" användes inte i bygden. Unga män kallades gosse eller dalkarl (skrift 67, s. 7).
 
+### Husen, sysslorna och bygden
+
+Kontrollerat mot PDF-texten 2026-10-19 ✓. Förslagen till nya skyltar som bygger på detta, med fler sidhänvisningar, står i [underlag/2026-10-19-fler-skyltar.html](underlag/2026-10-19-fler-skyltar.html).
+
+- **Eldhus och mjölkbod** byggdes alltid i par, gavel mot gavel, med en sval emellan under eldhusets förlängda tak. Svalen är 1,7–2,7 m bred, i snitt 2,3 m (skrift 66, s. 31; 67, s. 19, 26).
+- **Mjölkboden** är ungefär hälften så stor som eldhuset och lägre, för att hålla kylan. Tät stenmur under syllen, takbärande ryggås, ingen rököppning, aldrig trägolv. Det enda huset med lås. I husgrupp 10, 11 och 13 är gluggen på gaveln utsågad som ett W eller en fjäril (67, s. 19, 23, 25–26; 66, s. 31).
+- **Fähuset** låg ett stenkast bort och var minst dubbelt så stort, med plats för ungefär 4 kor och ett tiotal får och getter. Förrum vid dörren, fållor (kyor) utanför som en solfjäder (67, s. 20). Det största som finns kvar hör till husgrupp 2 (67, s. 27).
+- **Ägande:** husgrupp 3 är samfälld och 14 delvis. Husgrupp 7 är bara ett fähus, 14 mest tre fähus (67, s. 11–12).
+- **Boden vid serveringen** räknas till husgrupp 3 och är flyttad från Skattungbyn. Stockarna kommer troligen från ett rivet eldhus, med årtal främst från 1690-talet och början av 1700-talet, och tio figurristningar: strid med svärd och spjut, jakt, ryttare, en man med lykta (67, s. 12, 91; 70, s. 7–16).
+- **Kartan från 1827 jämförd med i dag:** 5 eldhus står där kartan visar dem, 6 är flyttade en kort bit, 3 står där kartan inte har något hus och 7 är borta. Husgrupperna i sydost vid bäcken finns inte kvar (66, s. 51–52). Hus har flyttats hit från Skattungbyn och Sunnanhed (67, s. 31). Stockar numrerades med romerska siffror när husen flyttades (66, s. 33).
+- **Vatten:** minst nio källor med klart vatten och två grävda brunnar, enligt en lokal kännare (66, s. 52). Fler än arterasen.se räknar upp.
+- **Lönnskrift:** 126 namn är skrivna med bokstävernas plats i alfabetet i romerska siffror, till exempel BED som II : V : IV, åren 1838–1904 (67, s. 6, 95).
+- **Djur och mjölk:** omkring 85 kor och 200 getter på vallen på 1820-talet, en uppskattning (67, s. 14). Messmöret gav ungefär 20 % mer ut av mjölken och krävde mycket ved (66, s. 40). Getterna försvann när mejerierna bara köpte komjölk; får följde aldrig med till fäboden (67, s. 16).
+- **Vådaelden 1686:** första gången namnet förekommer förlorade en bonde i Skattungbyn en mjölkstuga och ett eldhus med två kopparkittlar, smör och ost (66, s. 45–46).
+- **Bygden:** vid Oresjön ligger Dalarnas största gravfält, 45 runda stensättningar från omkring 150–400 e.Kr. (66, s. 7).
+
 ### Fäbodgårdarna och byn
 
 Skrift 69 (2026-04-30) kopplar varje fäbodgård till en gård i Näset eller Arvet. Några av gårdsnamnen där liknar husnamnen på arterasen.se: Tillhed (nr 7 och 15), Juganer (nr 13, jämför Juganes) och Carles (nr 18, jämför Karles lada). Kontrollera mot originalet och med föreningen innan sambanden används.
