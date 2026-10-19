@@ -29,7 +29,7 @@ Bilderböckerna B3–B8 finns i [bilder.md](bilder.md).
 
 Tryckt bok: *Fäbodristningar i Dalarna*, Gidlunds förlag 2022, ISBN 978-91-7844-460-1. Kapitel 7, av Bägerfeldt, sammanfattar skrift 67 (skrift 84, s. 10).
 
-Version 66 och 67 lästes bara delvis: verktyget klarar inte hela långa PDF:er. Kapitlen om Ärteråsen i skrift 66 (s. 44–58) och kapitlet om årtal i skrift 67 (s. 58) är inte genomgångna. Läs dem i `material/skrifter/` när de har hämtats.
+Sedan 2026-10-19 är skrift 66, 67, 70, 72 och 89 lästa ur `material/skrifter/` där de handlar om Ärteråsen, även kapitlen om Ärteråsen i skrift 66 (s. 44–58) och om årtal i skrift 67 (s. 58). Skrift 84 och 88 är lästa i urval, skrift 69 inte alls. Det som kom ut av läsningen, med sidhänvisningar, står i [underlag/2026-10-19-fler-skyltar.html](underlag/2026-10-19-fler-skyltar.html). `pdftotext -layout` på kopiorna ger hela texten.
 
 ## Årsringsdateringar
 
