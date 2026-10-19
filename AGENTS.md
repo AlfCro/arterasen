@@ -35,7 +35,7 @@ npm run check:readme       # README nämner alla kommandon, mappar och workflows
 npm run build              # produktion: bara platser med status klar på alla språk
 npm run build:preview      # som utkast.arterasen.se: utkast, källor och banner syns
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
-npm run bild -- <fil> <slug>     # krymp foto och ta bort GPS och annan metadata
+npm run bild -- <fil> <slug> [namn]   # krymp foto och ta bort GPS och annan metadata, namn t.ex. bild-2
 npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
 node tools/artifact-preview.mjs dist <mapp>   # gör dist/ publicerbar som claude.ai-artifact (efter build:preview)
 npm run hamta              # hämta filerna i material/hamta.json (körs på GitHub, se nedan)
@@ -78,7 +78,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - **Status `klar` sätts bara efter godkännande:** kortet ligger i *Godkänt* och flyttades dit av någon annan än den som skrev texten. Se [docs/arbetsflode.md](docs/arbetsflode.md).
 - **Adressen (slug) är permanent** när skylten satts upp. Byter en plats namn: lägg till `flyttad_till` i `content/tryckta-skyltar.json`, ta aldrig bort en rad.
 - **Privatpersoner** nämns inte utan samtycke. Husen ägs av enskilda.
-- **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens dokument säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens.
+- **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens dokument säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. Upp till fyra extra bilder per plats står under `fler_bilder` i `sv.md` med samma fält, och med `bild` och `bildtext` i övriga språk; de visas under *Fler bilder* efter texten. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Att beskära bort personen räcker när ingen annan i bilden kan kännas igen.
 - **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
 - **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
 
@@ -174,3 +174,4 @@ Saker som var kända 2026-10-17 och 2026-10-18 och som inte syns förrän man st
 - **WebFetch** når bara adresser som har synts i samtalet (sökresultat eller från Alf), uppgraderar http till https och klarar därför inte sajter som bara har http (fnf.nu, taxelson.se:s objektsidor). Långa PDF:er läses bara delvis. Facebook kräver inloggning och går bara att läsa om chatten är kopplad till Alfs dator.
 - **WebFetch och våra egna sajter:** `robots.txt` släpper in `Claude-User`, så WebFetch kan läsa `utkast.arterasen.se`, `/intern/` och förhandsvisningarna. Verktyget sparar dock `robots.txt` per värdnamn i mer än 30 minuter (2026-10-18). Efter en ändring i `robots.txt` kan en adress som redan besökts ge `ROBOTS_DISALLOWED` trots att filen live är rätt. Läs då samma bygge på en adress verktyget inte har besökt, till exempel deploy-adressen `https://<hash>.arterasen-info.pages.dev/` ur kontrollen på commiten, eller be Alf öppna `/robots.txt` i telefonen. Ett nytt försök direkt efter ett misslyckat stoppas också av verktyget.
 - **Leta inte igen** efter sådant som redan finns i `docs/fakta.md`, `docs/kallor.md` och `docs/bilder.md`. Där står också vad som inte gick att nå.
+- **DigitaltMuseums API** går att läsa med WebFetch: `https://api.dimu.org/api/solr/select?q=<sökord>&wt=json&rows=100&api.key=demo`, med `start=` för fler sidor och `fl=` för fälten. `artifact.uniqueId` ger sidan `https://digitaltmuseum.se/<uniqueId>` och `artifact.defaultMediaIdentifier` bilden `https://ems.dimu.org/image/<id>?dimension=2000x2000&mediatype=image/jpg` (2026-10-19). Själva bilderna hämtas med `hamta-material`.

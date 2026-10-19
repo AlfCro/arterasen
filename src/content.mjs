@@ -23,6 +23,8 @@ export const FREE_LICENSES = {
   'Public Domain Mark 1.0': 'https://creativecommons.org/publicdomain/mark/1.0/',
 };
 
+const MAX_EXTRA = 4;
+
 const LIMITS = {
   ingressChars: 160,
   bodyWordsMin: 40,
@@ -47,6 +49,23 @@ function readMd(file) {
   // YAML 1.2 core schema: dates stay strings, "1954" stays a string when quoted.
   const data = YAML.parse(m[1]) || {};
   return { data, body: m[2].trim() };
+}
+
+// Width and height of a JPEG from its SOF marker, so pages can reserve the space before
+// a lazy image loads. No image library needed at build time.
+function jpegSize(file) {
+  const b = fs.readFileSync(file);
+  if (b[0] !== 0xff || b[1] !== 0xd8) return null;
+  let i = 2;
+  while (i + 9 < b.length) {
+    if (b[i] !== 0xff) return null;
+    const m = b[i + 1];
+    if (m === 0xff) { i++; continue; }
+    if (m === 0x01 || (m >= 0xd0 && m <= 0xd9)) { i += 2; continue; }
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { width: b.readUInt16BE(i + 7), height: b.readUInt16BE(i + 5) };
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return null;
 }
 
 const words = (s) => s.replace(/[#*_>`\[\]()]/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -116,28 +135,61 @@ export function loadContent(config) {
       else if (numbers.has(main.nummer)) err(`${base}/${primary}.md`, `nummer ${main.nummer} används redan av ${numbers.get(main.nummer)}`);
       else numbers.set(main.nummer, slug);
 
-      if (main.bild) {
-        const img = path.join(place.dir, main.bild);
-        if (!fs.existsSync(img)) err(`${base}/${primary}.md`, `bilden ${main.bild} finns inte i mappen`);
-        else {
-          place.image = {
-            file: img,
-            name: `${slug}${path.extname(main.bild).toLowerCase()}`,
-            credit: main.fotograf || null,
-            license: main.bildlicens || null,
-            licenseUrl: FREE_LICENSES[main.bildlicens] || null,
-            source: main.bildkalla || null,
-          };
-          const size = fs.statSync(img).size;
-          if (size > LIMITS.imageBytes) warn(`${base}/${main.bild}`, `bilden är ${Math.round(size / 1024)} kB, kör npm run bild för att krympa den`);
-          if (!main.fotograf) err(`${base}/${primary}.md`, 'fotograf saknas för bilden');
-          if (main.bildlicens && !FREE_LICENSES[main.bildlicens])
-            err(`${base}/${primary}.md`, `bildlicens "${main.bildlicens}" känns inte igen. Använd ${Object.keys(FREE_LICENSES).join(', ')}, eller ta bort raden om fotografen har gett tillåtelse`);
-          if (main.bildlicens && !main.bildkalla) err(`${base}/${primary}.md`, 'bildkalla saknas: länka till sidan där bilden och licensen finns');
-          if (main.bildkalla && !/^https:\/\//.test(main.bildkalla)) err(`${base}/${primary}.md`, 'bildkalla måste vara en https-adress');
-        }
+      // Photos: the main one (bild) under the ingress, and up to MAX_EXTRA more (fler_bilder) after the text.
+      // Credit and license are given once in sv.md; every language has its own bildtext.
+      const where = `${base}/${primary}.md`;
+      const photo = (d, name, captionOf) => {
+        const img = path.join(place.dir, d.bild);
+        if (!fs.existsSync(img)) { err(where, `bilden ${d.bild} finns inte i mappen`); return null; }
+        const size = fs.statSync(img).size;
+        if (size > LIMITS.imageBytes) warn(`${base}/${d.bild}`, `bilden är ${Math.round(size / 1024)} kB, kör npm run bild för att krympa den`);
+        if (!d.fotograf) err(where, `fotograf saknas för ${d.bild}`);
+        if (d.bildlicens && !FREE_LICENSES[d.bildlicens])
+          err(where, `bildlicens "${d.bildlicens}" för ${d.bild} känns inte igen. Använd ${Object.keys(FREE_LICENSES).join(', ')}, eller ta bort raden om fotografen har gett tillåtelse`);
+        if (d.bildlicens && !d.bildkalla) err(where, `bildkalla saknas för ${d.bild}: länka till sidan där bilden och licensen finns`);
+        if (d.bildkalla && !/^https:\/\//.test(d.bildkalla)) err(where, `bildkalla för ${d.bild} måste vara en https-adress`);
+        const captions = {};
         for (const lang of langs) {
-          if (place.langs[lang] && !place.langs[lang].bildtext) err(`${base}/${lang}.md`, 'bildtext saknas (behövs för skärmläsare)');
+          if (!place.langs[lang]) continue;
+          captions[lang] = captionOf(lang);
+          if (!captions[lang]) err(`${base}/${lang}.md`, `bildtext saknas för ${d.bild} (behövs för skärmläsare)`);
+        }
+        return {
+          file: img,
+          name,
+          size: jpegSize(img),
+          credit: d.fotograf || null,
+          license: d.bildlicens || null,
+          licenseUrl: FREE_LICENSES[d.bildlicens] || null,
+          source: d.bildkalla || null,
+          captions,
+        };
+      };
+
+      if (main.bild) {
+        place.image = photo(main, `${slug}${path.extname(main.bild).toLowerCase()}`, (lang) => place.langs[lang].bildtext);
+      }
+      place.extraImages = [];
+      if (main.fler_bilder != null && !Array.isArray(main.fler_bilder)) err(where, 'fler_bilder måste vara en lista');
+      const extras = Array.isArray(main.fler_bilder) ? main.fler_bilder : [];
+      if (extras.length && !main.bild) err(where, 'fler_bilder kräver att bild också är satt');
+      if (extras.length > MAX_EXTRA) warn(where, `${extras.length} extra bilder, högst ${MAX_EXTRA} rekommenderas så att sidan laddar snabbt`);
+      const seen = new Set([main.bild]);
+      for (const e of extras) {
+        if (!e?.bild) { err(where, 'varje rad i fler_bilder behöver bild'); continue; }
+        if (seen.has(e.bild)) { err(where, `bilden ${e.bild} används två gånger`); continue; }
+        seen.add(e.bild);
+        const ext = path.extname(e.bild).toLowerCase();
+        const img = photo(e, `${slug}-${path.basename(e.bild, path.extname(e.bild))}${ext}`, (lang) =>
+          lang === primary ? e.bildtext : (place.langs[lang].fler_bilder || []).find((x) => x?.bild === e.bild)?.bildtext,
+        );
+        if (img) place.extraImages.push(img);
+      }
+      for (const lang of langs) {
+        if (lang === primary || !place.langs[lang]) continue;
+        for (const x of place.langs[lang].fler_bilder || []) {
+          if (!seen.has(x?.bild)) warn(`${base}/${lang}.md`, `fler_bilder nämner ${x?.bild}, som inte finns i ${primary}.md`);
+          if (x && ['fotograf', 'bildlicens', 'bildkalla'].some((k) => x[k] != null)) warn(`${base}/${lang}.md`, `fotograf, bildlicens och bildkalla anges bara i ${primary}.md`);
         }
       }
       place.sources = main.kallor || [];

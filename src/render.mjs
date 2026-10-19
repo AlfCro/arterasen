@@ -136,9 +136,12 @@ export function placePage(ctx, place, lang, prev, next) {
   const r = up(depth);
   const url = (l) => `${ctx.config.siteUrl}${l}/${place.slug}/`;
 
-  const figure = place.image
-    ? `<figure class="photo"><img src="${r}bilder/${place.image.name}" alt="${esc(c.bildtext)}" loading="lazy" decoding="async">
-<figcaption>${esc(c.bildtext)}${photoCredit(t, lang, place.image)}</figcaption></figure>`
+  const photoFigure = (img) =>
+    `<figure class="photo"><img src="${r}bilder/${img.name}" alt="${esc(img.captions[lang])}"${img.size ? ` width="${img.size.width}" height="${img.size.height}"` : ''} loading="lazy" decoding="async">
+<figcaption>${esc(img.captions[lang])}${photoCredit(t, lang, img)}</figcaption></figure>`;
+  const figure = place.image ? photoFigure(place.image) : '';
+  const morePhotos = (place.extraImages || []).length
+    ? `<section class="more-photos" aria-labelledby="photos-h"><h2 id="photos-h">${t.morePhotos}</h2>${place.extraImages.map(photoFigure).join('\n')}</section>`
     : '';
 
   const facts = (c.fakta || []).length
@@ -179,6 +182,7 @@ export function placePage(ctx, place, lang, prev, next) {
 <p class="ingress">${esc(c.ingress)}</p>
 ${figure}
 <div class="prose">${md(c.body)}</div>
+${morePhotos}
 ${facts}
 ${sources}
 </main>`,

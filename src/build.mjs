@@ -109,7 +109,9 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
   for (const p of visible) write(outDir, `skyltar/qr/${p.slug}.svg`, await qrSvg(qrUrl(config, p.slug)));
 
   // Images
-  for (const p of visible) if (p.image) write(outDir, `bilder/${p.image.name}`, fs.readFileSync(p.image.file));
+  for (const p of visible) {
+    for (const img of [p.image, ...(p.extraImages || [])].filter(Boolean)) write(outDir, `bilder/${img.name}`, fs.readFileSync(img.file));
+  }
 
   // Service worker (production only): keeps every page readable offline after the first visit.
   if (!preview) {

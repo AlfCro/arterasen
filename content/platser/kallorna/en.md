@@ -7,8 +7,12 @@ fakta:
     text: Spjutgravskällan, Möhrkällan
   - rubrik: Wells
     text: Three dug, one drilled
+  - rubrik: Could be revived
+    text: Kvickkällan, Ninnis källa
   - rubrik: Restored
     text: "2025"
+  - rubrik: Paid for by
+    text: SEK 30,000 from a local community fund
 ---
 
 People and animals needed water every day, and the milk was often cooled in cold spring water. The springs were what made the summer farm possible.

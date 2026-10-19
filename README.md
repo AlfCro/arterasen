@@ -14,11 +14,11 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
 ## Läget just nu
 
-Senast uppdaterad: 2026-10-18
+Senast uppdaterad: 2026-10-19
 
 - **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** fem platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Ingen är godkänd av föreningen. Flera fakta motsäger varandra mellan källorna och väntar på svar.
-- **Fritt material används direkt i utkasten** sedan 2026-10-18: bilder och uppgifter med fri licens eller fria villkor väntar inte på svar. Fäbodvallen och Ristningarna har museibilder, och Ristningarna bygger nu också på Lars Bägerfeldts skrifter. Upphovspersonen kontaktas parallellt, och för en privatperson ska det vara gjort innan platsen godkänns.
+- **Fritt material används direkt i utkasten** sedan 2026-10-18: bilder och uppgifter med fri licens eller fria villkor väntar inte på svar. Sedan 2026-10-19 har fyra av fem platser museibilder, upp till fyra extra bilder per plats och fler faktarader. Källorna saknar fortfarande bild. Ristningarna, Eldhusen och Fjällkorna bygger också på Lars Bägerfeldts skrifter. Upphovspersonen kontaktas parallellt, och för en privatperson ska det vara gjort innan platsen godkänns.
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
@@ -75,7 +75,7 @@ npm run dev        # http://localhost:8080, utkast syns
 | `npm run build:preview` | Som `utkast.arterasen.se`: utkast, källor och banner syns. Används av Pages-projektet för utkasten. |
 | `npm run build:cf` | Används av Pages-projektet för den publika sajten. Väljer produktion på `main` och förhandsvisning på andra grenar. |
 | `npm run ny -- <slug> "<Titel>"` | Ny plats från mallen |
-| `npm run bild -- <fil> <slug>` | Krymper ett foto och tar bort GPS och annan metadata |
+| `npm run bild -- <fil> <slug> [namn]` | Krymper ett foto och tar bort GPS och annan metadata. Utan namn blir det platsens huvudbild `bild.jpg`, med till exempel `bild-2` en extra bild under `fler_bilder`. |
 | `npm run verify -- --out=<mapp>` | Webbläsartest: skärmdumpar i mobilbredd, skyltar som PDF, QR-avkodning och offline. Kräver Chromium för Playwright. |
 | `npm run hamta` | Laddar ner filerna i `material/hamta.json`. Körs normalt av workflowen `hamta-material`. |
 

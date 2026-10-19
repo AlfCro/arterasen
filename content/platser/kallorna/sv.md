@@ -8,8 +8,12 @@ fakta:
     text: Spjutgravskällan, Möhrkällan
   - rubrik: Brunnar
     text: Tre grävda, en borrad
+  - rubrik: Kan återupplivas
+    text: Kvickkällan, Ninnis källa
   - rubrik: Renoverat
     text: "2025"
+  - rubrik: Pengar till renoveringen
+    text: 30 000 kr från bygdepengen
 kallor:
   - https://www.arterasen.se/
 ---

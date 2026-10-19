@@ -30,7 +30,7 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
    - Lägg dokumentets källor i `kallor`, och länken till Drive-dokumentet sist.
    - Är något oklart eller motsägelsefullt: skriv det som en fråga i kortkommentaren i steg 11 och låt uppgiften vara utanför texten.
 6. **Översätt** till `en.md` och `de.md` med samma fakta i samma ordning. Använd ordlistan i [AGENTS.md](../AGENTS.md).
-7. **Foton:** när dokumentet anger fotograf och att föreningen får använda bilden, eller när bilden har en fri licens (se [bilder.md](bilder.md)). `npm run bild -- <fil> <slug>`, sätt `bild` och `fotograf` i `sv.md`, för fri licens också `bildlicens` och `bildkalla`, och `bildtext` i alla språk.
+7. **Foton:** när dokumentet anger fotograf och att föreningen får använda bilden, eller när bilden har en fri licens (se [bilder.md](bilder.md)). `npm run bild -- <fil> <slug>`, sätt `bild` och `fotograf` i `sv.md`, för fri licens också `bildlicens` och `bildkalla`, och `bildtext` i alla språk. Fler bilder: `npm run bild -- <fil> <slug> bild-2` och en rad under `fler_bilder` i varje språkfil.
 8. **Status** är `utkast` i alla språk. Vid ändring av en publicerad plats: behåll `klar`, men PR:en mergas inte förrän ändringen är godkänd (se nedan).
 9. **Kontrollera:** `npm run check` utan fel och `npm run build:preview`. Titta på sidan i mobilbredd.
 10. **Git:**
