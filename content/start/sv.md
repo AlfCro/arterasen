@@ -1,6 +1,6 @@
 ---
 titel: Ärteråsens fäbod
-ingress: Fäboden på berget ovanför Näset i Ore. Här betade byns djur om somrarna från 1400-talet fram till 1954.
+ingress: Fäboden på berget ovanför Näset i Ore, belagd sedan 1500-talet. Här betade byns djur om somrarna fram till 1954.
 ---
 
 Varje skylt på fäboden har ett nummer och en QR-kod. Skanna koden med mobilkameran så öppnas texten om platsen på ditt språk. Sidorna sparas i telefonen efter första besöket, så att de går att läsa även där täckningen är svag.

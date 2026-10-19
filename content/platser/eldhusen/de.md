@@ -1,6 +1,6 @@
 ---
 titel: Die Feuerhäuser
-ingress: In den Feuerhäusern wurde gekocht, die Milch verarbeitet und geschlafen. Von den 22 Häusern um 1850 stehen noch zwölf.
+ingress: In den Feuerhäusern wurde gekocht, die Milch verarbeitet und geschlafen. Höchstens gab es hier wohl 22 Almhöfe. Zwölf Feuerhäuser stehen noch.
 status: utkast
 bildtext: In einem Feuerhaus auf Ärteråsen im Jahr 1926, in einem Haus aus dem Jahr 1775. Bänke an den Wänden und ein Topf, der mitten auf dem Lehmboden über dem Feuer hängt.
 fler_bilder:
@@ -9,10 +9,12 @@ fler_bilder:
   - bild: bild-3.jpg
     bildtext: Altes Werkzeug an einer Holzwand, darunter eine Säge und eine Kette, 2018.
 fakta:
-  - rubrik: Feuerhäuser um 1850
-    text: "22"
-  - rubrik: Nutzer um 1850
+  - rubrik: Almhöfe 1827
+    text: "17"
+  - rubrik: Besitzer 1827
     text: "36"
+  - rubrik: Höchstens
+    text: Vielleicht 22 Almhöfe
   - rubrik: Feuerhäuser heute
     text: "12"
   - rubrik: Größe
@@ -27,6 +29,6 @@ Das Eldhus, das Feuerhaus, war Wohnung und Küche der Alm. Ein Feuerhaus misst e
 
 Über dem Feuer hing ein großer Kupferkessel. Darin wurde viele Stunden lang Messmör gekocht, und aus der Milch entstanden auch Käse und Butter. Oft teilten sich mehrere Personen ein Feuerhaus.
 
-Mitte des 19. Jahrhunderts gab es auf Ärteråsen 22 Feuerhäuser und 36 Nutzer. Zwölf Feuerhäuser stehen noch heute, und sie gehören verschiedenen Besitzern. Als das Holz 2024 untersucht wurde, hatte ein Stamm in einem der Feuerhäuser seinen äußersten Jahresring aus dem Jahr 1646.
+Bei der Flurneuordnung von 1827 gab es 17 Almhöfe mit 36 Besitzern, höchstens waren es wohl 22. Zwölf Feuerhäuser stehen noch heute, und sie gehören verschiedenen Besitzern. Als das Holz 2024 untersucht wurde, hatte ein Stamm in einem der Feuerhäuser seinen äußersten Jahresring aus dem Jahr 1646.
 
 An den Innenwänden befinden sich viele der Ritzungen der Alm. Mehr dazu bei Station 3. Die Feuerhäuser werden noch immer genutzt, für Geselligkeit, Spiele und Volksmusik während der Kulturwoche des Vereins.

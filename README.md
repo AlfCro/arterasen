@@ -17,13 +17,15 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 Senast uppdaterad: 2026-10-19
 
 - **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
-- **Texterna:** fem platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna. Ingen är godkänd av föreningen. Flera fakta motsäger varandra mellan källorna och väntar på svar.
+- **Texterna:** nio platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna, och sedan 2026-10-19 Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. Ingen är godkänd av föreningen. Föreningen har avgjort de flesta motsägelserna mellan källorna (2026-10-19), och utkasten följer svaren sedan 2026-10-19. Kvar: när bruket upphörde och vilka källor som rinner.
 - **Fritt material används direkt i utkasten** sedan 2026-10-18: bilder och uppgifter med fri licens eller fria villkor väntar inte på svar. Sedan 2026-10-19 har fyra av fem platser museibilder, upp till fyra extra bilder per plats och fler faktarader. Källorna saknar fortfarande bild. Ristningarna, Eldhusen och Fjällkorna bygger också på Lars Bägerfeldts skrifter. Upphovspersonen kontaktas parallellt, och för en privatperson ska det vara gjort innan platsen godkänns.
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
-- **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Föreningen väljer vilka som blir skyltar.
-- **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas.
-- **Väntar på föreningen:** svar om konton, källor, bilder och fakta. Frågorna skickades till ordföranden 2026-10-18.
+- **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Fyra av dem (6, 7, 8 och 13) finns som utkast. Föreningen väljer vilka som blir skyltar.
+- **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas. Alf tvivlar på att Drive behövs; Trello blir det viktiga (2026-10-19, inte beslutat).
+- **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Detaljerna står i delplanerna.
+- **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
+- **Väntar på föreningen:** val bland förslagen 6–17, platslistan avstämd mot utkasten, granskning av utkasten och beslut om karta eller skyltar.
 
 Detaljer, vem som gör vad och tidslinje: [PLAN.md](PLAN.md) och den senaste rapporten.
 

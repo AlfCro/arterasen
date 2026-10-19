@@ -5,6 +5,14 @@ ingress: Här skrivs det upp när något ändras i hur vi jobbar. Det senaste st
 uppdaterad: 2026-10-19
 ---
 
+## 2026-10-19, kväll
+
+- **Allt börjar på svenska.** Du skriver bara på svenska. Claude översätter, och besökarens telefon öppnar sidan på rätt språk själv. En QR-kod räcker för alla tre språken. Se [Så jobbar vi](../).
+- Föreningen har svarat på frågorna om fakta. Utkasten säger nu att fäboden är belagd sedan 1500-talet och enligt traditionen ännu äldre, att det fanns 17 fäbodgårdar med 36 ägare år 1827, och att hundar inte är välkomna vecka 25–32.
+- Lars Bägerfeldt har godkänt att föreningen använder hans bilder och skrifter.
+- Fjällkorna har fått hela bilden från 2018, med namnet på den som syns i bilden. Hon har sagt ja.
+- Fyra nya utkast att läsa i {{granskning}}: Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. De bygger mest på Lars Bägerfeldts skrifter och är förslag. Föreningen bestämmer vilka som blir skyltar och vilka nummer de får.
+
 ## 2026-10-19
 
 - En plats kan nu ha flera bilder. Den första visas överst, de andra under rubriken *Fler bilder* efter texten.

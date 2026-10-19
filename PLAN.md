@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-19 10:40
+Senast uppdaterad: 2026-10-19 23:05
 
 ## Mål
 
@@ -13,10 +13,10 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 | Nr | Initiativ | Delplan | Status | Nästa steg | Vem |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner på `utkast.arterasen.se` | Alf, föreningen |
-| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Pågår | `info.arterasen.se` och `utkast.arterasen.se` i gång 2026-10-18, licenser valda. Kvar: domänerna *Active*, GitHub-appens åtkomst, regel för `main`, fler administratörer. | Alf |
-| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Koppla Trello och Google Drive till Claude | Alf |
-| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Fem utkast, fyra med museibilder, tolv förslag på fler skyltar | Fritt material används utan att vänta. Föreningen väljer bland förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)), svarar på faktafrågorna (C) och granskar utkasten. Bägerfeldt får veta. | Föreningen |
-| 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar | Provskylt på en plats, välj material | Föreningen |
+| 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Pågår | Mejl på arterasen.se med Cloudflare Email Routing (domänen saknar MX). Domänen till föreningen och föreningens Google-konto (beslutat av föreningen 2026-10-19). Kvar sedan förut: domänerna *Active*, GitHub-appens åtkomst, regel för `main`, fler administratörer. | Alf, föreningen |
+| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Bestäm om Trello räcker utan Google Drive (Alf tvivlar på Drive). Koppla Trello till Claude. Ta ställning till föreningens förslag om två läsare per text. | Alf |
+| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Nio utkast, fem som följer föreningens svar och fyra ur förslagen 6–17, platslista med elva platser | Stäm av föreningens platslista mot utkasten och förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)). Föreningen granskar utkasten. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
+| 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar, föreningen lutar åt en bärbar karta | Bestäm karta, fasta skyltar på stolpar eller båda. Sedan provskylt eller provkarta våren 2027. | Föreningen |
 
 Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 
@@ -43,20 +43,30 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [x] Alf: granska och merga PR:en med anteckningar för nästa agent (PR #8, 2026-10-18)
 - [x] Alf: granska och merga PR #9 (2026-10-18)
 - [x] Alf: granska och merga PR #10 (fler bilder och fakta, 2026-10-19)
-- [ ] Alf: granska och merga PR #11 (förslag på fler skyltar)
+- [x] Alf: granska och merga PR #11 (förslag på fler skyltar, 2026-10-19)
+- [ ] Alf: granska och merga PR #12 (svar från ordföranden)
 - [ ] Alf: skicka underlaget med förslag på fler skyltar till ordföranden, [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html)
 - [ ] Föreningen: välja bland förslagen 6–17 och svara på de nio frågorna i underlaget
+- [ ] Alf: Cloudflare Email Routing för `info@arterasen.se`, steg i [plans/02-hosting.md](plans/02-hosting.md). Fråga först ordföranden vilka adresser hon använder.
+- [ ] Föreningen: skapa ett Google-konto som föreningen äger och som styrelsen delar (A4, A6)
+- [ ] Alf och föreningen: byta innehavare av arterasen.se till föreningen (A2)
+- [ ] Alf: ta ställning till föreningens förslag om två läsare per text (D2), se [plans/03-innehallsflode.md](plans/03-innehallsflode.md)
+- [ ] Alf: bara Trello, eller Trello och Google Drive? Vad som ändras står i [plans/03-innehallsflode.md](plans/03-innehallsflode.md)
+- [ ] Föreningen: läsa de fyra nya utkasten (Boden, Mjölkboden, Kartan från 1827, Fäbodstigen) på `utkast.arterasen.se` efter merge
+- [ ] Alf och föreningen: stämma av platslistan mot utkasten och förslagen 6–17, och välja karta eller skyltar
+- [ ] Claude, omkring 2026-10-26: kontrollera att den gamla DNS-zonen hos `jean`/`lloyd` har slutat svara
 - [ ] Alf: ta bort grenen `claude/fria-bilder-licens` på GitHub
-- [ ] Alf: skicka underlaget med 32 frågor till ordföranden (filen skickades till Alf 2026-10-18, ligger inte i repot). B1, B7, C8 och D4 har ändrats sedan dess, se rapporten 2026-10-18 fritt-material-licens.
-- [ ] Ordföranden och föreningen: svara på underlaget, de fem viktigaste är A1, A2, A3, B1 och E1
+- [x] Alf: skicka underlaget med 32 frågor till ordföranden. Svaren kom 2026-10-19.
+- [x] Ordföranden och föreningen: svara på underlaget (2026-10-19). Öppet kvar: C4, startpunkten i C6, levande källor i C9, beloppet i E1, logotypen i D6.
 - [ ] Alf: regel för `main` på GitHub, gratis nu när repot är publikt (se [plans/02-hosting.md](plans/02-hosting.md))
 - [x] Alf: licens för kod och texter, MIT och CC BY 4.0 (2026-10-18)
-- [ ] Alf eller föreningen: berätta för Lars Bägerfeldt att hans skrifter används i utkasten och fråga om bilder. Utkasten väntar inte, men det ska vara gjort innan Ristningarna godkänns.
+- [x] Föreningen: berätta för Lars Bägerfeldt. Han har godkänt att föreningen använder alla hans bilder och skrifter (2026-10-19).
 
 ## Rapporter
 
 En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
 
+- 2026-10-19 [Svar från ordföranden](rapporter/2026-10-19-svar-ordforanden.md): svaren på underlaget inlagda, fyra utkast uppdaterade och fyra nya ur förslagen, föreningens platslista, bärbar karta i stället för skyltar, mejlen på arterasen.se saknar MX, Trello kanske utan Drive
 - 2026-10-19 [Förslag på fler skyltar](rapporter/2026-10-19-forslag-fler-skyltar.md): tolv förslag ur Bägerfeldts skrifter, fyra med prioritet A, som Claude Docs-dokument och som HTML-fil för ordföranden i `docs/underlag/`
 - 2026-10-19 [Fler bilder och fakta](rapporter/2026-10-19-fler-bilder-fakta.md): alla 24 museibilder av Ärteråsen hämtade, upp till fyra bilder per plats, fler faktarader, ILS 1662 hittad på bild
 - 2026-10-18 [Fritt material och licenser](rapporter/2026-10-18-fritt-material-licens.md): museibilder i två utkast, Ristningarna med Bägerfeldts uppgifter, MIT och CC BY 4.0, det privata konfigurationsrepot nämnt i README
