@@ -34,6 +34,8 @@ uppdaterad: 2026-10-20
 | Publicerat, skylt ska tryckas | Sidan är ute, skylten kan skrivas ut | Claude |
 | Skylt uppsatt | Skylten sitter på plats | Den som satte upp den |
 
+På tavlan finns ett kort för varje plats som har ett utkast, i *Granska*, och ett kort för varje förslag på en ny plats, i *Idéer och frågor*. Vill ni ha en av de föreslagna platserna: skriv det i en kommentar och flytta kortet till *Klar för Claude*. Vilka platser det blir och i vilken ordning samlas på kortet *Platslistan och numreringen*.
+
 Ett kort är en plats. Kortets namn är platsens namn, till exempel *Eldhusen*. Gäller det en ändring av en plats som redan finns, skriv *Ändra:* först, till exempel *Ändra: Eldhusen*.
 
 ## Regler som skyddar sajten

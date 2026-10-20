@@ -1,7 +1,7 @@
 // Builds the static site into dist/.
 //
 //   node src/build.mjs               production: only places with status "klar" on every language
-//   node src/build.mjs --preview     review build: drafts included, banner, sources, noindex
+//   node src/build.mjs --preview     review build: drafts included, banner, noindex
 //   node src/build.mjs --cloudflare  picks the mode from CF_PAGES_BRANCH (main = production)
 //   node src/build.mjs --out=path    write somewhere else than dist/
 

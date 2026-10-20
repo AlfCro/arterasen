@@ -25,6 +25,9 @@ export const FREE_LICENSES = {
 
 const MAX_EXTRA = 4;
 
+// A link from one place to another in the Markdown text: [Title](../slug/)
+const PLACE_LINK = /\]\(\.\.\/([a-z0-9-]+)\/?\)/g;
+
 const LIMITS = {
   ingressChars: 160,
   bodyWordsMin: 40,
@@ -225,6 +228,22 @@ export function loadContent(config) {
       err(where, 'skylten sitter uppe men platsen är inte publicerad, QR-koden skulle leda till en tom sida');
     }
   }
+  // Links between places in the text, written as [Title](../slug/). Production only builds
+  // published places, so a published place must not link to one that is still a draft.
+  for (const p of places) {
+    for (const lang of langs) {
+      const c = p.langs[lang];
+      if (!c) continue;
+      for (const [, target] of c.body.matchAll(PLACE_LINK)) {
+        const where = `content/platser/${p.slug}/${lang}.md`;
+        const to = bySlug.get(target);
+        if (!to) err(where, `länken till ../${target}/ leder till en plats som inte finns`);
+        else if (p.published && !to.published)
+          err(where, `länken till ${target} leder till en plats som inte är publicerad. Publicera ${target} först eller ta bort länken`);
+      }
+    }
+  }
+
   const printedSlugs = new Set(printed.filter((s) => !s.flyttad_till).map((s) => s.slug));
   for (const p of places) p.printed = printedSlugs.has(p.slug);
 

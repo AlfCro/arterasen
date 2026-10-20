@@ -22,10 +22,12 @@ Senast uppdaterad: 2026-10-20
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Fyra av dem (6, 7, 8 och 13) finns som utkast. Föreningen väljer vilka som blir skyltar.
+- **Alla platser finns på Trello** sedan 2026-10-20: de nio utkasten i *Granska* med texten och frågorna, förslagen och föreningens platser utan underlag i *Idéer och frågor*, och kortet *Platslistan och numreringen*. Numren är inte bestämda, och omnumrering kräver inget godkännande.
+- **Källorna syns på den publika sajten** sedan 2026-10-20, inte bara i förhandsvisningen. Länken till Trello-kortet visas bara i förhandsvisningen.
 - **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen till Claude finns sedan 2026-10-20, med listor och mallkort. Kvar innan volontärerna bjuds in: hur foton kommer från korten till repot.
-- **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Detaljerna står i delplanerna.
+- **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. 2026-10-20: troligen laminerade A5 med QR-koder som delas ut till gästerna, tillsammans med en karta, inte helt bestämt. Detaljerna står i delplanerna.
 - **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
-- **Väntar på föreningen:** val bland förslagen 6–17, platslistan avstämd mot utkasten, granskning av utkasten och beslut om karta eller skyltar.
+- **Väntar på föreningen:** svar på korten på Trello: val bland förslagen, platslistan och ordningen, granskning av utkasten och beslut om blad, karta eller skyltar.
 
 Detaljer, vem som gör vad och tidslinje: [PLAN.md](PLAN.md) och den senaste rapporten.
 
@@ -71,11 +73,11 @@ npm run dev        # http://localhost:8080, utkast syns
 
 | Kommando | Vad det gör |
 | --- | --- |
-| `npm run dev` | Lokal förhandsvisning med utkast, källor och banner synliga |
+| `npm run dev` | Lokal förhandsvisning med utkast och banner synliga |
 | `npm run check` | Validerar allt innehåll. Måste vara grönt. |
 | `npm run check:readme` | Kontrollerar att den här filen stämmer med repot, se sista avsnittet |
 | `npm run build` | Produktion till `dist/`: bara platser som har status `klar` på alla språk |
-| `npm run build:preview` | Som `utkast.arterasen.se`: utkast, källor och banner syns, och QR-koderna leder till utkastet. Används av Pages-projektet för utkasten. |
+| `npm run build:preview` | Som `utkast.arterasen.se`: utkast och banner syns, och QR-koderna leder till utkastet. Används av Pages-projektet för utkasten. |
 | `npm run build:cf` | Används av Pages-projektet för den publika sajten. Väljer produktion på `main` och förhandsvisning på andra grenar. |
 | `npm run ny -- <slug> "<Titel>"` | Ny plats från mallen |
 | `npm run bild -- <fil> <slug> [namn]` | Krymper ett foto och tar bort GPS och annan metadata. Utan namn blir det platsens huvudbild `bild.jpg`, med till exempel `bild-2` en extra bild under `fler_bilder`. |

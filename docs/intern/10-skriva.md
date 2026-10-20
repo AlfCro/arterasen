@@ -21,8 +21,8 @@ uppdaterad: 2026-10-20
 - **Det viktigaste först.** Skriv en eller två meningar som räcker om man inte läser mer.
 - **Förklara ovanliga ord** som fäbodkulla, messmör eller bomärke första gången de används.
 - **Fakta i en lista.** Årtal, antal och namn kan stå som korta rader, till exempel *Äldsta ristningen: 1662*.
-- **Ange källor.** En länk, en bok, eller "berättat av …". Källorna visas bara i förhandsvisningen.
-- **Nämn inte privatpersoner** utan att de har sagt ja. Husen ägs av enskilda personer. Det gäller även källor: skriv "berättat av …" bara om personen vill stå med.
+- **Ange källor.** En länk, en bok, eller "berättat av …". Källorna står under texten på sidan, så att besökare kan läsa mer.
+- **Nämn inte privatpersoner** utan att de har sagt ja. Husen ägs av enskilda personer. Det gäller även källor, som syns för alla: skriv "berättat av …" bara om personen vill stå med.
 - **Texterna får användas av andra.** Allt på sajten får användas fritt om föreningen anges som källa. Det heter licensen CC BY 4.0. När du lämnar en text till föreningen går du med på det.
 - **Allt du skriver kan bli offentligt.** Kortet på Trello syns bara för oss som är med på tavlan, men när Claude har gjort en sida av texten syns den för alla som letar på internet, även innan den är godkänd. Skriv därför inget på kortet som inte får bli känt, till exempel telefonnummer eller vem som äger ett hus.
 
