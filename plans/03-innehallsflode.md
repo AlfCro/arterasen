@@ -1,6 +1,6 @@
 # 03 Innehållsflöde och kommunikation
 
-Status: Ej startat
+Status: Pågår
 Ansvarig: Alf (uppsättning), Claude (daglig hantering), föreningen (texter och godkännande)
 Senast uppdaterad: 2026-10-20
 
@@ -40,11 +40,14 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 
 ## Att göra
 
-- [ ] Koppla **Trello** till Claude under *Inställningar → Kopplingar* på claude.ai (Alf). Kopplingen finns i registret (2026-10-20).
-- [ ] Prova att Trello-kopplingen kan hämta bilagor från ett kort. Går det inte: välj ett annat sätt att få foton till repot, till exempel att Alf laddar ner dem och lägger dem i chatten, eller en workflow som hämtar bilagor med en Trello-nyckel som GitHub-hemlighet (Claude, Alf)
-- [ ] Skapa en Trello-arbetsyta för föreningen och tavlan *QR-skyltar* med listorna ovan. Tavlan ska bara synas för medlemmarna, eftersom korten innehåller utkast. Gratisversionen tillåter 10 medlemmar per arbetsyta och 10 MB per bilaga. Claude gör det om kopplingen tillåter.
-- [ ] Lägg kortet *MALL – kopiera mig* överst i listan *Skriver*, med texten i [docs/kortmall.md](../docs/kortmall.md) (Claude, när Trello är kopplat)
-- [ ] Lägg in länken i `intern.trelloUrl` i `site.config.json` (Claude, PR till Alf)
+- [x] Koppla **Trello** till Claude (Alf, 2026-10-20). Kopplingen går via Alfs Trello-konto.
+- [ ] **Foton från korten till repot.** Läget 2026-10-20: kopplingen kan lista bilagor (`trelloReadCard` med `list_attachments` ger namn, storlek och adress) men har inget sätt att hämta själva filen. Skalet når inte `trello.com` eller `api.trello.com` (proxyn svarar 403, policy), och en omstart ändrar inte det. Nästa steg: Alf bifogar en bild på kortet *Test: bifoga en bild från mobilen* i *Idéer och frågor*, och nästa session kör `list_attachments` för att se vad kopplingen ger. Välj sedan (Alf):
+  - en workflow likt `hamta-material` som hämtar bilagor med en Trello-nyckel och token som GitHub-hemligheter. Claude listar kort, bilagor och plats i en fil. Workflowen hämtar bilagan, kör `npm run bild` och committar bara den krympta bilden utan metadata till grenen. Originalet och nyckeln hamnar aldrig i repot.
+  - eller att Alf laddar ner fotona och lägger dem i chatten. Enklast, men Alf blir en flaskhals.
+- [x] Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) med de sju listorna (Alf skapade tavlan, Claude listorna, 2026-10-20). Gratisversionen tillåter 10 medlemmar per arbetsyta och 10 MB per bilaga.
+- [ ] Döp om arbetsytan från *Trello Workspace* till *Ärteråsens Kulturförening*, kontrollera att tavlan är *Private*, och stäng tavlan *Ärteråsens Kulturförening* som bara innehåller Trellos startguide (Alf). Kopplingen kan inte ändra arbetsytor, synlighet eller stänga tavlor.
+- [x] Kortet *MALL – kopiera mig* överst i listan *Skriver*, med texten i [docs/kortmall.md](../docs/kortmall.md) (Claude, 2026-10-20)
+- [x] Länken i `intern.trelloUrl` i `site.config.json` (Claude, 2026-10-20). `/intern/` länkar nu till tavlan.
 - [ ] Bjud in volontärerna till tavlan, skicka länken till `/intern/` (Alf eller föreningen)
 - [ ] Schemalagd uppgift: varje morgon går Claude igenom tavlan enligt `docs/arbetsflode.md` (Claude, när kopplingarna fungerar)
 - [ ] Provkör med en plats och en volontär. Justera rutinen och skriv upp ändringar på `/intern/nytt/`.
@@ -55,7 +58,7 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 - Granskare: föreningen har en som kan läsa engelska och letar efter någon som kan tyska (D3). Två i styrelsen skriver det mesta.
 - Ska Claude gå igenom tavlan varje morgon, eller bara när någon säger till?
 - Räcker 10 medlemmar på Trello-arbetsytan?
-- Kan Trello-kopplingen hämta bilagor, så att Claude får fotona?
+- Hur kommer fotona från korten till repot? Se *Att göra*.
 
 ## Logg
 
@@ -63,3 +66,4 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 - 2026-10-18: Volontärerna informerade på `/intern/` om att texterna syns för alla när repot är publikt. Frågorna om godkännare, skribenter, översättningsgranskare och Google-konto skickade till ordföranden (D2, D3, A6) (Claude).
 - 2026-10-19: Svar från ordföranden: två i styrelsen skriver det mesta, en granskare för engelska finns, tyska saknas. Föreningen föreslår två läsare per text. Föreningen ska ha ett eget Google-konto (Claude).
 - 2026-10-20: Bara Trello (Alf). Texten skrivs på kortet och foton bifogas där. Kortmall i stället för dokumentmall, volontärsidorna och agentens rutin omskrivna (Claude).
+- 2026-10-20: Trello kopplat. Tavlan QR-skyltar har de sju listorna, mallkortet och ett provkort för bilagor. Kopplingen kan inte hämta bilagor, och skalet når inte trello.com. Länken till tavlan i `site.config.json` (Alf, Claude).

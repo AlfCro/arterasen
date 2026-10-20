@@ -22,7 +22,7 @@ Senast uppdaterad: 2026-10-20
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Fyra av dem (6, 7, 8 och 13) finns som utkast. Föreningen väljer vilka som blir skyltar.
-- **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan och Trello-kopplingen till Claude saknas än.
+- **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen till Claude finns sedan 2026-10-20, med listor och mallkort. Kvar innan volontärerna bjuds in: hur foton kommer från korten till repot.
 - **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Detaljerna står i delplanerna.
 - **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
 - **Väntar på föreningen:** val bland förslagen 6–17, platslistan avstämd mot utkasten, granskning av utkasten och beslut om karta eller skyltar.

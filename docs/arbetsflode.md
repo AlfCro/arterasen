@@ -23,7 +23,7 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
 ## Klar för Claude: ny plats eller ändring
 
 1. **Läs kortet:** namn, beskrivningen med texten enligt kortmallen, alla kommentarer sedan förra förhandsvisningen och bilagorna. Står det *Ändrat i beskrivningen* i en kommentar: jämför beskrivningen med platsens `sv.md`.
-2. **Hämta fotona** som är bifogade på kortet till en mapp utanför repot. Går det inte med Trello-kopplingen: skriv till Alf vilka bilagor som behövs och fortsätt med texten.
+2. **Hämta fotona** som är bifogade på kortet till en mapp utanför repot. Kopplingen ger bara bilagornas namn och adress (`list_attachments`), och skalet når inte trello.com. Tills ett sätt är valt (se [plans/03](../plans/03-innehallsflode.md)): skriv till Alf vilka bilagor som behövs och fortsätt med texten.
 3. **Ny eller ändring?** Börjar kortnamnet med *Ändra:* eller finns platsen redan i `content/platser/`, är det en ändring.
 4. **Ny plats:** välj slug av platsens namn: gemener, å och ä blir a, ö blir o, mellanslag blir bindestreck, högst 20 tecken. Kontrollera att den inte finns i `content/tryckta-skyltar.json`. Kör `npm run ny -- <slug> "<Titel>"`.
 5. **Skriv `sv.md`** utifrån kortet:
