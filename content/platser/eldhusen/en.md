@@ -31,4 +31,4 @@ A large copper kettle hung over the fire. In it messmör was boiled for many hou
 
 At the land reform of 1827 there were 17 farm units with 36 owners, and at most there were perhaps 22. Twelve fire houses still stand, and they have several different owners. When the timber was examined in 2024, a log in one of the fire houses had its outermost tree ring from 1646.
 
-Inside, the walls carry many of the farm's carvings. Read more about them at sign 3. The fire houses are still in use, for get-togethers, games and folk music during the association's culture week.
+Inside, the walls carry many of the farm's carvings. Read more about them under [The carvings](../ristningarna/). The fire houses are still in use, for get-togethers, games and folk music during the association's culture week.

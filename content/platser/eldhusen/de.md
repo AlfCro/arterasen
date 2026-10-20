@@ -31,4 +31,4 @@ Das Eldhus, das Feuerhaus, war Wohnung und Küche der Alm. Ein Feuerhaus misst e
 
 Bei der Flurneuordnung von 1827 gab es 17 Almhöfe mit 36 Besitzern, höchstens waren es wohl 22. Zwölf Feuerhäuser stehen noch heute, und sie gehören verschiedenen Besitzern. Als das Holz 2024 untersucht wurde, hatte ein Stamm in einem der Feuerhäuser seinen äußersten Jahresring aus dem Jahr 1646.
 
-An den Innenwänden befinden sich viele der Ritzungen der Alm. Mehr dazu bei Station 3. Die Feuerhäuser werden noch immer genutzt, für Geselligkeit, Spiele und Volksmusik während der Kulturwoche des Vereins.
+An den Innenwänden befinden sich viele der Ritzungen der Alm. Mehr dazu unter [Die Ritzungen](../ristningarna/). Die Feuerhäuser werden noch immer genutzt, für Geselligkeit, Spiele und Volksmusik während der Kulturwoche des Vereins.
