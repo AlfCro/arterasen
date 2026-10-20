@@ -52,4 +52,4 @@ Eldhuset var fäbodens hem och kök. Ett eldhus är ungefär fyra gånger fyra m
 
 Vid storskiftet 1827 fanns 17 fäbodgårdar med 36 ägare, och som mest var de kanske 22. Tolv eldhus står kvar i dag, och de har flera olika ägare. När timret undersöktes 2024 hade en stock i ett av eldhusen sin yttersta årsring från 1646.
 
-På väggarna inne i eldhusen finns många av fäbodens ristningar. Läs mer om dem på skylten om ristningarna. Eldhusen används fortfarande, till umgänge, spel och spelmansmusik under föreningens kulturvecka.
+På väggarna inne i eldhusen finns många av fäbodens ristningar. Läs mer om dem under [Ristningarna](../ristningarna/). Eldhusen används fortfarande, till umgänge, spel och spelmansmusik under föreningens kulturvecka.
