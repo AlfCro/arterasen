@@ -2,9 +2,11 @@
 //
 // Browser check of the built site, for agents and humans:
 //   1. Builds a preview and takes phone-width screenshots (light and dark) to look at.
-//   2. Prints the signs to A5 PDF and decodes every QR code from the rendered page.
-//   3. Builds production in a temporary copy with every place approved, then checks
-//      language redirect, offline reading after the first scan, language memory and 404.
+//   2. Prints the signs to A5 PDF and decodes every QR code from the rendered page:
+//      they must lead to the draft site, and every sign must be stamped as a test print.
+//   3. Builds production in a temporary copy with every place approved, decodes its signs
+//      (public address, no stamps), then checks language redirect, offline reading after
+//      the first scan, language memory and 404.
 // Exits with code 1 if anything fails. Screenshots and the PDF go to --out (default: OS temp).
 //
 // Needs a Chromium. Found in this order: $CHROMIUM_PATH, $PLAYWRIGHT_BROWSERS_PATH/chromium-*,
@@ -63,15 +65,46 @@ function serve(dir, port) {
   return new Promise((resolve) => server.listen(port, () => resolve(server)));
 }
 
+// No SITE_URL and no Cloudflare variables, so the QR addresses come from site.config.json alone.
 function build(cwd, outDir, preview) {
   execFileSync(process.execPath, [path.join(cwd, 'src', 'build.mjs'), ...(preview ? ['--preview'] : []), `--out=${outDir}`], {
     cwd,
     stdio: 'pipe',
-    env: { ...process.env, SITE_URL: '' },
+    env: { ...process.env, SITE_URL: '', CF_PAGES_BRANCH: '', CF_PAGES_URL: '' },
   });
 }
 
+// Decodes every QR code on /skyltar/ and checks it against the address the build should use:
+// the public site in production, the draft site in previews. Preview signs must all be stamped.
+async function checkSigns(base, { expectedBase, preview, pdf, shot }) {
+  const ctx = await browser.newContext({ viewport: { width: 900, height: 1200 }, deviceScaleFactor: 2 });
+  const page = await ctx.newPage();
+  await page.goto(base + '/skyltar/', { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  if (pdf) await page.pdf({ path: path.join(OUT, pdf), preferCSSPageSize: true, printBackground: true });
+  const label = preview ? 'utkastet' : 'produktion';
+  const signs = await page.$$('.sign');
+  for (const [i, sign] of signs.entries()) {
+    const png = PNG.sync.read(await (await sign.$('.sign-qr')).screenshot());
+    const code = jsQR(new Uint8ClampedArray(png.data), png.width, png.height);
+    // The printed address and the QR code must point to the same place.
+    const printed = (await (await sign.$('.sign-url')).textContent()).trim();
+    const expected = `${expectedBase}${printed.split('/').pop()}/`;
+    if (!code) fail(`${label}: QR-koden på skylt ${i + 1} gick inte att avkoda`);
+    else if (code.data !== expected) fail(`${label}: QR-koden på skylt ${i + 1} är ${code.data}, väntade ${expected}`);
+    if (printed !== expected.replace(/^https?:\/\//, '').replace(/\/$/, '')) fail(`${label}: skylt ${i + 1} visar adressen ${printed}`);
+    const stamped = Boolean(await sign.$('.sign-stamp'));
+    if (preview && !stamped) fail(`${label}: skylt ${i + 1} saknar provtrycksstämpel`);
+    if (!preview && stamped) fail(`${label}: skylt ${i + 1} är stämplad trots att platsen är godkänd`);
+    if (i === 0 && shot) await sign.screenshot({ path: path.join(OUT, shot) });
+  }
+  if (!signs.length) fail(`${label}: inga skyltar på /skyltar/`);
+  else ok(`${label}: ${signs.length} skyltar avkodade, QR-koderna leder till ${expectedBase}${pdf ? ', PDF sparad' : ''}`);
+  await ctx.close();
+}
+
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
+const slash = (url) => (url.endsWith('/') ? url : `${url}/`);
 const browser = await chromium.launch({ executablePath: chromiumPath() });
 
 // ---------- 1 + 2: preview build, screenshots, signs ----------
@@ -106,26 +139,12 @@ for (const [url, scheme] of shots) {
 }
 ok(`${shots.length} skärmdumpar i 390 px`);
 
-{
-  const ctx = await browser.newContext({ viewport: { width: 900, height: 1200 }, deviceScaleFactor: 2 });
-  const page = await ctx.newPage();
-  await page.goto(base + '/skyltar/', { waitUntil: 'networkidle' });
-  await page.evaluate(() => document.fonts.ready);
-  await page.pdf({ path: path.join(OUT, 'skyltar.pdf'), preferCSSPageSize: true, printBackground: true });
-  const signs = await page.$$('.sign');
-  for (const [i, sign] of signs.entries()) {
-    const png = PNG.sync.read(await (await sign.$('.sign-qr')).screenshot());
-    const code = jsQR(new Uint8ClampedArray(png.data), png.width, png.height);
-    // The printed address and the QR code must point to the same place.
-    const printed = (await (await sign.$('.sign-url')).textContent()).trim();
-    const expected = `${config.siteUrl}${printed.split('/').pop()}/`;
-    if (!code) fail(`QR-koden på skylt ${i + 1} gick inte att avkoda`);
-    else if (code.data !== expected) fail(`QR-koden på skylt ${i + 1} är ${code.data}, väntade ${expected}`);
-    if (i === 0) await sign.screenshot({ path: path.join(OUT, 'skylt-1.png') });
-  }
-  ok(`${signs.length} skyltar avkodade, PDF sparad`);
-  await ctx.close();
-}
+await checkSigns(base, {
+  expectedBase: slash(config.intern?.granskningUrl || config.siteUrl),
+  preview: true,
+  pdf: 'skyltar.pdf',
+  shot: 'skylt-1.png',
+});
 server.close();
 
 // ---------- 3: production with everything approved, offline behaviour ----------
@@ -143,6 +162,8 @@ const prodDir = path.join(copy, 'dist');
 build(copy, prodDir, false);
 server = await serve(prodDir, 4312);
 base = 'http://localhost:4312';
+
+await checkSigns(base, { expectedBase: slash(config.siteUrl), preview: false, shot: 'skylt-1-produktion.png' });
 
 if (places.length >= 2) {
   const ctx = await browser.newContext({ locale: 'de-DE' });

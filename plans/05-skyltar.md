@@ -2,7 +2,7 @@
 
 Status: Mall klar. Föreningen lutar åt en bärbar karta i stället för fasta skyltar, inte beslutat
 Ansvarig: Föreningen
-Senast uppdaterad: 2026-10-19
+Senast uppdaterad: 2026-10-20
 
 ## Mål
 
@@ -33,6 +33,7 @@ Vad det betyder här:
 - 2026-10-17: Skylten genereras från innehållet på `/skyltar/` som A5, en per sida. QR-koden finns även som SVG för tryckerier.
 - 2026-10-17: Skyltar för utkast märks *Provtryck, ej godkänd* och ska inte sättas upp.
 - 2026-10-17: En uppsatt skylts adress ändras aldrig. Kontrollen stoppar varje ändring som skulle göra en uppsatt QR-kod oanvändbar.
+- 2026-10-20: **QR-koderna i utkastbyggen leder till utkastet** (Alf). På `utkast.arterasen.se` leder de dit, på en grens förhandsvisning till den förhandsvisningen. Produktionen leder som förut till `info.arterasen.se`. Eftersom en sådan kod aldrig får sitta uppe är alla skyltar i ett utkastbygge märkta *Provtryck*, också för godkända platser (*Provtryck från utkastet*), och SVG-filerna för tryckeriet länkas bara från den publika `/skyltar/`.
 
 ## Att göra
 
@@ -56,3 +57,4 @@ Vad det betyder här:
 
 - 2026-10-17: Skyltmall i A5 med QR 72 mm, felkorrigering Q, titlar på tre språk. Alla QR-koder kontrollavkodade (Claude).
 - 2026-10-19: Ordförandens svar E1–E4 och D6 inlagda. Föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar, och fasta skyltar i så fall på stolpar. Inget i mallen ändrat än (Claude).
+- 2026-10-20: QR-koderna i utkastbyggen leder till utkastet, alla skyltar där märkta *Provtryck*. `npm run verify` avkodar nu skyltarna i både utkast- och produktionsbygget (Claude).
