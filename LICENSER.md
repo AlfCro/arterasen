@@ -15,6 +15,6 @@ Det här repot använder tillåtande licenser. Du får återanvända både kod o
 
 ## Texter från volontärer
 
-Den som lämnar en text till föreningen för sajten går med på att den publiceras under CC BY 4.0. Det står i [docs/intern/10-skriva.md](docs/intern/10-skriva.md) och i Drive-mallen ([docs/drive-mall.md](docs/drive-mall.md)).
+Den som lämnar en text till föreningen för sajten går med på att den publiceras under CC BY 4.0. Det står i [docs/intern/10-skriva.md](docs/intern/10-skriva.md) och i kortmallen på Trello ([docs/kortmall.md](docs/kortmall.md)).
 
 Beslutat av Alf Cronmalm 2026-10-18, se [plans/02-hosting.md](plans/02-hosting.md).

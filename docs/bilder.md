@@ -5,7 +5,7 @@ Bilder som hittats på andra webbplatser, med fotograf och vad som gäller för 
 Reglerna i [AGENTS.md](../AGENTS.md) gäller: en bild används på sajten när vi vet vem som tagit den och har rätt att använda den. Det gäller två slags bilder:
 
 - **Fri licens** (CC BY, CC BY-SA, CC0, public domain): används i utkasten direkt, utan att vänta på svar. Ange `fotograf`, `bildlicens` och `bildkalla` i platsens `sv.md`, så visas krediteringen under bilden. Museer med CC-licens behöver inte tillfrågas.
-- **Tillåtelse från fotografen**: volontärens dokument säger att föreningen får använda bilden. Lars Bägerfeldts fria villkor (ej kommersiellt) räcker för utkasten, men han ska ha fått veta innan platsen godkänns.
+- **Tillåtelse från fotografen**: volontärens Trello-kort säger att föreningen får använda bilden. Lars Bägerfeldts fria villkor (ej kommersiellt) räcker för utkasten, men han ska ha fått veta innan platsen godkänns.
 
 En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Kör alltid `npm run bild` innan en bild läggs in under `content/`.
 

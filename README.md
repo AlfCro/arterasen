@@ -14,7 +14,7 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
 ## Läget just nu
 
-Senast uppdaterad: 2026-10-19
+Senast uppdaterad: 2026-10-20
 
 - **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** nio platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna, och sedan 2026-10-19 Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. Ingen är godkänd av föreningen. Föreningen har avgjort de flesta motsägelserna mellan källorna (2026-10-19), och utkasten följer svaren sedan 2026-10-19. Kvar: när bruket upphörde och vilka källor som rinner.
@@ -22,7 +22,7 @@ Senast uppdaterad: 2026-10-19
 - **Licens** sedan 2026-10-18: MIT för koden och CC BY 4.0 för texterna, se [LICENSER.md](LICENSER.md).
 - **Underlaget** om fäboden är samlat i [docs/fakta.md](docs/fakta.md), [docs/kallor.md](docs/kallor.md) och [docs/bilder.md](docs/bilder.md). Fria museibilder och Lars Bägerfeldts skrifter ligger i [material/](material/).
 - **Fler skyltar:** tolv förslag ur Lars Bägerfeldts skrifter sedan 2026-10-19, med innehåll, placering och sidhänvisningar, i [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html). Fyra av dem (6, 7, 8 och 13) finns som utkast. Föreningen väljer vilka som blir skyltar.
-- **Volontärflödet** med Trello och Google Drive är inte i gång. Kopplingarna till Claude saknas. Alf tvivlar på att Drive behövs; Trello blir det viktiga (2026-10-19, inte beslutat).
+- **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan och Trello-kopplingen till Claude saknas än.
 - **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. Detaljerna står i delplanerna.
 - **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
 - **Väntar på föreningen:** val bland förslagen 6–17, platslistan avstämd mot utkasten, granskning av utkasten och beslut om karta eller skyltar.
@@ -32,7 +32,7 @@ Detaljer, vem som gör vad och tidslinje: [PLAN.md](PLAN.md) och den senaste rap
 ## Så fungerar det
 
 ```
-Volontär skriver i Google Drive ──► Trello-kort "Klar för Claude"
+Volontär skriver på Trello-kortet ──► kortet till "Klar för Claude"
         ▲                                     │
         │                                     ▼
   kommentar på kortet              Claude gör sida + översätter,
@@ -51,13 +51,13 @@ Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/
 | Sökväg | Vad |
 | --- | --- |
 | `content/` | Texterna: en mapp per plats i `content/platser/` med `sv.md`, `en.md` och `de.md`, startsidan, mallen och [listan över uppsatta skyltar](content/tryckta-skyltar.json) |
-| `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, mallen för Google Drive, `docs/intern/` som blir `/intern/` på sajten, och underlag till föreningen i [docs/underlag/](docs/underlag/) |
+| `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, kortmallen för Trello, `docs/intern/` som blir `/intern/` på sajten, och underlag till föreningen i [docs/underlag/](docs/underlag/) |
 | `material/` | Kopior av fria bilder och skrifter, med licens per fil i [material/hamta.json](material/hamta.json). Syns på GitHub. En bild som ska visas på sajten krymps först till `content/` med `npm run bild`. Se [material/LASMIG.md](material/LASMIG.md). |
 | `plans/` | En delplan per initiativ: mål, beslut, att göra, öppna frågor och logg |
 | `rapporter/` | En rapport per arbetspass |
 | `src/` | Generatorn, mallar, stil och service worker. Inga ramverk. |
 | `tools/` | Webbläsartest, förhandsvisning som artifact, hämtning av material och kontrollen av den här filen |
-| [site.config.json](site.config.json) | Adress, språk, textlicens och länkar till Trello och Drive |
+| [site.config.json](site.config.json) | Adress, språk, textlicens och länken till Trello-tavlan |
 | [LICENSE](LICENSE), [LICENSER.md](LICENSER.md) | MIT för koden, CC BY 4.0 för texterna, och undantagen |
 
 ## Utveckling

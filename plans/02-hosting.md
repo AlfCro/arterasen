@@ -2,7 +2,7 @@
 
 Status: Pågår
 Ansvarig: Alf
-Senast uppdaterad: 2026-10-19
+Senast uppdaterad: 2026-10-20
 
 ## Mål
 
@@ -60,7 +60,7 @@ Läget 2026-10-19, från publika uppslag mot `dns.google`:
 
 **Förslag (Claude):**
 
-1. Föreningens eget Google-konto (A6) blir också styrelsens gemensamma adress (A4) och kontaktadress i GitHub, Cloudflare, Trello och Name ISP. Det ligger inte på arterasen.se, vilket Cloudflare-inloggningen kräver (se *Fler än en person kommer åt allt*).
+1. Styrelsens gemensamma adress (A4) blir ett gratis Gmail-konto som föreningen äger, och kontaktadress i GitHub, Cloudflare, Trello och Name ISP. Det ligger inte på arterasen.se, vilket Cloudflare-inloggningen kräver (se *Fler än en person kommer åt allt*).
 2. **Cloudflare Email Routing** i Alfs zon tar emot post till `info@arterasen.se` och skickar den vidare till en vanlig brevlåda, i första hand föreningens Gmail. Gratis, utan N.nu och utan egen server. Cloudflare lägger själv in tre MX (`route1`–`route3.mx.cloudflare.net`), SPF (`v=spf1 include:_spf.mx.cloudflare.net ~all`) och en DKIM-post (`cf2024-1._domainkey`).
 3. Ska styrelsen kunna svara från `info@arterasen.se`: *Skicka e-post som* i Gmail, och SPF utökas med `include:_spf.google.com`.
 
@@ -91,9 +91,9 @@ Email Routing tar bara emot och skickar vidare. Det är ingen brevlåda.
 - 2026-10-18: **Två Pages-projekt och adressen `utkast.arterasen.se`** (Alf). `arterasen-info` bygger `main` till `info.arterasen.se`, `arterasen-utkast` bygger `main` med `npm run build:preview` till `utkast.arterasen.se`. Ersätter grenen `granskning` och workflowen som speglade `main` dit. Underlag: [Två adresser för QR-sajten](https://claude.ai/code/artifact/9e3892a9-0640-41c1-93ca-0a359e9727c9).
 - 2026-10-18: **Pages, inte Workers** (Claude, Alf lät Claude välja). Skapa-flödet erbjuder Workers först, och Cloudflare rekommenderar Workers för nya projekt. Men sajten är statisk, `build:cf` läser `CF_PAGES_BRANCH` som bara Pages sätter, och Pages kräver ingen `wrangler`-konfiguration. Ett byte senare är litet: en `wrangler.jsonc` med `assets` mot `dist` och att läsa grenen ur `WORKERS_CI_BRANCH`.
 - 2026-10-18: **Claude får läsa utkast och `/intern/`** (Alf). `robots.txt` släpper in `Claude-User`, Anthropics agent för hämtningar som en person ber Claude om, så att Claude kan kontrollera sidorna. Alla andra robotar, också träningsroboten `ClaudeBot`, följer reglerna som förut, och `noindex` gäller fortfarande.
-- 2026-10-18: **Tillåtande licenser** (Alf): MIT för koden och CC BY 4.0 för texterna, med föreningen som namn att ange. Bilder och `material/` har egna villkor. Volontärerna går med på CC BY när de lämnar en text, vilket står i `docs/intern/10-skriva.md` och Drive-mallen. Ingen volontärtext fanns ännu. Se [LICENSER.md](../LICENSER.md).
+- 2026-10-18: **Tillåtande licenser** (Alf): MIT för koden och CC BY 4.0 för texterna, med föreningen som namn att ange. Bilder och `material/` har egna villkor. Volontärerna går med på CC BY när de lämnar en text, vilket står i `docs/intern/10-skriva.md` och [kortmallen](../docs/kortmall.md). Ingen volontärtext fanns ännu. Se [LICENSER.md](../LICENSER.md).
 - 2026-10-18: **Det privata repot `AlfCro/arterasen-config` nämns öppet** (Alf). README säger att drift- och kontouppgifter finns där och varför det är privat. Innehållet stannar där.
-- 2026-10-19 (föreningen, svar A2–A6): **Domänen ska ägas av föreningen** med dess organisationsnummer, med automatisk förnyelse. **Styrelsens firmatecknare ansvarar för inloggningarna**, och en av dem är andra person med inloggning till varje tjänst. Föreningen ska ha **ett eget Google-konto** och **en adress som styrelsen delar**. Namnen och personnumren står i svaret, inte här.
+- 2026-10-19 (föreningen, svar A2–A6): **Domänen ska ägas av föreningen** med dess organisationsnummer, med automatisk förnyelse. **Styrelsens firmatecknare ansvarar för inloggningarna**, och en av dem är andra person med inloggning till varje tjänst. Föreningen ska ha **en adress som styrelsen delar**. Namnen och personnumren står i svaret, inte här.
 - 2026-10-17: **Alfs egen server används inte.** Föreningen ska inte vara beroende av en privatpersons server (Alf).
 - 2026-10-17: Huvudsajten och den här sajten hålls isär. `/intern/` ligger på den publika sajten men är olistad och utan hemligheter.
 
@@ -103,11 +103,10 @@ Email Routing tar bara emot och skickar vidare. Det är ingen brevlåda.
 
 Sajten ska fungera i många år och får inte hänga på en enda person. Varje tjänst ska ha minst två personer som kan logga in, och en adress som föreningen kommer åt som kontaktmejl. Inloggningsuppgifter skrivs aldrig i repot eller på `/intern/`.
 
-- [ ] Skapa en adress som styrelsen delar (föreningen vill det, A4) och ett Google-konto som föreningen äger (A6). Förslag: samma konto, se *Mejl på arterasen.se*. Använd den som kontaktadress i tjänsterna nedan.
+- [ ] Skapa en adress som styrelsen delar (föreningen vill det, A4), till exempel ett gratis Gmail-konto som föreningen äger, se *Mejl på arterasen.se*. Använd den som kontaktadress i tjänsterna nedan.
 - [ ] **GitHub:** ett personligt repo kan bara ha en ägare, och medarbetare får inte adminrätt. Skapa en gratis organisation, flytta repot dit och lägg till en andra ägare. Cloudflare är kopplat sedan 2026-10-18, så Cloudflare-appen måste då godkännas för det nya repot och kopplingen kontrolleras i båda Pages-projekten. Claude uppdaterar `AlfCro/arterasen` i `package.json`, `AGENTS.md`, `docs/arbetsflode.md` och den här filen. GitHub omdirigerar de gamla adresserna under tiden.
 - [ ] Cloudflare, senast innan skyltarna trycks våren 2027: döp om kontot till föreningens namn, lägg till en person i styrelsen som *Super Administrator*, och en tredje inloggning med föreningens mejladress, också *Super Administrator*. Då kan styrelsen alltid ta sig in genom att återställa lösenordet, även om både Alf och styrelsepersonen slutar. Mejladressen får inte ligga på arterasen.se, eftersom DNS för den ligger i samma konto. Tvåstegsverifiering på alla, reservkoderna hos styrelsen.
-- [ ] Trello: minst två administratörer på arbetsytan och tavlan, en av dem med föreningens gemensamma adress. Trello är troligen det viktigaste kontot för volontärerna (Alf 2026-10-19).
-- [ ] Google Drive: mappen ska ägas av föreningens konto, inte av ett privat. En fil ägs av den som skapade den och försvinner om det kontot tas bort. Alf tvivlar 2026-10-19 på att Drive behövs, se [03](03-innehallsflode.md). Utan Drive är kontot främst styrelsens gemensamma adress.
+- [ ] Trello: minst två administratörer på arbetsytan och tavlan, en av dem med föreningens gemensamma adress. Trello är det enda verktyget volontärerna använder (Alf 2026-10-20), och texter och foton ligger på korten tills Claude har gjort sidor av dem.
 - [ ] Name ISP: domänen ägs juridiskt av den som står som innehavare, inte av den som har inloggningen. Föreningen vill äga den (A2): byt innehavare till föreningen med dess organisationsnummer. Nuvarande innehavare behöver troligen godkänna bytet. Firmatecknarna ska ha inloggningen (Alf, föreningen).
 - [ ] Skriv upp vem som har inloggning till vad, på ett ställe som föreningen kommer åt men utanför repot, till exempel i ett styrelseprotokoll.
 - [ ] Arbetsflödet med Claude går via Alfs Claude-konto. Kontrollera att README räcker för att någon annan ska kunna lägga in och publicera en text för hand.
@@ -185,4 +184,5 @@ Frågorna om domän, konton och huvudsajten skickades till föreningens ordföra
 - 2026-10-18: Pages-projekten `arterasen-info` och `arterasen-utkast` skapade med `info.arterasen.se` och `utkast.arterasen.se` (Alf). Pages valt framför Workers (Claude). `granskningUrl` pekar på utkastsajten och `granskning.yml` är borttagen. `info.arterasen.se` och huvudsajten svarar. `robots.txt` släpper in `Claude-User` (Claude).
 - 2026-10-18: Licenser valda: MIT och CC BY 4.0 (Alf). `LICENSE`, `LICENSER.md`, licensrad i sidfoten. README nämner det privata konfigurationsrepot (Claude).
 - 2026-10-18: PR #7 mergad (ersatte #6, som stängdes när #5:s gren togs bort). Båda sajterna byggda från `main` och kontrollerade. Grenar kan inte raderas från sessionen. Anteckningar för nästa agent i AGENTS.md och `docs/arbetsflode.md` (Claude).
-- 2026-10-19: Ordförandens svar A1–A6: hon sköter hemsidan, domänen ska ägas av föreningen, firmatecknarna ansvarar för inloggningarna, föreningen får eget Google-konto och gemensam adress. arterasen.se saknar MX-post, så post till adresser där kommer inte fram; förslag om Cloudflare Email Routing. Den gamla zonen svarar fortfarande för vissa resolvrar (Claude).
+- 2026-10-19: Ordförandens svar A1–A6: hon sköter hemsidan, domänen ska ägas av föreningen, firmatecknarna ansvarar för inloggningarna, föreningen får en gemensam adress. arterasen.se saknar MX-post, så post till adresser där kommer inte fram; förslag om Cloudflare Email Routing. Den gamla zonen svarar fortfarande för vissa resolvrar (Claude).
+- 2026-10-20: Bara Trello för volontärerna (Alf). Kontot för föreningens material behövs inte; kvar är en adress som styrelsen delar (Claude).

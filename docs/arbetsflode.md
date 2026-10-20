@@ -4,9 +4,10 @@ Den här rutinen följer Claude när tavlan gås igenom, antingen när någon be
 
 ## Förutsättningar
 
-- Kopplingarna **Trello** och **Google Drive** finns i sessionen. Saknas någon: gör inget på tavlan, skriv till Alf vad som saknas och avsluta.
+- Kopplingen **Trello** finns i sessionen. Saknas den: gör inget på tavlan, skriv till Alf att den saknas och avsluta.
 - Repot `AlfCro/arterasen` är kopplat och klonat. Kör `npm ci`.
-- Länkar till tavlan och mappen står i `site.config.json` under `intern`.
+- Länken till tavlan står i `site.config.json` under `intern.trelloUrl`.
+- Kortet *MALL – kopiera mig* överst i listan *Skriver* har samma text som [kortmall.md](kortmall.md). Ändras filen: uppdatera mallkortet. Mallkortet hanteras aldrig som en plats.
 
 ## Ordning för en genomgång
 
@@ -21,16 +22,16 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
 
 ## Klar för Claude: ny plats eller ändring
 
-1. **Läs kortet:** namn, beskrivning, alla kommentarer sedan förra förhandsvisningen, bilagor och länken till Drive.
-2. **Läs materialet** i Google Drive: dokumentet och foton i samma mapp.
+1. **Läs kortet:** namn, beskrivningen med texten enligt kortmallen, alla kommentarer sedan förra förhandsvisningen och bilagorna. Står det *Ändrat i beskrivningen* i en kommentar: jämför beskrivningen med platsens `sv.md`.
+2. **Hämta fotona** som är bifogade på kortet till en mapp utanför repot. Går det inte med Trello-kopplingen: skriv till Alf vilka bilagor som behövs och fortsätt med texten.
 3. **Ny eller ändring?** Börjar kortnamnet med *Ändra:* eller finns platsen redan i `content/platser/`, är det en ändring.
 4. **Ny plats:** välj slug av platsens namn: gemener, å och ä blir a, ö blir o, mellanslag blir bindestreck, högst 20 tecken. Kontrollera att den inte finns i `content/tryckta-skyltar.json`. Kör `npm run ny -- <slug> "<Titel>"`.
-5. **Skriv `sv.md`** utifrån dokumentet:
-   - Behåll volontärens innehåll och fakta. Korta och förtydliga enligt mallen, men lägg inte till uppgifter som inte står i dokumentet eller i en källa du har läst.
-   - Lägg dokumentets källor i `kallor`, och länken till Drive-dokumentet sist.
+5. **Skriv `sv.md`** utifrån kortet:
+   - Behåll volontärens innehåll och fakta. Korta och förtydliga enligt mallen, men lägg inte till uppgifter som inte står på kortet eller i en källa du har läst.
+   - Lägg kortets källor i `kallor`, och länken till Trello-kortet sist. Kortet syns bara för tavlans medlemmar, så länken säger inget till andra.
    - Är något oklart eller motsägelsefullt: skriv det som en fråga i kortkommentaren i steg 11 och låt uppgiften vara utanför texten.
 6. **Översätt** till `en.md` och `de.md` med samma fakta i samma ordning. Använd ordlistan i [AGENTS.md](../AGENTS.md).
-7. **Foton:** när dokumentet anger fotograf och att föreningen får använda bilden, eller när bilden har en fri licens (se [bilder.md](bilder.md)). `npm run bild -- <fil> <slug>`, sätt `bild` och `fotograf` i `sv.md`, för fri licens också `bildlicens` och `bildkalla`, och `bildtext` i alla språk. Fler bilder: `npm run bild -- <fil> <slug> bild-2` och en rad under `fler_bilder` i varje språkfil.
+7. **Foton:** när kortet anger fotograf och att föreningen får använda bilden, eller när bilden har en fri licens (se [bilder.md](bilder.md)). `npm run bild -- <fil> <slug>`, sätt `bild` och `fotograf` i `sv.md`, för fri licens också `bildlicens` och `bildkalla`, och `bildtext` i alla språk. Fler bilder: `npm run bild -- <fil> <slug> bild-2` och en rad under `fler_bilder` i varje språkfil.
 8. **Status** är `utkast` i alla språk. Vid ändring av en publicerad plats: behåll `klar`, men PR:en mergas inte förrän ändringen är godkänd (se nedan).
 9. **Kontrollera:** `npm run check` utan fel och `npm run build:preview`. Titta på sidan i mobilbredd.
 10. **Git:**
@@ -39,7 +40,7 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
     - **Ändring av publicerad plats:** merga inte. Granskningslänk är PR:ens egen förhandsvisning. Hämta adressen ur Cloudflares kommentar på PR:en eller ur kontrollen `Cloudflare Pages: arterasen-info` (kommandot står under *Miljön i Claude-sessioner* i [AGENTS.md](../AGENTS.md); `gh pr checks` fungerar inte). Grenaliaset är `https://innehall-<slug>.arterasen-info.pages.dev/`.
 11. **Vänta på förhandsvisningen** och öppna länken för att se att sidan finns. Skriv sedan en kommentar på kortet:
     - Länkar till sidan på svenska, engelska och tyska
-    - Vad du har ändrat jämfört med dokumentet, i en eller två meningar
+    - Vad du har ändrat jämfört med kortets text, i en eller två meningar
     - Frågor, om det finns några
     - *Ser det bra ut? Flytta kortet till Godkänt. Annars: skriv vad som ska ändras och flytta tillbaka till Klar för Claude.*
 12. Flytta kortet till **Granska**.

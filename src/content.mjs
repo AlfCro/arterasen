@@ -244,7 +244,7 @@ export function loadContent(config) {
 }
 
 function checkBody(where, body, err) {
-  // Text comes from volunteers via Drive. Raw HTML is not allowed, so nothing can be injected into the page.
+  // Text comes from volunteers via Trello cards. Raw HTML is not allowed, so nothing can be injected into the page.
   const stripped = body.replace(/`[^`]*`/g, '');
   if (/<\/?[a-z!][^>]*>/i.test(stripped)) err(where, 'texten innehåller HTML, använd vanlig Markdown');
 }

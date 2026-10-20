@@ -1,10 +1,10 @@
-# Mall för Google-dokumentet
+# Kortmall för en ny plats
 
-Innehållet nedan blir dokumentet *Mall – ny plats* i föreningens Drive-mapp. Volontärerna gör en kopia per plats. Rubrikerna ska finnas kvar i kopian så att Claude hittar rätt uppgifter.
+Texten nedan står i beskrivningen på kortet *MALL – kopiera mig* överst i listan *Skriver* på Trello-tavlan. Volontären kopierar kortet (⋯ → *Kopiera*), döper kopian till platsens namn och fyller i beskrivningen. Rubrikerna ska finnas kvar så att Claude hittar rätt uppgifter. Foton bifogas på kortet.
+
+Claude lägger in mallkortet när tavlan finns, och ändrar det när den här filen ändras.
 
 ---
-
-# Plats: (skriv platsens namn)
 
 **Skrivet av:** (ditt namn)
 **Datum:** (ÅÅÅÅ-MM-DD)
@@ -13,7 +13,7 @@ Innehållet nedan blir dokumentet *Mall – ny plats* i föreningens Drive-mapp.
 
 ## Var står skylten?
 
-Beskriv var på fäboden platsen finns, till exempel "vid grinden nedanför serveringen". Ett foto eller en pil på en karta går också bra.
+Beskriv var på fäboden platsen finns, till exempel "vid grinden nedanför serveringen". Ett foto på kortet går också bra.
 
 ## Det viktigaste
 
@@ -36,9 +36,9 @@ Var kommer uppgifterna ifrån? En länk, en bok med sidnummer, eller "berättat 
 
 ## Bilder
 
-För varje bild i mappen:
+För varje bild som är bifogad på kortet:
 
-- Filnamn:
+- Bildens namn på kortet:
 - Fotograf:
 - Får föreningen använda bilden på sajten? (ja/nej)
 - Syns någon person som går att känna igen? Har hen sagt ja? (ja/nej)

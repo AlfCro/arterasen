@@ -2,17 +2,17 @@
 titel: Skriva en text
 flik: Skriva
 ingress: En bra text på en skylt är kort och handlar om det besökaren ser framför sig just nu.
-uppdaterad: 2026-10-19
+uppdaterad: 2026-10-20
 ---
 
 ## Så här gör du
 
-1. Öppna {{drive}}.
-2. Gör en kopia av dokumentet *Mall – ny plats*. Högerklicka och välj *Gör en kopia*. I mobilen: tryck på de tre prickarna och välj *Gör en kopia*.
-3. Döp kopian till platsens namn och flytta den till mappen *Platser*.
-4. Fyll i mallen. Det gör inget om det inte blir perfekt, Claude hjälper till med språket.
-5. Lägg eventuella foton i samma mapp.
-6. Lägg ett kort på {{trello}} med platsens namn och klistra in länken till dokumentet i kortets beskrivning. Flytta kortet till *Klar för Claude* när du är klar.
+1. Öppna {{trello}}.
+2. Överst i listan *Skriver* ligger kortet *MALL – kopiera mig*. Öppna det, tryck på de tre prickarna och välj *Kopiera*. Låt kopian hamna i listan *Skriver*.
+3. Döp kopian till platsens namn.
+4. Fyll i rubrikerna i kortets beskrivning. Det gör inget om det inte blir perfekt, Claude hjälper till med språket.
+5. Bifoga foton på kortet: tryck på gemet eller *Bilaga* och välj bilden. En bild får vara högst 10 MB. Bilder från mobilen är nästan alltid mindre än så.
+6. Flytta kortet till *Klar för Claude* när du är klar.
 
 ## Tips för texten
 
@@ -24,12 +24,12 @@ uppdaterad: 2026-10-19
 - **Ange källor.** En länk, en bok, eller "berättat av …". Källorna visas bara i förhandsvisningen.
 - **Nämn inte privatpersoner** utan att de har sagt ja. Husen ägs av enskilda personer. Det gäller även källor: skriv "berättat av …" bara om personen vill stå med.
 - **Texterna får användas av andra.** Allt på sajten får användas fritt om föreningen anges som källa. Det heter licensen CC BY 4.0. När du lämnar en text till föreningen går du med på det.
-- **Allt du skriver kan bli offentligt.** Ditt dokument i Drive syns bara för oss, men när Claude har gjort en sida av texten syns den för alla som letar på internet, även innan den är godkänd. Skriv därför inget i dokumentet som inte får bli känt, till exempel telefonnummer eller vem som äger ett hus.
+- **Allt du skriver kan bli offentligt.** Kortet på Trello syns bara för oss som är med på tavlan, men när Claude har gjort en sida av texten syns den för alla som letar på internet, även innan den är godkänd. Skriv därför inget på kortet som inte får bli känt, till exempel telefonnummer eller vem som äger ett hus.
 
 ## Foton
 
 - Ta bilden i liggande format och i dagsljus. En bra bild räcker, men upp till fem bilder per plats går bra.
-- Skriv i dokumentet vem som tog bilden och att vi får använda den.
+- Skriv på kortet vem som tog bilden och att vi får använda den.
 - Syns det en person som går att känna igen, fråga personen först.
 - Gamla bilder från museer, till exempel Dalarnas museum, får vi ofta använda fritt om fotografen och museet står med. Claude letar upp sådana bilder och skriver ut vem som tog dem.
 - Skriv en mening om vad bilden visar. Den läses upp för den som inte ser.
