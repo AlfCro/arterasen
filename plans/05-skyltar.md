@@ -1,6 +1,6 @@
 # 05 Skyltar: tryck och uppsättning
 
-Status: Mall klar. Föreningen lutar åt laminerade A5 som delas ut, med en karta, i stället för fasta skyltar. Inte beslutat
+Status: Mall klar. Föreningen lutar åt laminerade A5 som delas ut, med en karta, i stället för fasta skyltar. Inte beslutat. Löst utkast till en karta med QR-koder på `/intern/karta/` sedan 2026-10-20
 Ansvarig: Föreningen
 Senast uppdaterad: 2026-10-20
 
@@ -31,6 +31,17 @@ Vad det betyder här:
 - **Hur hittar besökaren nummer 7 på marken?** Med bara en karta behövs kanske små nummerpinnar vid platserna, eller tydliga landmärken på kartan.
 - **Den som inte lånar kartan** får ingen information. En enda skylt vid parkeringen eller serveringen med en QR-kod till startsidan kan täcka det.
 
+### Utkast till kartan (2026-10-20)
+
+Alf frågade hur det visuella ska lösas. Ett löst utkast finns på `/intern/karta/` (fliken *Karta, utkast*) och på Trello-kortet [Karta med QR-koder (löst utkast)](https://trello.com/c/7QfVyuMu/23-karta-med-qr-koder-l%C3%B6st-utkast). Inget i det är beslutat.
+
+- **Underlaget** är Bägerfeldts karta över husen i dag, skrift 66 s. 51: hus, öppen mark, skogskant, höjdkurvor och skala. Den är omritad som SVG i sajtens färger med `tools/karta-vektorisera.py` (färgsegmentering, hus som roterade rektanglar), inte inklistrad. Resultatet ligger i `content/karta/bas.svg`. Husen är maskinritade och kan ha små fel; hus som skyms av Bägerfeldts markeringar kan saknas.
+- **Lägena** står i `content/karta/lagen.json` som bildpunkter på underlaget. Där står `"exempel": true` tills föreningen har pekat ut platserna; så länge är alla lägen påhittade och varje blad stämplat *Löst utkast · lägena är påhittade*. Lägena hör inte till `sv.md`, eftersom de inte är fakta än.
+- **QR-koderna sitter inte på platserna.** Husen står 10–30 m isär, och en kod behöver drygt 2 cm. I stället: numrerade cirklar på kartan och koderna i rutor runt om, med ett streck in till cirkeln. Rutorna fördelas efter vinkeln runt kartans mitt, så att strecken sällan korsar varandra.
+- **Två uppslag i A4:** (1) allt på ett blad, kartan i mitten och 15 rutor runt om, och (2) större karta med siffror fram och ett rutnät med koder bak. Båda har en större kod till startsidan med texten att skanna den först där det finns täckning, så att service workern sparar alla sidor.
+- **QR 25 mm** i rutorna, 36 mm på baksidan, felkorrigering Q som på skyltarna. Alla koder avkodas av `npm run verify`, i utkastet och i produktion.
+- I produktionsbygget visar sidan bara godkända platser, som `/skyltar/`, och länkar annars till utkastet.
+
 ## Beslut
 
 - 2026-10-17: Skylten genereras från innehållet på `/skyltar/` som A5, en per sida. QR-koden finns även som SVG för tryckerier.
@@ -48,12 +59,17 @@ Vad det betyder här:
 - [ ] Redovisning till Vindkraftsfonden: kvitton och bilder som visar resultatet. Kvitton från privata leverantörer får vara egna (E1). Spara kvitton och ta bilder av kartan eller skyltarna på plats (föreningen).
 - [ ] När skylten sitter uppe: flytta kortet till *Skylt uppsatt*. Claude lägger in den i `content/tryckta-skyltar.json`.
 - [ ] Inför varje säsong: skanna alla skyltar och byt skadade
+- [ ] Kartan: föreningen pekar ut var varje plats är (Trello-kortet *Karta med QR-koder*). Claude för in lägena i `content/karta/lagen.json` och sätter `exempel` till `false` när alla är utpekade.
+- [ ] Kartan: välja uppslag 1 eller 2, och vad mer som ska synas (serveringen, parkeringen, stigens början, utsiktstornet)
+- [ ] Kartan: fråga Bägerfeldt vilken karta hans bild bygger på, innan något trycks (se *Öppna frågor*)
 
 ## Öppna frågor
 
 - ~~Stolpar eller fäste på husen?~~ Stolpar (E2).
 - Bärbar karta, fasta skyltar eller båda? Se *Väntar på beslut*.
 - Hur många skyltar ryms i budgeten från Vindkraftsfonden? Svaret om bidraget (E1) nämner villkoren men inte beloppet.
+- **Kartans underlag:** Bägerfeldts bild ser ut att bygga på en karta från Lantmäteriet. Lantmäteriets öppna data är CC0, men alla produkter är inte öppna (ortofoto kräver avgift och licens). Vilken karta han utgick från behöver vara känt innan kartan trycks. Är den inte fri finns OpenStreetMap eller en egen skiss som alternativ.
+- **Norr uppåt?** Bägerfeldts bild har ingen norrpil. Kartan från 1827 är vriden så att norr är uppåt i hans skrift, och den nutida är troligen det också, men det är inte kontrollerat. Ingen norrpil i utkastet.
 - Ska skyltarna ha föreningens logotyp? Föreningen räknar kohuvudet på Facebooksidan som logotyp och funderar på en ny (D6). Behövs som fil, helst SVG eller stor PNG.
 
 ## Logg
@@ -62,3 +78,4 @@ Vad det betyder här:
 - 2026-10-19: Ordförandens svar E1–E4 och D6 inlagda. Föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar, och fasta skyltar i så fall på stolpar. Inget i mallen ändrat än (Claude).
 - 2026-10-20: QR-koderna i utkastbyggen leder till utkastet, alla skyltar där märkta *Provtryck*. `npm run verify` avkodar nu skyltarna i både utkast- och produktionsbygget (Claude).
 - 2026-10-20: Föreningen lutar åt laminerade A5 med QR-koder som delas ut till gästerna, kombinerade med en karta, inte helt bestämt (Alf). Numret låses inte förrän numren är bestämda (Claude).
+- 2026-10-20: Löst utkast till en karta med QR-koder på `/intern/karta/`, två uppslag i A4, underlaget omritat ur Bägerfeldts skrift 66 s. 51, påhittade lägen. Trello-kortet *Karta med QR-koder (löst utkast)* med fem frågor till föreningen (Claude, på Alfs förslag).

@@ -4,6 +4,7 @@
 //   1. Builds a preview and takes phone-width screenshots (light and dark) to look at.
 //   2. Prints the signs to A5 PDF and decodes every QR code from the rendered page:
 //      they must lead to the draft site, and every sign must be stamped as a test print.
+//      Does the same for the map draft on /intern/karta/ (karta.pdf).
 //   3. Builds production in a temporary copy with every place approved, decodes its signs
 //      (public address, no stamps), then checks language redirect, offline reading after
 //      the first scan, language memory and 404.
@@ -103,6 +104,27 @@ async function checkSigns(base, { expectedBase, preview, pdf, shot }) {
   await ctx.close();
 }
 
+// Decodes every QR code on the map draft (/intern/karta/): each must lead to a place page or the
+// start page of the address the build should use.
+async function checkMap(base, { expectedBase, label, pdf }) {
+  const ctx = await browser.newContext({ viewport: { width: 1000, height: 1200 }, deviceScaleFactor: 2 });
+  const page = await ctx.newPage();
+  await page.goto(base + '/intern/karta/', { waitUntil: 'networkidle' });
+  await page.evaluate(() => document.fonts.ready);
+  if (pdf) await page.pdf({ path: path.join(OUT, pdf), preferCSSPageSize: true, printBackground: true });
+  const codes = await page.$$('.map-tile-qr svg, .map-start-qr svg, .map-cell-qr svg');
+  const valid = new Set([expectedBase, ...places.map((p) => `${expectedBase}${p}/`)]);
+  for (const [i, el] of codes.entries()) {
+    const png = PNG.sync.read(await el.screenshot());
+    const code = jsQR(new Uint8ClampedArray(png.data), png.width, png.height);
+    if (!code) fail(`${label}: QR-kod ${i + 1} på kartan gick inte att avkoda`);
+    else if (!valid.has(code.data)) fail(`${label}: QR-kod ${i + 1} på kartan leder till ${code.data}`);
+  }
+  if (!codes.length) fail(`${label}: inga QR-koder på kartan`);
+  else ok(`${label}: ${codes.length} QR-koder på kartan avkodade${pdf ? ', PDF sparad' : ''}`);
+  await ctx.close();
+}
+
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
 const slash = (url) => (url.endsWith('/') ? url : `${url}/`);
 const browser = await chromium.launch({ executablePath: chromiumPath() });
@@ -114,7 +136,7 @@ const places = fs.readdirSync(path.join(previewDir, 'skyltar', 'qr')).map((f) =>
 let server = await serve(previewDir, 4311);
 let base = 'http://localhost:4311';
 
-const shots = [['/sv/', 'light'], ...places.map((p) => [`/sv/${p}/`, 'light']), [`/de/${places[0] ?? ''}/`, 'dark'], ['/intern/', 'light'], ['/intern/status/', 'light']];
+const shots = [['/sv/', 'light'], ...places.map((p) => [`/sv/${p}/`, 'light']), [`/de/${places[0] ?? ''}/`, 'dark'], ['/intern/', 'light'], ['/intern/status/', 'light'], ['/intern/karta/', 'light']];
 for (const [url, scheme] of shots) {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, colorScheme: scheme });
   const page = await ctx.newPage();
@@ -145,6 +167,7 @@ await checkSigns(base, {
   pdf: 'skyltar.pdf',
   shot: 'skylt-1.png',
 });
+await checkMap(base, { expectedBase: slash(config.intern?.granskningUrl || config.siteUrl), label: 'utkastet', pdf: 'karta.pdf' });
 server.close();
 
 // ---------- 3: production with everything approved, offline behaviour ----------
@@ -164,6 +187,7 @@ server = await serve(prodDir, 4312);
 base = 'http://localhost:4312';
 
 await checkSigns(base, { expectedBase: slash(config.siteUrl), preview: false, shot: 'skylt-1-produktion.png' });
+await checkMap(base, { expectedBase: slash(config.siteUrl), label: 'produktion' });
 
 if (places.length >= 2) {
   const ctx = await browser.newContext({ locale: 'de-DE' });

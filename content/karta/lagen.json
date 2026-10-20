@@ -1,0 +1,15 @@
+{
+  "om": "Var varje plats står på kartan, i bildpunkter på content/karta/bas.svg (941 × 915, ungefär 2,07 punkter per meter, 0,0 uppe till vänster). Så länge exempel är true är lägena påhittade och visar bara hur kartan kan se ut. Sätt exempel till false först när alla lägen är utpekade av föreningen.",
+  "exempel": true,
+  "lagen": {
+    "vallen": [470, 615],
+    "eldhusen": [487, 537],
+    "ristningarna": [399, 511],
+    "kallorna": [752, 660],
+    "fjallkorna": [470, 285],
+    "boden": [556, 496],
+    "mjolkboden": [655, 409],
+    "kartan-1827": [571, 575],
+    "fabodstigen": [150, 858]
+  }
+}
