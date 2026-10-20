@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-20 21:45
+Senast uppdaterad: 2026-10-20 22:20
 
 ## Mål
 
@@ -48,6 +48,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [x] Alf: granska och merga PR #10 (fler bilder och fakta, 2026-10-19)
 - [x] Alf: granska och merga PR #11 (förslag på fler skyltar, 2026-10-19)
 - [ ] Alf: granska och merga PR #12 (svar från ordföranden)
+- [ ] Alf: granska och merga PR #15 (QR-koderna i utkastet leder till utkastet), skanna sedan en skylt på `utkast.arterasen.se/skyltar/`
 - [ ] Alf: skicka underlaget med förslag på fler skyltar till ordföranden, [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html)
 - [ ] Föreningen: välja bland förslagen 6–17 och svara på de nio frågorna i underlaget
 - [ ] Alf: Cloudflare Email Routing för `info@arterasen.se`, steg i [plans/02-hosting.md](plans/02-hosting.md). Fråga först ordföranden vilka adresser hon använder.
