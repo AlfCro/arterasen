@@ -2,12 +2,12 @@
 titel: Granska och godkänna
 flik: Granska
 ingress: Innan något syns för besökarna ska någon i föreningen ha läst det och sagt ja.
-uppdaterad: 2026-10-17
+uppdaterad: 2026-10-20
 ---
 
 ## När ett kort ligger i Granska
 
-1. Öppna kortet på {{trello}}. Claude har skrivit en kommentar med länkar till förhandsvisningen på svenska, engelska och tyska, och vad som har ändrats jämfört med dokumentet.
+1. Öppna kortet på {{trello}}. Claude har skrivit en kommentar med länkar till förhandsvisningen på svenska, engelska och tyska, och vad som har ändrats jämfört med texten på kortet.
 2. Öppna länken i mobilen. Det är så besökarna kommer att se sidan. Överst står det att det är en förhandsvisning.
 3. Läs texten och faktarutan. Stämmer uppgifterna? Är något otydligt?
 4. Längst ner på sidan står källorna. Kolla gärna en eller två.
@@ -18,7 +18,7 @@ Flytta kortet till **Godkänt**. Claude publicerar sidan, oftast inom ett dygn, 
 
 ## Behöver något ändras?
 
-Skriv en kommentar på kortet om vad som ska ändras och flytta kortet tillbaka till **Klar för Claude**. Du kan också ändra direkt i Google-dokumentet och skriva *Ändrat i dokumentet* i kommentaren.
+Skriv en kommentar på kortet om vad som ska ändras och flytta kortet tillbaka till **Klar för Claude**. Du kan också ändra direkt i kortets beskrivning och skriva *Ändrat i beskrivningen* i kommentaren.
 
 ## Bra att veta
 

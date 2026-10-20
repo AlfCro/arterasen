@@ -1,14 +1,14 @@
 ---
 titel: Så jobbar vi
 flik: Så jobbar vi
-ingress: Så här blir en text till en skylt med QR-kod. Du behöver bara Google Drive och Trello, och båda fungerar i mobilen.
-uppdaterad: 2026-10-19
+ingress: Så här blir en text till en skylt med QR-kod. Du behöver bara Trello, och det fungerar i mobilen.
+uppdaterad: 2026-10-20
 ---
 
 ## Kort version
 
-1. **Skriv** texten om en plats på svenska i ett Google-dokument i {{drive}}. Använd mallen.
-2. **Säg till** genom att flytta platsens kort på {{trello}} till listan *Klar för Claude*.
+1. **Skriv** texten om en plats på svenska direkt på ett kort på {{trello}}. Kopiera mallkortet så får du rubrikerna. Bifoga foton på kortet.
+2. **Säg till** genom att flytta kortet till listan *Klar för Claude*.
 3. **Claude** gör i ordning sidan och översätter den till engelska och tyska. Sedan lägger Claude en länk till en förhandsvisning på kortet och flyttar det till *Granska*.
 4. **Läs** förhandsvisningen i mobilen. Ser allt bra ut flyttar du kortet till *Godkänt*. Vill du ändra något skriver du en kommentar på kortet och flyttar tillbaka det till *Klar för Claude*.
 5. **Claude publicerar** sidan på {{publik}} och lägger skylten att skriva ut på kortet.
@@ -40,7 +40,7 @@ Ett kort är en plats. Kortets namn är platsens namn, till exempel *Eldhusen*. 
 
 - **Godkänn inte din egen text.** Någon annan än den som skrev ska läsa och flytta kortet till *Godkänt*.
 - **Skriv bara sådant vi vet.** Ange var uppgifterna kommer ifrån. Claude hittar inte på fakta, men kan ställa frågor.
-- **Bilder** får bara användas om fotografen har sagt ja. Skriv fotografens namn i dokumentet.
+- **Bilder** får bara användas om fotografen har sagt ja. Skriv fotografens namn på kortet.
 - **Adressen på en uppsatt skylt ändras aldrig.** Om en plats byter namn finns den gamla adressen kvar och leder till rätt sida.
 
 ## Frågor

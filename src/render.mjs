@@ -282,7 +282,6 @@ export function fillPlaceholders(ctx, text) {
   const missing = '_(länken läggs in när den finns)_';
   return text
     .replace(/\{\{trello\}\}/g, links.trelloUrl ? `[Trello-tavlan](${links.trelloUrl})` : `Trello-tavlan ${missing}`)
-    .replace(/\{\{drive\}\}/g, links.driveUrl ? `[mappen i Google Drive](${links.driveUrl})` : `mappen i Google Drive ${missing}`)
     .replace(/\{\{granskning\}\}/g, links.granskningUrl ? `[granskningsversionen](${links.granskningUrl})` : `granskningsversionen ${missing}`)
     .replace(/\{\{publik\}\}/g, `[${ctx.config.siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}](${ctx.config.siteUrl})`);
 }

@@ -17,7 +17,7 @@ Ett beslut som ändrar något i en delplans **Beslut** ska stämmas av med Alf i
 
 ## Projektet i korthet
 
-QR-skyltar på Ärteråsens fäbod (Ore, Rättviks kommun). Varje skylt leder till en kort text om platsen på svenska, engelska och tyska. Texterna skrivs av lågtekniska volontärer i Ärteråsens Kulturförening. De lämnar material i Google Drive och följer arbetet på en Trello-tavla. Agenten gör sidor av materialet, översätter, lägger upp förhandsvisningar och publicerar när föreningen har godkänt.
+QR-skyltar på Ärteråsens fäbod (Ore, Rättviks kommun). Varje skylt leder till en kort text om platsen på svenska, engelska och tyska. Texterna skrivs av lågtekniska volontärer i Ärteråsens Kulturförening. De skriver texten och bifogar foton på ett kort på en Trello-tavla, där arbetet också följs. Agenten gör sidor av materialet, översätter, lägger upp förhandsvisningar och publicerar när föreningen har godkänt.
 
 - Publik sajt: `https://info.arterasen.se/` (Cloudflare Pages-projektet `arterasen-info`, bygger `main` med `npm run build:cf`)
 - Utkast: `https://utkast.arterasen.se/` (Pages-projektet `arterasen-utkast`, bygger `main` med `npm run build:preview`, utkast synliga, `noindex`). Det är granskningsversionen som `intern.granskningUrl` pekar på.
@@ -59,7 +59,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `docs/underlag/` | Underlag till föreningen som Alf har bett ska ligga i repot, som självständiga HTML-filer. Ingen nutida privatperson nämns. |
 | `material/` | Kopior av fria bilder och skrifter, listade i `material/hamta.json`. Syns på GitHub. Bilder därifrån når sajten bara via `npm run bild` till `content/`. |
 | `LICENSE`, `LICENSER.md` | MIT för koden, CC BY 4.0 för texterna, undantagen |
-| `docs/drive-mall.md` | Innehållet i Google Docs-mallen som volontärerna kopierar |
+| `docs/kortmall.md` | Texten på mallkortet på Trello som volontärerna kopierar |
 | `tools/verify.mjs` | Webbläsartest av den byggda sajten |
 | `tools/artifact-preview.mjs` | Kopia av den byggda sajten som går att publicera som artifact |
 | `tools/check-readme.mjs` | Kontrollen att README.md hänger med (`npm run check:readme`) |
@@ -67,19 +67,19 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `src/` | Byggskript, mallar, stil. Inga ramverk. |
 | `plans/` | Delplaner per initiativ |
 | `rapporter/` | En rapport per arbetspass, nyast länkad från PLAN.md |
-| `site.config.json` | Adress, språk, länkar till Trello och Drive |
+| `site.config.json` | Adress, språk, länken till Trello-tavlan |
 
 ## Regler
 
 ### Innehåll
 
-- **Hitta aldrig på fakta.** Varje uppgift ska komma från volontärens dokument eller från en källa som står i `kallor`. Är något oklart: ställ frågan på Trello-kortet och lämna uppgiften utanför tills den är besvarad.
+- **Hitta aldrig på fakta.** Varje uppgift ska komma från volontärens Trello-kort eller från en källa som står i `kallor`. Är något oklart: ställ frågan på Trello-kortet och lämna uppgiften utanför tills den är besvarad.
 - **Fritt material väntar inte.** Bilder och uppgifter med fri licens (CC BY, CC BY-SA, CC0, public domain) eller med upphovspersonens egna fria villkor används i utkasten direkt, med källan angiven. Vänta inte på svar om tillstånd för sådant (beslut av Alf 2026-10-18). Kontakta upphovspersonen parallellt: en privatperson ska ha fått veta och inte ha sagt nej innan platsen sätts till `klar`. Lars Bägerfeldt har godkänt att föreningen använder alla hans bilder och skrifter (2026-10-19). Ett museum med CC-licens behöver inte tillfrågas.
 - **Motsägelser väntar.** Uppgifter där källorna säger olika saker (se *Motsägelser* i `docs/fakta.md`) är ingen tillståndsfråga och lämnas utanför eller skrivs försiktigt tills föreningen har svarat.
 - **Status `klar` sätts bara efter godkännande:** kortet ligger i *Godkänt* och flyttades dit av någon annan än den som skrev texten. Se [docs/arbetsflode.md](docs/arbetsflode.md).
 - **Adressen (slug) är permanent** när skylten satts upp. Byter en plats namn: lägg till `flyttad_till` i `content/tryckta-skyltar.json`, ta aldrig bort en rad.
 - **Privatpersoner** nämns inte utan samtycke. Husen ägs av enskilda.
-- **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens dokument säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. Upp till fyra extra bilder per plats står under `fler_bilder` i `sv.md` med samma fält, och med `bild` och `bildtext` i övriga språk; de visas under *Fler bilder* efter texten. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Att beskära bort personen räcker när ingen annan i bilden kan kännas igen.
+- **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens Trello-kort säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. Upp till fyra extra bilder per plats står under `fler_bilder` i `sv.md` med samma fält, och med `bild` och `bildtext` i övriga språk; de visas under *Fler bilder* efter texten. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Att beskära bort personen räcker när ingen annan i bilden kan kännas igen.
 - **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
 - **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
 
@@ -165,7 +165,7 @@ Saker som var kända 2026-10-17 och 2026-10-18 och som inte syns förrän man st
   ```
 - **Hämta `main` innan push** (`git fetch origin main && git rebase origin/main`), annars kan push från en gammal grund klon avvisas.
 - **Chromium** finns under `$PLAYWRIGHT_BROWSERS_PATH`. `npm run verify` hittar den själv. Kör aldrig `playwright install`.
-- **Kopplingar:** Trello och Google Drive behövs för arbetsflödet. 2026-10-17 var Trello inte installerat och Google Drive installerat men inte anslutet. Kontrollera med ListConnectors och föreslå dem med SuggestConnectors. Atlassian-kopplingen hör inte till föreningen och används inte här.
+- **Kopplingar:** Trello är den enda koppling arbetsflödet behöver (Alf 2026-10-20). 2026-10-20 fanns Trello i registret men var inte installerat. Kontrollera med ListConnectors och föreslå den med SearchMcpRegistry och SuggestConnectors. Om kopplingen kan hämta bilagor (foton) är inte provat. Atlassian-kopplingen hör inte till föreningen och används inte här.
 - **DNS-uppslag** fungerar inte från skalet (ingen `dig`, ingen namnupplösning). Använd WebFetch mot `https://dns.google/resolve?name=<domän>&type=<NS|A|MX|CNAME|SOA>`. 2026-10-19 svarade vissa uppslag från den gamla zonen hos `jean`/`lloyd` och andra från Alfs zon: se vilken namnserver som står först i SOA-svaret (`jean` gammal, `betty` Alfs). Efter tre, fyra uppslag i rad kan proxyn svara 429 och spärra fler försök i passet (2026-10-18), så välj uppslagen med omsorg.
 - **Se sajten:** `https://utkast.arterasen.se/` visar `main` med utkast, och en gren syns på sin förhandsvisning (se ovan). Utan nät eller före en push går det att publicera bygget som artifact: `npm run build:preview`, sedan `node tools/artifact-preview.mjs dist <mapp i scratchpad>`. Skriptet skriver ut `files`-kartan. Publicera `<mapp>/index.html` med Artifact-verktyget, `root` satt till mappen och `files` från skriptet. Senaste versionen: se rapporten i PLAN.md. En artifact från en tidigare session uppdateras genom att dess URL skickas som `url`.
 - **Beslutsunderlag** som Alf ska läsa eller dela skrivs som Claude Docs-dokument, eller som en självständig HTML-fil (allt inbäddat, inga externa resurser) som skickas till Alf med SendUserFile när han vill ha en fil att skicka vidare. Som filer i repot bara när Alf ber om det, och då i `docs/underlag/` utan nutida privatpersoner, eftersom repot är publikt (Alf 2026-10-19, första filen `docs/underlag/2026-10-19-fler-skyltar.html`). Länka eller nämn dem från delplanen och rapporten, och skriv frågorna i rapporten så att nästa session vet vad som frågats.
