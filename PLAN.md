@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-20 18:50
+Senast uppdaterad: 2026-10-20 21:45
 
 ## Mål
 
@@ -14,7 +14,7 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 | --- | --- | --- | --- | --- | --- |
 | 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner på `utkast.arterasen.se` | Alf, föreningen |
 | 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Pågår | Mejl på arterasen.se med Cloudflare Email Routing (domänen saknar MX). Domänen till föreningen och en adress som styrelsen delar (beslutat av föreningen 2026-10-19). Kvar sedan förut: domänerna *Active*, GitHub-appens åtkomst, regel för `main`, fler administratörer. | Alf, föreningen |
-| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Ej startat | Bara Trello (beslut 2026-10-20). Skapa tavlan och koppla Trello till Claude. Ta ställning till föreningens förslag om två läsare per text. | Alf |
+| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Pågår | Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen finns, med listor och mallkort. Nästa: välj hur foton kommer från korten till repot, sedan bjuda in volontärerna. Ta ställning till två läsare per text. | Alf |
 | 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Nio utkast, fem som följer föreningens svar och fyra ur förslagen 6–17, platslista med elva platser | Stäm av föreningens platslista mot utkasten och förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)). Föreningen granskar utkasten. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
 | 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar, föreningen lutar åt en bärbar karta | Bestäm karta, fasta skyltar på stolpar eller båda. Sedan provskylt eller provkarta våren 2027. | Föreningen |
 
@@ -25,7 +25,10 @@ Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 Det som står still tills någon gör något. Hela listan med detaljer finns i den senaste rapporten.
 
 - [x] Alf: granska och merga PR #1 (2026-10-17). Actions behövde ingen ändrad inställning.
-- [ ] Alf: koppla Trello till Claude
+- [x] Alf: koppla Trello till Claude (2026-10-20)
+- [ ] Alf: bifoga en bild på kortet *Test: bifoga en bild från mobilen* på Trello, så att nästa session kan se vad kopplingen ger
+- [ ] Alf: välj hur foton kommer från Trello till repot, workflow med Trello-nyckel som GitHub-hemlighet eller nedladdning för hand ([plans/03-innehallsflode.md](plans/03-innehallsflode.md))
+- [ ] Alf: döp om Trello-arbetsytan till Ärteråsens Kulturförening, kontrollera att tavlan är *Private*, stäng startguidetavlan
 - [x] Alf: välj upplägg och namn för utkastadressen: två Pages-projekt och `utkast.arterasen.se` (2026-10-18)
 - [x] ~~Alf: ta reda på vems Cloudflare-konto arterasen.se ligger i~~: ingen i föreningen vet. Zonen flyttas i stället till Alfs konto (beslut 2026-10-18).
 - [x] Alf: flytta zonen arterasen.se till sitt Cloudflare-konto (2026-10-18). Huvudsajten svarar som förut, se [plans/02-hosting.md](plans/02-hosting.md).
@@ -66,6 +69,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 
 En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
 
+- 2026-10-20 [Trello-tavlan](rapporter/2026-10-20-trello-tavlan.md): Trello kopplat, listor och mallkort på tavlan, foton kan inte hämtas från sessionen, överlämning till nästa session
 - 2026-10-20 [Bara Trello](rapporter/2026-10-20-bara-trello.md): texten skrivs på Trello-kortet och foton bifogas där, kortmall i stället för dokumentmall, volontärsidor och agentens rutin omskrivna
 - 2026-10-19 [Svar från ordföranden](rapporter/2026-10-19-svar-ordforanden.md): svaren på underlaget inlagda, fyra utkast uppdaterade och fyra nya ur förslagen, föreningens platslista, bärbar karta i stället för skyltar, mejlen på arterasen.se saknar MX
 - 2026-10-19 [Förslag på fler skyltar](rapporter/2026-10-19-forslag-fler-skyltar.md): tolv förslag ur Bägerfeldts skrifter, fyra med prioritet A, som Claude Docs-dokument och som HTML-fil för ordföranden i `docs/underlag/`
