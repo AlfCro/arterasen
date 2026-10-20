@@ -11,7 +11,7 @@ import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 import { ROOT, loadConfig, loadContent } from './content.mjs';
 import { placePage, indexPage, entryPage, notFoundPage, internPage, statusPage } from './render.mjs';
-import { signsPage, qrSvg, qrUrl } from './signs.mjs';
+import { signsPage, qrSvg, qrUrl, qrBaseUrl } from './signs.mjs';
 
 // "Arteras Display" is IM Fell English for letters, with digits from EB Garamond:
 // IM Fell only has old-style figures, where 1 looks like a capital I (bad on a numbered sign).
@@ -77,6 +77,7 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
   const ctx = {
     config,
     mode: { preview },
+    qrBase: qrBaseUrl(config, preview),
     assets,
     start: content.start,
     places: visible,
@@ -106,7 +107,7 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
 
   // Signs
   add('skyltar/index.html', await signsPage(ctx, visible), false);
-  for (const p of visible) write(outDir, `skyltar/qr/${p.slug}.svg`, await qrSvg(qrUrl(config, p.slug)));
+  for (const p of visible) write(outDir, `skyltar/qr/${p.slug}.svg`, await qrSvg(qrUrl(ctx.qrBase, p.slug)));
 
   // Images
   for (const p of visible) {
@@ -146,7 +147,7 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
 
   log(
     `Byggt ${preview ? 'förhandsvisning' : 'produktion'} till ${path.relative(ROOT, outDir) || outDir}: ` +
-      `${visible.length} av ${content.places.length} platser, ${config.languages.length} språk.`,
+      `${visible.length} av ${content.places.length} platser, ${config.languages.length} språk. QR-koderna leder till ${ctx.qrBase}`,
   );
   return { outDir, visible: visible.length, total: content.places.length };
 }

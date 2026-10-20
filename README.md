@@ -75,7 +75,7 @@ npm run dev        # http://localhost:8080, utkast syns
 | `npm run check` | Validerar allt innehåll. Måste vara grönt. |
 | `npm run check:readme` | Kontrollerar att den här filen stämmer med repot, se sista avsnittet |
 | `npm run build` | Produktion till `dist/`: bara platser som har status `klar` på alla språk |
-| `npm run build:preview` | Som `utkast.arterasen.se`: utkast, källor och banner syns. Används av Pages-projektet för utkasten. |
+| `npm run build:preview` | Som `utkast.arterasen.se`: utkast, källor och banner syns, och QR-koderna leder till utkastet. Används av Pages-projektet för utkasten. |
 | `npm run build:cf` | Används av Pages-projektet för den publika sajten. Väljer produktion på `main` och förhandsvisning på andra grenar. |
 | `npm run ny -- <slug> "<Titel>"` | Ny plats från mallen |
 | `npm run bild -- <fil> <slug> [namn]` | Krymper ett foto och tar bort GPS och annan metadata. Utan namn blir det platsens huvudbild `bild.jpg`, med till exempel `bild-2` en extra bild under `fler_bilder`. |
@@ -89,6 +89,8 @@ SITE_URL=http://<din-dators-ip>:8080/ npm run dev
 ```
 
 Öppna sedan `/skyltar/` och skanna en kod.
+
+Vart QR-koderna leder beror på bygget: produktion leder alltid till `info.arterasen.se`. Ett utkastbygge leder till sig självt: `utkast.arterasen.se`, grenens förhandsvisning på Cloudflare (`CF_PAGES_URL`) eller `SITE_URL` när den är satt. Där är alla skyltar märkta *Provtryck* och ska inte sättas upp.
 
 ## Lägga till en plats
 

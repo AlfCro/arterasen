@@ -2,7 +2,7 @@
 titel: Skyltar
 flik: Skyltar
 ingress: Varje plats får en skylt i A5 med nummer, namn på tre språk och en QR-kod.
-uppdaterad: 2026-10-17
+uppdaterad: 2026-10-20
 ---
 
 ## Skriva ut
@@ -14,6 +14,8 @@ När en plats är publicerad lägger Claude en länk till skylten på Trello-kor
 3. Välj *Spara som PDF* om skylten ska till ett tryckeri.
 
 QR-koden finns också som separat fil för tryckerier, se länkarna på skyltsidan.
+
+**Skriv ut från {{publik}}.** I {{granskning}} leder QR-koderna till utkasten, så att du kan skanna och läsa dem. De skyltarna är märkta *Provtryck* och ska aldrig sättas upp.
 
 ## Material
 

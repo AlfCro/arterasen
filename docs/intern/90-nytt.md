@@ -7,6 +7,7 @@ uppdaterad: 2026-10-20
 
 ## 2026-10-20
 
+- **QR-koderna i granskningsversionen leder till utkasten.** Skannar du en skylt i {{granskning}} hamnar du på utkastet, inte på den publika sidan. De skyltarna är märkta *Provtryck* och ska inte sättas upp. Skyltar att sätta upp skrivs ut från {{publik}}. Se [Skyltar](../skyltar/).
 - **Allt sker på Trello.** Du skriver texten direkt på platsens kort och bifogar foton där. Kopiera kortet *MALL – kopiera mig* överst i listan *Skriver* så får du rubrikerna. Se [Skriva en text](../skriva/).
 
 ## 2026-10-19, kväll
