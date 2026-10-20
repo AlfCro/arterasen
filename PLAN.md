@@ -51,7 +51,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [x] Alf: granska och merga PR #15 (QR-koderna i utkastet leder till utkastet, 2026-10-20)
 - [ ] Alf: skanna en skylt på `utkast.arterasen.se/skyltar/` och se att den leder till utkastet
 - [x] Alf: granska och merga PR #17 (källor på den publika sajten, länkar mellan platser, rutinen för korten och omnumrering), mergad 2026-10-20
-- [ ] Alf: granska och merga PR:en med kartutkastet (`claude/karta-utkast`)
+- [ ] Alf: granska och merga PR #18 (kartutkastet på `/intern/karta/`)
 - [ ] Föreningen: peka ut platserna på kartan, välja uppslag och svara på frågorna på kortet *Karta med QR-koder (löst utkast)*
 - [ ] Alf eller föreningen: fråga Lars Bägerfeldt vilken karta bilden på s. 51 i skrift 66 bygger på, innan kartan trycks
 - [ ] Föreningen: läsa korten i *Granska* på Trello och svara på frågorna på korten och på kortet *Platslistan och numreringen*

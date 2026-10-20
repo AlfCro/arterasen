@@ -2,7 +2,7 @@
 
 Arbetspass: 2026-10-20 23:02–23:35
 Av: Claude
-PR: grenen `claude/karta-utkast`
+PR: #18
 Initiativ: 05
 
 ## Sammanfattning
@@ -36,7 +36,7 @@ Alf frågade hur en laminerad karta med QR-koder kan lösas visuellt. Underlaget
 
 ## Väntar på
 
-- [ ] Alf: granska och merga PR:en
+- [ ] Alf: granska och merga PR #18
 - [ ] Föreningen: peka ut platserna på kartan, välja uppslag och svara på frågorna på Trello-kortet
 - [ ] Alf eller föreningen: fråga Lars Bägerfeldt vilken karta bilden bygger på
 
