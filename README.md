@@ -25,6 +25,7 @@ Senast uppdaterad: 2026-10-20
 - **Alla platser finns på Trello** sedan 2026-10-20: de nio utkasten i *Granska* med texten och frågorna, förslagen och föreningens platser utan underlag i *Idéer och frågor*, och kortet *Platslistan och numreringen*. Numren är inte bestämda, och omnumrering kräver inget godkännande.
 - **Källorna syns på den publika sajten** sedan 2026-10-20, inte bara i förhandsvisningen. Länken till Trello-kortet visas bara i förhandsvisningen.
 - **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen till Claude finns sedan 2026-10-20, med listor och mallkort. Kvar innan volontärerna bjuds in: hur foton kommer från korten till repot.
+- **Kartan med QR-koder** finns som löst utkast sedan 2026-10-20, på `/intern/karta/` i utkastet: underlaget är omritat ur Lars Bägerfeldts karta över husen, i två uppslag i A4. Lägena är påhittade tills föreningen har pekat ut platserna på Trello-kortet *Karta med QR-koder (löst utkast)*. Se [plans/05-skyltar.md](plans/05-skyltar.md).
 - **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. 2026-10-20: troligen laminerade A5 med QR-koder som delas ut till gästerna, tillsammans med en karta, inte helt bestämt. Detaljerna står i delplanerna.
 - **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
 - **Väntar på föreningen:** svar på korten på Trello: val bland förslagen, platslistan och ordningen, granskning av utkasten och beslut om blad, karta eller skyltar.
@@ -52,13 +53,13 @@ Allt innehåll ligger som Markdown i `content/`. En liten Node-generator i `src/
 
 | Sökväg | Vad |
 | --- | --- |
-| `content/` | Texterna: en mapp per plats i `content/platser/` med `sv.md`, `en.md` och `de.md`, startsidan, mallen och [listan över uppsatta skyltar](content/tryckta-skyltar.json) |
+| `content/` | Texterna: en mapp per plats i `content/platser/` med `sv.md`, `en.md` och `de.md`, startsidan, mallen, [listan över uppsatta skyltar](content/tryckta-skyltar.json) och kartutkastets underlag och lägen i `content/karta/` |
 | `docs/` | Faktaunderlag, källor och bilder om fäboden, agentens arbetsflöde, kortmallen för Trello, `docs/intern/` som blir `/intern/` på sajten, och underlag till föreningen i [docs/underlag/](docs/underlag/) |
 | `material/` | Kopior av fria bilder och skrifter, med licens per fil i [material/hamta.json](material/hamta.json). Syns på GitHub. En bild som ska visas på sajten krymps först till `content/` med `npm run bild`. Se [material/LASMIG.md](material/LASMIG.md). |
 | `plans/` | En delplan per initiativ: mål, beslut, att göra, öppna frågor och logg |
 | `rapporter/` | En rapport per arbetspass |
 | `src/` | Generatorn, mallar, stil och service worker. Inga ramverk. |
-| `tools/` | Webbläsartest, förhandsvisning som artifact, hämtning av material och kontrollen av den här filen |
+| `tools/` | Webbläsartest, förhandsvisning som artifact, hämtning av material, kontrollen av den här filen och skriptet som ritade om kartunderlaget (Python, körs inte i bygget) |
 | [site.config.json](site.config.json) | Adress, språk, textlicens och länken till Trello-tavlan |
 | [LICENSE](LICENSE), [LICENSER.md](LICENSER.md) | MIT för koden, CC BY 4.0 för texterna, och undantagen |
 

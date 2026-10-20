@@ -5,6 +5,10 @@ ingress: Varje plats får en skylt i A5 med nummer, namn på tre språk och en Q
 uppdaterad: 2026-10-20
 ---
 
+## Karta i stället för skyltar?
+
+Föreningen funderar på att dela ut en karta med QR-koder i stället för att sätta upp skyltar. Ett första utkast finns under fliken [Karta, utkast](../karta/). **Siffrorna på den kartan står på påhittade ställen.** Hjälp till att peka ut platserna på Trello-kortet *Karta med QR-koder (löst utkast)* i *Idéer och frågor*.
+
 ## Skriva ut
 
 När en plats är publicerad lägger Claude en länk till skylten på Trello-kortet. Alla godkända skyltar finns också på sidan [Skyltar att skriva ut](../../skyltar/).

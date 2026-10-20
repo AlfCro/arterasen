@@ -7,6 +7,7 @@ uppdaterad: 2026-10-20
 
 ## 2026-10-20
 
+- **Utkast till en karta med QR-koder.** Under fliken [Karta, utkast](../karta/) finns ett första försök till en karta som kan delas ut i stället för skyltar. Siffrorna står på påhittade ställen. Läs kortet *Karta med QR-koder (löst utkast)* på Trello och berätta var platserna är.
 - **Alla platser finns på Trello.** De nio utkasten ligger i *Granska* med texten i beskrivningen och länkar till förhandsvisningen. Förslagen på fler platser ligger i *Idéer och frågor*, med frågor till er. Läs, kommentera och flytta korten som vanligt.
 - **Numren är inte bestämda.** Skriv i en kommentar på kortet *Platslistan och numreringen* om ni vill ha en annan ordning. Adressen och QR-koden ändras inte när numret ändras.
 - **Källorna syns på sidan**, under texten, också när sidan är publicerad. Skriv därför bara "berättat av …" om personen vill stå med.

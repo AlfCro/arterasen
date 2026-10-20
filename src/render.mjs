@@ -270,6 +270,7 @@ function internHeader(ctx, current, depth) {
   const tabs = [
     ...ctx.intern.map((d) => ({ href: d.slug ? `${r}intern/${d.slug}/` : `${r}intern/`, label: d.flik || d.titel, key: d.slug })),
     { href: `${r}intern/status/`, label: 'Status', key: 'status' },
+    { href: `${r}intern/karta/`, label: 'Karta, utkast', key: 'karta' },
     { href: `${r}skyltar/`, label: 'Skriv ut skyltar', key: 'utskrift' },
   ];
   return `<header class="site-header intern-header">
@@ -305,6 +306,11 @@ ${doc.uppdaterad ? `<p class="updated">Uppdaterad ${esc(doc.uppdaterad instanceo
     saveLang: false,
     bodyClass: 'intern',
   });
+}
+
+// An internal page whose main element is already rendered (the map draft).
+export function internShell(ctx, { key, title, main, depth = 2 }) {
+  return page(ctx, { lang: 'sv', depth, title: `${title} – intern sida`, header: internHeader(ctx, key, depth), main, saveLang: false, bodyClass: 'intern' });
 }
 
 export function statusPage(ctx) {

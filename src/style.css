@@ -788,6 +788,386 @@ td a + a {
   }
 }
 
+/* ---------- Map with QR codes (draft, /intern/karta/) ---------- */
+
+@page karta {
+  size: A4 portrait;
+  margin: 0;
+}
+
+.map-help {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 0 1.5rem;
+}
+
+.map-help h1 .badge {
+  font-family: var(--body);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.map-sheet {
+  page: karta;
+  position: relative;
+  overflow: hidden;
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto 10mm;
+  background: #fff;
+  color: #1f1a16;
+  border: 1px solid #b9c1b0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media (max-width: 860px) {
+  .map-sheet {
+    zoom: 0.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-sheet {
+    zoom: 0.42;
+  }
+}
+
+.map-svg {
+  position: absolute;
+  inset: 0;
+  width: 210mm;
+  height: 297mm;
+}
+
+.map-head {
+  position: absolute;
+  top: 9mm;
+  left: 10mm;
+  right: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6mm;
+}
+
+.map-head h2 {
+  margin: 0;
+  font-size: 26pt;
+  line-height: 1;
+}
+
+.map-langs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  font-size: 8pt;
+  line-height: 1.3;
+  color: #4a463f;
+}
+
+.map-langs li:first-child {
+  font-weight: 600;
+  color: #1f1a16;
+}
+
+.k-skog {
+  fill: #e1e9d3;
+}
+
+.k-vall path {
+  fill: #f8f4e4;
+  stroke: #c8c0a0;
+  stroke-width: 2;
+}
+
+.k-kurvor path {
+  fill: none;
+  stroke: #a3b48f;
+  stroke-width: 2;
+}
+
+.k-hus rect {
+  fill: #7d6450;
+}
+
+.k-lines path {
+  fill: none;
+  stroke: #4a463f;
+  stroke-width: 0.28;
+}
+
+.k-marker circle {
+  fill: #8a2a1c;
+  stroke: #fff;
+  stroke-width: 0.5;
+}
+
+.k-marker text {
+  fill: #fff;
+  text-anchor: middle;
+  font-family: var(--display);
+}
+
+.map-tile,
+.map-start {
+  position: absolute;
+  background: #fff;
+  border: 0.3mm solid #b9c1b0;
+  border-radius: 1.2mm;
+}
+
+.map-tile-head {
+  margin: 1.6mm 1.8mm 0;
+  height: 7.4mm;
+  overflow: hidden;
+  font-size: 7pt;
+  font-weight: 600;
+  line-height: 1.12;
+  hyphens: auto;
+}
+
+.map-tile-n {
+  float: left;
+  margin-right: 1.2mm;
+  font-family: var(--display);
+  font-size: 19pt;
+  font-weight: 400;
+  line-height: 0.85;
+  color: #8a2a1c;
+}
+
+.map-tile-qr {
+  position: absolute;
+  left: 50%;
+  bottom: 0.6mm;
+  width: 25mm;
+  height: 25mm;
+  transform: translateX(-50%);
+}
+
+.map-tile-qr svg,
+.map-start-qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map-start {
+  display: flex;
+  gap: 3mm;
+  padding: 2mm;
+}
+
+.map-start-qr {
+  flex: none;
+  width: 42mm;
+  height: 42mm;
+}
+
+.map-start-text p {
+  margin: 0 0 1.6mm;
+  font-size: 8pt;
+  line-height: 1.3;
+}
+
+.map-start-text .map-start-title {
+  margin: 1.5mm 0 2.5mm;
+  font-family: var(--display);
+  font-size: 13pt;
+  line-height: 1.1;
+}
+
+.k-scale path {
+  fill: none;
+  stroke: #1f1a16;
+  stroke-width: 0.35;
+}
+
+.k-scale text {
+  font-size: 2.8px; /* 1 unit = 1 mm in the sheet */
+  fill: #1f1a16;
+}
+
+.map-stamp {
+  position: absolute;
+  top: 82mm;
+  left: 40mm;
+  width: 130mm;
+  margin: 0;
+  transform: rotate(-14deg);
+  text-align: center;
+  font-weight: 600;
+  font-size: 17pt;
+  color: rgb(138 42 28 / 0.55);
+  border-block: 0.8mm solid rgb(138 42 28 / 0.55);
+  padding: 1mm 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.map-front .map-stamp {
+  top: 110mm;
+  left: 20mm;
+  width: 170mm;
+  font-size: 22pt;
+}
+
+.map-back .map-stamp {
+  top: 3.5mm;
+  left: 12mm;
+  width: auto;
+  transform: none;
+  border: 0;
+  padding: 0;
+  font-size: 9pt;
+}
+
+.map-list {
+  position: absolute;
+  top: 228mm;
+  left: 10mm;
+  right: 10mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 3;
+  column-gap: 6mm;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+.map-list-n {
+  display: inline-block;
+  min-width: 5mm;
+  font-family: var(--display);
+  font-size: 12pt;
+  color: #8a2a1c;
+}
+
+.map-credit {
+  position: absolute;
+  left: 10mm;
+  right: 10mm;
+  bottom: 8mm;
+  margin: 0;
+  font-size: 7pt;
+  color: #4a463f;
+}
+
+.map-grid {
+  position: absolute;
+  inset: 12mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4mm;
+}
+
+.map-cell {
+  position: relative;
+  border: 0.3mm solid #b9c1b0;
+  border-radius: 1.2mm;
+  padding: 3mm 3mm 0;
+}
+
+.map-cell p {
+  margin: 0;
+}
+
+.map-cell-n {
+  float: left;
+  margin-right: 2.5mm !important;
+  font-family: var(--display);
+  font-size: 26pt;
+  line-height: 0.9;
+  color: #8a2a1c;
+}
+
+.map-cell-title {
+  font-weight: 600;
+  font-size: 9.5pt;
+  line-height: 1.15;
+}
+
+.map-cell-small {
+  margin-top: 1mm !important;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 8.5pt;
+  line-height: 1.2;
+  color: #4a463f;
+}
+
+.map-cell-start .map-cell-small {
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 7pt;
+}
+
+.map-cell-qr {
+  position: absolute;
+  left: 50%;
+  bottom: 2mm;
+  width: 36mm;
+  height: 36mm;
+  transform: translateX(-50%);
+}
+
+.map-cell-start .map-cell-qr {
+  bottom: auto;
+  top: 3mm;
+}
+
+.map-cell-start .map-cell-title {
+  position: absolute;
+  left: 3mm;
+  right: 3mm;
+  bottom: 12mm;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 12pt;
+}
+
+.map-cell-start .map-cell-small {
+  position: absolute;
+  left: 3mm;
+  right: 3mm;
+  bottom: 3mm;
+}
+
+.map-cell-qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media print {
+  body:has(.map-page) .site-header,
+  body:has(.map-page) .skip,
+  .map-help {
+    display: none;
+  }
+
+  body:has(.map-page) {
+    background: none;
+  }
+
+  .map-page {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+  .map-sheet {
+    zoom: 1;
+    margin: 0;
+    border: 0;
+    break-after: page;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto !important;
