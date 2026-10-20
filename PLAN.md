@@ -1,6 +1,6 @@
 # Arbetsplan
 
-Senast uppdaterad: 2026-10-20 22:20
+Senast uppdaterad: 2026-10-20 22:50
 
 ## Mål
 
@@ -14,9 +14,9 @@ Föreningen har fått pengar från Vindkraftsfonden till bland annat information
 | --- | --- | --- | --- | --- | --- |
 | 1 | Sajt och design | [plans/01-sajt.md](plans/01-sajt.md) | Grundbygge mergat | Testa på telefoner på `utkast.arterasen.se` | Alf, föreningen |
 | 2 | Hosting och domän | [plans/02-hosting.md](plans/02-hosting.md) | Pågår | Mejl på arterasen.se med Cloudflare Email Routing (domänen saknar MX). Domänen till föreningen och en adress som styrelsen delar (beslutat av föreningen 2026-10-19). Kvar sedan förut: domänerna *Active*, GitHub-appens åtkomst, regel för `main`, fler administratörer. | Alf, föreningen |
-| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Pågår | Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen finns, med listor och mallkort. Nästa: välj hur foton kommer från korten till repot, sedan bjuda in volontärerna. Ta ställning till två läsare per text. | Alf |
-| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Nio utkast, fem som följer föreningens svar och fyra ur förslagen 6–17, platslista med elva platser | Stäm av föreningens platslista mot utkasten och förslagen 6–17 ([underlag](docs/underlag/2026-10-19-fler-skyltar.html)). Föreningen granskar utkasten. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
-| 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar, föreningen lutar åt en bärbar karta | Bestäm karta, fasta skyltar på stolpar eller båda. Sedan provskylt eller provkarta våren 2027. | Föreningen |
+| 3 | Innehållsflöde och kommunikation | [plans/03-innehallsflode.md](plans/03-innehallsflode.md) | Pågår | Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) har ett kort per plats och förslag sedan 2026-10-20. Nästa: välj hur foton kommer från korten till repot, sedan bjuda in volontärerna. Ta ställning till två läsare per text. | Alf |
+| 4 | Platser och texter | [plans/04-innehall.md](plans/04-innehall.md) | Nio utkast i *Granska* på Trello, förslagen och föreningens platser i *Idéer och frågor*, numren inte bestämda | Föreningen läser korten i *Granska*, svarar på frågorna där och skriver ordningen på kortet *Platslistan och numreringen*. Omnumrering kräver inget godkännande. Kvar i fakta: 1953 eller 1954, och vilka källor som rinner. | Föreningen, Alf |
+| 5 | Skyltar: tryck och uppsättning | [plans/05-skyltar.md](plans/05-skyltar.md) | Mall klar, föreningen lutar åt laminerade A5 som delas ut, med en karta | Bestäm blad och karta, fasta skyltar eller båda. Sedan provtryck våren 2027. | Föreningen |
 
 Status: *Ej startat*, *Pågår*, *Väntar på …*, *Klart*.
 
@@ -48,7 +48,10 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 - [x] Alf: granska och merga PR #10 (fler bilder och fakta, 2026-10-19)
 - [x] Alf: granska och merga PR #11 (förslag på fler skyltar, 2026-10-19)
 - [ ] Alf: granska och merga PR #12 (svar från ordföranden)
-- [ ] Alf: granska och merga PR #15 (QR-koderna i utkastet leder till utkastet), skanna sedan en skylt på `utkast.arterasen.se/skyltar/`
+- [x] Alf: granska och merga PR #15 (QR-koderna i utkastet leder till utkastet, 2026-10-20)
+- [ ] Alf: skanna en skylt på `utkast.arterasen.se/skyltar/` och se att den leder till utkastet
+- [ ] Alf: granska och merga PR #17 (källor på den publika sajten, länkar mellan platser, rutinen för korten och omnumrering)
+- [ ] Föreningen: läsa korten i *Granska* på Trello och svara på frågorna på korten och på kortet *Platslistan och numreringen*
 - [ ] Alf: skicka underlaget med förslag på fler skyltar till ordföranden, [docs/underlag/2026-10-19-fler-skyltar.html](docs/underlag/2026-10-19-fler-skyltar.html)
 - [ ] Föreningen: välja bland förslagen 6–17 och svara på de nio frågorna i underlaget
 - [ ] Alf: Cloudflare Email Routing för `info@arterasen.se`, steg i [plans/02-hosting.md](plans/02-hosting.md). Fråga först ordföranden vilka adresser hon använder.
@@ -70,6 +73,7 @@ Det som står still tills någon gör något. Hela listan med detaljer finns i d
 
 En rapport per arbetspass, nyast först. Mall: [rapporter/_mall.md](rapporter/_mall.md).
 
+- 2026-10-20 [Alla platser på tavlan](rapporter/2026-10-20-platser-pa-tavlan.md): ett kort per utkast i *Granska* och per förslag i *Idéer och frågor*, källorna på den publika sajten, omnumrering utan godkännande, laminerade A5 med karta i stället för skyltar (inte bestämt)
 - 2026-10-20 [Trello-tavlan](rapporter/2026-10-20-trello-tavlan.md): Trello kopplat, listor och mallkort på tavlan, foton kan inte hämtas från sessionen, överlämning till nästa session
 - 2026-10-20 [Bara Trello](rapporter/2026-10-20-bara-trello.md): texten skrivs på Trello-kortet och foton bifogas där, kortmall i stället för dokumentmall, volontärsidor och agentens rutin omskrivna
 - 2026-10-19 [Svar från ordföranden](rapporter/2026-10-19-svar-ordforanden.md): svaren på underlaget inlagda, fyra utkast uppdaterade och fyra nya ur förslagen, föreningens platslista, bärbar karta i stället för skyltar, mejlen på arterasen.se saknar MX

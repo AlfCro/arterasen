@@ -8,6 +8,8 @@ Den här rutinen följer Claude när tavlan gås igenom, antingen när någon be
 - Repot `AlfCro/arterasen` är kopplat och klonat. Kör `npm ci`.
 - Länken till tavlan står i `site.config.json` under `intern.trelloUrl`.
 - Kortet *MALL – kopiera mig* överst i listan *Skriver* har samma text som [kortmall.md](kortmall.md). Ändras filen: uppdatera mallkortet. Mallkortet hanteras aldrig som en plats.
+- **Varje plats har ett kort**, också de som Claude har skrivit ur källorna. Kortets beskrivning har platsens svenska text under rubrikerna i kortmallen och ska stämma med `sv.md`. Ändrar Claude `sv.md`, uppdateras beskrivningen i samma pass.
+- **Numret står inte i kortnamnet** och inte i utkastkortens beskrivning. Numren finns i `sv.md` och på kortet *Platslistan och numreringen* i *Idéer och frågor*, så att en omnumrering bara ändrar ett kort. Förslagskorten har arbetsnumret från underlaget de kommer ifrån.
 
 ## Ordning för en genomgång
 
@@ -16,13 +18,14 @@ Gå igenom listorna i den här ordningen och hantera varje kort för sig. Ett fe
 1. *Godkänt* → publicera
 2. *Klar för Claude* → gör sida eller ändring
 3. *Skylt uppsatt* → registrera skylten (bara kort som inte redan har en kommentar om registrering)
-4. *Idéer och frågor* → svara på frågor om arbetssättet om svaret står i `docs/intern/` eller i en plan. Annars: tagga Alf i en kommentar.
+4. *Idéer och frågor* → svara på frågor om arbetssättet om svaret står i `docs/intern/` eller i en plan. Annars: tagga Alf i en kommentar. Nya kommentarer på kortet *Platslistan och numreringen*: se *Numrera om* nedan.
 
 Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar och eventuella fel.
 
 ## Klar för Claude: ny plats eller ändring
 
 1. **Läs kortet:** namn, beskrivningen med texten enligt kortmallen, alla kommentarer sedan förra förhandsvisningen och bilagorna. Står det *Ändrat i beskrivningen* i en kommentar: jämför beskrivningen med platsens `sv.md`.
+   - **Förslagskort** (beskrivningen börjar med *Förslag:*) har innehåll och sidhänvisningar men ingen färdig text. Skriv texten ur källorna på kortet, läs uppgifterna i källan, och följ svaren på kortets frågor. Ersätt sedan beskrivningen med texten under kortmallens rubriker.
 2. **Hämta fotona** som är bifogade på kortet till en mapp utanför repot. Kopplingen ger bara bilagornas namn och adress (`list_attachments`), och skalet når inte trello.com. Tills ett sätt är valt (se [plans/03](../plans/03-innehallsflode.md)): skriv till Alf vilka bilagor som behövs och fortsätt med texten.
 3. **Ny eller ändring?** Börjar kortnamnet med *Ändra:* eller finns platsen redan i `content/platser/`, är det en ändring.
 4. **Ny plats:** välj slug av platsens namn: gemener, å och ä blir a, ö blir o, mellanslag blir bindestreck, högst 20 tecken. Kontrollera att den inte finns i `content/tryckta-skyltar.json`. Kör `npm run ny -- <slug> "<Titel>"`.
@@ -40,10 +43,25 @@ Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar
     - **Ändring av publicerad plats:** merga inte. Granskningslänk är PR:ens egen förhandsvisning. Hämta adressen ur Cloudflares kommentar på PR:en eller ur kontrollen `Cloudflare Pages: arterasen-info` (kommandot står under *Miljön i Claude-sessioner* i [AGENTS.md](../AGENTS.md); `gh pr checks` fungerar inte). Grenaliaset är `https://innehall-<slug>.arterasen-info.pages.dev/`.
 11. **Vänta på förhandsvisningen** och öppna länken för att se att sidan finns. Skriv sedan en kommentar på kortet:
     - Länkar till sidan på svenska, engelska och tyska
+    - Beskrivningen är uppdaterad så att den stämmer med `sv.md`
     - Vad du har ändrat jämfört med kortets text, i en eller två meningar
     - Frågor, om det finns några
     - *Ser det bra ut? Flytta kortet till Godkänt. Annars: skriv vad som ska ändras och flytta tillbaka till Klar för Claude.*
 12. Flytta kortet till **Granska**.
+
+## Länkar mellan platser
+
+Hänvisa till en annan plats med en länk, `[Ristningarna](../ristningarna/)`, aldrig med dess nummer eller med ordet skylt. Numren ändras, och det är inte bestämt om det blir skyltar eller blad som delas ut. `npm run check` stoppar en publicerad plats som länkar till en plats som inte är publicerad, så publicera den andra platsen först eller ta bort länken.
+
+## Numrera om
+
+Omnumrering kräver inget godkännande (Alf 2026-10-20). Föreningen skriver den nya ordningen i en kommentar på kortet *Platslistan och numreringen*.
+
+1. Ändra `nummer` i `sv.md` för alla platser som byter nummer, på grenen `innehall/numrering`. `npm run check` kräver unika nummer, så hela den nya ordningen görs i en commit.
+2. PR *Innehåll: numrering* med länk till kortet. Merga när `check` är grön, också när publicerade platser byter nummer.
+3. Uppdatera avsnittet *Numren i dag* på kortet och svara i en kommentar.
+
+Numret står på skyltar och blad som skrivs ut, men adressen och QR-koden bygger på slugen och ändras inte. Att låsa numret när något är tryckt tas upp när numren är bestämda (Alf 2026-10-20).
 
 ## Godkänt: publicera
 

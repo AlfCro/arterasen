@@ -18,6 +18,7 @@ export const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 export const md = (s) => marked.parse(s || '');
+const TRELLO_URL = /https?:\/\/(www\.)?trello\.com\//i;
 export const up = (depth) => '../'.repeat(depth);
 
 const stamp = () =>
@@ -150,16 +151,18 @@ export function placePage(ctx, place, lang, prev, next) {
         .join('')}</dl></section>`
     : '';
 
-  const sources =
-    ctx.mode.preview && place.sources.length
-      ? `<section class="sources"><h2>${t.previewSources}</h2><ul>${place.sources
-          .map((s) => {
-            // "Title: https://…" links the title; a bare URL links itself.
-            const m = String(s).match(/^(?:(.*?):?\s+)?(https?:\/\/\S+)$/);
-            return `<li>${m ? `<a href="${esc(m[2])}">${esc(m[1] || m[2])}</a>` : esc(s)}</li>`;
-          })
-          .join('')}</ul></section>`
-      : '';
+  // Sources are shown on every page. The link to the Trello card only works for the board's
+  // members, so it stays in previews, where reviewers use it, and is left out of production.
+  const shownSources = place.sources.filter((s) => ctx.mode.preview || !TRELLO_URL.test(String(s)));
+  const sources = shownSources.length
+    ? `<section class="sources"><h2>${t.sources}</h2><ul>${shownSources
+        .map((s) => {
+          // "Title: https://…" links the title; a bare URL links itself.
+          const m = String(s).match(/^(?:(.*?):?\s+)?(https?:\/\/\S+)$/);
+          return `<li>${m ? `<a href="${esc(m[2])}">${esc(m[1] || m[2])}</a>` : esc(s)}</li>`;
+        })
+        .join('')}</ul></section>`
+    : '';
 
   const routeLink = (p, cls, label, rel) =>
     p

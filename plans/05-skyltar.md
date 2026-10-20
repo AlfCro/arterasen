@@ -1,6 +1,6 @@
 # 05 Skyltar: tryck och uppsättning
 
-Status: Mall klar. Föreningen lutar åt en bärbar karta i stället för fasta skyltar, inte beslutat
+Status: Mall klar. Föreningen lutar åt laminerade A5 som delas ut, med en karta, i stället för fasta skyltar. Inte beslutat
 Ansvarig: Föreningen
 Senast uppdaterad: 2026-10-20
 
@@ -20,11 +20,14 @@ Varje godkänd plats har en tålig skylt som går att skanna i sol, regn och sva
 
 Ordförandens svar 2026-10-19 (E1, E2, E4): föreningen föredrar hittills att inte sätta upp skyltar som stör miljön, utan att ha QR-koderna på en bärbar karta, inplastad eller i hård plast, som besökare kan kvittera ut. Det är inte färdigtänkt. Blir det fasta skyltar ska de stå på egna stolpar, inte sitta på husen.
 
+2026-10-20 (Alf, från föreningen, inte helt bestämt): föreningen vill nog inte sätta upp fasta skyltar, utan dela ut laminerade A5 med QR-koder till gästerna. I så fall behöver de kombineras med en karta.
+
 Vad det betyder här:
 
 - **Sajten och adresserna påverkas inte.** QR-koderna pekar på samma adresser, och startsidan listar redan platserna med nummer.
 - **Kartan kan vara informationsbladet** som Vindkraftsfonden ger pengar till ("informationsblad med QR-koder", se *Mål* i [PLAN.md](../PLAN.md)).
 - **Skyltmallen behöver en kartvariant.** `/skyltar/` gör i dag en A5 per plats. En karta behöver ett underlag att rita på (föreningens karta över stigen, kartan från 1827 eller en ny skiss) och ett val: en QR-kod per plats, eller en kod till startsidan och numrerade platser.
+- **Numret låses inte än** (Alf 2026-10-20). Blad som delas ut trycks om billigt, så en ny ordning kostar lite. Frågan tas upp när numren är bestämda.
 - **Hur hittar besökaren nummer 7 på marken?** Med bara en karta behövs kanske små nummerpinnar vid platserna, eller tydliga landmärken på kartan.
 - **Den som inte lånar kartan** får ingen information. En enda skylt vid parkeringen eller serveringen med en QR-kod till startsidan kan täcka det.
 
@@ -58,3 +61,4 @@ Vad det betyder här:
 - 2026-10-17: Skyltmall i A5 med QR 72 mm, felkorrigering Q, titlar på tre språk. Alla QR-koder kontrollavkodade (Claude).
 - 2026-10-19: Ordförandens svar E1–E4 och D6 inlagda. Föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar, och fasta skyltar i så fall på stolpar. Inget i mallen ändrat än (Claude).
 - 2026-10-20: QR-koderna i utkastbyggen leder till utkastet, alla skyltar där märkta *Provtryck*. `npm run verify` avkodar nu skyltarna i både utkast- och produktionsbygget (Claude).
+- 2026-10-20: Föreningen lutar åt laminerade A5 med QR-koder som delas ut till gästerna, kombinerade med en karta, inte helt bestämt (Alf). Numret låses inte förrän numren är bestämda (Claude).

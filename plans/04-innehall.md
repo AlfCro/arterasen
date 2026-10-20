@@ -1,8 +1,8 @@
 # 04 Platser och texter
 
-Status: Nio utkast, föreningens svar inlagda, platslista från föreningen, fyra av förslagen 6–17 skrivna som utkast
+Status: Nio utkast, alla platser och förslag som kort på Trello, numren inte bestämda
 Ansvarig: Föreningen (val av platser, fakta, godkännande), Claude (redigering, översättning)
-Senast uppdaterad: 2026-10-19
+Senast uppdaterad: 2026-10-20
 
 ## Mål
 
@@ -62,12 +62,14 @@ Utkasten bygger på arterasen.se, Visit Dalarna, Swedish Spoon och regeringens p
 - 2026-10-17: Ägare till husen nämns inte vid namn.
 - 2026-10-18: **Fritt material används i utkasten utan att vänta på svar** (Alf). Bilder med fri licens och uppgifter med upphovspersonens fria villkor, till exempel Lars Bägerfeldts, går in direkt med källan angiven. Upphovspersonen kontaktas parallellt. En privatperson ska ha fått veta och inte ha sagt nej innan platsen sätts till `klar`. Museer med CC-licens behöver inte tillfrågas. Gäller inte motsägelser mellan källor eller bilder där en nutida person syns.
 - 2026-10-19 (föreningen, svar C1–C3, C5, C7): fäboden är "belagd sedan 1500-talet, enligt traditionen ännu äldre". 17 fäbodgårdar med 36 ägare 1827, som mest kanske 22, och 12 eldhus i dag. Hundar inte välkomna vecka 25–32. Parkeringen 500 m från fäboden.
+- 2026-10-20: **Omnumrering kräver inget godkännande** (Alf). Föreningen skriver ordningen på kortet *Platslistan och numreringen*, och Claude mergar en PR som bara ändrar `nummer`, också för publicerade platser. Att låsa numret när något är tryckt tas upp när numren är bestämda. Rutinen står i [docs/arbetsflode.md](../docs/arbetsflode.md).
+- 2026-10-20: **Hänvisningar mellan platser är länkar**, inte nummer eller "skylt 3" (Claude, efter Alfs fråga om omnumrering). Eldhusen ändrad i PR #16.
 - 2026-10-19 (föreningen, B4, B5): museibilden från 2018 med personen och korna får användas med hennes namn. Sunnanheds fjällkor får stå med.
 
 ## Att göra
 
 - [ ] Föreningen läser utkasten i granskningsversionen och kommenterar
-- [ ] Föreningen bestämmer platslistan och numreringen. En lista med elva platser kom 2026-10-19 (ovan). Kvar: stämma av den mot utkasten och förslagen 6–17, och vad 4–6 och 11 ska handla om (Alf, föreningen).
+- [ ] Föreningen bestämmer platslistan och numreringen. En lista med elva platser kom 2026-10-19 (ovan). Kvar: stämma av den mot utkasten och förslagen 6–17, och vad 4–6 och 11 ska handla om (Alf, föreningen). Frågorna står sedan 2026-10-20 på Trello, på kortet *Platslistan och numreringen* och på varje platskort.
 - [ ] Alf skickar underlaget med förslagen 6–17 till ordföranden
 - [ ] Föreningen väljer bland förslagen 6–17 och svarar på de nio frågorna i underlaget. Fyra finns som utkast att läsa: 6, 7, 8 och 13.
 - [ ] Foton till varje plats, med fotografens namn och tillåtelse eller fri licens. Alla utom Källorna har museibilder (2026-10-19). Kvar: en bild av en källa, och nyare bilder av eldhusen utifrån. Fria museibilder finns i [docs/bilder.md](../docs/bilder.md).
@@ -102,3 +104,4 @@ Faktagranskning, för den som kan fäboden:
 - 2026-10-19: Bägerfeldts skrifter 66, 67, 70, 72 och 89 lästa där de rör Ärteråsen, 84 och 88 i urval. Tolv förslag på fler skyltar (6–17) som Claude Docs-dokument och som självständig HTML-fil i `docs/underlag/` för ordföranden. Nya fakta om husen, kartan från 1827 och lönnskriften i docs/fakta.md (Claude).
 - 2026-10-19: Ordförandens svar på underlaget från 2026-10-18 inlagda. Fäbodvallen, startsidan, Eldhusen och Fjällkorna uppdaterade på tre språk: åldern, fäbodgårdarna och ägarna 1827, hundar vecka 25–32, Sunnanheds fjällkor, och hela museibilden med personens namn efter hennes samtycke. Föreningens platslista med elva platser införd. Bägerfeldt har godkänt (Claude).
 - 2026-10-19: Fyra nya utkast på tre språk ur förslagen: Boden med figurristningarna (6), Mjölkboden och svalen (7), Kartan från 1827 (8) och Fäbodstigen (13). Bilder ur Bägerfeldts skrifter 66 och 70, museibild DMTB 000000176 och föreningens karta över stigen. Uppgifterna kontrollerade mot PDF-texten (Claude).
+- 2026-10-20: Alla platser på Trello-tavlan: de nio utkasten i *Granska* med texten och frågorna, förslagen 9–12 och 14–17 och Tvåvåningsladan och Barnfäboden i *Idéer och frågor*. Föreningens plats 9 Utsiktstornet ligger på förslag 15, plats 11 kanske på förslag 12, och plats 5 kanske på förslag 16 (kyor är fållorna). Eldhusen hänvisar till Ristningarna med en länk i stället för "skylt 3" (PR #16) (Claude).

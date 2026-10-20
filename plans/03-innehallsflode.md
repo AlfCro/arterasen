@@ -48,6 +48,7 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 - [ ] Döp om arbetsytan från *Trello Workspace* till *Ärteråsens Kulturförening*, kontrollera att tavlan är *Private*, och stäng tavlan *Ärteråsens Kulturförening* som bara innehåller Trellos startguide (Alf). Kopplingen kan inte ändra arbetsytor, synlighet eller stänga tavlor.
 - [x] Kortet *MALL – kopiera mig* överst i listan *Skriver*, med texten i [docs/kortmall.md](../docs/kortmall.md) (Claude, 2026-10-20)
 - [x] Länken i `intern.trelloUrl` i `site.config.json` (Claude, 2026-10-20). `/intern/` länkar nu till tavlan.
+- [x] Ett kort per plats på tavlan (Claude, 2026-10-20): de nio utkasten i *Granska* med texten i beskrivningen och en kommentar med länkar och frågor, förslagen och föreningens platser utan underlag i *Idéer och frågor*, och kortet *Platslistan och numreringen*.
 - [ ] Bjud in volontärerna till tavlan, skicka länken till `/intern/` (Alf eller föreningen)
 - [ ] Schemalagd uppgift: varje morgon går Claude igenom tavlan enligt `docs/arbetsflode.md` (Claude, när kopplingarna fungerar)
 - [ ] Provkör med en plats och en volontär. Justera rutinen och skriv upp ändringar på `/intern/nytt/`.
@@ -67,3 +68,4 @@ Vad varje lista betyder för volontärerna står i [docs/intern/00-index.md](../
 - 2026-10-19: Svar från ordföranden: två i styrelsen skriver det mesta, en granskare för engelska finns, tyska saknas. Föreningen föreslår två läsare per text. Föreningen ska ha ett eget Google-konto (Claude).
 - 2026-10-20: Bara Trello (Alf). Texten skrivs på kortet och foton bifogas där. Kortmall i stället för dokumentmall, volontärsidorna och agentens rutin omskrivna (Claude).
 - 2026-10-20: Trello kopplat. Tavlan QR-skyltar har de sju listorna, mallkortet och ett provkort för bilagor. Kopplingen kan inte hämta bilagor, och skalet når inte trello.com. Länken till tavlan i `site.config.json` (Alf, Claude).
+- 2026-10-20: Tavlan fylld: nio utkastkort i *Granska*, åtta förslagskort och två platser från föreningens lista i *Idéer och frågor*, och kortet *Platslistan och numreringen*. Rutinen säger nu att kortets beskrivning följer `sv.md`, hur förslagskort blir utkast och hur omnumrering går till. Provkortet har ännu ingen bilaga (Claude).

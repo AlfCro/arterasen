@@ -33,7 +33,7 @@ npm run dev                # förhandsvisning på http://localhost:8080 (utkast 
 npm run check              # validera allt innehåll, måste vara grönt
 npm run check:readme       # README nämner alla kommandon, mappar och workflows, länkarna fungerar, läget inte äldre än PLAN.md
 npm run build              # produktion: bara platser med status klar på alla språk
-npm run build:preview      # som utkast.arterasen.se: utkast, källor och banner syns
+npm run build:preview      # som utkast.arterasen.se: utkast och banner syns
 npm run ny -- <slug> "<Titel>"   # ny plats från mallen
 npm run bild -- <fil> <slug> [namn]   # krymp foto och ta bort GPS och annan metadata, namn t.ex. bild-2
 npm run verify -- --out=<mapp>   # webbläsartest: skärmdumpar, skyltar som PDF, QR-avkodning, offline
@@ -81,6 +81,8 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - **Privatpersoner** nämns inte utan samtycke. Husen ägs av enskilda.
 - **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens Trello-kort säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. Upp till fyra extra bilder per plats står under `fler_bilder` i `sv.md` med samma fält, och med `bild` och `bildtext` i övriga språk; de visas under *Fler bilder* efter texten. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Att beskära bort personen räcker när ingen annan i bilden kan kännas igen.
 - **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
+- **Källor syns för alla** på sidan sedan 2026-10-20 (Alf). Länken till Trello-kortet visas bara i förhandsvisningen. Skriv därför aldrig en privatperson som källa utan att hen vill stå med.
+- **Hänvisa till en annan plats med länk**, `[Ristningarna](../ristningarna/)`, aldrig med nummer. Numren ändras, och omnumrering kräver inget godkännande (Alf 2026-10-20). Se [docs/arbetsflode.md](docs/arbetsflode.md).
 - **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
 
 ### Ordlista
