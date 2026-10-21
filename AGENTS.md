@@ -51,7 +51,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 | `content/start/` | Startsidans text per språk |
 | `content/_mall/` | Mall som `npm run ny` kopierar |
 | `content/tryckta-skyltar.json` | Skyltar som sitter uppe. Raderna tas aldrig bort. |
-| `content/karta/` | Kartutkastet: `bas.svg` (omritad efter Bägerfeldts skrift 66 s. 51) och `lagen.json` med platsernas lägen i bildpunkter. `"exempel": true` betyder påhittade lägen. Se [plans/05-skyltar.md](plans/05-skyltar.md). |
+| `content/karta/` | Kartutkastet: `bas.svg` (omritad efter Bägerfeldts skrift 66 s. 51) och `lagen.json` med platsernas lägen i bildpunkter under `lagen`, och annat på kartan (parkering, servering) under `etiketter`. `"exempel": true` betyder påhittade lägen. Föreningen pekar ut lägen på `/intern/karta/peka/` som rader på Trello, se *Lägen på kartan* i [docs/arbetsflode.md](docs/arbetsflode.md) och [plans/05-skyltar.md](plans/05-skyltar.md). |
 | `docs/intern/` | Interna sidor för volontärerna, Markdown på enkel svenska |
 | `docs/arbetsflode.md` | Agentens rutin för Trello-korten |
 | `docs/fakta.md` | Insamlade fakta om fäboden med källor, obekräftade uppgifter och motsägelser |
@@ -84,7 +84,7 @@ Kör `npm run verify` efter varje ändring i `src/` och titta på skärmdumparna
 - **Bilder** används när vi vet vem som tog dem och har rätt att använda dem: volontärens Trello-kort säger att föreningen får använda bilden, eller bilden har en fri licens. Ange `fotograf`, och för fri licens också `bildlicens` och `bildkalla` i `sv.md` (`npm run check` känner igen licenserna i `FREE_LICENSES` i `src/content.mjs`). Kör alltid `npm run bild`. Upp till fyra extra bilder per plats står under `fler_bilder` i `sv.md` med samma fält, och med `bild` och `bildtext` i övriga språk; de visas under *Fler bilder* efter texten. En nutida bild där en person kan kännas igen kräver personens samtycke, oavsett licens. Att beskära bort personen räcker när ingen annan i bilden kan kännas igen.
 - **Längd:** ingress högst 160 tecken, brödtext 80–200 ord. Skriv för någon som står framför platsen.
 - **Källor syns för alla** på sidan sedan 2026-10-20 (Alf). Länken till Trello-kortet visas bara i förhandsvisningen. Skriv därför aldrig en privatperson som källa utan att hen vill stå med.
-- **Kartans lägen är inte fakta** förrän föreningen har pekat ut dem. Skriv dem i `content/karta/lagen.json`, inte i `sv.md`, och låt `"exempel"` vara `true` tills alla är utpekade.
+- **Kartans lägen är inte fakta** förrän föreningen har pekat ut dem. Skriv dem i `content/karta/lagen.json`, inte i `sv.md`, och låt `"exempel"` vara `true` tills alla är utpekade. Föreningen skickar dem som rader, `320.144 nr 3 Ristningarna`, där 320 är x och 144 är y i bildpunkter på `bas.svg`.
 - **Hänvisa till en annan plats med länk**, `[Ristningarna](../ristningarna/)`, aldrig med nummer. Numren ändras, och omnumrering kräver inget godkännande (Alf 2026-10-20). Se [docs/arbetsflode.md](docs/arbetsflode.md).
 - **Översättningar** har samma fakta i samma ordning som `sv.md`, på naturlig engelska och tyska. Använd ordlistan nedan.
 

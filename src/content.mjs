@@ -244,6 +244,8 @@ export function loadContent(config) {
     }
   }
 
+  checkMapFile(bySlug, err);
+
   const printedSlugs = new Set(printed.filter((s) => !s.flyttad_till).map((s) => s.slug));
   for (const p of places) p.printed = printedSlugs.has(p.slug);
 
@@ -260,6 +262,39 @@ export function loadContent(config) {
   }
 
   return { start, places, moved, intern, errors, warnings };
+}
+
+// The map draft: content/karta/lagen.json has positions in pixels of content/karta/bas.svg.
+// Positions come from volunteers as lines like "320.144 nr 3 Ristningarna" (/intern/karta/peka/),
+// so a typo should stop the build rather than put a place off the map.
+function checkMapFile(bySlug, err) {
+  const dir = path.join(CONTENT, 'karta');
+  const file = path.join(dir, 'lagen.json');
+  if (!fs.existsSync(file)) return;
+  const where = 'content/karta/lagen.json';
+  let data;
+  try {
+    data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (e) {
+    err(where, `går inte att läsa som JSON: ${e.message}`);
+    return;
+  }
+  const box = fs.existsSync(path.join(dir, 'bas.svg')) && fs.readFileSync(path.join(dir, 'bas.svg'), 'utf8').match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
+  const [w, h] = box ? [Number(box[1]), Number(box[2])] : [Infinity, Infinity];
+  const inside = (p) => Array.isArray(p) && p.length === 2 && p.every(Number.isFinite) && p[0] >= 0 && p[1] >= 0 && p[0] <= w && p[1] <= h;
+  const range = `[x, y] med x 0–${w} och y 0–${h}`;
+  if ('exempel' in data && typeof data.exempel !== 'boolean') err(where, 'exempel ska vara true eller false');
+  for (const [slug, p] of Object.entries(data.lagen || {})) {
+    if (!bySlug.has(slug)) err(where, `lagen: ${slug} är ingen plats i content/platser/`);
+    if (!inside(p)) err(where, `lagen: ${slug} har ${JSON.stringify(p)}, ska vara ${range}`);
+  }
+  if (data.etiketter != null && !Array.isArray(data.etiketter)) err(where, 'etiketter ska vara en lista');
+  else {
+    for (const [i, l] of (data.etiketter || []).entries()) {
+      if (typeof l?.text !== 'string' || !l.text.trim()) err(where, `etiketter ${i + 1}: text saknas`);
+      if (!inside(l?.lage)) err(where, `etiketter ${i + 1}: lage är ${JSON.stringify(l?.lage)}, ska vara ${range}`);
+    }
+  }
 }
 
 function checkBody(where, body, err) {

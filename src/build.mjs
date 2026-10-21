@@ -13,6 +13,7 @@ import { ROOT, loadConfig, loadContent } from './content.mjs';
 import { placePage, indexPage, entryPage, notFoundPage, internPage, statusPage, internShell } from './render.mjs';
 import { signsPage, qrSvg, qrUrl, qrBaseUrl } from './signs.mjs';
 import { loadMap, mapMain } from './map.mjs';
+import { pointMain } from './map-point.mjs';
 
 // "Arteras Display" is IM Fell English for letters, with digits from EB Garamond:
 // IM Fell only has old-style figures, where 1 looks like a capital I (bad on a numbered sign).
@@ -71,6 +72,7 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
     css: writeAsset(outDir, 'style', 'css', css),
     js: writeAsset(outDir, 'app', 'js', fs.readFileSync(path.join(ROOT, 'src', 'app.js'))),
     icon: writeAsset(outDir, 'icon', 'svg', fs.readFileSync(path.join(ROOT, 'src', 'icon.svg'))),
+    point: writeAsset(outDir, 'map-point', 'js', fs.readFileSync(path.join(ROOT, 'src', 'map-point.js'))),
     preload,
   };
 
@@ -105,7 +107,19 @@ export async function build({ preview = false, outDir = path.join(ROOT, 'dist'),
   // Internal pages
   for (const doc of content.intern) add(doc.slug ? `intern/${doc.slug}/index.html` : 'intern/index.html', internPage(ctx, doc), false);
   add('intern/status/index.html', statusPage(ctx), false);
-  add('intern/karta/index.html', internShell(ctx, { key: 'karta', title: 'Karta, utkast', main: await mapMain(ctx, loadMap(), visible) }), false);
+  const map = loadMap();
+  add('intern/karta/index.html', internShell(ctx, { key: 'karta', title: 'Karta, utkast', main: await mapMain(ctx, map, visible) }), false);
+  add(
+    'intern/karta/peka/index.html',
+    internShell(ctx, {
+      key: 'peka',
+      title: 'Peka på kartan',
+      depth: 3,
+      main: pointMain(ctx, map, visible),
+      after: `<script src="../../../${assets.point}" defer></script>`,
+    }),
+    false,
+  );
 
   // Signs
   add('skyltar/index.html', await signsPage(ctx, visible), false);

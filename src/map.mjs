@@ -3,7 +3,9 @@
 // The base map is content/karta/bas.svg, traced from Lars Bägerfeldt's map of the present-day
 // houses (tools/karta-vektorisera.py). Where each place is on it comes from content/karta/lagen.json,
 // in pixels of the base map. While that file says "exempel": true the positions are made up, and
-// every sheet is stamped so.
+// every sheet is stamped so. "etiketter" in the same file are other things to show on the map,
+// such as the parking: a dot and a Swedish text, no number or QR code. Volunteers point positions
+// out on /intern/karta/peka/ (src/map-point.mjs).
 //
 // Two layouts, both A4 portrait, all measures in mm:
 //   1. One sheet: the map in the middle, a QR tile per place around it, a line from tile to place.
@@ -28,7 +30,7 @@ export function loadMap() {
   const pxPerM = Number(svg.match(/data-px-per-m="([\d.]+)"/)?.[1] || 0);
   const inner = svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
   const lagen = JSON.parse(fs.readFileSync(path.join(DIR, 'lagen.json'), 'utf8'));
-  return { vw, vh, pxPerM, inner, example: lagen.exempel !== false, positions: lagen.lagen || {} };
+  return { vw, vh, pxPerM, inner, example: lagen.exempel !== false, positions: lagen.lagen || {}, labels: lagen.etiketter || [] };
 }
 
 // The base map placed at x, y with width w, in the sheet's mm coordinates.
@@ -41,6 +43,16 @@ const toMm = (map, box, [px, py]) => [box.x + (px * box.w) / map.vw, box.y + (py
 
 function marker(n, [x, y], r) {
   return `<g class="k-marker"><circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${r}"/><text x="${x.toFixed(2)}" y="${(y + r * 0.42).toFixed(2)}" font-size="${(r * 1.25).toFixed(2)}">${n}</text></g>`;
+}
+
+// Something on the map without a QR code: a dot and a short Swedish text, size in mm.
+function labels(map, box, size) {
+  return map.labels
+    .map((l) => {
+      const [x, y] = toMm(map, box, l.lage);
+      return `<g class="k-label"><circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${(size * 0.3).toFixed(2)}"/><text x="${(x + size * 0.6).toFixed(2)}" y="${(y + size * 0.35).toFixed(2)}" font-size="${size}" stroke-width="${(size * 0.3).toFixed(2)}">${esc(l.text)}</text></g>`;
+    })
+    .join('');
 }
 
 function scaleBar(map, box, x, y) {
@@ -163,6 +175,7 @@ ${sheetHeader(ctx)}
 <svg class="map-svg" viewBox="0 0 ${A4.w} ${A4.h}" width="${A4.w}mm" height="${A4.h}mm" role="img" aria-label="Karta över fäboden med QR-koder">
 ${baseMap(map, box.x, box.y, box.w)}
 <g class="k-lines">${lines.join('')}</g>
+${labels(map, box, 2.4)}
 ${markers.join('')}
 ${scaleBar(map, box, box.x + 3, box.y + 6)}
 </svg>
@@ -183,6 +196,7 @@ ${stamp(map)}
 ${sheetHeader(ctx)}
 <svg class="map-svg" viewBox="0 0 ${A4.w} ${A4.h}" width="${A4.w}mm" height="${A4.h}mm" role="img" aria-label="Karta över fäboden med numrerade platser">
 ${baseMap(map, box.x, box.y, box.w)}
+${labels(map, box, 3.2)}
 ${placed.map((p) => marker(p.number, toMm(map, box, map.positions[p.slug]), 3.4)).join('')}
 ${scaleBar(map, box, 12, box.y + box.h + 6)}
 </svg>
@@ -222,6 +236,7 @@ export async function mapMain(ctx, map, places) {
 <h1>Karta med QR-koder <span class="badge">Löst utkast</span></h1>
 <p>Ett första försök att visa hur en karta med QR-koder kan se ut, i stället för skyltar vid varje plats. Inget är bestämt.</p>
 ${map?.example ? '<p><strong>Lägena är påhittade.</strong> Siffrorna står på kartan bara för att visa hur det kan se ut. När föreningen har pekat ut var varje plats är, ritas kartan om med rätt lägen.</p>' : ''}
+<p class="map-point-link"><a href="peka/">Peka ut platserna på kartan</a>: tryck där en plats är, skriv vad som ska stå där och klistra in raden på Trello.</p>
 <p>Kartan är ritad efter Lars Bägerfeldts karta över husen i dag, i <i>Historisk vandring runt Ärteråsens fäbod</i> (2025), s. 51. Husen, vallen och skogskanten är ritade av en dator efter hans bild och kan ha små fel.</p>
 <p>Två uppslag att jämföra:</p>
 <ol>

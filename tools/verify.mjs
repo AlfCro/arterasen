@@ -4,7 +4,8 @@
 //   1. Builds a preview and takes phone-width screenshots (light and dark) to look at.
 //   2. Prints the signs to A5 PDF and decodes every QR code from the rendered page:
 //      they must lead to the draft site, and every sign must be stamped as a test print.
-//      Does the same for the map draft on /intern/karta/ (karta.pdf).
+//      Does the same for the map draft on /intern/karta/ (karta.pdf), and on /intern/karta/peka/
+//      taps the map, names a place and checks the line that is copied for Trello.
 //   3. Builds production in a temporary copy with every place approved, decodes its signs
 //      (public address, no stamps), then checks language redirect, offline reading after
 //      the first scan, language memory and 404.
@@ -125,6 +126,49 @@ async function checkMap(base, { expectedBase, label, pdf }) {
   await ctx.close();
 }
 
+// The pointing page (/intern/karta/peka/): a tap on the map plus a place name must give the line
+// "x.y nr N Title" for the tapped spot, put it on the clipboard and keep it after a reload.
+async function checkPoint(base) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+  await ctx.grantPermissions(['clipboard-read', 'clipboard-write'], { origin: base });
+  const page = await ctx.newPage();
+  page.on('console', (m) => m.type() === 'error' && fail(`konsolfel på /intern/karta/peka/: ${m.text()}`));
+  page.on('dialog', (d) => d.accept());
+  await page.goto(base + '/intern/karta/peka/', { waitUntil: 'networkidle' });
+  const first = await page.evaluate(() => JSON.parse(document.getElementById('point-data').textContent).places[0]);
+  if (!first) {
+    fail('pekverktyget: inga platser att föreslå');
+    return ctx.close();
+  }
+  await page.locator('#point-map').scrollIntoViewIfNeeded();
+  const target = [320, 144];
+  const spot = await page.evaluate(([x, y]) => {
+    const svg = document.getElementById('point-map');
+    const pt = svg.createSVGPoint();
+    pt.x = x;
+    pt.y = y;
+    const p = pt.matrixTransform(svg.getScreenCTM());
+    return { x: p.x, y: p.y };
+  }, target);
+  await page.mouse.click(spot.x, spot.y);
+  const at = (await page.inputValue('#point-at')).split('.').map(Number);
+  if (at.length !== 2 || Math.abs(at[0] - target[0]) > 3 || Math.abs(at[1] - target[1]) > 3)
+    fail(`pekverktyget: tryck på ${target.join('.')} gav läget ${at.join('.')}`);
+  await page.fill('#point-text', first.title);
+  const nr = await page.inputValue('#point-nr');
+  if (Number(nr) !== first.nr) fail(`pekverktyget: numret blev ${nr || 'tomt'}, väntade ${first.nr} för ${first.title}`);
+  await page.click('#point-form button[type=submit]');
+  const expected = `${at.join('.')} nr ${first.nr} ${first.title}`;
+  const clip = await page.evaluate(() => navigator.clipboard.readText());
+  if (clip !== expected) fail(`pekverktyget: urklippet har "${clip}", väntade "${expected}"`);
+  await page.reload({ waitUntil: 'networkidle' });
+  const kept = await page.locator('#point-lines code').allTextContents();
+  if (kept.join('|') !== expected) fail(`pekverktyget: listan efter omladdning är "${kept.join('|')}"`);
+  if (!failures.some((f) => f.startsWith('pekverktyget'))) ok(`pekverktyget: tryck, namn och nummer gav "${expected}" i urklippet`);
+  await page.screenshot({ path: path.join(OUT, 'intern_karta_peka-lista.png'), fullPage: true });
+  await ctx.close();
+}
+
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.config.json'), 'utf8'));
 const slash = (url) => (url.endsWith('/') ? url : `${url}/`);
 const browser = await chromium.launch({ executablePath: chromiumPath() });
@@ -136,7 +180,7 @@ const places = fs.readdirSync(path.join(previewDir, 'skyltar', 'qr')).map((f) =>
 let server = await serve(previewDir, 4311);
 let base = 'http://localhost:4311';
 
-const shots = [['/sv/', 'light'], ...places.map((p) => [`/sv/${p}/`, 'light']), [`/de/${places[0] ?? ''}/`, 'dark'], ['/intern/', 'light'], ['/intern/status/', 'light'], ['/intern/karta/', 'light']];
+const shots = [['/sv/', 'light'], ...places.map((p) => [`/sv/${p}/`, 'light']), [`/de/${places[0] ?? ''}/`, 'dark'], ['/intern/', 'light'], ['/intern/status/', 'light'], ['/intern/karta/', 'light'], ['/intern/karta/peka/', 'light'], ['/intern/karta/peka/', 'dark']];
 for (const [url, scheme] of shots) {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, colorScheme: scheme });
   const page = await ctx.newPage();
@@ -168,6 +212,7 @@ await checkSigns(base, {
   shot: 'skylt-1.png',
 });
 await checkMap(base, { expectedBase: slash(config.intern?.granskningUrl || config.siteUrl), label: 'utkastet', pdf: 'karta.pdf' });
+await checkPoint(base);
 server.close();
 
 // ---------- 3: production with everything approved, offline behaviour ----------
