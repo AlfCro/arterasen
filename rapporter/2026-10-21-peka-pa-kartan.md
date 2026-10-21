@@ -19,6 +19,7 @@ Alf ville ha ett sätt för föreningen att säga var platserna ligger och vilka
 - **Kontroll** i `npm run check`: lägen för platser som inte finns, lägen utanför kartan och felaktiga etiketter stoppar bygget.
 - **Test** i `npm run verify`: trycker på kartan vid 320.144, väljer den första platsen, kontrollerar läget, numret, raden i urklippet och att listan finns kvar efter omladdning. Två nya skärmdumpar i 390 px, ljust och mörkt.
 - Fliken *Peka på kartan* i den interna menyn och en länk från *Karta, utkast*. Länken till Trello-kortet står i `site.config.json` under `intern.kartaKortUrl`.
+- **Trello:** fråga 1 och 4 på kortet [Karta med QR-koder (löst utkast)](https://trello.com/c/7QfVyuMu) ber nu om rader från *Peka på kartan* i stället för ett foto av en utskrift. Kortet länkar till grenens förhandsvisning tills PR:en är mergad, och till `utkast.arterasen.se/intern/karta/` för kartutkastet.
 - **Dokumentation:** avsnittet *Peka ut platserna* i [Skyltar](../docs/intern/30-skyltar.md), en punkt i [Nytt](../docs/intern/90-nytt.md), rutinen *Lägen på kartan* i [docs/arbetsflode.md](../docs/arbetsflode.md), [plans/05-skyltar.md](../plans/05-skyltar.md), PLAN.md, README och AGENTS.md.
 
 ## Beslut
@@ -41,6 +42,7 @@ Alf ville ha ett sätt för föreningen att säga var platserna ligger och vilka
 
 - [ ] Alf: granska och merga PR #19
 - [ ] Föreningen: peka ut platserna och etiketterna på `/intern/karta/peka/` och klistra in raderna på kortet [Karta med QR-koder (löst utkast)](https://trello.com/c/7QfVyuMu)
+- [ ] Claude, efter merge: byta länken i fråga 1 på kortet till `https://utkast.arterasen.se/intern/karta/peka/`
 - [ ] Claude, när raderna kommer: föra in dem enligt *Lägen på kartan* i docs/arbetsflode.md
 
 ## Öppna frågor
