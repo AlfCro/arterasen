@@ -910,6 +910,19 @@ td a + a {
   font-family: var(--display);
 }
 
+.k-label circle {
+  fill: #1f1a16;
+}
+
+.k-label text {
+  fill: #1f1a16;
+  stroke: #fff;
+  stroke-linejoin: round;
+  paint-order: stroke;
+  font-family: var(--body);
+  font-weight: 600;
+}
+
 .map-tile,
 .map-start {
   position: absolute;
@@ -1165,6 +1178,272 @@ td a + a {
     margin: 0;
     border: 0;
     break-after: page;
+  }
+}
+
+/* ---------- Pointing out places on the map (/intern/karta/peka/) ---------- */
+
+.map-point-link {
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+}
+
+.map-point-link a {
+  font-weight: 600;
+}
+
+.point-page {
+  max-width: 48rem;
+}
+
+.point-steps {
+  padding-left: 1.4rem;
+}
+
+.point-steps li + li {
+  margin-top: 0.4rem;
+}
+
+.point-explain {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.point-page code {
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+.point-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.point-bar[hidden] {
+  display: none;
+}
+
+.point-zoom {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.point-zoom button {
+  min-width: 2.75rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.point-frame {
+  overflow: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.point-frame.zoomed {
+  max-height: 70vh;
+}
+
+.point-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.point-svg .g-lines path {
+  fill: none;
+  stroke: #26211c;
+}
+
+.point-svg .g-major {
+  stroke-width: 1.6;
+  stroke-opacity: 0.45;
+}
+
+.point-svg .g-minor {
+  stroke-width: 1;
+  stroke-opacity: 0.22;
+}
+
+.point-svg .g-labels text {
+  font-family: var(--body);
+  font-size: 30px;
+  fill: #26211c;
+}
+
+.point-svg .g-x {
+  text-anchor: middle;
+}
+
+.point-svg .g-y {
+  text-anchor: end;
+}
+
+.p-mark circle {
+  fill: #8a2a1c;
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.p-current circle {
+  fill: #26211c;
+}
+
+.p-mark text,
+.p-pick text {
+  font-family: var(--body);
+  font-size: 26px;
+  font-weight: 600;
+  fill: #26211c;
+  stroke: #fff;
+  stroke-width: 7px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.p-pick circle,
+.p-pick path {
+  fill: none;
+  stroke: #8a2a1c;
+  stroke-width: 4;
+}
+
+.p-pick text {
+  fill: #8a2a1c;
+}
+
+.point-form,
+.point-list,
+.point-how,
+.point-now {
+  margin-top: 1.25rem;
+}
+
+.point-status {
+  flex: 1;
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+}
+
+.point-field {
+  margin-bottom: 0.9rem;
+}
+
+.point-field label {
+  display: block;
+  font-weight: 600;
+}
+
+.point-field label span {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.point-field input,
+.point-list textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.55rem 0.65rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+}
+
+.point-field-nr input {
+  max-width: 7rem;
+}
+
+.point-page button {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.55rem 0.9rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.point-page .point-primary {
+  font-weight: 600;
+  color: #fff;
+  background: #8a2a1c;
+  border-color: #8a2a1c;
+}
+
+.point-list h2,
+.point-how h2,
+.point-now h2 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.point-list ol {
+  padding-left: 1.6rem;
+}
+
+.point-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.75rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.point-list li button {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.point-list code {
+  white-space: normal;
+}
+
+.point-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.point-now ul {
+  padding-left: 1.2rem;
+}
+
+@media print {
+  body:has(.point-page) .site-header,
+  body:has(.point-page) .skip,
+  .point-bar,
+  .point-form,
+  .point-list,
+  .point-now {
+    display: none !important;
+  }
+
+  .point-frame {
+    max-height: none;
+    overflow: visible;
+    border: 0;
+  }
+
+  .point-svg {
+    width: 100% !important;
   }
 }
 

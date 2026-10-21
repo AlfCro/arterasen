@@ -14,7 +14,7 @@ Repot är publikt. Allt här, även utkast och underlag, syns för alla.
 
 ## Läget just nu
 
-Senast uppdaterad: 2026-10-20
+Senast uppdaterad: 2026-10-21
 
 - **Sajten** ligger på nätet sedan 2026-10-18: `info.arterasen.se` och `utkast.arterasen.se`, två Cloudflare Pages-projekt som bygger `main`. DNS för arterasen.se ligger i ett Cloudflare-konto som Alf har skapat och där föreningen får egna administratörer. Huvudsajten hos N.nu ligger kvar. Domänen förnyas automatiskt hos Name ISP.
 - **Texterna:** nio platser finns som utkast på tre språk: Fäbodvallen, Eldhusen, Ristningarna, Källorna och Fjällkorna, och sedan 2026-10-19 Boden med figurristningarna, Mjölkboden och svalen, Kartan från 1827 och Fäbodstigen. Ingen är godkänd av föreningen. Föreningen har avgjort de flesta motsägelserna mellan källorna (2026-10-19), och utkasten följer svaren sedan 2026-10-19. Kvar: när bruket upphörde och vilka källor som rinner.
@@ -25,7 +25,7 @@ Senast uppdaterad: 2026-10-20
 - **Alla platser finns på Trello** sedan 2026-10-20: de nio utkasten i *Granska* med texten och frågorna, förslagen och föreningens platser utan underlag i *Idéer och frågor*, och kortet *Platslistan och numreringen*. Numren är inte bestämda, och omnumrering kräver inget godkännande.
 - **Källorna syns på den publika sajten** sedan 2026-10-20, inte bara i förhandsvisningen. Länken till Trello-kortet visas bara i förhandsvisningen.
 - **Volontärflödet** går bara via Trello sedan 2026-10-20: texten skrivs på platsens kort och foton bifogas där. Tavlan [QR-skyltar](https://trello.com/b/yhacWi40/qr-skyltar) och Trello-kopplingen till Claude finns sedan 2026-10-20, med listor och mallkort. Kvar innan volontärerna bjuds in: hur foton kommer från korten till repot.
-- **Kartan med QR-koder** finns som löst utkast sedan 2026-10-20, på `/intern/karta/` i utkastet: underlaget är omritat ur Lars Bägerfeldts karta över husen, i två uppslag i A4. Lägena är påhittade tills föreningen har pekat ut platserna på Trello-kortet *Karta med QR-koder (löst utkast)*. Se [plans/05-skyltar.md](plans/05-skyltar.md).
+- **Kartan med QR-koder** finns som löst utkast sedan 2026-10-20, på `/intern/karta/` i utkastet: underlaget är omritat ur Lars Bägerfeldts karta över husen, i två uppslag i A4. Lägena är påhittade tills föreningen har pekat ut platserna. Det gör de sedan 2026-10-21 på `/intern/karta/peka/`: tryck på kartan, skriv vad som ska stå där och numret, och klistra in den kopierade raden, till exempel `320.144 nr 3 Ristningarna`, på Trello-kortet *Karta med QR-koder (löst utkast)*. Claude för in raderna i `content/karta/lagen.json`. Se [plans/05-skyltar.md](plans/05-skyltar.md).
 - **Föreningens svar** på underlaget från 2026-10-18 kom 2026-10-19: en platslista med elva platser, domänen ska ägas av föreningen, Lars Bägerfeldt har godkänt, och föreningen lutar åt en bärbar karta med QR-koder i stället för fasta skyltar. 2026-10-20: troligen laminerade A5 med QR-koder som delas ut till gästerna, tillsammans med en karta, inte helt bestämt. Detaljerna står i delplanerna.
 - **Mejl på arterasen.se fungerar inte:** domänen saknar MX-post. Förslaget är Cloudflare Email Routing, se [plans/02-hosting.md](plans/02-hosting.md).
 - **Väntar på föreningen:** svar på korten på Trello: val bland förslagen, platslistan och ordningen, granskning av utkasten och beslut om blad, karta eller skyltar.

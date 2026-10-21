@@ -18,7 +18,7 @@ Gå igenom listorna i den här ordningen och hantera varje kort för sig. Ett fe
 1. *Godkänt* → publicera
 2. *Klar för Claude* → gör sida eller ändring
 3. *Skylt uppsatt* → registrera skylten (bara kort som inte redan har en kommentar om registrering)
-4. *Idéer och frågor* → svara på frågor om arbetssättet om svaret står i `docs/intern/` eller i en plan. Annars: tagga Alf i en kommentar. Nya kommentarer på kortet *Platslistan och numreringen*: se *Numrera om* nedan.
+4. *Idéer och frågor* → svara på frågor om arbetssättet om svaret står i `docs/intern/` eller i en plan. Annars: tagga Alf i en kommentar. Nya kommentarer på kortet *Platslistan och numreringen*: se *Numrera om* nedan. Nya rader på kortet *Karta med QR-koder*: se *Lägen på kartan* nedan.
 
 Avsluta med en kort sammanfattning till Alf: vad som hanterades, vad som väntar och eventuella fel.
 
@@ -62,6 +62,25 @@ Omnumrering kräver inget godkännande (Alf 2026-10-20). Föreningen skriver den
 3. Uppdatera avsnittet *Numren i dag* på kortet och svara i en kommentar.
 
 Numret står på skyltar och blad som skrivs ut, men adressen och QR-koden bygger på slugen och ändras inte. Att låsa numret när något är tryckt tas upp när numren är bestämda (Alf 2026-10-20).
+
+## Lägen på kartan
+
+Föreningen pekar ut platserna på `/intern/karta/peka/` och klistrar in rader på kortet *Karta med QR-koder (löst utkast)*, som `site.config.json` länkar under `intern.kartaKortUrl`. Raderna ser ut så här:
+
+```
+320.144 nr 3 Ristningarna
+150.858 Parkering
+```
+
+`320.144` är x och y i bildpunkter på `content/karta/bas.svg`, samma tal som i `content/karta/lagen.json`. `nr 3` är numret på kartan, och resten är vad som ska stå där. Den som skriver för hand kan skriva `320,144` eller `320 144`; det betyder samma sak.
+
+1. **Plats med QR-kod:** raden syftar på en plats i `content/platser/`, med titeln eller ett namn som tydligt pekar ut den. Skriv läget under `lagen` med platsens slug: `"ristningarna": [320, 144]`.
+2. **Annat på kartan** (parkering, servering): skriv det under `etiketter` som `{ "text": "Parkering", "lage": [150, 858] }`. Texten står på svenska på kartan.
+3. **Osäkert** vilken plats en rad gäller, eller två personer pekar ut samma plats mer än cirka 20 punkter (10 m) isär: fråga på kortet och lämna raden tills den är besvarad. Annars gäller den senaste raden.
+4. **Ett annat nummer** än `nummer` i `sv.md`: följ *Numrera om* ovan, i samma PR.
+5. Gren `innehall/karta`, PR *Innehåll: lägen på kartan* med länk till kortet. `npm run check` stoppar okända platser och lägen utanför kartan. Merga när `check` är grön.
+6. `exempel` står kvar som `true` tills alla platser är utpekade. Ta då bort påhittade lägen som ingen har pekat ut och sätt `exempel` till `false`.
+7. Svara på kortet: vilka rader som är inlagda, vad som är oklart, och länk till `https://utkast.arterasen.se/intern/karta/`.
 
 ## Godkänt: publicera
 

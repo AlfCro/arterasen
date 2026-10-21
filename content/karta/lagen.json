@@ -1,5 +1,5 @@
 {
-  "om": "Var varje plats står på kartan, i bildpunkter på content/karta/bas.svg (941 × 915, ungefär 2,07 punkter per meter, 0,0 uppe till vänster). Så länge exempel är true är lägena påhittade och visar bara hur kartan kan se ut. Sätt exempel till false först när alla lägen är utpekade av föreningen.",
+  "om": "Var varje plats står på kartan, i bildpunkter på content/karta/bas.svg (941 × 915, ungefär 2,07 punkter per meter, 0,0 uppe till vänster). Föreningen pekar ut lägena på /intern/karta/peka/ och skriver rader som \"320.144 nr 3 Ristningarna\" på Trello: 320 är x och 144 är y. Platser med QR-kod står under lagen med sin slug, annat som ska synas på kartan (parkering, servering) under etiketter med text och lage. Så länge exempel är true är lägena under lagen påhittade och visar bara hur kartan kan se ut. Sätt exempel till false först när alla lägen är utpekade av föreningen.",
   "exempel": true,
   "lagen": {
     "vallen": [470, 615],
@@ -11,5 +11,6 @@
     "mjolkboden": [655, 409],
     "kartan-1827": [571, 575],
     "fabodstigen": [150, 858]
-  }
+  },
+  "etiketter": []
 }

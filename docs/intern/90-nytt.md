@@ -2,8 +2,12 @@
 titel: Nytt i arbetssättet
 flik: Nytt
 ingress: Här skrivs det upp när något ändras i hur vi jobbar. Det senaste står först.
-uppdaterad: 2026-10-20
+uppdaterad: 2026-10-21
 ---
+
+## 2026-10-21
+
+- **Peka ut platserna på kartan i telefonen.** Under den nya fliken [Peka på kartan](../karta/peka/) trycker du där en plats är och skriver vad som ska stå där, till exempel *Ristningarna* eller *Parkering*, och numret om platsen har en QR-kod. En rad som `320.144 nr 3 Ristningarna` kopieras. Klistra in den i en kommentar på Trello-kortet *Karta med QR-koder (löst utkast)*. Ni behöver alltså inte skriva ut kartan och ta en bild. Se [Skyltar](../skyltar/).
 
 ## 2026-10-20
 
